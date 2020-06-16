@@ -1,0 +1,26 @@
+.navigation {
+    position: sticky;
+    flex: none;
+    top: 0;
+    height: 100vh;
+    width: 300px;
+    background: #000;
+    color: #fff;
+}
+
+.name {
+    padding: 12px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.links {
+    padding: 6px 12px;
+}
+
+.links a {
+    margin: 8px 0;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}

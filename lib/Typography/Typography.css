@@ -1,0 +1,87 @@
+body {
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+/* heading */
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    line-height: 1.5;
+    font-weight: 700;
+    margin: 0 0 0.5em;
+}
+
+h1, .h1 {
+    font-size: 40px;
+}
+
+h2, .h2 {
+    font-size: 32px;
+}
+
+h3, .h3 {
+    font-size: 24px;
+}
+
+h4, .h4 {
+    font-size: 20px;
+}
+
+h5, .h5 {
+    font-size: 16px;
+}
+
+h6, .h6 {
+    font-size: 14px;
+}
+
+/* sub-title */
+
+.subtitle-h2,
+.subtitle-h3,
+.subtitle-h4 {
+    line-height: 1.5;
+    font-weight: 400;
+    margin: 0 0 0.5em;
+}
+
+.subtitle-h2 {
+    font-size: 32px;
+}
+
+.subtitle-h3 {
+    font-size: 24px;
+}
+
+.subtitle-h4 {
+    font-size: 20px;
+}
+
+/* paragraph */
+
+.p1, .p2, .p3, .p4 {
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.p1 {
+    font-size: 18px;
+}
+
+.p2 {
+    font-size: 16px;
+}
+
+.p3 {
+    font-size: 14px;
+}
+
+.p4 {
+    font-size: 12px;
+}

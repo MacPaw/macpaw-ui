@@ -1,0 +1,135 @@
+.button {
+    position: relative;
+    display: inline-flex;
+    padding: 16px 32px;
+    min-width: 100px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: .1s all ease-in-out;
+    outline: none;
+    user-select: none;
+}
+
+.button.-wide {
+    width: 100%;
+}
+
+.button[disabled] {
+    cursor: default;
+}
+
+/* sizes */
+
+.button.-medium {
+    padding: 13px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.button.-small {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+/* primary */
+
+.button.-primary {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+
+.button.-primary:not(:disabled):hover {
+    background-color: #2ecf80;
+}
+
+.button.-primary:not(:disabled):active {
+    background-color: #05a657;
+}
+
+.button.-primary[disabled]:not(.-loading) {
+    background-color: var(--color-black-16);
+}
+
+.button.-primary .button-loader {
+    fill: var(--color-white);
+}
+
+/* primary outline */
+
+.button.-primary.-outline {
+    color: var(--color-black);
+    background: var(--color-white);
+    box-shadow: inset 0 0 0 2px var(--color-black-08);
+}
+
+.button.-primary.-outline:not(:disabled):hover {
+    background: var(--color-white);
+    box-shadow: inset 0 0 0 2px var(--color-black);
+}
+
+.button.-primary.-outline:not(:disabled):active {
+    color: var(--color-white);
+    background-color: var(--color-black);
+}
+
+.button.-primary.-outline[disabled]:not(.-loading) {
+    color: var(--color-black-08);
+    background-color: var(--color-white);
+    box-shadow: inset 0 0 0 2px var(--color-black-08);
+}
+
+.button.-primary.-outline .button-loader {
+    fill: var(--color-black);
+}
+
+/* secondary */
+
+.button.-secondary {
+    color: var(--color-white);
+    background-color: var(--color-secondary);
+}
+
+.button.-secondary:not(:disabled):hover {
+    background-color: #3FADFF;
+}
+
+.button.-secondary:not(:disabled):active {
+    background-color: #1684D6;
+}
+
+.button.-secondary[disabled]:not(.-loading) {
+    background-color: var(--color-black-16);
+}
+
+.button.-secondary .button-loader {
+    fill: var(--color-white);
+}
+
+/* loading */
+
+.button-loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: button-loading linear infinite 1s;
+}
+
+@keyframes button-loading {
+    from {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

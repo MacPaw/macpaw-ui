@@ -1,0 +1,62 @@
+.palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 180px));
+    column-gap: 32px;
+    row-gap: 32px;
+}
+
+.palette:not(:last-child) {
+    margin-bottom: 54px;
+}
+
+.cell {
+    border-radius: 20px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.color {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.gradients {
+    grid-template-columns: 1fr 1fr;
+}
+
+.gradients .cell {
+    display: flex;
+}
+
+.gradients .color {
+    width: 160px;
+}
+
+.gradient {
+    position: relative;
+    flex: 1;
+    min-width: 300px;
+}
+
+.gradientColor {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.gradientColor:first-child {
+    left: 48px;
+}
+
+.gradientColor:last-child {
+    right: 48px;
+}

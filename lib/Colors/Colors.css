@@ -1,0 +1,54 @@
+:root {
+    /* main colors */
+    --color-primary: #06c668;
+    --color-secondary: #1b9eff;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-error: #e13e3e;
+    --color-additional: #f0507f;
+
+    /* color modifiers */
+    --color-black-64: rgba(0, 0, 0, .64);
+    --color-black-48: rgba(0, 0, 0, .48);
+    --color-black-32: rgba(0, 0, 0, .23);
+    --color-black-16: rgba(0, 0, 0, .16);
+    --color-black-08: rgba(0, 0, 0, .08);
+    --color-black-04: rgba(0, 0, 0, .04);
+
+    /* social colors */
+    --color-facebook: #6179bb;
+    --color-twitter: #22d4ff;
+    --color-youtube: #f54141;
+    --color-instagram: #8f54ef;
+    --color-linkedin: #406dab;
+    --color-dribble: #ea4c89;
+    --color-rss: #f4a34f;
+
+    /* product colors */
+    --color-cleanmymac-x: #f83c7e;
+    --color-cleanmydrive: #ff438e;
+    --color-cleanmymac-3: #ec3b85;
+    --color-cleanmypc: #1f9ffe;
+    --color-gemini-classic: #27d4ff;
+    --color-gemini-2: #3ebeff;
+    --color-listen: #e94848;
+    --color-setapp: #6b656b;
+    --color-cleanmymac-classic: #d33d85;
+    --color-wallpaper-wizzard: #ef6380;
+    --color-encrypto: #fec011;
+    --color-unarchiver: #ba8753;
+
+    /* product gradients */
+    --gradient-cleanmymac-x: linear-gradient(92deg, #f6f9ff 0%, #fff5fa 100%);
+    --gradient-cleanmydrive: linear-gradient(92deg, #eff0f4 0%, #fef8fb 100%);
+    --gradient-cleanmymac-3: linear-gradient(92deg, #f2f8fb 0%, #faf0f7 100%);
+    --gradient-cleanmypc: linear-gradient(92deg, #eef3fd 0%, #f5fafc 100%);
+    --gradient-gemini-classic: linear-gradient(92deg, #e9f4fa 0%, #f7faff 100%);
+    --gradient-gemini-2: linear-gradient(92deg, #f0f5fe 0%, #f6fafb 100%);
+    --gradient-listen: linear-gradient(92deg, #e8f7fa 0%, #fef7f9 100%);
+    --gradient-setapp: linear-gradient(92deg, #f3f4f7 0%, #fbf7f5 100%);
+    --gradient-cleanmymac-classic: linear-gradient(92deg, #eff2f6 0%, #fcf4fd 100%);
+    --gradient-wallpaper-wizzard: linear-gradient(92deg, #e3f7f8 0%, #fdf7f1 100%);
+    --gradient-encrypto: linear-gradient(92deg, #fdf8f2 0%, #fbf6e8 100%);
+    --gradient-unarchiver: linear-gradient(92deg, #f6f3f5 0%, #fbf5ee 100%);
+}
