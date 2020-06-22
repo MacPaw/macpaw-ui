@@ -68,7 +68,7 @@
 
 .button.-primary.-outline {
     color: var(--color-black);
-    background: var(--color-white);
+    background: none;
     box-shadow: inset 0 0 0 2px var(--color-black-08);
 }
 
@@ -84,7 +84,7 @@
 
 .button.-primary.-outline[disabled]:not(.-loading) {
     color: var(--color-black-08);
-    background-color: var(--color-white);
+    background: none;
     box-shadow: inset 0 0 0 2px var(--color-black-08);
 }
 
@@ -115,6 +115,35 @@
     fill: var(--color-white);
 }
 
+/* secondary outline */
+
+.button.-secondary.-outline {
+    color: var(--color-secondary);
+    background: none;
+    box-shadow: inset 0 0 0 2px var(--color-secondary);
+}
+
+.button.-secondary.-outline:not(:disabled):hover {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    box-shadow: inset 0 0 0 2px var(--color-secondary);
+}
+
+.button.-secondary.-outline:not(:disabled):active {
+    background-color: #1684D6;
+    box-shadow: inset 0 0 0 2px #1684D6;
+}
+
+.button.-secondary.-outline[disabled]:not(.-loading) {
+    color: var(--color-black-08);
+    background-color: var(--color-white);
+    box-shadow: inset 0 0 0 2px var(--color-black-08);
+}
+
+.button.-secondary.-outline .button-loader {
+    fill: var(--color-secondary);
+}
+
 /* loading */
 
 .button-loader {
@@ -129,6 +158,7 @@
     from {
         transform: translate(-50%, -50%) rotate(0);
     }
+
     to {
         transform: translate(-50%, -50%) rotate(360deg);
     }
