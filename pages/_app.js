@@ -1,5 +1,5 @@
 import Layout from '../internal/Layout/Layout';
-import '../lib/ui.css';
+import '../src/ui.css';
 
 export default function Application({ Component, pageProps }) {
   return (

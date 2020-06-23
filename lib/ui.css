@@ -1,5 +1,262 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-@import './Normalize/Normalize.css';
-@import './Colors/Colors.css';
-@import './Typography/Typography.css';
-@import './Button/Button.css';
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+:root {
+    /* main colors */
+    --color-primary: #06c668;
+    --color-secondary: #1b9eff;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-error: #e13e3e;
+    --color-additional: #f0507f;
+
+    /* color modifiers */
+    --color-black-64: rgba(0, 0, 0, .64);
+    --color-black-48: rgba(0, 0, 0, .48);
+    --color-black-32: rgba(0, 0, 0, .23);
+    --color-black-16: rgba(0, 0, 0, .16);
+    --color-black-08: rgba(0, 0, 0, .08);
+    --color-black-04: rgba(0, 0, 0, .04);
+
+    /* social colors */
+    --color-facebook: #6179bb;
+    --color-twitter: #22d4ff;
+    --color-youtube: #f54141;
+    --color-instagram: #8f54ef;
+    --color-linkedin: #406dab;
+    --color-dribble: #ea4c89;
+    --color-rss: #f4a34f;
+
+    /* product colors */
+    --color-cleanmymac-x: #f83c7e;
+    --color-cleanmydrive: #ff438e;
+    --color-cleanmymac-3: #ec3b85;
+    --color-cleanmypc: #1f9ffe;
+    --color-gemini-classic: #27d4ff;
+    --color-gemini-2: #3ebeff;
+    --color-listen: #e94848;
+    --color-setapp: #6b656b;
+    --color-cleanmymac-classic: #d33d85;
+    --color-wallpaper-wizzard: #ef6380;
+    --color-encrypto: #fec011;
+    --color-unarchiver: #ba8753;
+
+    /* product gradients */
+    --gradient-cleanmymac-x: linear-gradient(92deg, #f6f9ff 0%, #fff5fa 100%);
+    --gradient-cleanmydrive: linear-gradient(92deg, #eff0f4 0%, #fef8fb 100%);
+    --gradient-cleanmymac-3: linear-gradient(92deg, #f2f8fb 0%, #faf0f7 100%);
+    --gradient-cleanmypc: linear-gradient(92deg, #eef3fd 0%, #f5fafc 100%);
+    --gradient-gemini-classic: linear-gradient(92deg, #e9f4fa 0%, #f7faff 100%);
+    --gradient-gemini-2: linear-gradient(92deg, #f0f5fe 0%, #f6fafb 100%);
+    --gradient-listen: linear-gradient(92deg, #e8f7fa 0%, #fef7f9 100%);
+    --gradient-setapp: linear-gradient(92deg, #f3f4f7 0%, #fbf7f5 100%);
+    --gradient-cleanmymac-classic: linear-gradient(92deg, #eff2f6 0%, #fcf4fd 100%);
+    --gradient-wallpaper-wizzard: linear-gradient(92deg, #e3f7f8 0%, #fdf7f1 100%);
+    --gradient-encrypto: linear-gradient(92deg, #fdf8f2 0%, #fbf6e8 100%);
+    --gradient-unarchiver: linear-gradient(92deg, #f6f3f5 0%, #fbf5ee 100%);
+}
+body {
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+}
+/* heading */
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    line-height: 1.5;
+    font-weight: 700;
+    margin: 0 0 0.5em;
+}
+h1, .h1 {
+    font-size: 40px;
+}
+h2, .h2 {
+    font-size: 32px;
+}
+h3, .h3 {
+    font-size: 24px;
+}
+h4, .h4 {
+    font-size: 20px;
+}
+h5, .h5 {
+    font-size: 16px;
+}
+h6, .h6 {
+    font-size: 14px;
+}
+/* sub-title */
+.subtitle-h2,
+.subtitle-h3,
+.subtitle-h4 {
+    line-height: 1.5;
+    font-weight: 400;
+    margin: 0 0 0.5em;
+}
+.subtitle-h2 {
+    font-size: 32px;
+}
+.subtitle-h3 {
+    font-size: 24px;
+}
+.subtitle-h4 {
+    font-size: 20px;
+}
+/* paragraph */
+.p1, .p2, .p3, .p4 {
+    line-height: 1.5;
+    font-weight: 400;
+}
+.p1 {
+    font-size: 18px;
+}
+.p2 {
+    font-size: 16px;
+}
+.p3 {
+    font-size: 14px;
+}
+.p4 {
+    font-size: 12px;
+}
+.button {
+    position: relative;
+    display: inline-flex;
+    padding: 16px 32px;
+    min-width: 100px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: .1s all ease-in-out;
+    outline: none;
+    user-select: none;
+}
+.button.-wide {
+    width: 100%;
+}
+.button[disabled] {
+    cursor: default;
+}
+/* sizes */
+.button.-medium {
+    padding: 13px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+.button.-small {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+/* primary */
+.button.-primary {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+.button.-primary:not(:disabled):hover {
+    background-color: #2ecf80;
+}
+.button.-primary:not(:disabled):active {
+    background-color: #05a657;
+}
+.button.-primary[disabled]:not(.-loading) {
+    background-color: var(--color-black-16);
+}
+.button.-primary .button-loader {
+    fill: var(--color-white);
+}
+/* primary outline */
+.button.-primary.-outline {
+    color: var(--color-black);
+    background: none;
+    box-shadow: inset 0 0 0 2px var(--color-black-08);
+}
+.button.-primary.-outline:not(:disabled):hover {
+    background: var(--color-white);
+    box-shadow: inset 0 0 0 2px var(--color-black);
+}
+.button.-primary.-outline:not(:disabled):active {
+    color: var(--color-white);
+    background-color: var(--color-black);
+}
+.button.-primary.-outline[disabled]:not(.-loading) {
+    color: var(--color-black-08);
+    background: none;
+    box-shadow: inset 0 0 0 2px var(--color-black-08);
+}
+.button.-primary.-outline .button-loader {
+    fill: var(--color-black);
+}
+/* secondary */
+.button.-secondary {
+    color: var(--color-white);
+    background-color: var(--color-secondary);
+}
+.button.-secondary:not(:disabled):hover {
+    background-color: #3FADFF;
+}
+.button.-secondary:not(:disabled):active {
+    background-color: #1684D6;
+}
+.button.-secondary[disabled]:not(.-loading) {
+    background-color: var(--color-black-16);
+}
+.button.-secondary .button-loader {
+    fill: var(--color-white);
+}
+/* secondary outline */
+.button.-secondary.-outline {
+    color: var(--color-secondary);
+    background: none;
+    box-shadow: inset 0 0 0 2px var(--color-secondary);
+}
+.button.-secondary.-outline:not(:disabled):hover {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    box-shadow: inset 0 0 0 2px var(--color-secondary);
+}
+.button.-secondary.-outline:not(:disabled):active {
+    background-color: #1684D6;
+    box-shadow: inset 0 0 0 2px #1684D6;
+}
+.button.-secondary.-outline[disabled]:not(.-loading) {
+    color: var(--color-black-08);
+    background-color: var(--color-white);
+    box-shadow: inset 0 0 0 2px var(--color-black-08);
+}
+.button.-secondary.-outline .button-loader {
+    fill: var(--color-secondary);
+}
+/* loading */
+.button-loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: button-loading linear infinite 1s;
+}
+@keyframes button-loading {
+    from {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

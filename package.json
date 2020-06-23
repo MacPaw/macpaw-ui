@@ -1,24 +1,40 @@
 {
   "name": "macpaw-ui",
+  "version": "0.0.5",
+  "main": "lib/ui.js",
   "scripts": {
     "dev": "next -p 1234",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint ./lib",
+    "lib": "babel src --out-dir lib && postcss ./src/ui.css --output ./lib/ui.css"
   },
   "peerDependencies": {
     "clsx": "^1.1.1",
-    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-react": "^7.10.1",
     "@mdx-js/loader": "^1.6.4",
     "@next/mdx": "^9.4.2",
     "clsx": "^1.1.1",
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
     "next": "^9.4.2",
+    "postcss-cli": "^7.1.1",
+    "postcss-import": "^12.0.1",
     "prism-react-renderer": "^1.1.1",
-    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
-  }
+  },
+  "typings": "src/ui.d.ts",
+  "files": ["src", "lib"]
 }
