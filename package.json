@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint ./src",
-    "lib": "babel src --out-dir lib && postcss ./src/ui.css --output ./lib/ui.css --use postcss-import"
+    "lib:js": "babel src --out-dir lib --presets=@babel/env,@babel/preset-react",
+    "lib:css": "postcss ./src/ui.css --output ./lib/ui.css --use postcss-import",
+    "lib": "yarn lib:css && yarn lib:js"
   },
   "peerDependencies": {
     "clsx": "^1.1.1",
@@ -36,5 +38,6 @@
     "react-dom": "^16.13.1"
   },
   "typings": "src/ui.d.ts",
-  "files": ["src", "lib"]
+  "files": ["src", "lib"],
+  "license": "MIT"
 }
