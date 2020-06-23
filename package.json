@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint ./src",
-    "lib": "babel src --out-dir lib && postcss ./src/ui.css --output ./lib/ui.css --config ./src"
+    "lib": "babel src --out-dir lib && postcss ./src/ui.css --output ./lib/ui.css --use postcss-import"
   },
   "peerDependencies": {
     "clsx": "^1.1.1",
