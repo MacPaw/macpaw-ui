@@ -6,7 +6,7 @@
     "dev": "next -p 1234",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ./lib",
+    "lint": "eslint ./src",
     "lib": "babel src --out-dir lib && postcss ./src/ui.css --output ./lib/ui.css"
   },
   "peerDependencies": {
