@@ -2,7 +2,7 @@ import {FC} from 'react';
 
 interface Props {
   type?: 'button' | 'submit';
-  color?: 'primary' | 'secondary';
+  color?: 'primary' | 'secondary' | 'warning';
   size?: 'medium' | 'small';
   disabled?: boolean;
   wide?: boolean;

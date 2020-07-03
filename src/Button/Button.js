@@ -8,7 +8,7 @@ const Button = (props) => {
     className,
     type = 'button',
     color = 'primary',
-    size = 'medium',
+    size,
     wide,
     disabled,
     loading,
