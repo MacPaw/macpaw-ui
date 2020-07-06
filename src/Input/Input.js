@@ -1,4 +1,4 @@
-import React, {TextField} from 'react';
+import React from 'react';
 import cx from 'clsx';
 
 const Input = (props) => {
@@ -23,7 +23,7 @@ const Input = (props) => {
 
   const inputClassName = cx('input', {
     [`-${size}`]: size
-  })
+  });
 
   return (
     <label className={labelClassName}>
