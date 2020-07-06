@@ -8,7 +8,6 @@ interface Props {
   placeholder?: string;
   errorMessage?: string | React.ReactNodeArray;
   labelModifier?: string | boolean;
-  isAutoFocus?: boolean;
   disabled?: boolean;
 }
 

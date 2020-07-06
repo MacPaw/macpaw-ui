@@ -10,14 +10,13 @@ const Input = (props) => {
     errorMessage = '',
     size,
     labelModifier,
-    isAutoFocus = true,
     disabled = false,
     ...other
   } = props;
 
   const labelErrorClassName = labelModifier ? '-error' : 'mb-24 -error';
 
-  const labelClassName = cx(`form-field ${labelModifier ? labelModifier : ''}`, {
+  const labelClassName = cx(`form-field ${labelModifier && labelModifier}`, {
     [labelErrorClassName]: !!errorMessage,
   });
 
@@ -35,7 +34,6 @@ const Input = (props) => {
         placeholder={placeholder}
         value={value}
         area-label={`${name} input`}
-        autoFocus={isAutoFocus}
         disabled={disabled}
         {...other}
       />
