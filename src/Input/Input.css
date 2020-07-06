@@ -1,0 +1,87 @@
+.input {
+  height: 40px;
+  width: 100%;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 2px solid rgba(111,114,121, .16);
+  background: var(--color-white);
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  transition: border-color 200ms cubic-bezier(0.25,0.1,0.25,1);
+}
+
+.input:hover, .input.-hover {
+  border-color: var(--color-black)
+}
+
+.input::placeholder {
+  color: rgba(#333, 0.32);
+}
+
+input:focus, input.-focus {
+  outline: none;
+  border-color: var(--color-secondary);
+}
+  
+.input.-big {
+  height: 143px;
+}
+
+.input.-large {
+  height: 48px;
+  padding: 0 18px;
+}
+    
+.input.-link-right {
+  padding: 0 62px 0 18px;
+}
+      
+.input.-small {
+  height: 32px;
+  padding: 0 14px;
+  font-size: 12px;
+}
+    
+.input[disabled] {
+  background: var(--color-black-04);
+  border-color: transparent;
+}
+
+.field-message {
+  display: block;
+  position: relative;
+  padding: 4px 0 0 8px;
+  left: 0;
+  right: 0;
+  font-size: 12px;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .2s ease-in-out;
+}
+
+.form-field {
+  display: block;
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.form-field.-error .field-message, 
+.form-field.-error input, 
+.form-field.-error .select-box, 
+.form-field.-error textarea,
+.form-field.-error a {
+  color: red;
+}
+
+.form-field.-error .field-message {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form-field.-error a {
+  text-decoration: underline
+}
+.form-field.-error a:hover {
+  text-decoration: none
+}
