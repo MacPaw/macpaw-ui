@@ -15,21 +15,22 @@ const Input = (props) => {
     ...other
   } = props;
 
-  const labelErrorClassName = labelModifier ? `-error` : 'mb-24 -error';
+  const labelErrorClassName = labelModifier ? '-error' : 'mb-24 -error';
 
   const labelClassName = cx(`form-field ${labelModifier ? labelModifier : ''}`, {
     [labelErrorClassName]: !!errorMessage,
   });
 
   const inputClassName = cx('input', {
-    [`-${size}`]: size
+    [`-${size}`]: size,
   });
 
   return (
-    <label className={labelClassName}>
+    <label htmlFor={name} className={labelClassName}>
       <input
         type={type}
         className={inputClassName}
+        id={name}
         name={name}
         placeholder={placeholder}
         value={value}
