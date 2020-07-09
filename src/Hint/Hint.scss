@@ -8,19 +8,16 @@
     line-height: 1.2;
     text-align: left;
     transition: all .2s ease-in-out;
-}
-.hint.-large {
-    font-size: 14px;
-}
-
-.hint.-error {
-    color: red;
-}
-
-.hint a {
-    text-decoration: underline
-}
-
-.hint a:hover {
-    text-decoration: none
+    &.-large {
+        font-size: 14px;
+    }
+    &.-error {
+        color: red;
+    }
+    a {
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none
+        }
+    }
 }

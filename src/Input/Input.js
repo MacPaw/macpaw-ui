@@ -24,7 +24,7 @@ const Input = (props) => {
   });
 
   return (
-    // TODO: fix htmlFor bug
+  // TODO: fix htmlFor bug
   // eslint-disable-next-line no-alert
     <label className={classNames}>
       <input
@@ -35,7 +35,7 @@ const Input = (props) => {
         disabled={disabled}
         {...other}
       />
-      {errorMessage && <Hint error children={errorMessage} />}
+      {errorMessage && <Hint error>{errorMessage}</Hint>}
     </label>
   );
 };
