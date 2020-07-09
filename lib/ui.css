@@ -162,14 +162,6 @@ h6, .h6 {
   transition: 0.1s all ease-in-out;
   outline: none;
   user-select: none;
-  /* sizes */
-  /* primary */
-  /* primary outline */
-  /* secondary */
-  /* secondary outline */
-  /* warning */
-  /* warning outline */
-  /* loading */
 }
 .button.-wide {
   width: 100%;
