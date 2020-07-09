@@ -1,12 +1,32 @@
 .input {
   display: block;
-  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
   font-size: 14px;
-  
+
+  &.-medium input {
+    padding: 10px 15px;
+  }
+
+  &.-small input {
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+
+  &.-link-right input {
+    padding: 0 62px 0 18px;
+  }
+
+  &.-error input, 
+  &.-error .select-box, 
+  &.-error textarea {
+    border-color: red;
+  }
+
   input {
     width: 100%;
     padding: 14px 18px;
     border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
     line-height: 1.2;
     border: 2px solid rgba(111,114,121, .16);
     background: var(--color-white);
@@ -31,22 +51,7 @@
     }
   }
 
-  &.-medium input {
-    padding: 10px 15px;
-  }
-
-  &.-small input {
-    padding: 7px 14px;
-    font-size: 12px;
-  }
-
-  &.-link-right input {
-    padding: 0 62px 0 18px;
-  }
-
-  &.-error input, 
-  &.-error .select-box, 
-  &.-error textarea {
-    border-color: red;
+  .hint {
+    margin-top: 4px;
   }
 }

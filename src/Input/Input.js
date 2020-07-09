@@ -12,21 +12,20 @@ const Input = (props) => {
     size,
     labelModifier,
     disabled = false,
+    style,
     ...other
   } = props;
 
   const classNames = cx('input', {
-    [labelModifier]: !!labelModifier,
-    '-error': !!errorMessage,
+    [labelModifier]: Boolean(labelModifier),
+    '-error': Boolean(errorMessage),
     '-medium': size === 'medium',
     '-small': size === 'small',
     '-big': size === 'big',
   });
 
   return (
-  // TODO: fix htmlFor bug
-  // eslint-disable-next-line no-alert
-    <label className={classNames}>
+    <label className={classNames} style={style}>
       <input
         type={type}
         name={name}

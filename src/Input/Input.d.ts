@@ -1,10 +1,11 @@
-import {FC} from 'react';
+import React, {FC} from 'react';
 
 interface Props {
+  name: string;
+  className?: string;
   type: 'text' | 'email' | 'password';
   size?: 'medium' | 'small'
   value?: string;
-  name: string;
   placeholder?: string;
   errorMessage?: string | React.ReactNodeArray;
   labelModifier?: string | boolean;

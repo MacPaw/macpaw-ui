@@ -9,7 +9,7 @@ const CodeBlock = ({ children, className }) => {
   return (
     <Highlight {...defaultProps} code={children.trim()} language={language} theme={theme}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <div className={cx(className, styles.code)} style={{ ...style }}>
+        <pre className={cx(className, styles.code)} style={{ ...style }}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
@@ -17,7 +17,7 @@ const CodeBlock = ({ children, className }) => {
               ))}
             </div>
           ))}
-        </div>
+        </pre>
       )}
     </Highlight>
   );

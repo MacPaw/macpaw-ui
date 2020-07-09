@@ -1,45 +1,82 @@
 import Input from '../src/Input/Input';
+import FormRow from '../src/FormRow/FormRow';
 
 # Inputs
 
 <br /><br />
 
 ## Sizes
-<div style={{ width: 200 }}>
-    <Input type="text" name="name" value="Defauld" placeholder="Some Placeholder" style={{ margin: '8px' }} />
-    <Input type="text" name="name" value="Medium"  size="medium" placeholder="Some Placeholder" style={{ margin: '8px' }} />
-    <Input type="text" name="name" value="Small" size="small" placeholder="Some Placeholder" style={{ margin: '8px' }} />
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Input type="text" name="name" value="Default" placeholder="Default" />
+    </FormRow>
+    <FormRow>
+        <Input type="text" name="name" value="Medium"  size="medium" placeholder="Medium" />
+    </FormRow>
+    <FormRow>
+        <Input type="text" name="name" value="Small" size="small" placeholder="Small" />
+    </FormRow>
 </div>
 
 ```
-<Input type="text" name="name" value="Large" placeholder="Some Placeholder" />
-<Input type="text" name="name" value="Default" size="medium" placeholder="Some Placeholder"/>
-<Input type="text" name="name" value="Small" size="small" placeholder="Some Placeholder" />
+<FormRow>
+  <Input type="text" name="name" value="Default" placeholder="Default" />
+</FormRow>
+<FormRow>
+  <Input type="text" name="name" value="Medium"  size="medium" placeholder="Medium" />
+</FormRow>
+<FormRow>
+  <Input type="text" name="name" value="Small" size="small" placeholder="Small" />
+</FormRow>
 ```
 
 ## Text Input
-<div style={{ width: 200 }}>
-    <Input type="text" name="name" value="Defauld Input" placeholder="Some Placeholder" style={{ margin: '8px' }} />
-    <Input type="text" name="name" value="Defauld Input with Error" errorMessage="Error text" placeholder="Some Placeholder" style={{ margin: '8px' }} />
-    <Input type="text" name="name" value="Disabled Defauld Input" placeholder="Some Placeholder" disabled style={{ margin: '24px 8px 8px' }} />
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Input type="text" name="name" value="Default" placeholder="Default" />
+    </FormRow>
+    <FormRow>
+        <Input type="text" name="name" value="With Error" errorMessage="Error text" placeholder="With Error" />
+    </FormRow>
+    <FormRow>
+        <Input type="text" name="name" value="Disabled" placeholder="Disabled" disabled />
+    </FormRow>
 </div>
 
 ```
-<Input type="text" name="name" value="Large Input" placeholder="Some Placeholder" />
-<Input type="text" name="name" value="Large Input with Error" errorMessage="Error text" placeholder="Some Placeholder" />
-<Input type="text" name="name" value="Disabled Large Input" placeholder="Some Placeholder" disabled />
+<FormRow>
+  <Input type="text" name="name" value="Default" placeholder="Default" />
+</FormRow>
+<FormRow>
+  <Input type="text" name="name" value="With Error" errorMessage="Error text" placeholder="With Error" />
+</FormRow>
+<FormRow>
+  <Input type="text" name="name" value="Disabled" placeholder="Disabled" disabled />
+</FormRow>
 ```
 
 ## Password Input
 
-<div style={{ width: 200 }}>
-    <Input type="password" name="password" value="password" placeholder="Some Placeholder" style={{ margin: '8px' }} />
-    <Input type="password" name="password" value="password" errorMessage="Error text" placeholder="Some Placeholder" style={{ margin: '8px' }} />
-    <Input type="password" name="password" value="password" placeholder="Some Placeholder" disabled style={{ margin: '24px 8px 8px' }} />
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Input type="password" name="password" value="password" placeholder="Password" />
+    </FormRow>
+    <FormRow>
+        <Input type="password" name="password" value="password" errorMessage="Error text" placeholder="Password Error" />
+    </FormRow>
+    <FormRow>
+        <Input type="password" name="password" value="password" placeholder="Password Disabled" disabled />
+    </FormRow>
 </div>
 
 ```
-<Input type="password" name="password" value="password" placeholder="Some Placeholder" />
-<Input type="password" name="password" value="password" errorMessage="Error text" placeholder="Some Placeholder" />
-<Input type="password" name="password" value="password" placeholder="Some Placeholder" disabled />
+<FormRow>
+  <Input type="password" name="password" value="password" placeholder="Password" />
+</FormRow>
+<FormRow>
+  <Input type="password" name="password" value="password" errorMessage="Error text" placeholder="Password Error" />
+</FormRow>
+<FormRow>
+  <Input type="password" name="password" value="password" placeholder="Password Disabled" disabled />
+</FormRow>
 ```
