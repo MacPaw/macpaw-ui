@@ -1,194 +1,194 @@
 .button {
-    position: relative;
-    display: inline-flex;
-    padding: 16px 32px;
-    min-width: 100px;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1;
-    border: none;
-    border-radius: 10px;
-    box-shadow: none;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: .1s all ease-in-out;
-    outline: none;
-    user-select: none;
-}
+  position: relative;
+  display: inline-flex;
+  padding: 16px 32px;
+  min-width: 100px;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: .1s all ease-in-out;
+  outline: none;
+  user-select: none;
 
-.button.-wide {
+  &.-wide {
     width: 100%;
-}
+  }
 
-.button[disabled] {
+  &[disabled] {
     cursor: default;
-}
+  }
 
-/* sizes */
+  // sizes
 
-.button.-medium {
+  &.-medium {
     padding: 13px 24px;
     border-radius: 8px;
     font-size: 14px;
-}
+  }
 
-.button.-small {
+  &.-small {
     padding: 10px 24px;
     border-radius: 8px;
     font-size: 12px;
-}
+  }
 
-/* primary */
+  // primary
 
-.button.-primary {
+  &.-primary {
     color: var(--color-white);
     background-color: var(--color-primary);
-}
+  }
 
-.button.-primary:not(:disabled):hover {
+  &.-primary:not(:disabled):hover {
     background-color: #2ecf80;
-}
+  }
 
-.button.-primary:not(:disabled):active {
+  &.-primary:not(:disabled):active {
     background-color: #05a657;
-}
+  }
 
-.button.-primary[disabled]:not(.-loading) {
+  &.-primary[disabled]:not(.-loading) {
     background-color: var(--color-black-16);
-}
+  }
 
-/* primary outline */
+  // primary outline
 
-.button.-primary.-outline {
+  &.-primary.-outline {
     color: var(--color-black);
     background: none;
     box-shadow: inset 0 0 0 2px var(--color-black-08);
-}
+  }
 
-.button.-primary.-outline:not(:disabled):hover {
+  &.-primary.-outline:not(:disabled):hover {
     background: var(--color-white);
     box-shadow: inset 0 0 0 2px var(--color-black);
-}
+  }
 
-.button.-primary.-outline:not(:disabled):active {
+  &.-primary.-outline:not(:disabled):active {
     color: var(--color-white);
     background-color: var(--color-black);
-}
+  }
 
-.button.-primary.-outline[disabled]:not(.-loading) {
+  &.-primary.-outline[disabled]:not(.-loading) {
     color: var(--color-black-08);
     background: none;
     box-shadow: inset 0 0 0 2px var(--color-black-08);
-}
+  }
 
-/* secondary */
+  // secondary
 
-.button.-secondary {
+  &.-secondary {
     color: var(--color-white);
     background-color: var(--color-secondary);
-}
+  }
 
-.button.-secondary:not(:disabled):hover {
+  &.-secondary:not(:disabled):hover {
     background-color: #3FADFF;
-}
+  }
 
-.button.-secondary:not(:disabled):active {
+  &.-secondary:not(:disabled):active {
     background-color: #1684D6;
-}
+  }
 
-.button.-secondary[disabled]:not(.-loading) {
+  &.-secondary[disabled]:not(.-loading) {
     background-color: var(--color-black-16);
-}
+  }
 
-/* secondary outline */
+  // secondary outline
 
-.button.-secondary.-outline {
+  &.-secondary.-outline {
     color: var(--color-secondary);
     background: none;
     box-shadow: inset 0 0 0 2px var(--color-secondary);
-}
+  }
 
-.button.-secondary.-outline:not(:disabled):hover {
+  &.-secondary.-outline:not(:disabled):hover {
     background: var(--color-secondary);
     color: var(--color-white);
     box-shadow: inset 0 0 0 2px var(--color-secondary);
-}
+  }
 
-.button.-secondary.-outline:not(:disabled):active {
+  &.-secondary.-outline:not(:disabled):active {
     background-color: #1684D6;
     box-shadow: inset 0 0 0 2px #1684D6;
-}
+  }
 
-.button.-secondary.-outline[disabled]:not(.-loading) {
+  &.-secondary.-outline[disabled]:not(.-loading) {
     color: var(--color-black-08);
     background-color: var(--color-white);
     box-shadow: inset 0 0 0 2px var(--color-black-08);
-}
+  }
 
-/* warning */
+  // warning
 
-.button.-warning {
+  &.-warning {
     color: var(--color-white);
     background-color: var(--color-error);
-}
+  }
 
-.button.-warning:not(:disabled):hover {
+  &.-warning:not(:disabled):hover {
     background-color: #E55D5D;
-}
+  }
 
-.button.-warning:not(:disabled):active {
+  &.-warning:not(:disabled):active {
     background-color: #BC3434;
-}
+  }
 
-.button.-warning[disabled]:not(.-loading) {
+  &.-warning[disabled]:not(.-loading) {
     background-color: var(--color-black-16);
-}
+  }
 
-/* warning outline */
+  // warning outline
 
-.button.-warning.-outline {
+  &.-warning.-outline {
     color: var(--color-error);
     background: none;
     box-shadow: inset 0 0 0 2px var(--color-error);
-}
+  }
 
-.button.-warning.-outline:not(:disabled):hover {
+  &.-warning.-outline:not(:disabled):hover {
     background: var(--color-error);
     color: var(--color-white);
     box-shadow: inset 0 0 0 2px var(--color-error);
-}
+  }
 
-.button.-warning.-outline:not(:disabled):active {
+  &.-warning.-outline:not(:disabled):active {
     background-color: #BC3434;
     box-shadow: inset 0 0 0 2px #BC3434;
-}
+  }
 
-.button.-warning.-outline[disabled]:not(.-loading) {
+  &.-warning.-outline[disabled]:not(.-loading) {
     color: var(--color-black-08);
     background-color: var(--color-white);
     box-shadow: inset 0 0 0 2px var(--color-black-08);
-}
+  }
 
-/* loading */
+  // loading
 
-.button-loader {
+  &-loader {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     animation: button-loading linear infinite 1s;
     fill: currentColor;
+  }
 }
 
 @keyframes button-loading {
-    from {
-        transform: translate(-50%, -50%) rotate(0);
-    }
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
 
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
