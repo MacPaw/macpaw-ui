@@ -2,7 +2,7 @@ import {FC} from 'react';
 
 interface Props {
   type: 'text' | 'email' | 'password';
-  size?: 'large' | 'small'
+  size?: 'medium' | 'small'
   value?: string;
   name: string;
   placeholder?: string;

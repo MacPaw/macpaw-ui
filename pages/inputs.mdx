@@ -5,37 +5,41 @@ import Input from '../src/Input/Input';
 <br /><br />
 
 ## Sizes
-
-<Input type="text" name="name" value="Large" size="large" placeholder="Some Placeholder" labelModifier="mb-24" style={{width: 200}} />
-<Input type="text" name="name" value="Default" placeholder="Some Placeholder"  labelModifier="mb-24"style={{width: 200}} />
-<Input type="text" name="name" value="Small" size="small" placeholder="Some Placeholder" labelModifier="mb-24" style={{width: 200}} />
+<div style={{ width: 200 }}>
+    <Input type="text" name="name" value="Defauld" placeholder="Some Placeholder" style={{ margin: '8px' }} />
+    <Input type="text" name="name" value="Medium"  size="medium" placeholder="Some Placeholder" style={{ margin: '8px' }} />
+    <Input type="text" name="name" value="Small" size="small" placeholder="Some Placeholder" style={{ margin: '8px' }} />
+</div>
 
 ```
-<Input type="text" name="name" value="Large" size="large" placeholder="Some Placeholder" />
-<Input type="text" name="name" value="Default" placeholder="Some Placeholder" />
+<Input type="text" name="name" value="Large" placeholder="Some Placeholder" />
+<Input type="text" name="name" value="Default" size="medium" placeholder="Some Placeholder"/>
 <Input type="text" name="name" value="Small" size="small" placeholder="Some Placeholder" />
 ```
 
 ## Text Input
-
-<Input type="text" name="name" value="Large Input" size="large" placeholder="Some Placeholder" style={{width: 200}} />
-<Input type="text" name="name" value="Large Input with Error" size="large" errorMessage="Error text" placeholder="Some Placeholder" style={{width: 200}} />
-<Input type="text" name="name" value="Disabled Large Input" size="large" placeholder="Some Placeholder" disabled style={{width: 200}} />
+<div style={{ width: 200 }}>
+    <Input type="text" name="name" value="Defauld Input" placeholder="Some Placeholder" style={{ margin: '8px' }} />
+    <Input type="text" name="name" value="Defauld Input with Error" errorMessage="Error text" placeholder="Some Placeholder" style={{ margin: '8px' }} />
+    <Input type="text" name="name" value="Disabled Defauld Input" placeholder="Some Placeholder" disabled style={{ margin: '24px 8px 8px' }} />
+</div>
 
 ```
-<Input type="text" name="name" value="Large Input" size="large" placeholder="Some Placeholder" />
-<Input type="text" name="name" value="Large Input with Error" size="large" errorMessage="Error text" placeholder="Some Placeholder" />
-<Input type="text" name="name" value="Disabled Large Input" size="large" placeholder="Some Placeholder" disabled />
+<Input type="text" name="name" value="Large Input" placeholder="Some Placeholder" />
+<Input type="text" name="name" value="Large Input with Error" errorMessage="Error text" placeholder="Some Placeholder" />
+<Input type="text" name="name" value="Disabled Large Input" placeholder="Some Placeholder" disabled />
 ```
 
 ## Password Input
 
-<Input type="password" name="password" value="password" size="large" placeholder="Some Placeholder" style={{width: 200}} />
-<Input type="password" name="password" value="password" size="large" errorMessage="Error text" placeholder="Some Placeholder" style={{width: 200}} />
-<Input type="password" name="password" value="password" size="large" placeholder="Some Placeholder" disabled style={{width: 200}} />
+<div style={{ width: 200 }}>
+    <Input type="password" name="password" value="password" placeholder="Some Placeholder" style={{ margin: '8px' }} />
+    <Input type="password" name="password" value="password" errorMessage="Error text" placeholder="Some Placeholder" style={{ margin: '8px' }} />
+    <Input type="password" name="password" value="password" placeholder="Some Placeholder" disabled style={{ margin: '24px 8px 8px' }} />
+</div>
 
 ```
-<Input type="password" name="password" value="password" size="large" placeholder="Some Placeholder" />
-<Input type="password" name="password" value="password" size="large" errorMessage="Error text" placeholder="Some Placeholder" />
-<Input type="password" name="password" value="password" size="large" placeholder="Some Placeholder" disabled />
+<Input type="password" name="password" value="password" placeholder="Some Placeholder" />
+<Input type="password" name="password" value="password" errorMessage="Error text" placeholder="Some Placeholder" />
+<Input type="password" name="password" value="password" placeholder="Some Placeholder" disabled />
 ```

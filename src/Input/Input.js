@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'clsx';
+import Hint from '../Hint/Hint';
 
 const Input = (props) => {
   const {
@@ -7,37 +8,34 @@ const Input = (props) => {
     value,
     name,
     placeholder = '',
-    errorMessage = '',
+    errorMessage,
     size,
     labelModifier,
     disabled = false,
     ...other
   } = props;
 
-  const labelErrorClassName = labelModifier ? '-error' : 'mb-24 -error';
-
-  const labelClassName = cx(`form-field ${labelModifier && labelModifier}`, {
-    [labelErrorClassName]: !!errorMessage,
-  });
-
-  const inputClassName = cx('input', {
-    [`-${size}`]: size,
+  const classNames = cx('input', {
+    [labelModifier]: !!labelModifier,
+    '-error': !!errorMessage,
+    '-medium': size === 'medium',
+    '-small': size === 'small',
+    '-big': size === 'big',
   });
 
   return (
-    <label htmlFor={name} className={labelClassName}>
+    // TODO: fix htmlFor bug
+  // eslint-disable-next-line no-alert
+    <label className={classNames}>
       <input
         type={type}
-        className={inputClassName}
-        id={name}
         name={name}
         placeholder={placeholder}
-        value={value}
-        area-label={`${name} input`}
+        defaultValue={value}
         disabled={disabled}
         {...other}
       />
-      <span className="field-message">{errorMessage}</span>
+      {errorMessage && <Hint error children={errorMessage} />}
     </label>
   );
 };
