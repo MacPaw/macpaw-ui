@@ -1,0 +1,22 @@
+.hint{
+    display: block;
+    position: relative;
+    left: 0;
+    right: 0;
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: left;
+    transition: all .2s ease-in-out;
+    &.-large {
+        font-size: 14px;
+    }
+    &.-error {
+        color: red;
+    }
+    a {
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none
+        }
+    }
+}

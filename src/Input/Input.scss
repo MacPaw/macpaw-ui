@@ -1,0 +1,57 @@
+.input {
+  display: block;
+  font-size: 14px;
+
+  &.-medium input {
+    padding: 10px 15px;
+  }
+
+  &.-small input {
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+
+  &.-link-right input {
+    padding: 0 62px 0 18px;
+  }
+
+  &.-error input, 
+  &.-error .select-box, 
+  &.-error textarea {
+    border-color: red;
+  }
+
+  input {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    line-height: 1.2;
+    border: 2px solid rgba(111,114,121, .16);
+    background: var(--color-white);
+    transition: border-color 200ms cubic-bezier(0.25,0.1,0.25,1);
+
+    &:hover {
+      border-color: var(--color-black)
+    }
+
+    &::placeholder {
+      color: rgba(#333, 0.32);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-secondary);
+    }
+
+    &[disabled] {
+      background: var(--color-black-04);
+      border-color: transparent;
+    }
+  }
+
+  .hint {
+    margin-top: 4px;
+  }
+}

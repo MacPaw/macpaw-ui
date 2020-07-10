@@ -1,6 +1,7 @@
 import {FC} from 'react';
 
 interface Props {
+  className?: string;
   type?: 'button' | 'submit';
   color?: 'primary' | 'secondary' | 'warning';
   size?: 'medium' | 'small';

@@ -17,6 +17,9 @@ export default () => (
       <Link href="/loaders">
         <a>Loaders</a>
       </Link>
+      <Link href="/inputs">
+        <a>Inputs</a>
+      </Link>
     </div>
   </div>
 );
