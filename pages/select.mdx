@@ -22,7 +22,16 @@ import Select from '../src/Select/Select';
 
 <div style={{marginBottom: 16, maxWidth: 300}}>
     <Select required>
-        <option selected disabled value="">Placeholder</option>
+        <option selected disabled value="">Select a product</option>
+        <option>CleanMyMac X</option>
+        <option>Gemini</option>
+        <option>CleanMyDrive</option>
+    </Select>
+</div>
+
+<div style={{marginBottom: 16, maxWidth: 300}}>
+    <Select error="Please select a product">
+        <option>CleanMyMac X</option>
         <option>Gemini</option>
         <option>CleanMyDrive</option>
     </Select>

@@ -15,11 +15,17 @@
   background-position: calc(100% - 16px) 50%;
   color: #333;
   font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  transition: .1s border-color;
 
-  &:focus {
-    outline: none;
+  &:focus, &:active {
     border-color: var(--color-secondary);
     box-shadow: 0 0 0 3px var(--color-outline);
+  }
+
+  &:not(:focus):not([disabled]):not(.-error):hover {
+    border-color: var(--color-black);
   }
 
   &[disabled] {
@@ -33,5 +39,9 @@
 
   &::-ms-expand {
     display: none;
+  }
+
+  &.-error {
+    border-color: var(--color-error);
   }
 }

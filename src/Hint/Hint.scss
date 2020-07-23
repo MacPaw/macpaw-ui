@@ -11,7 +11,7 @@
         font-size: 14px;
     }
     &.-error {
-        color: red;
+        color: var(--color-error);
     }
     a {
         text-decoration: underline;

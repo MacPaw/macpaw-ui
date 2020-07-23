@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'clsx';
+import Hint from '../Hint/Hint';
 
 const Select = (props) => {
   const {
@@ -12,9 +13,12 @@ const Select = (props) => {
   } = props;
 
   return (
-    <select className={cx('select', className, error && '-error')} value={selected} disabled={disabled} {...other}>
-      {children}
-    </select>
+    <>
+      <select className={cx('select', className, error && '-error')} value={selected} disabled={disabled} {...other}>
+        {children}
+      </select>
+      {error && <Hint style={{ marginTop: 6 }} error>{`* ${error}`}</Hint>}
+    </>
   );
 };
 

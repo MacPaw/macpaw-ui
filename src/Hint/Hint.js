@@ -2,7 +2,12 @@ import React from 'react';
 import cx from 'clsx';
 
 const Hint = (props) => {
-  const { large, children, error } = props;
+  const {
+    large,
+    children,
+    error,
+    ...other
+  } = props;
 
   const hintClassName = cx('hint', {
     '-large': large,
@@ -10,7 +15,7 @@ const Hint = (props) => {
   });
 
   return (
-    <span className={hintClassName}>
+    <span className={hintClassName} {...other}>
       {children}
     </span>
   );
