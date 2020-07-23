@@ -1,6 +1,6 @@
 {
   "name": "@macpaw/ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/ui.js",
   "scripts": {
     "dev": "next -p 1234",
@@ -41,5 +41,8 @@
     "src",
     "lib"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "license": "MIT"
 }
