@@ -1,0 +1,37 @@
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: flex;
+  height: 40px;
+  width: 100%;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 2px solid rgba(111, 114, 121, 0.16);
+  background-color: #fff;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTIgNyI+ICA8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIHBvaW50cz0iMyA2IDggMTAgMTMgNiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIgLTUpIi8+PC9zdmc+);
+  background-repeat: no-repeat;
+  background-size: 12px 6px;
+  background-position: calc(100% - 16px) 50%;
+  color: #333;
+  font-size: 14px;
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px var(--color-outline);
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    background-color: rgba(111, 114, 121, 0.16);
+  }
+
+  &:not(:valid) {
+    color: rgba(51, 51, 51, 0.32);
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}

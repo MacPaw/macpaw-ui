@@ -5,3 +5,10 @@
 body {
     margin: 0;
 }
+
+hr {
+    margin: 64px 0;
+    border: none;
+    height: 2px;
+    background: var(--color-black-16);
+}

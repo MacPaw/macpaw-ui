@@ -11,14 +11,20 @@ export default () => (
       <Link href="/typography">
         <a>Typography</a>
       </Link>
-      <Link href="/buttons">
-        <a>Buttons</a>
+      <Link href="/button">
+        <a>Button</a>
       </Link>
-      <Link href="/loaders">
-        <a>Loaders</a>
+      <Link href="/loader">
+        <a>Loader</a>
       </Link>
-      <Link href="/inputs">
-        <a>Inputs</a>
+      <Link href="/input">
+        <a>Input</a>
+      </Link>
+      <Link href="/checkbox">
+        <a>Checkbox</a>
+      </Link>
+      <Link href="/select">
+        <a>Select</a>
       </Link>
     </div>
   </div>
