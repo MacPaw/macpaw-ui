@@ -26,6 +26,9 @@ export default () => (
       <Link href="/select">
         <a>Select</a>
       </Link>
+      <Link href="/breadcrumbs">
+        <a>Breadcrumbs</a>
+      </Link>
     </div>
   </div>
 );

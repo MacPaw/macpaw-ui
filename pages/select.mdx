@@ -12,6 +12,14 @@ import Select from '../src/Select/Select';
     </Select>
 </div>
 
+```
+<Select>
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+</Select>
+```
+
 <div style={{marginBottom: 16, maxWidth: 300}}>
     <Select disabled>
         <option>CleanMyMac X</option>
@@ -20,14 +28,31 @@ import Select from '../src/Select/Select';
     </Select>
 </div>
 
+```
+<Select disabled>
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+</Select>
+```
+
 <div style={{marginBottom: 16, maxWidth: 300}}>
-    <Select required>
-        <option selected disabled value="">Select a product</option>
+    <Select defaultValue="">
+        <option disabled value="">Select a product</option>
         <option>CleanMyMac X</option>
         <option>Gemini</option>
         <option>CleanMyDrive</option>
     </Select>
 </div>
+
+```
+<Select defaultValue="">
+    <option disabled value="">Select a product</option>
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+</Select>
+```
 
 <div style={{marginBottom: 16, maxWidth: 300}}>
     <Select error="Please select a product">
@@ -36,3 +61,11 @@ import Select from '../src/Select/Select';
         <option>CleanMyDrive</option>
     </Select>
 </div>
+
+```
+<Select error="Please select a product">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+</Select>
+```

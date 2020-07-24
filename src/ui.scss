@@ -6,11 +6,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 @import './Normalize/Normalize.scss';
-@import './Colors/Colors.scss';
-@import './Typography/Typography.scss';
+@import './Breadcrumbs/Breadcrumbs.scss';
 @import './Button/Button.scss';
+@import './Colors/Colors.scss';
+@import './Checkbox/Checkbox.scss';
+@import './FormRow/FormRow.scss';
 @import './Input/Input.scss';
 @import './Hint/Hint.scss';
-@import './FormRow/FormRow.scss';
-@import './Checkbox/Checkbox.scss';
 @import './Select/Select.scss';
+@import './Typography/Typography.scss';

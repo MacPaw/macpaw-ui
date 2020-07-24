@@ -1,0 +1,37 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    color: rgba(#333, 0.32);
+    margin-right: 38px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    position: relative;
+    text-decoration: none;
+    color: rgba(#333, 0.72);
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      margin-top: -8px;
+      margin-left: 11px;
+      width: 16px;
+      height: 16px;
+      background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDExIDE4Ij4KICA8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIHBvaW50cz0iOCAxMiAxNiAyMCAyNCAxMiIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDcgMTgpIi8+Cjwvc3ZnPgo=") center no-repeat;
+      background-size: 16px 16px;
+      opacity: 0.25;
+    }
+  }
+}
