@@ -1,5 +1,5 @@
 {
-  "name": "@macpaw/ui",
+  "name": "@macpaw/macpaw-ui",
   "version": "0.0.1",
   "main": "lib/ui.js",
   "scripts": {
