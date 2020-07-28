@@ -32,6 +32,9 @@ export default () => (
       <Link href="/badge">
         <a>Badge</a>
       </Link>
+      <Link href="/panel">
+        <a>Panel</a>
+      </Link>
     </div>
   </div>
 );
