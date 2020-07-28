@@ -2,10 +2,14 @@ import React from 'react';
 import cx from 'clsx';
 
 const Panel = (props) => {
-  const { className, children, ...other } = props;
+  const {
+    className,
+    outline,
+    children, ...other
+  } = props;
 
   return (
-    <div className={cx('panel', className)} {...other}>{children}</div>
+    <div className={cx('panel', outline && '-outline', className)} {...other}>{children}</div>
   );
 };
 
