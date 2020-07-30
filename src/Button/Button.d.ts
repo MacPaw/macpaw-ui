@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import {FC, ReactNode} from 'react';
 
 interface Props {
   className?: string;
@@ -9,6 +9,8 @@ interface Props {
   wide?: boolean;
   loading?: boolean;
   outline?: boolean;
+  iconLeft?: ReactNode;
+  iconRight?: ReactNode;
 }
 
 declare const Button: FC<Props>;

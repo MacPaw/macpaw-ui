@@ -1,9 +1,11 @@
 .button {
   position: relative;
   display: inline-flex;
-  padding: 16px 32px;
-  min-width: 100px;
   align-items: center;
+  vertical-align: middle;
+  padding: 0 32px;
+  height: 48px;
+  min-width: 100px;
   justify-content: center;
   font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
   font-size: 16px;
@@ -29,13 +31,15 @@
   // sizes
 
   &.-medium {
-    padding: 13px 24px;
+    height: 40px;
+    padding: 0 24px;
     border-radius: 8px;
     font-size: 14px;
   }
 
   &.-small {
-    padding: 10px 24px;
+    height: 32px;
+    padding: 0 24px;
     border-radius: 8px;
     font-size: 12px;
   }
@@ -180,6 +184,18 @@
     transform: translate(-50%, -50%);
     animation: button-loading linear infinite 1s;
     fill: currentColor;
+  }
+
+  // icons
+
+  &-icon {
+    &.-left {
+      margin-right: 8px;
+    }
+
+    &.-right {
+      margin-left: 8px;
+    }
   }
 }
 

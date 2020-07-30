@@ -6,37 +6,37 @@ export default () => (
     <div className={styles.name}>MacPaw UI Kit</div>
     <div className={styles.links}>
       <Link href="/colors">
-        Colors
+        <a>Colors</a>
       </Link>
       <Link href="/typography">
-        Typography
+        <a>Typography</a>
       </Link>
       <Link href="/button">
-        Button
+        <a>Button</a>
       </Link>
       <Link href="/loader">
-        Loader
+        <a>Loader</a>
       </Link>
       <Link href="/input">
-        Input
+        <a>Input</a>
       </Link>
       <Link href="/checkbox">
-        Checkbox
+        <a>Checkbox</a>
       </Link>
       <Link href="/select">
-        Select
+        <a>Select</a>
       </Link>
       <Link href="/breadcrumbs">
-        Breadcrumbs
+        <a>Breadcrumbs</a>
       </Link>
       <Link href="/badge">
-        Badge
+        <a>Badge</a>
       </Link>
       <Link href="/panel">
-        Panel
+        <a>Panel</a>
       </Link>
       <Link href="/table">
-        Table
+        <a>Table</a>
       </Link>
     </div>
   </div>
