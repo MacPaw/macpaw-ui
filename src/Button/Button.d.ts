@@ -11,6 +11,7 @@ interface Props {
   outline?: boolean;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
+  onClickHandler?: () => void;
 }
 
 declare const Button: FC<Props>;
