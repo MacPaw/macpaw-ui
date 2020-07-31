@@ -15,7 +15,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@macpaw'
       - run: yarn
-      - run: yarn build
+      - run: yarn lib
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
