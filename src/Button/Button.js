@@ -15,7 +15,6 @@ const Button = (props) => {
     outline,
     iconLeft,
     iconRight,
-    onClickHandler,
     ...other
   } = props;
 
@@ -31,7 +30,7 @@ const Button = (props) => {
   const isIconRight = !loading && iconRight;
 
   return (
-    <button type={type} className={classNames} disabled={disabled || loading} onClick={onClickHandler ? onClickHandler : null} {...other}>
+    <button type={type} className={classNames} disabled={disabled || loading} {...other}>
       {isIconLeft && <span className="button-icon -left">{iconLeft}</span>}
       {loading && '\u00A0'}
       {loading && <ButtonLoader />}
