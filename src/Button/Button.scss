@@ -20,6 +20,13 @@
   user-select: none;
   outline: none;
 
+  & + .button {
+    margin-left: 12px;
+    @media only screen and (max-width: 575px) {
+      margin-left: 0;
+    }
+  }
+
   &.-wide {
     width: 100%;
   }

@@ -7,7 +7,7 @@ const Button = (props) => {
     children,
     className,
     type = 'button',
-    color = 'primary',
+    color,
     size,
     wide,
     disabled,
