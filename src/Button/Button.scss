@@ -67,12 +67,12 @@
 
   &.-primary.-outline {
     color: var(--color-black);
-    background: none;
+    background-color: transparent;
     box-shadow: inset 0 0 0 2px var(--color-black-08);
   }
 
   &.-primary.-outline:not(:disabled):hover {
-    background: none;
+    background-color: transparent;
     box-shadow: inset 0 0 0 2px var(--color-black);
   }
 
@@ -83,7 +83,7 @@
 
   &.-primary.-outline[disabled]:not(.-loading) {
     color: var(--color-black-08);
-    background: none;
+    background-color: transparent;
     box-shadow: inset 0 0 0 2px var(--color-black-08);
   }
 
@@ -110,7 +110,7 @@
 
   &.-secondary.-outline {
     color: var(--color-secondary);
-    background: none;
+    background-color: transparent;
     box-shadow: inset 0 0 0 2px var(--color-secondary);
   }
 
@@ -154,7 +154,7 @@
 
   &.-warning.-outline {
     color: var(--color-error);
-    background: none;
+    background-color: transparent;
     box-shadow: inset 0 0 0 2px var(--color-error);
   }
 
