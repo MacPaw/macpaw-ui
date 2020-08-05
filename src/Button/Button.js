@@ -32,9 +32,8 @@ const Button = (props) => {
   return (
     <button type={type} className={classNames} disabled={disabled || loading} {...other}>
       {isIconLeft && <span className="button-icon -left">{iconLeft}</span>}
-      {loading && '\u00A0'}
       {loading && <ButtonLoader />}
-      {!loading && children}
+      <span className="button-content">{children}</span>
       {isIconRight && <span className="button-icon -right">{iconRight}</span>}
     </button>
   );

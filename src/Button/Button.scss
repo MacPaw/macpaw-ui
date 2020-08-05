@@ -177,6 +177,10 @@
 
   // loading
 
+  &.-loading .button-content {
+    visibility: hidden;
+  }
+
   &-loader {
     position: absolute;
     left: 50%;
