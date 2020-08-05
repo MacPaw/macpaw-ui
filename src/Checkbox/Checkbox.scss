@@ -1,7 +1,6 @@
 .checkbox {
   margin: 8px 0;
   display: inline-flex;
-  align-items: center;
   font-size: 14px;
   cursor: pointer;
   user-select: none;
@@ -38,6 +37,8 @@
 
   span {
     display: block;
+    position: relative;
+    top: 4px;
     margin-right: 8px;
     width: 16px;
     height: 16px;
