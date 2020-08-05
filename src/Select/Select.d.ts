@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import {FC, ChangeEvent} from 'react';
 
 interface Props {
   name?: string;
@@ -6,6 +6,7 @@ interface Props {
   selected?: string;
   disabled?: boolean;
   error?: boolean;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 declare const Select: FC<Props>;
