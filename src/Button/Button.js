@@ -33,7 +33,7 @@ const Button = (props) => {
     <button type={type} className={classNames} disabled={disabled || loading} {...other}>
       {isIconLeft && <span className="button-icon -left">{iconLeft}</span>}
       {loading && <ButtonLoader />}
-      <span className="button-content">{children}</span>
+      {loading ? <span className="button-content">{children}</span> : children}
       {isIconRight && <span className="button-icon -right">{iconRight}</span>}
     </button>
   );
