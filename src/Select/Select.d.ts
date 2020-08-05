@@ -1,6 +1,7 @@
 import {FC} from 'react';
 
 interface Props {
+  name?: string;
   className?: string;
   selected?: string;
   disabled?: boolean;
