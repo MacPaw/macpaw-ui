@@ -80,3 +80,17 @@ import FormRow from '../src/FormRow/FormRow';
   <Input type="password" name="password" value="password" placeholder="Password Disabled" disabled />
 </FormRow>
 ```
+
+## Input with Action
+
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Input type="password" name="password" value="password" placeholder="Password" action={<a href="#">Forgot?</a>} />
+    </FormRow>
+</div>
+
+```
+<FormRow>
+    <Input type="password" name="password" value="password" placeholder="Password" action={<a href="#">Forgot?</a>} />
+</FormRow>
+```

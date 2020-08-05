@@ -13,6 +13,7 @@ const Input = (props) => {
     labelModifier,
     disabled = false,
     style,
+    action,
     ...other
   } = props;
 
@@ -22,6 +23,7 @@ const Input = (props) => {
     '-medium': size === 'medium',
     '-small': size === 'small',
     '-big': size === 'big',
+    '-action': Boolean(action),
   });
 
   return (
@@ -34,6 +36,7 @@ const Input = (props) => {
         disabled={disabled}
         {...other}
       />
+      {action && <div className="input-action">{action}</div>}
       {errorMessage && <Hint error>{errorMessage}</Hint>}
     </label>
   );

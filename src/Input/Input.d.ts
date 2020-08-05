@@ -1,4 +1,4 @@
-import {FC, ReactNodeArray, ChangeEvent} from 'react';
+import {FC, ReactNodeArray, ChangeEvent, ReactNode} from 'react';
 
 interface Props {
   name: string;
@@ -11,6 +11,7 @@ interface Props {
   labelModifier?: string | boolean;
   disabled?: boolean;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  action?: ReactNode;
 }
 
 declare const Input: FC<Props>;

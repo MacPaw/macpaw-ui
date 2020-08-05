@@ -4,6 +4,11 @@ body {
     line-height: 1.75;
 }
 
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
 /* heading */
 
 h1, .h1,
