@@ -11,6 +11,9 @@ export default () => (
       <Link href="/typography">
         <a>Typography</a>
       </Link>
+      <Link href="/banner">
+        <a>Banner</a>
+      </Link>
       <Link href="/button">
         <a>Button</a>
       </Link>

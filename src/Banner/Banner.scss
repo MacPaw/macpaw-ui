@@ -1,0 +1,46 @@
+.banner {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  background: #FFEEBA;
+  border-radius: 10px;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  &.-secondary {
+    background: rgba(113, 150, 225, 0.08);
+  }
+
+  &.-readonly {
+    background: #F3F3F3;
+  }
+
+  &-content {
+    flex: 1;
+  }
+
+  &-icon {
+    display: inline-flex;
+    margin-right: 8px;
+  }
+
+  &-action {
+    margin-left: 24px;
+
+    @include mobile {
+      margin-top: 16px;
+      margin-left: 0;
+      width: 100%;
+    }
+
+    .button {
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+}
