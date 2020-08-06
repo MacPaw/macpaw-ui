@@ -1,4 +1,5 @@
 export { default as Badge } from './Badge/Badge';
+export { default as Banner } from './Banner/Banner';
 export { default as Breadcrumbs } from './Breadcrumbs/Breadcrumbs';
 export { default as Button } from './Button/Button';
 export { default as Checkbox } from './Checkbox/Checkbox';
