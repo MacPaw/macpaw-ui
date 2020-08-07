@@ -15,6 +15,7 @@ interface Props {
   href?: string;
   target?: string;
   rel?: string;
+  component?: ReactNode
 }
 
 declare const Button: FC<Props>;

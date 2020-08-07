@@ -15,7 +15,7 @@ const Button = (props) => {
     outline,
     iconLeft,
     iconRight,
-    href,
+    component = 'button',
     ...other
   } = props;
 
@@ -29,25 +29,28 @@ const Button = (props) => {
 
   const isIconLeft = !loading && iconLeft;
   const isIconRight = !loading && iconRight;
-  const ButtonContent = () => (
-    <>
+
+  let Component = component;
+  const componentProps = {};
+
+  if (Component === 'button' && other.href) {
+    Component = 'a';
+  }
+
+  if (Component === 'button') {
+    componentProps.type = type;
+    componentProps.disabled = disabled || loading;
+  } else if (Component !== 'a' || !other.href) {
+    componentProps.role = 'button';
+  }
+
+  return (
+    <Component className={classNames} {...componentProps} {...other}>
       {isIconLeft && <span className="button-icon -left">{iconLeft}</span>}
       {loading && <ButtonLoader />}
       {loading ? <span className="button-content">{children}</span> : children}
       {isIconRight && <span className="button-icon -right">{iconRight}</span>}
-    </>
-  );
-
-  return (
-    href ? (
-      <a href={href} className={classNames} {...other}>
-        <ButtonContent />
-      </a>
-    ) : (
-      <button type={type} className={classNames} disabled={disabled || loading} {...other}>
-        <ButtonContent />
-      </button>
-    )
+    </Component>
   );
 };
 
