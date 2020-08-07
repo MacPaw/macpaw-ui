@@ -2,6 +2,8 @@ import React from 'react';
 import cx from 'clsx';
 import ButtonLoader from './ButtonLoader';
 
+// TODO: forwardRef: https://github.com/mui-org/material-ui/blob/master/packages/material-ui/src/ButtonBase/ButtonBase.js
+
 const Button = (props) => {
   const {
     children,
