@@ -12,6 +12,9 @@ interface Props {
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
   onClick?: () => void;
+  href?: string;
+  target?: string;
+  rel?: string;
 }
 
 declare const Button: FC<Props>;

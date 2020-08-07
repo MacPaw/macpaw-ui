@@ -15,6 +15,7 @@ const Button = (props) => {
     outline,
     iconLeft,
     iconRight,
+    href,
     ...other
   } = props;
 
@@ -28,14 +29,25 @@ const Button = (props) => {
 
   const isIconLeft = !loading && iconLeft;
   const isIconRight = !loading && iconRight;
-
-  return (
-    <button type={type} className={classNames} disabled={disabled || loading} {...other}>
+  const ButtonContent = () => (
+    <>
       {isIconLeft && <span className="button-icon -left">{iconLeft}</span>}
       {loading && <ButtonLoader />}
       {loading ? <span className="button-content">{children}</span> : children}
       {isIconRight && <span className="button-icon -right">{iconRight}</span>}
-    </button>
+    </>
+  );
+
+  return (
+    href ? (
+      <a href={href} className={classNames} {...other}>
+        <ButtonContent />
+      </a>
+    ) : (
+      <button type={type} className={classNames} disabled={disabled || loading} {...other}>
+        <ButtonContent />
+      </button>
+    )
   );
 };
 
