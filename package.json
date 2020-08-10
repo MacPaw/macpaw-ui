@@ -4,7 +4,7 @@
   "main": "lib/ui.js",
   "scripts": {
     "dev": "next -p 1234",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "eslint ./src",
     "lib:js": "babel src --out-dir lib --presets=@babel/env,@babel/preset-react",
