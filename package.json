@@ -4,12 +4,12 @@
   "main": "lib/ui.js",
   "scripts": {
     "dev": "npx storybook -p 6006",
-    "build": "build-storybook",
+    "build": "build-storybook -o out",
     "lint": "eslint ./src",
     "lib:js": "babel src --out-dir lib --presets=@babel/env,@babel/preset-react",
     "lib:css": "sass ./src/ui.scss ./lib/ui.css",
     "lib": "yarn lib:css && yarn lib:js",
-    "deploy:s3": "deploy-aws-s3-cloudfront --non-interactive --source=storybook-static --bucket=ui.macpaw.com --destination=/"
+    "deploy:s3": "deploy-aws-s3-cloudfront --non-interactive --source=out --bucket=ui.macpaw.com --destination=/"
   },
   "peerDependencies": {
     "clsx": "^1.1.1",
