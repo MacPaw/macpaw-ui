@@ -8,7 +8,8 @@
     "lint": "eslint ./src",
     "lib:js": "babel src --out-dir lib --presets=@babel/env,@babel/preset-react",
     "lib:css": "sass ./src/ui.scss ./lib/ui.css",
-    "lib": "yarn lib:css && yarn lib:js"
+    "lib": "yarn lib:css && yarn lib:js",
+    "deploy:s3": "deploy-aws-s3-cloudfront --non-interactive --source=storybook-static --bucket=ui.macpaw.com --destination=/"
   },
   "peerDependencies": {
     "clsx": "^1.1.1",
@@ -26,6 +27,7 @@
     "@storybook/react": "^6.0.5",
     "babel-loader": "^8.1.0",
     "clsx": "^1.1.1",
+    "deploy-aws-s3-cloudfront": "^3.2.4",
     "eslint": "^7.3.1",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.21.2",
