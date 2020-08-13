@@ -1,9 +1,11 @@
-import Select from '../src/Select/Select';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Select } from '../ui';
 
-# Selects
+<Meta title="Select" component={Select} />
 
-<br /><br />
+# Badge
 
+<Canvas>
 <div style={{marginBottom: 16, maxWidth: 300}}>
     <Select>
         <option>CleanMyMac X</option>
@@ -11,15 +13,11 @@ import Select from '../src/Select/Select';
         <option>CleanMyDrive</option>
     </Select>
 </div>
+</Canvas>
 
-```
-<Select>
-    <option>CleanMyMac X</option>
-    <option>Gemini</option>
-    <option>CleanMyDrive</option>
-</Select>
-```
+## Disabled
 
+<Canvas>
 <div style={{marginBottom: 16, maxWidth: 300}}>
     <Select disabled>
         <option>CleanMyMac X</option>
@@ -27,15 +25,11 @@ import Select from '../src/Select/Select';
         <option>CleanMyDrive</option>
     </Select>
 </div>
+</Canvas>
 
-```
-<Select disabled>
-    <option>CleanMyMac X</option>
-    <option>Gemini</option>
-    <option>CleanMyDrive</option>
-</Select>
-```
+## Placeholder
 
+<Canvas>
 <div style={{marginBottom: 16, maxWidth: 300}}>
     <Select defaultValue="">
         <option disabled value="">Select a product</option>
@@ -44,16 +38,11 @@ import Select from '../src/Select/Select';
         <option>CleanMyDrive</option>
     </Select>
 </div>
+</Canvas>
 
-```
-<Select defaultValue="">
-    <option disabled value="">Select a product</option>
-    <option>CleanMyMac X</option>
-    <option>Gemini</option>
-    <option>CleanMyDrive</option>
-</Select>
-```
+## Error state
 
+<Canvas>
 <div style={{marginBottom: 16, maxWidth: 300}}>
     <Select error="Please select a product">
         <option>CleanMyMac X</option>
@@ -61,11 +50,4 @@ import Select from '../src/Select/Select';
         <option>CleanMyDrive</option>
     </Select>
 </div>
-
-```
-<Select error="Please select a product">
-    <option>CleanMyMac X</option>
-    <option>Gemini</option>
-    <option>CleanMyDrive</option>
-</Select>
-```
+</Canvas>

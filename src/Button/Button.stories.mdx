@@ -1,0 +1,62 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Button } from '../ui';
+import Icon from '../Icons/Play';
+
+<Meta title="Button" component={Button} />
+
+# Button
+
+## Sizes
+
+<Canvas>
+    <Button color="primary" style={{width: 200, margin: 8}}>Default</Button>
+    <Button color="primary" style={{width: 200, margin: 8}} size="medium">Medium</Button>
+    <Button color="primary" style={{width: 200, margin: 8}} size="small">Small</Button>
+</Canvas>
+
+## With Icon
+
+<Canvas>
+    <Button color="primary" style={{margin: 8}} iconRight={<Icon />}>Right Icon</Button>
+    <Button color="primary" style={{margin: 8}} iconLeft={<Icon />}>Left Icon</Button>
+</Canvas>
+
+## Primary action buttons
+
+Used for main action on current page, usually it’s one of two, either Free Download or Buy Now
+
+<Canvas>
+    <Button color="secondary" style={{width: 200, margin: 8}}>Secondary</Button>
+    <Button color="secondary" style={{width: 200, margin: 8}} loading>Loading</Button>
+    <Button color="secondary" style={{width: 200, margin: 8}} disabled>Disabled</Button>
+</Canvas>
+
+## Secondary - low priority
+
+<Canvas>
+    <Button color="secondary" outline style={{width: 200, margin: 8}}>Secondary</Button>
+    <Button color="secondary" outline style={{width: 200, margin: 8}} loading>Loading</Button>
+    <Button color="secondary" outline style={{width: 200, margin: 8}} disabled>Disabled</Button>
+</Canvas>
+
+## Warning
+
+<Canvas>
+    <Button color="warning" style={{width: 200, margin: 8}}>Warning</Button>
+    <Button color="warning" style={{width: 200, margin: 8}} loading>Loading</Button>
+    <Button color="warning" style={{width: 200, margin: 8}} disabled>Disabled</Button>
+</Canvas>
+
+## Warning - low priority
+
+<Canvas>
+    <Button color="warning" outline style={{width: 200, margin: 8}}>Warning</Button>
+    <Button color="warning" outline style={{width: 200, margin: 8}} loading>Loading</Button>
+    <Button color="warning" outline style={{width: 200, margin: 8}} disabled>Disabled</Button>
+</Canvas>
+
+## As a link tag
+
+<Canvas>
+    <Button href="#" color="primary">Default</Button>
+</Canvas>

@@ -9,54 +9,54 @@
     margin-bottom: 54px;
 }
 
-.cell {
+.paletteCell {
     border-radius: 20px;
     height: 100px;
     overflow: hidden;
 }
 
-.color {
+.paletteColor {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.text {
+.paletteText {
     margin-top: 6px;
     font-size: 12px;
     font-weight: 600;
     text-align: center;
 }
 
-.gradients {
+.paletteGradients {
     grid-template-columns: 1fr 1fr;
 }
 
-.gradients .cell {
+.paletteGradients .paletteCell {
     display: flex;
 }
 
-.gradients .color {
+.paletteGradients .paletteColor {
     width: 160px;
 }
 
-.gradient {
+.paletteGradient {
     position: relative;
     flex: 1;
     min-width: 300px;
 }
 
-.gradientColor {
+.paletteGradientColor {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }
 
-.gradientColor:first-child {
+.paletteGradientColor:first-child {
     left: 48px;
 }
 
-.gradientColor:last-child {
+.paletteGradientColor:last-child {
     right: 48px;
 }

@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Banner, Button } from '../ui';
+import Icon from '../Icons/Error';
+
+<Meta title="Banner" component={Banner} />
+
+# Banner
+
+## Needs Attention with Action
+
+<Canvas>
+<Banner action={<Button size="small" color="secondary">Update Billing Method</Button>}>
+    <b>Payment failed.</b> Please update your billing method.
+</Banner>
+</Canvas>
+
+## Secondary with Action and Icon
+
+<Canvas>
+<Banner type="secondary" action={<Button size="small" color="primary" outline>Resend Email</Button>} icon={<Icon />}>
+    Please confirm your email by clicking the link we sent to <b>email</b>
+</Banner>
+</Canvas>
+
+## Readonly
+
+<Canvas>
+<Banner type="readonly">
+    <b>Payment failed.</b> Please update your billing method.
+</Banner>
+</Canvas>

@@ -1,15 +1,11 @@
-import Loader from '../src/Loader/Loader';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Loader } from '../ui';
 
-# Loaders
+<Meta title="Loader" component={Loader} />
 
-<br /><br />
+# Loader
 
+<Canvas>
 <div style={{width: 200, height: 200, position: 'relative'}}><Loader /></div>
-<br /><br />
 <div style={{width: 200, height: 200, position: 'relative'}}><Loader size={100} /></div>
-
-```
-<Loader />
-<Loader size={100} />
-```
-
+</Canvas>

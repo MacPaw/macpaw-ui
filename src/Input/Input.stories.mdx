@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Input, FormRow } from '../ui';
+
+<Meta title="Input" component={Input} />
+
+# Input
+
+<Canvas>
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Input type="text" name="name" value="Default" placeholder="Default" />
+    </FormRow>
+    <FormRow>
+        <Input type="text" name="name" value="Error state" errorMessage="Error text" placeholder="Error state" />
+    </FormRow>
+    <FormRow>
+        <Input type="text" name="name" value="Disabled" placeholder="Disabled" disabled />
+    </FormRow>
+</div>
+</Canvas>
+
+## Input with Action
+
+<Canvas>
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Input type="password" name="password" value="password" placeholder="Password" action={<a href="#">Forgot?</a>} />
+    </FormRow>
+</div>
+</Canvas>
+
+## Sizes
+
+<Canvas>
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Input type="text" name="name" value="Default" placeholder="Default" />
+    </FormRow>
+    <FormRow>
+        <Input type="text" name="name" value="Medium"  size="medium" placeholder="Medium" />
+    </FormRow>
+    <FormRow>
+        <Input type="text" name="name" value="Small" size="small" placeholder="Small" />
+    </FormRow>
+</div>
+</Canvas>

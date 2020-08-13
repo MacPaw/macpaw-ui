@@ -1,11 +1,11 @@
-import Palette from '../internal/Palette/Palette';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Palette from '../Colors/Palette';
 
-# Colors
-
-<br /><br />
+<Meta title="Colors" />
 
 ## Main colors
 
+<Canvas>
 <Palette
     items={[
         {
@@ -34,9 +34,11 @@ import Palette from '../internal/Palette/Palette';
         },
     ]}
 />
+</Canvas>
 
 ## Color modifier
 
+<Canvas>
 <Palette
     items={[
         {
@@ -65,9 +67,11 @@ import Palette from '../internal/Palette/Palette';
         },
     ]}
 />
+</Canvas>
 
 ## Product colors & gradients
 
+<Canvas>
 <Palette
     items={[
         {
@@ -132,9 +136,11 @@ import Palette from '../internal/Palette/Palette';
         },
     ]}
 />
+</Canvas>
 
 ## Social colors
 
+<Canvas>
 <Palette
     items={[
         {
@@ -167,3 +173,4 @@ import Palette from '../internal/Palette/Palette';
         },
     ]}
 />
+</Canvas>

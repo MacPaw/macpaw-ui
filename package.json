@@ -3,9 +3,8 @@
   "version": "0.0.21",
   "main": "lib/ui.js",
   "scripts": {
-    "dev": "next -p 1234",
-    "build": "next build && next export",
-    "start": "next start",
+    "dev": "npx storybook -p 6006",
+    "build": "build-storybook",
     "lint": "eslint ./src",
     "lib:js": "babel src --out-dir lib --presets=@babel/env,@babel/preset-react",
     "lib:css": "sass ./src/ui.scss ./lib/ui.css",
@@ -21,8 +20,11 @@
     "@babel/core": "^7.10.3",
     "@babel/preset-env": "^7.10.3",
     "@babel/preset-react": "^7.10.1",
-    "@mdx-js/loader": "^1.6.4",
-    "@next/mdx": "^9.4.2",
+    "@storybook/addon-actions": "^6.0.5",
+    "@storybook/addon-essentials": "^6.0.5",
+    "@storybook/addon-links": "^6.0.5",
+    "@storybook/react": "^6.0.5",
+    "babel-loader": "^8.1.0",
     "clsx": "^1.1.1",
     "eslint": "^7.3.1",
     "eslint-config-airbnb": "^18.2.0",
@@ -30,11 +32,11 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
-    "next": "^9.4.2",
-    "prism-react-renderer": "^1.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "sass": "^1.26.9"
+    "react-is": "^16.13.1",
+    "sass": "^1.26.9",
+    "sass-loader": "^9.0.3"
   },
   "typings": "src/ui.d.ts",
   "files": [
@@ -44,5 +46,6 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {}
 }
