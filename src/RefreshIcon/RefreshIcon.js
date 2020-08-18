@@ -23,8 +23,8 @@ const Loader = ({ size = 24 }) => (
         <animateTransform
           attributeName="transform"
           type="rotate"
-          from="0 18 18"
-          to="360 18 18"
+          from="0 12 12"
+          to="360 12 12"
           dur="2s"
           repeatCount="indefinite"
         />
