@@ -3,7 +3,8 @@
 ## Adding new Component
 
 * Add Component's JS / styles / typings files to [src/%ComponentName%](/src) directory
-* Import Component's JS, styles and typings to [ui.js](/src/ui.js), [ui.scss](/src/ui.scss) and [ui.d.ts](/src/ui.d.ts) correspondingly.
+* Import Component's JS, styles and typings to [ui.js](/src/ui.js), [ui.scss](/src/ui.scss) and [ui.d.ts](/src/ui.d.ts) correspondingly
+* Describe Component in %ComponentName%.stories.mdx file
 
 ## Release
 
