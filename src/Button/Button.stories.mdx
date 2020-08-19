@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { Button } from '../ui';
-import Icon from '../Icons/Play';
+import { Play } from '../../icons/jsx';
 
 <Meta title="Button" component={Button} />
 
@@ -17,8 +17,8 @@ import Icon from '../Icons/Play';
 ## With Icon
 
 <Canvas>
-    <Button color="primary" style={{margin: 8}} iconRight={<Icon />}>Right Icon</Button>
-    <Button color="primary" style={{margin: 8}} iconLeft={<Icon />}>Left Icon</Button>
+    <Button color="primary" style={{margin: 8}} iconRight={<Play />}>Right Icon</Button>
+    <Button color="primary" style={{margin: 8}} iconLeft={<Play />}>Left Icon</Button>
 </Canvas>
 
 ## Primary action buttons

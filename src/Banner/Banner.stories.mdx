@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { Banner, Button } from '../ui';
-import Icon from '../Icons/Error';
+import { Refreshing } from '../../icons/jsx';
 
 <Meta title="Banner" component={Banner} />
 
@@ -17,7 +17,7 @@ import Icon from '../Icons/Error';
 ## Secondary with Action and Icon
 
 <Canvas>
-<Banner type="secondary" action={<Button size="small" color="primary" outline>Resend Email</Button>} icon={<Icon />}>
+<Banner type="secondary" action={<Button size="small" color="primary" outline>Resend Email</Button>} icon={<Refreshing />}>
     Please confirm your email by clicking the link we sent to <b>email</b>
 </Banner>
 </Canvas>

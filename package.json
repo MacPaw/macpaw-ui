@@ -1,11 +1,12 @@
 {
   "name": "@macpaw/macpaw-ui",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "main": "lib/ui.js",
   "scripts": {
     "dev": "npx start-storybook -p 6006",
     "build": "build-storybook -o out",
     "lint": "eslint ./src",
+    "icons": "npx @svgr/cli -d icons/jsx icons/svg",
     "lib:js": "babel src --out-dir lib --presets=@babel/env,@babel/preset-react",
     "lib:css": "sass ./src/ui.scss ./lib/ui.css",
     "lib": "yarn lib:css && yarn lib:js",
@@ -49,5 +50,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "@svgr/cli": "^5.4.0"
+  }
 }
