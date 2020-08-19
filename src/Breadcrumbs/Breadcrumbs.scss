@@ -30,7 +30,7 @@
       width: 16px;
       height: 16px;
       background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDExIDE4Ij4KICA8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIHBvaW50cz0iOCAxMiAxNiAyMCAyNCAxMiIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDcgMTgpIi8+Cjwvc3ZnPgo=") center no-repeat;
-      background-size: 16px 16px;
+      background-size: contain;
       opacity: 0.25;
     }
   }
