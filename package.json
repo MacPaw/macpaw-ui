@@ -45,7 +45,8 @@
   "typings": "src/ui.d.ts",
   "files": [
     "src",
-    "lib"
+    "lib",
+    "icons"
   ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
