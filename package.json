@@ -1,6 +1,6 @@
 {
   "name": "@macpaw/macpaw-ui",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "main": "lib/ui.js",
   "scripts": {
     "dev": "npx start-storybook -p 6006",
@@ -26,6 +26,7 @@
     "@storybook/addon-essentials": "^6.0.12",
     "@storybook/addon-links": "^6.0.12",
     "@storybook/react": "^6.0.12",
+    "@svgr/cli": "^5.4.0",
     "babel-loader": "^8.1.0",
     "clsx": "^1.1.1",
     "deploy-aws-s3-cloudfront": "^3.2.4",
@@ -49,8 +50,5 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "license": "MIT",
-  "dependencies": {
-    "@svgr/cli": "^5.4.0"
-  }
+  "license": "MIT"
 }
