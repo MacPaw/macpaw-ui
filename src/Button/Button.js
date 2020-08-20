@@ -29,11 +29,11 @@ const Button = (props) => {
     '-outline': outline,
   });
 
+  const componentProps = {};
   const isIconLeft = !loading && iconLeft;
   const isIconRight = !loading && iconRight;
 
   let Component = component;
-  const componentProps = {};
 
   if (Component === 'button' && other.href) {
     Component = 'a';
