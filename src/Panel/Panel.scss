@@ -1,4 +1,6 @@
 .panel {
+  display: block;
+  color: var(--color-black);
   padding: 36px;
   background: var(--color-white);
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.08);

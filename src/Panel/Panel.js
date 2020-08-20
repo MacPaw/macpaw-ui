@@ -5,11 +5,15 @@ const Panel = (props) => {
   const {
     className,
     outline,
-    children, ...other
+    children,
+    component = 'div',
+    ...other
   } = props;
 
+  const Component = other.href ? 'a' : component;
+
   return (
-    <div className={cx('panel', outline && '-outline', className)} {...other}>{children}</div>
+    <Component className={cx('panel', outline && '-outline', className)} {...other}>{children}</Component>
   );
 };
 
