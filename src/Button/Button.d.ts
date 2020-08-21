@@ -15,7 +15,7 @@ interface Props {
   href?: string;
   target?: string;
   rel?: string;
-  component?: ReactNode
+  component?: ReactNode;
   [x:string]: any;
 }
 
