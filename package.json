@@ -1,14 +1,14 @@
 {
   "name": "@macpaw/macpaw-ui",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "main": "lib/ui.js",
   "scripts": {
     "dev": "npx start-storybook -p 6006",
     "build": "build-storybook -o out",
     "lint": "eslint ./src",
     "icons:jsx": "npx @svgr/cli -d icons/jsx icons/svg",
-    "icons:tsx": "npx @svgr/cli --typescript -d icons/tsx icons/svg",
-    "icons": "yarn icons:jsx && yarn icons:tsx",
+    "icons:jsx2es6": "babel icons/jsx --out-dir icons/jsx --presets=@babel/env,@babel/preset-react",
+    "icons": "yarn icons:jsx && yarn icons:jsx2es6",
     "lib:js": "babel src --out-dir lib --presets=@babel/env,@babel/preset-react",
     "lib:css": "sass ./src/ui.scss ./lib/ui.css",
     "lib": "yarn lib:css && yarn lib:js",
