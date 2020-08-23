@@ -1,6 +1,6 @@
 {
   "name": "@macpaw/macpaw-ui",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "main": "lib/ui.js",
   "scripts": {
     "dev": "npx start-storybook -p 6006",
