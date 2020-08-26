@@ -1,7 +1,6 @@
-import {FC} from 'react';
+import {FC, HTMLProps} from 'react';
 
-interface Props {
-  className?: string;
+interface Props extends HTMLProps<HTMLElement> {
   large?: boolean;
   text: string;
   error?: boolean;

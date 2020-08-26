@@ -1,11 +1,8 @@
-import {FC, ReactNode} from 'react';
+import {FC, ReactNode, HTMLProps} from 'react';
 
-interface Props {
-  className?: string;
+interface Props extends HTMLProps<HTMLElement & HTMLLinkElement> {
   outline?: boolean;
   href?: string;
-  target?: string;
-  rel?: string;
   component?: ReactNode;
   [x:string]: any;
 }

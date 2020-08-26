@@ -1,12 +1,9 @@
-import {FC, ChangeEvent} from 'react';
+import {FC, HTMLProps} from 'react';
 
-interface Props {
-  name?: string;
-  className?: string;
+interface Props extends HTMLProps<HTMLSelectElement> {
   selected?: string;
   disabled?: boolean;
   error?: boolean;
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 declare const Select: FC<Props>;

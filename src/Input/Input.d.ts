@@ -1,16 +1,12 @@
-import {FC, ReactNodeArray, ChangeEvent, ReactNode} from 'react';
+import {FC, ReactNodeArray, ReactNode, HTMLProps} from 'react';
 
-interface Props {
-  name: string;
-  className?: string;
-  type: 'text' | 'email' | 'password';
+interface Props extends HTMLProps<HTMLInputElement & HTMLTextAreaElement> {
   size?: 'medium' | 'small'
   value?: string;
   placeholder?: string;
   errorMessage?: string | ReactNodeArray;
   labelModifier?: string | boolean;
   disabled?: boolean;
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   action?: ReactNode;
 }
 

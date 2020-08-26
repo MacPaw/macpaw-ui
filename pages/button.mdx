@@ -1,0 +1,84 @@
+import { Button } from '../src//ui';
+import { Play } from '../src/icons/jsx';
+
+# Button
+
+## Sizes
+
+<Button color="primary" style={{width: 200, margin: 8}}>Default</Button>
+<Button color="primary" style={{width: 200, margin: 8}} size="medium">Medium</Button>
+<Button color="primary" style={{width: 200, margin: 8}} size="small">Small</Button>
+
+```
+<Button color="primary" style={{width: 200, margin: 8}}>Default</Button>
+<Button color="primary" style={{width: 200, margin: 8}} size="medium">Medium</Button>
+<Button color="primary" style={{width: 200, margin: 8}} size="small">Small</Button>
+```
+
+## With Icon
+
+<Button color="primary" style={{margin: 8}} iconRight={<Play />}>Right Icon</Button>
+<Button color="primary" style={{margin: 8}} iconLeft={<Play />}>Left Icon</Button>
+
+```
+<Button color="primary" style={{margin: 8}} iconRight={<Play />}>Right Icon</Button>
+<Button color="primary" style={{margin: 8}} iconLeft={<Play />}>Left Icon</Button>
+```
+
+## Primary action buttons
+
+Used for main action on current page, usually it’s one of two, either Free Download or Buy Now
+
+<Button color="secondary" style={{width: 200, margin: 8}}>Secondary</Button>
+<Button color="secondary" style={{width: 200, margin: 8}} loading>Loading</Button>
+<Button color="secondary" style={{width: 200, margin: 8}} disabled>Disabled</Button>
+
+```
+<Button color="secondary" style={{width: 200, margin: 8}}>Secondary</Button>
+<Button color="secondary" style={{width: 200, margin: 8}} loading>Loading</Button>
+<Button color="secondary" style={{width: 200, margin: 8}} disabled>Disabled</Button>
+```
+
+## Secondary - low priority
+
+<Button color="secondary" outline style={{width: 200, margin: 8}}>Secondary</Button>
+<Button color="secondary" outline style={{width: 200, margin: 8}} loading>Loading</Button>
+<Button color="secondary" outline style={{width: 200, margin: 8}} disabled>Disabled</Button>
+
+```
+<Button color="secondary" outline style={{width: 200, margin: 8}}>Secondary</Button>
+<Button color="secondary" outline style={{width: 200, margin: 8}} loading>Loading</Button>
+<Button color="secondary" outline style={{width: 200, margin: 8}} disabled>Disabled</Button>
+```
+
+## Warning
+
+<Button color="warning" style={{width: 200, margin: 8}}>Warning</Button>
+<Button color="warning" style={{width: 200, margin: 8}} loading>Loading</Button>
+<Button color="warning" style={{width: 200, margin: 8}} disabled>Disabled</Button>
+
+```
+<Button color="warning" style={{width: 200, margin: 8}}>Warning</Button>
+<Button color="warning" style={{width: 200, margin: 8}} loading>Loading</Button>
+<Button color="warning" style={{width: 200, margin: 8}} disabled>Disabled</Button>
+```
+
+## Warning - low priority
+
+<Button color="warning" outline style={{width: 200, margin: 8}}>Warning</Button>
+<Button color="warning" outline style={{width: 200, margin: 8}} loading>Loading</Button>
+<Button color="warning" outline style={{width: 200, margin: 8}} disabled>Disabled</Button>
+
+```
+<Button color="warning" outline style={{width: 200, margin: 8}}>Warning</Button>
+<Button color="warning" outline style={{width: 200, margin: 8}} loading>Loading</Button>
+<Button color="warning" outline style={{width: 200, margin: 8}} disabled>Disabled</Button>
+```
+
+## As a link tag
+
+<Button href="#" color="primary">Default</Button>
+
+```
+<Button href="#" color="primary">Default</Button>
+```

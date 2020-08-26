@@ -1,6 +1,6 @@
-import {FC} from 'react';
+import {FC, HTMLProps} from 'react';
 
-interface Props {
+interface Props extends HTMLProps<HTMLElement> {
   size?: number;
 }
 

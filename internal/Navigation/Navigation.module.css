@@ -1,0 +1,27 @@
+.navigation {
+    position: sticky;
+    flex: none;
+    top: 0;
+    height: 100vh;
+    width: 300px;
+    background: #000;
+    color: #fff;
+}
+
+.projectName {
+    padding: 12px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.navigationLinks {
+    padding: 6px 12px;
+}
+
+.navigationLink {
+    margin: 8px 0;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    text-transform: capitalize;
+}

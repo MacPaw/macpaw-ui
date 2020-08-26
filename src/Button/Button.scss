@@ -20,6 +20,10 @@
   user-select: none;
   outline: none;
 
+  &:focus {
+    box-shadow: 0 0 0 3px var(--color-outline);
+  }
+
   &.-wide {
     width: 100%;
   }
@@ -68,12 +72,12 @@
   &.-primary.-outline {
     color: var(--color-black);
     background-color: transparent;
-    box-shadow: inset 0 0 0 2px var(--color-black-08);
+    border: 2px solid var(--color-black-08);
   }
 
   &.-primary.-outline:not(:disabled):hover {
     background-color: transparent;
-    box-shadow: inset 0 0 0 2px var(--color-black);
+    border: 2px solid var(--color-black);
   }
 
   &.-primary.-outline:not(:disabled):active {
@@ -84,7 +88,7 @@
   &.-primary.-outline[disabled]:not(.-loading) {
     color: var(--color-black-08);
     background-color: transparent;
-    box-shadow: inset 0 0 0 2px var(--color-black-08);
+    border: 2px solid var(--color-black-08);
   }
 
   // secondary
@@ -111,24 +115,24 @@
   &.-secondary.-outline {
     color: var(--color-secondary);
     background-color: transparent;
-    box-shadow: inset 0 0 0 2px var(--color-secondary);
+    border: 2px solid var(--color-secondary);
   }
 
   &.-secondary.-outline:not(:disabled):hover {
     background: var(--color-secondary);
     color: var(--color-white);
-    box-shadow: inset 0 0 0 2px var(--color-secondary);
+    border: 2px solid var(--color-secondary);
   }
 
   &.-secondary.-outline:not(:disabled):active {
     background-color: #1684D6;
-    box-shadow: inset 0 0 0 2px #1684D6;
+    border: 2px solid #1684D6;
   }
 
   &.-secondary.-outline[disabled]:not(.-loading) {
     color: var(--color-black-08);
     background-color: transparent;
-    box-shadow: inset 0 0 0 2px var(--color-black-08);
+    border: 2px solid var(--color-black-08);
   }
 
   // warning
@@ -155,24 +159,24 @@
   &.-warning.-outline {
     color: var(--color-error);
     background-color: transparent;
-    box-shadow: inset 0 0 0 2px var(--color-error);
+    border: 2px solid var(--color-error);
   }
 
   &.-warning.-outline:not(:disabled):hover {
     background: var(--color-error);
     color: var(--color-white);
-    box-shadow: inset 0 0 0 2px var(--color-error);
+    border: 2px solid var(--color-error);
   }
 
   &.-warning.-outline:not(:disabled):active {
     background-color: #BC3434;
-    box-shadow: inset 0 0 0 2px #BC3434;
+    border: 2px solid #BC3434;
   }
 
   &.-warning.-outline[disabled]:not(.-loading) {
     color: var(--color-black-08);
     background-color: transparent;
-    box-shadow: inset 0 0 0 2px var(--color-black-08);
+    border: 2px solid var(--color-black-08);
   }
 
   // loading
@@ -200,6 +204,10 @@
     &.-right {
       margin-left: 8px;
     }
+  }
+
+  svg {
+    fill: currentColor;
   }
 }
 

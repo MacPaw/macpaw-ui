@@ -1,7 +1,6 @@
-import {FC, ReactNode} from 'react';
+import {FC, ReactNode, HTMLProps} from 'react';
 
-interface Props {
-  className?: string;
+interface Props extends HTMLProps<HTMLButtonElement> {
   type?: 'button' | 'submit';
   color?: 'primary' | 'secondary' | 'warning';
   size?: 'medium' | 'small';
@@ -13,8 +12,6 @@ interface Props {
   iconRight?: ReactNode;
   onClick?: () => void;
   href?: string;
-  target?: string;
-  rel?: string;
   component?: ReactNode;
   [x:string]: any;
 }

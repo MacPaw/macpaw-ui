@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'clsx';
-import ButtonLoader from './ButtonLoader';
+import PawIcon from '../Icons/jsx/Paw';
 
 // TODO: forwardRef: https://github.com/mui-org/material-ui/blob/master/packages/material-ui/src/ButtonBase/ButtonBase.js
 
@@ -49,7 +49,7 @@ const Button = (props) => {
   return (
     <Component className={classNames} {...componentProps} {...other}>
       {isIconLeft && <span className="button-icon -left">{iconLeft}</span>}
-      {loading && <ButtonLoader />}
+      {loading && <PawIcon className="button-loader" />}
       {loading ? <span className="button-content">{children}</span> : children}
       {isIconRight && <span className="button-icon -right">{iconRight}</span>}
     </Component>

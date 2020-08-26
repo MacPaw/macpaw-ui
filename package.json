@@ -3,15 +3,13 @@
   "version": "0.0.33",
   "main": "lib/ui.js",
   "scripts": {
-    "dev": "npx start-storybook -p 6006",
-    "build": "build-storybook -o out",
+    "dev": "next -p 1234",
+    "build": "next build && next export",
     "lint": "eslint ./src",
-    "icons:jsx": "npx @svgr/cli -d icons/jsx icons/svg",
-    "icons:jsx2es6": "babel icons/jsx --out-dir icons/jsx --presets=@babel/env,@babel/preset-react",
-    "icons": "yarn icons:jsx && yarn icons:jsx2es6",
+    "icons": "npx @svgr/cli -d src/icons/jsx src/icons/svg && npx eslint src/icons/jsx --fix",
     "lib:js": "babel src --out-dir lib --presets=@babel/env,@babel/preset-react",
     "lib:css": "sass ./src/ui.scss ./lib/ui.css",
-    "lib": "yarn lib:css && yarn lib:js",
+    "lib": "yarn lib:css && yarn lib:js && yarn icons",
     "deploy:s3": "deploy-aws-s3-cloudfront --non-interactive --source=out --bucket=ui.macpaw.com --destination=/ --distribution=E2NQDOZEC6GH2E"
   },
   "peerDependencies": {
@@ -24,12 +22,8 @@
     "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
-    "@storybook/addon-actions": "^6.0.16",
-    "@storybook/addon-essentials": "^6.0.16",
-    "@storybook/addon-links": "^6.0.1",
-    "@storybook/react": "^6.0.16",
-    "@svgr/cli": "^5.4.0",
-    "babel-loader": "^8.1.0",
+    "@mdx-js/loader": "^1.6.4",
+    "@next/mdx": "^9.4.2",
     "clsx": "^1.1.1",
     "deploy-aws-s3-cloudfront": "^3.2.4",
     "eslint": "^7.3.1",
@@ -38,17 +32,16 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.0",
+    "next": "^9.4.2",
+    "prism-react-renderer": "^1.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-is": "^16.13.1",
-    "sass": "^1.26.10",
-    "sass-loader": "^9.0.3"
+    "sass": "^1.26.10"
   },
   "typings": "src/ui.d.ts",
   "files": [
     "src",
-    "lib",
-    "icons"
+    "lib"
   ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

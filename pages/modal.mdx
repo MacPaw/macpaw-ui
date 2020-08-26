@@ -1,0 +1,58 @@
+import { useState } from 'react';
+import { Button, Modal } from '../src/ui';
+
+# Modal
+
+export const Example = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const open = () => setIsOpen(true);
+    const close = () => setIsOpen(false);
+    return (
+        <>
+            <Button onClick={open}>Open Modal</Button>
+            <Modal
+                isOpen={isOpen}
+                onRequestClose={close}
+                icon={<img src="/example/warning.png" width={172} alt="" />}
+                actionsRight={(
+                    <>
+                        <Button outline>Stay Subscribed</Button>
+                        <Button color="warning">Cancel Subscription</Button>
+                    </>
+                )}
+                style={{ textAlign: 'center' }}
+            >
+                <h3>Are you totally sure about it?</h3>
+                <p>
+                    Are you sure you want to cancel  CleanMyMac X – Subscription for 5 Macs.
+                    <br />
+                    Note that you would not be able to go back to this point in time.
+                </p>
+            </Modal>
+        </>
+    );
+};
+
+<Example />
+
+```
+<Modal
+    isOpen={isOpen}
+    onRequestClose={close}
+    icon={<img src="/example/warning.png" width={172} alt="" />}
+    actionsRight={(
+        <>
+            <Button outline>Stay Subscribed</Button>
+            <Button color="warning">Cancel Subscription</Button>
+        </>
+    )}
+    style={{ textAlign: 'center' }}
+>
+    <h3>Are you totally sure about it?</h3>
+    <p>
+        Are you sure you want to cancel  CleanMyMac X – Subscription for 5 Macs.
+        <br />
+        Note that you would not be able to go back to this point in time.
+    </p>
+</Modal>
+```

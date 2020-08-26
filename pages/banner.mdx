@@ -1,0 +1,40 @@
+import { Banner, Button } from '../src/ui';
+import { Refreshing } from '../src/icons/jsx';
+
+# Banner
+
+## Needs Attention
+
+<Banner action={<Button size="small" color="secondary">Update Billing Method</Button>}>
+    <b>Payment failed.</b> Please update your billing method.
+</Banner>
+
+```
+<Banner action={<Button size="small" color="secondary">Update Billing Method</Button>}>
+    <b>Payment failed.</b> Please update your billing method.
+</Banner>
+```
+
+## Secondary
+
+<Banner type="secondary" action={<Button size="small" color="primary" outline>Resend Email</Button>} icon={<Refreshing />}>
+    Please confirm your email by clicking the link we sent to <b>email</b>
+</Banner>
+
+```
+<Banner type="secondary" action={<Button size="small" color="primary" outline>Resend Email</Button>} icon={<Refreshing />}>
+    Please confirm your email by clicking the link we sent to <b>email</b>
+</Banner>
+```
+
+## Readonly
+
+<Banner type="readonly">
+    <b>Payment failed.</b> Please update your billing method.
+</Banner>
+
+```
+<Banner type="readonly">
+    <b>Payment failed.</b> Please update your billing method.
+</Banner>
+```

@@ -1,7 +1,6 @@
-import {FC, ReactNode} from 'react';
+import {FC, ReactNode, HTMLProps} from 'react';
 
-interface Props {
-  className?: string;
+interface Props extends HTMLProps<HTMLElement> {
   type?: 'secondary' | 'readonly';
   icon?: ReactNode;
   action?: ReactNode;
