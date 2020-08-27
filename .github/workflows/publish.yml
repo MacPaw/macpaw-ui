@@ -15,7 +15,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@macpaw'
       - run: yarn
-      - run: npx @svgr/cli --out-dir src/icons/jsx src/icons/svg
+      - run: npx @svgr/cli src/icons/svg --out-dir src/icons/jsx
       - run: npx eslint src/icons/jsx --fix
       - run: yarn lib:css
       - run: yarn lib:js
