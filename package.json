@@ -6,7 +6,7 @@
     "dev": "next -p 1234",
     "build": "next build && next export",
     "lint": "eslint ./src",
-    "icons": "npx @svgr/cli -d src/icons/jsx src/icons/svg && npx eslint src/icons/jsx --fix",
+    "icons": "npx @svgr/cli -out-dir src/icons/jsx src/icons/svg && npx eslint src/icons/jsx --fix",
     "lib:js": "babel src --out-dir lib --presets=@babel/env,@babel/preset-react",
     "lib:css": "sass ./src/ui.scss ./lib/ui.css",
     "lib": "yarn lib:css && yarn lib:js && yarn icons",
