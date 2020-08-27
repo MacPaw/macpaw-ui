@@ -1,12 +1,15 @@
 {
   "name": "@macpaw/macpaw-ui",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "main": "lib/ui.js",
   "scripts": {
     "dev": "next -p 1234",
     "build": "next build && next export",
     "lint": "eslint ./src",
-    "icons": "npx @svgr/cli ./src/Icons/svg --out-dir ./src/Icons/jsx && npx eslint ./src/Icons/jsx --fix",
+    "icons:svg2jsx": "npx @svgr/cli ./src/Icons/svg --out-dir ./src/Icons/jsx",
+    "icons:fix": "npx eslint ./src/Icons/jsx --fix",
+    "icons:ts": "cp ./src/Icons/jsx/index.d.ts ./lib/Icons/jsx/",
+    "icons": "yarn icons:svg2jsx && yarn icons:fix && yarn icons:ts",
     "lib:js": "babel src --out-dir ./lib --presets=@babel/env,@babel/preset-react",
     "lib:css": "sass ./src/ui.scss ./lib/ui.css",
     "lib": "yarn lib:css && yarn lib:js",
