@@ -6,13 +6,11 @@
     "dev": "next -p 1234",
     "build": "next build && next export",
     "lint": "eslint ./src",
-    "icons:svg2jsx": "npx @svgr/cli ./src/Icons/svg --out-dir ./src/Icons/jsx",
-    "icons:fix": "npx eslint ./src/Icons/jsx --fix",
-    "icons:ts": "cp ./src/Icons/jsx/index.d.ts ./lib/Icons/jsx/",
-    "icons": "yarn icons:svg2jsx && yarn icons:fix && yarn icons:ts",
+    "types": "copyfiles -u 1 \"src/**/*.d.ts\" lib",
+    "icons": "npx @svgr/cli ./src/Icons/svg --out-dir ./src/Icons/jsx && npx eslint ./src/Icons/jsx --fix",
     "lib:js": "babel src --out-dir ./lib --presets=@babel/env,@babel/preset-react",
     "lib:css": "sass ./src/ui.scss ./lib/ui.css",
-    "lib": "yarn lib:css && yarn lib:js",
+    "lib": "yarn lib:css && yarn lib:js && yarn types",
     "deploy:s3": "deploy-aws-s3-cloudfront --non-interactive --source=out --bucket=ui.macpaw.com --destination=/ --distribution=E2NQDOZEC6GH2E"
   },
   "peerDependencies": {
@@ -29,6 +27,7 @@
     "@next/mdx": "^9.4.2",
     "@svgr/cli": "^5.4.0",
     "clsx": "^1.1.1",
+    "copyfiles": "^2.3.0",
     "deploy-aws-s3-cloudfront": "^3.2.4",
     "eslint": "^7.3.1",
     "eslint-config-airbnb": "^18.2.0",
@@ -42,7 +41,7 @@
     "react-dom": "^16.13.1",
     "sass": "^1.26.10"
   },
-  "typings": "src/ui.d.ts",
+  "typings": "lib/ui.d.ts",
   "files": [
     "src",
     "lib"
