@@ -6,8 +6,8 @@
     "dev": "next -p 1234",
     "build": "next build && next export",
     "lint": "eslint ./src",
-    "icons": "npx @svgr/cli --out-dir src/icons/jsx src/icons/svg && npx eslint src/icons/jsx --fix",
-    "lib:js": "babel src --out-dir lib --presets=@babel/env,@babel/preset-react",
+    "icons": "npx @svgr/cli ./src/icons/svg --out-dir ./src/icons/jsx && npx eslint ./src/icons/jsx --fix",
+    "lib:js": "babel src --out-dir ./lib --presets=@babel/env,@babel/preset-react",
     "lib:css": "sass ./src/ui.scss ./lib/ui.css",
     "lib": "yarn icons && yarn lib:css && yarn lib:js",
     "deploy:s3": "deploy-aws-s3-cloudfront --non-interactive --source=out --bucket=ui.macpaw.com --destination=/ --distribution=E2NQDOZEC6GH2E"
