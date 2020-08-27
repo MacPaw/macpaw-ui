@@ -24,6 +24,7 @@
     "@babel/preset-react": "^7.10.4",
     "@mdx-js/loader": "^1.6.4",
     "@next/mdx": "^9.4.2",
+    "@svgr/cli": "^5.4.0",
     "clsx": "^1.1.1",
     "deploy-aws-s3-cloudfront": "^3.2.4",
     "eslint": "^7.3.1",
