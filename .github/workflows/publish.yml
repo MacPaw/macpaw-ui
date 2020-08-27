@@ -15,7 +15,10 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@macpaw'
       - run: yarn
-      - run: yarn lib
+      - run: npx @svgr/cli --out-dir src/icons/jsx src/icons/svg
+      - run: npx eslint src/icons/jsx --fix
+      - run: yarn lib:css
+      - run: yarn lib:js
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
