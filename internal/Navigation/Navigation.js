@@ -23,7 +23,7 @@ const Navigation = () => (
     <div className={styles.projectName}>MacPaw UI Kit</div>
     <div className={styles.navigationLinks}>
       {pages.sort().map((link) => (
-        <Link href={`/${link}`} key={link}>
+        <Link href={`/${link}/`} key={link}>
           <a className={styles.navigationLink}>{link}</a>
         </Link>
       ))}
