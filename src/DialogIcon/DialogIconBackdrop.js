@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ModalBackdrop = ({ className }) => (
+const DialogIconBackdrop = ({ className }) => (
   <svg className={className} width="280" height="107" viewBox="0 0 280 107" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient x1="4.242%" y1="0%" x2="105.703%" y2="100%" id="modal-backdrop-a">
@@ -46,4 +46,4 @@ const ModalBackdrop = ({ className }) => (
   </svg>
 );
 
-export default ModalBackdrop;
+export default DialogIconBackdrop;

@@ -1,0 +1,25 @@
+.dialog-actions {
+  padding: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  .button {
+    @include mobile {
+      width: 100%;
+    }
+
+    &:not(:last-child) {
+      margin-right: 16px;
+
+      @include mobile {
+        margin-right: 0;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}

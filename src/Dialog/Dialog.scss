@@ -1,0 +1,51 @@
+.dialog {
+  position: relative;
+  width: 100%;
+  max-width: 736px;
+  background: #f7f7f7;
+  border-radius: 20px;
+  margin: auto;
+
+  &-root {
+    position: fixed;
+    z-index: 9000;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(218, 218, 218, .72);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-close {
+    display: inline-flex;
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+
+    &:focus {
+      box-shadow: 0 0 0 3px var(--color-outline);
+    }
+  }
+}

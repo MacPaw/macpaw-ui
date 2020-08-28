@@ -1,0 +1,17 @@
+.dialog-icon {
+  position: relative;
+  margin-bottom: 32px;
+  text-align: center;
+
+  &-backdrop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  svg, img {
+    vertical-align: top;
+  }
+}

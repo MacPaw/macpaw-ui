@@ -6,11 +6,8 @@ interface Props extends HTMLProps<HTMLElement> {
   shouldCloseOnOverlayClick?: boolean;
   withCloseButton?: boolean;
   onRequestClose: () => void;
-  icon?: ReactNode;
-  actionsRight?: ReactNode;
-  actionsLeft?: ReactNode;
 }
 
-declare const Modal: FC<Props>;
+declare const Dialog: FC<Props>;
 
-export default Modal;
+export default Dialog;
