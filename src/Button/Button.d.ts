@@ -1,4 +1,4 @@
-import {FC, ReactNode, HTMLProps} from 'react';
+import {FC, ReactNode, HTMLProps, MouseEvent} from 'react';
 
 interface Props extends HTMLProps<HTMLButtonElement> {
   type?: 'button' | 'submit';
@@ -10,7 +10,6 @@ interface Props extends HTMLProps<HTMLButtonElement> {
   outline?: boolean;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
-  onClick?: () => void;
   href?: string;
   component?: ReactNode;
   [x:string]: any;
