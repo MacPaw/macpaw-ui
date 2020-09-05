@@ -9,7 +9,6 @@ const pages = [
   'button',
   'checkbox',
   'colors',
-  'modal',
   'dialog',
   'input',
   'loader',
