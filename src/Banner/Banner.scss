@@ -7,6 +7,7 @@
   font-size: 14px;
   background: #FFEEBA;
   border-radius: 10px;
+  min-height: 72px; // banner with button should be the same height as without
 
   @include mobile {
     flex-direction: column;

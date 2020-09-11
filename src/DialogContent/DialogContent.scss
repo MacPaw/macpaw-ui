@@ -2,4 +2,10 @@
   padding: 48px;
   background: var(--color-white);
   border-radius: 20px;
+  overflow: auto;
+
+  @include mobile {
+    flex: 1;
+    padding: 24px;
+  }
 }

@@ -48,12 +48,12 @@ const Dialog = (props) => {
     <div className="dialog-root">
       <div className="dialog-overlay" onClick={overlayClickListener} tabIndex={-1} role="none" />
       <div className={dialogClassName} {...other}>
+        {children}
         {withCloseButton && (
           <button className="dialog-close" onClick={onRequestClose}>
             <CloseIcon />
           </button>
         )}
-        {children}
       </div>
     </div>
   );
