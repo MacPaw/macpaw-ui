@@ -13,3 +13,5 @@ export { default as DialogContent } from './DialogContent/DialogContent';
 export { default as DialogIcon } from './DialogIcon/DialogIcon';
 export { default as Panel } from './Panel/Panel';
 export { default as Select } from './Select/Select';
+export { default as Table } from './Table/Table';
+export { default as TableRow } from './TableRow/TableRow';

@@ -14,6 +14,7 @@ const pages = [
   'loader',
   'panel',
   'select',
+  'table',
   'typography',
 ]
 

@@ -1,0 +1,43 @@
+.table {
+  border-collapse: collapse;
+  width: 100%;
+
+  tbody {
+    box-shadow: 0 0 0 2px var(--color-black-08);
+    border-radius: 20px;
+  }
+
+  th, td {
+    padding: 32px 18px;
+
+    &:first-child,
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:nth-child(2) {
+      padding-left: 0;
+    }
+
+    &:nth-last-child(2) {
+      padding-right: 0;
+    }
+  }
+
+  th {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-black-48);
+    text-align: left;
+  }
+
+  td {
+    border-bottom: 2px solid var(--color-black-08);
+  }
+
+  tr:last-child {
+    td {
+      border-bottom: none;
+    }
+  }
+}
