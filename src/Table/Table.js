@@ -5,9 +5,9 @@ const Table = (props) => {
   const { className, children, ...other } = props;
 
   return (
-    <div className={cx('table', className)} {...other}>
+    <table className={cx('table', className)} {...other}>
       {children}
-    </div>
+    </table>
   );
 };
 
