@@ -1,7 +1,8 @@
 import React from 'react';
+import cx from 'clsx';
 
-const Loader = ({ size = 75 }) => (
-  <div className="loader">
+const Loader = ({ size = 75, inline = false }) => (
+  <div className={cx('loader', inline && '-inline')}>
     <svg width={size} height={size} viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#000">
       <g fill="none" fillRule="evenodd">
         <g transform="translate(1 1)" strokeWidth="2">
