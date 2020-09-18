@@ -13,6 +13,7 @@ const pages = [
   'input',
   'loader',
   'panel',
+  'payment',
   'select',
   'table',
   'typography',

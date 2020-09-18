@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="54" viewBox="0 0 70 54">
+  <defs>
+    <linearGradient id="card-a" x1="0%" x2="99.646%" y1="20.245%" y2="79.545%">
+      <stop offset="0%" stop-color="#CAD4D6"/>
+      <stop offset="100%" stop-color="#B4BABF"/>
+    </linearGradient>
+    <linearGradient id="card-b" x1="28.561%" x2="99.536%" y1="47.217%" y2="51.219%">
+      <stop offset="0%" stop-color="#656565"/>
+      <stop offset="100%" stop-color="#333"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="70" height="54" fill="url(#card-a)" rx="8"/>
+    <rect width="70" height="11" y="11" fill="url(#card-b)"/>
+    <rect width="16.528" height="6" x="44.722" y="28" fill="#FFF" opacity=".546"/>
+  </g>
+</svg>
