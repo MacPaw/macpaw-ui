@@ -7,6 +7,7 @@ const pages = [
   'banner',
   'breadcrumbs',
   'button',
+  'card-mask',
   'checkbox',
   'colors',
   'dialog',
@@ -25,7 +26,7 @@ const Navigation = () => (
     <div className={styles.navigationLinks}>
       {pages.sort().map((link) => (
         <Link href={`/${link}/`} key={link}>
-          <a className={styles.navigationLink}>{link}</a>
+          <a className={styles.navigationLink}>{link.replace('-', ' ')}</a>
         </Link>
       ))}
     </div>
