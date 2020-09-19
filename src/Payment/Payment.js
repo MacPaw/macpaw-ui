@@ -11,29 +11,29 @@ import UnionPay from '../Icons/jsx/PaymentUnionpay';
 import Visa from '../Icons/jsx/PaymentVisa';
 
 const Payment = (props) => {
-  const { type } = props;
+  const { type, ...other } = props;
 
   switch (type) {
     case 'paypal':
-      return <PayPal />;
+      return <PayPal {...other} />;
     case 'american_express':
-      return <AmericanExpress />;
+      return <AmericanExpress {...other} />;
     case 'diners_club':
-      return <DinersClub />;
+      return <DinersClub {...other} />;
     case 'discover':
-      return <Discover />;
+      return <Discover {...other} />;
     case 'jcb':
-      return <JCB />;
+      return <JCB {...other} />;
     case 'maestro':
-      return <Maestro />;
+      return <Maestro {...other} />;
     case 'unionpay':
-      return <UnionPay />;
+      return <UnionPay {...other} />;
     case 'visa':
-      return <Visa />;
+      return <Visa {...other} />;
     case 'master':
-      return <Master />;
+      return <Master {...other} />;
     default:
-      return <Card />;
+      return <Card {...other} />;
   }
 };
 

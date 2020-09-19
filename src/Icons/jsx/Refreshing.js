@@ -2,15 +2,19 @@ import * as React from 'react';
 
 function SvgRefreshing(props) {
   return (
-    <svg width={24} height={24} {...props}>
+    <svg width={24} height={24} viewBox="0 0 24 24" fill="#000" {...props}>
       <g fillRule="evenodd" transform="matrix(1 0 0 -1 0 21)">
         <path
           fill="none"
           stroke="#000"
           strokeWidth={2}
-          d="M18 6.33A8.304 8.304 0 0012.201 4C7.671 4 4 7.562 4 11.955m2 5.702A8.28 8.28 0 0011.799 20C16.329 20 20 16.418 20 12"
+          d="M18,6.32997724 C16.5159091,4.89039817 14.4656565,4 12.2010101,4 C7.6717173,4 4,7.56159268 4,11.9550399 M6,17.6568542 C7.48409093,19.1045695 9.53434346,20 11.7989899,20 C16.3282827,20 20,16.418278 20,12"
         />
-        <path d="M0 12h8l-4 4zM24 13h-8l4-5z" />
+        <polygon points="0 12 4 12 8 12 4 16" />
+        <polygon
+          points="16 8 20 8 24 8 20 13"
+          transform="rotate(-180 20 10.5)"
+        />
         <animateTransform
           attributeName="transform"
           type="rotate"
