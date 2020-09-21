@@ -5,7 +5,7 @@ function SvgPaymentCard(props) {
     <svg width={70} height={54} viewBox="0 0 70 54" {...props}>
       <defs>
         <linearGradient
-          id="card-a"
+          id="payment_card_svg__a"
           x1="0%"
           x2="99.646%"
           y1="20.245%"
@@ -15,7 +15,7 @@ function SvgPaymentCard(props) {
           <stop offset="100%" stopColor="#B4BABF" />
         </linearGradient>
         <linearGradient
-          id="card-b"
+          id="payment_card_svg__b"
           x1="28.561%"
           x2="99.536%"
           y1="47.217%"
@@ -26,16 +26,9 @@ function SvgPaymentCard(props) {
         </linearGradient>
       </defs>
       <g fill="none" fillRule="evenodd">
-        <rect width={70} height={54} fill="url(#card-a)" rx={8} />
-        <rect width={70} height={11} y={11} fill="url(#card-b)" />
-        <rect
-          width={16.528}
-          height={6}
-          x={44.722}
-          y={28}
-          fill="#FFF"
-          opacity={0.546}
-        />
+        <rect width={70} height={54} fill="url(#payment_card_svg__a)" rx={8} />
+        <path fill="url(#payment_card_svg__b)" d="M0 11h70v11H0z" />
+        <path fill="#FFF" opacity={0.546} d="M44.722 28H61.25v6H44.722z" />
       </g>
     </svg>
   );
