@@ -1,10 +1,19 @@
 import React from 'react';
 import cx from 'clsx';
 
-const FormRow = ({ className, children, ...other }) => (
-  <div className={cx('form-row', className)} {...other}>
-    {children}
-  </div>
-);
+const FormRow = (props) => {
+  const {
+    children,
+    variety,
+    className,
+    ...other
+  } = props;
+
+  return (
+    <div className={cx('form-row', variety && '-variety', className)} {...other}>
+      {children}
+    </div>
+  );
+};
 
 export default FormRow;

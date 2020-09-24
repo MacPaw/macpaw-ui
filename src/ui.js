@@ -16,6 +16,7 @@ export { default as Label } from './Label/Label';
 export { default as Loader } from './Loader/Loader';
 export { default as Panel } from './Panel/Panel';
 export { default as Payment } from './Payment/Payment';
+export { default as Radio } from './Radio/Radio';
 export { default as Select } from './Select/Select';
 export { default as Table } from './Table/Table';
 export { default as TableRow } from './TableRow/TableRow';

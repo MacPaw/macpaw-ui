@@ -1,0 +1,21 @@
+.radio {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+
+  input {
+    position: relative;
+    margin-right: 12px;
+    top: -1px;
+
+    &[disabled] {
+      cursor: not-allowed;
+    }
+  }
+
+  &.-error {
+    color: var(--color-error);
+  }
+}
