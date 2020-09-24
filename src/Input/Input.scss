@@ -2,6 +2,7 @@
   position: relative;
   display: block;
   font-size: 14px;
+  text-align: left;
 
   &.-medium input {
     padding: 10px 15px;
@@ -29,7 +30,7 @@
     transform: translateY(-50%);
   }
 
-  input {
+  input, textarea {
     width: 100%;
     padding: 14px 18px;
     border-radius: 8px;
@@ -56,10 +57,20 @@
     &[disabled] {
       background: var(--color-black-04);
       border-color: transparent;
+      cursor: not-allowed;
     }
+  }
+
+  textarea {
+    resize: none;
   }
 
   .hint {
     margin-top: 4px;
+  }
+
+  .h6 {
+    margin-bottom: 8px;
+    display: block;
   }
 }

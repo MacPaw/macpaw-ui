@@ -4,21 +4,21 @@ import Hint from '../Hint/Hint';
 
 const Input = (props) => {
   const {
-    type,
+    type = 'text',
     value,
     name,
     placeholder = '',
     errorMessage,
     size,
-    labelModifier,
     disabled = false,
+    multiline = false,
     style,
     action,
+    label,
     ...other
   } = props;
 
   const classNames = cx('input', {
-    [labelModifier]: Boolean(labelModifier),
     '-error': Boolean(errorMessage),
     '-medium': size === 'medium',
     '-small': size === 'small',
@@ -26,14 +26,22 @@ const Input = (props) => {
     '-action': Boolean(action),
   });
 
+  const componentProps = {};
+  const Component = multiline ? 'textarea' : 'input';
+
+  if (Component === 'input') {
+    componentProps.type = type;
+  }
+
   return (
     <label className={classNames} style={style}>
-      <input
-        type={type}
+      {label && <span className="h6">{label}</span>}
+      <Component
         name={name}
         placeholder={placeholder}
         defaultValue={value}
         disabled={disabled}
+        {...componentProps}
         {...other}
       />
       {action && <div className="input-action">{action}</div>}

@@ -5,9 +5,10 @@ interface Props extends HTMLProps<HTMLInputElement & HTMLTextAreaElement> {
   value?: string;
   placeholder?: string;
   errorMessage?: string | ReactNodeArray;
-  labelModifier?: string | boolean;
   disabled?: boolean;
   action?: ReactNode;
+  multiline?: boolean;
+  label?: string | ReactNodeArray;
 }
 
 declare const Input: FC<Props>;

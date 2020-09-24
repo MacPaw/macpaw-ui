@@ -4,26 +4,26 @@ import { Input, FormRow } from '../src/ui';
 
 <div style={{ width: 300 }}>
     <FormRow>
-        <Input type="text" name="name" value="Default" placeholder="Default" />
+        <Input type="text" name="name" placeholder="Name" label="Default" />
     </FormRow>
     <FormRow>
-        <Input type="text" name="name" value="Error state" errorMessage="Error text" placeholder="Error state" />
+        <Input type="text" name="name" value="Wrong value" errorMessage="Error message" label="With error" />
     </FormRow>
     <FormRow>
-        <Input type="text" name="name" value="Disabled" placeholder="Disabled" disabled />
+        <Input type="text" name="name" value="None" placeholder="Disabled" disabled label="Disabled" />
     </FormRow>
 </div>
 
 ```
 <div style={{ width: 300 }}>
     <FormRow>
-        <Input type="text" name="name" value="Default" placeholder="Default" />
+        <Input type="text" name="name" placeholder="Name" label="Default" />
     </FormRow>
     <FormRow>
-        <Input type="text" name="name" value="Error state" errorMessage="Error text" placeholder="Error state" />
+        <Input type="text" name="name" value="Wrong value" errorMessage="Error message" label="With error" />
     </FormRow>
     <FormRow>
-        <Input type="text" name="name" value="Disabled" placeholder="Disabled" disabled />
+        <Input type="text" name="name" value="None" placeholder="Disabled" disabled label="Disabled" />
     </FormRow>
 </div>
 ```
@@ -31,16 +31,12 @@ import { Input, FormRow } from '../src/ui';
 ## Input with Action
 
 <div style={{ width: 300 }}>
-    <FormRow>
-        <Input type="password" name="password" value="password" placeholder="Password" action={<a href="#">Forgot?</a>} />
-    </FormRow>
+    <Input type="password" name="password" value="password" placeholder="Password" action={<a href="#">Forgot?</a>} />
 </div>
 
 ```
 <div style={{ width: 300 }}>
-    <FormRow>
-        <Input type="password" name="password" value="password" placeholder="Password" action={<a href="#">Forgot?</a>} />
-    </FormRow>
+    <Input type="password" name="password" value="password" placeholder="Password" action={<a href="#">Forgot?</a>} />
 </div>
 ```
 
@@ -48,26 +44,38 @@ import { Input, FormRow } from '../src/ui';
 
 <div style={{ width: 300 }}>
     <FormRow>
-        <Input type="text" name="name" value="Default" placeholder="Default" />
+        <Input type="text" name="name" placeholder="Placeholder" label="Default" />
     </FormRow>
     <FormRow>
-        <Input type="text" name="name" value="Medium"  size="medium" placeholder="Medium" />
+        <Input type="text" name="name" size="medium" placeholder="Medium" label="Medium" />
     </FormRow>
     <FormRow>
-        <Input type="text" name="name" value="Small" size="small" placeholder="Small" />
+        <Input type="text" name="name" size="small" placeholder="Small" label="Small" />
     </FormRow>
 </div>
 
 ```
 <div style={{ width: 300 }}>
     <FormRow>
-        <Input type="text" name="name" value="Default" placeholder="Default" />
+        <Input type="text" name="name" placeholder="Placeholder" label="Default" />
     </FormRow>
     <FormRow>
-        <Input type="text" name="name" value="Medium"  size="medium" placeholder="Medium" />
+        <Input type="text" name="name" size="medium" placeholder="Medium" label="Medium" />
     </FormRow>
     <FormRow>
-        <Input type="text" name="name" value="Small" size="small" placeholder="Small" />
+        <Input type="text" name="name" size="small" placeholder="Small" label="Small" />
     </FormRow>
+</div>
+```
+
+### Multiline
+
+<div style={{ width: 300 }}>
+    <Input multiline rows={5} name="feedback" value="Feedback message" label="Feedback" />
+</div>
+
+```
+<div style={{ width: 300 }}>
+    <Input multiline rows={5} name="feedback" value="Feedback message" label="Feedback" />
 </div>
 ```
