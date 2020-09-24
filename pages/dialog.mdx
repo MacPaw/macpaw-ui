@@ -10,7 +10,7 @@ export const Example = () => {
     return (
         <>
             <Button onClick={open}>Open Dialog</Button>
-            <Dialog isOpen={isOpen} onRequestClose={close} style={{ textAlign: 'center' }}>
+            <Dialog isOpen={isOpen} onRequestClose={close}>
                 <DialogContent>
                     <DialogIcon>
                         <img src="/example/warning.png" width={172} alt="" />
