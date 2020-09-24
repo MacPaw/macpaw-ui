@@ -7,7 +7,7 @@
   padding: 0;
 
   li {
-    color: rgba(#333, 0.32);
+    color: #808080;
     margin-right: 38px;
 
     &:last-child {
@@ -18,7 +18,7 @@
   a {
     position: relative;
     text-decoration: none;
-    color: rgba(#333, 0.72);
+    color: var(--color-black);
 
     &:before {
       content: '';
