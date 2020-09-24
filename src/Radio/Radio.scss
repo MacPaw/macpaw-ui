@@ -6,9 +6,7 @@
   user-select: none;
 
   input {
-    position: relative;
     margin-right: 12px;
-    top: -1px;
 
     &[disabled] {
       cursor: not-allowed;
