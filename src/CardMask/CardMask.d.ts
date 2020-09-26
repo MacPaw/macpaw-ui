@@ -1,7 +1,7 @@
 import {FC, HTMLProps} from 'react';
 
 interface Props extends HTMLProps<HTMLElement> {
-  digits: string;
+  digits?: string;
   short?: boolean;
 }
 
