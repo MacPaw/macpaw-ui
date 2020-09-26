@@ -1,14 +1,14 @@
-import {FC, ReactNodeArray, ReactNode, HTMLProps} from 'react';
+import {FC, ReactNode, HTMLProps} from 'react';
 
 interface Props extends HTMLProps<HTMLInputElement> {
   size?: 'medium' | 'small'
   value?: string;
   placeholder?: string;
-  errorMessage?: string | ReactNodeArray;
+  errorMessage?: string | ReactNode;
   disabled?: boolean;
   action?: ReactNode;
   multiline?: boolean;
-  label?: string | ReactNodeArray;
+  label?: string | ReactNode;
   rows?: number;
 }
 
