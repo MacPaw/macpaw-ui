@@ -25,9 +25,8 @@
 
   &-action {
     position: absolute;
+    bottom: 12px;
     right: 18px;
-    top: 50%;
-    transform: translateY(-50%);
   }
 
   input, textarea {
