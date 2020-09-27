@@ -23,7 +23,6 @@ const Input = (props) => {
     '-medium': size === 'medium',
     '-small': size === 'small',
     '-big': size === 'big',
-    '-action': Boolean(action),
   });
 
   const componentProps = {};
@@ -36,15 +35,17 @@ const Input = (props) => {
   return (
     <label className={classNames} style={style}>
       {label && <span className="h6">{label}</span>}
-      <Component
-        name={name}
-        placeholder={placeholder}
-        defaultValue={value}
-        disabled={disabled}
-        {...componentProps}
-        {...other}
-      />
-      {action && <div className="input-action">{action}</div>}
+      <span className="input-field">
+        <Component
+          name={name}
+          placeholder={placeholder}
+          defaultValue={value}
+          disabled={disabled}
+          {...componentProps}
+          {...other}
+        />
+        {action && <span className="input-action">{action}</span>}
+      </span>
       {errorMessage && <Hint error>{errorMessage}</Hint>}
     </label>
   );

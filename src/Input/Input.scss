@@ -1,5 +1,4 @@
 .input {
-  position: relative;
   display: block;
   font-size: 14px;
   text-align: left;
@@ -19,8 +18,9 @@
     border-color: red;
   }
 
-  &.-action input {
-    padding-right: 0;
+  &-field {
+    display: block;
+    position: relative;
   }
 
   &-action {
