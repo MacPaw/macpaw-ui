@@ -5,13 +5,9 @@ import Hint from '../Hint/Hint';
 const Input = (props) => {
   const {
     type = 'text',
-    value,
-    name,
-    placeholder = '',
+    multiline = false,
     errorMessage,
     size,
-    disabled = false,
-    multiline = false,
     style,
     action,
     label,
@@ -36,14 +32,7 @@ const Input = (props) => {
     <label className={classNames} style={style}>
       {label && <span className="h6">{label}</span>}
       <span className="input-field">
-        <Component
-          name={name}
-          placeholder={placeholder}
-          defaultValue={value}
-          disabled={disabled}
-          {...componentProps}
-          {...other}
-        />
+        <Component {...componentProps} {...other} />
         {action && <span className="input-action">{action}</span>}
       </span>
       {errorMessage && <Hint error>{errorMessage}</Hint>}
