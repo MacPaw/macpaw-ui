@@ -209,6 +209,16 @@
   svg {
     fill: currentColor;
   }
+
+  &.-asLink {
+    padding: 0;
+    font-size: 14px;
+    display: inline;
+    font-weight: normal;
+    background: none !important;
+    border: none !important;
+    color: var(--color-secondary);
+  }
 }
 
 @keyframes button-loading {

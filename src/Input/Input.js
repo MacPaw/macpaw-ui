@@ -11,6 +11,7 @@ const Input = (props) => {
     style,
     action,
     label,
+    className,
     ...other
   } = props;
 
@@ -21,7 +22,9 @@ const Input = (props) => {
     '-big': size === 'big',
   });
 
-  const componentProps = {};
+  const componentProps = {
+    className: cx(action && '-with-action', className),
+  };
   const Component = multiline ? 'textarea' : 'input';
 
   if (Component === 'input') {

@@ -10,6 +10,7 @@ const Button = (props) => {
     className,
     type = 'button',
     color = 'primary',
+    component = 'button',
     size,
     wide,
     disabled,
@@ -17,7 +18,7 @@ const Button = (props) => {
     outline,
     iconLeft,
     iconRight,
-    component = 'button',
+    asLink,
     ...other
   } = props;
 
@@ -27,6 +28,7 @@ const Button = (props) => {
     '-small': size === 'small',
     '-loading': loading,
     '-outline': outline,
+    '-asLink': asLink,
   });
 
   const componentProps = {};

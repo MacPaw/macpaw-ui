@@ -25,7 +25,8 @@
 
   &-action {
     position: absolute;
-    bottom: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     right: 18px;
   }
 
@@ -58,6 +59,10 @@
       border-color: transparent;
       cursor: not-allowed;
     }
+  }
+
+  input.-with-action {
+    padding-right: 90px;
   }
 
   textarea {
