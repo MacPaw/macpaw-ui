@@ -1,5 +1,6 @@
-export { default as Account } from './Account';
 export { default as Close } from './Close';
+export { default as Device } from './Device';
+export { default as DeviceActive } from './DeviceActive';
 export { default as Error } from './Error';
 export { default as Notification } from './Notification';
 export { default as Paw } from './Paw';
@@ -15,3 +16,7 @@ export { default as PaymentUnionpay } from './PaymentUnionpay';
 export { default as PaymentVisa } from './PaymentVisa';
 export { default as Play } from './Play';
 export { default as Refreshing } from './Refreshing';
+export { default as Search } from './Search';
+export { default as User } from './User';
+export { default as Warning } from './Warning';
+export { default as Account } from './Account';

@@ -1,13 +1,18 @@
-import { Refreshing, Error, Play } from '../src/Icons/jsx';
+import { useEffect } from 'react';
+import * as icons from '../src/Icons/jsx';
 
 ## Icons
 
-<Refreshing />
-<Error />
-<Play />
+export const Grid = () => {
+    const iconKeys = Object.keys(icons).sort().filter((key) => !key.startsWith('Payment'));
+    return iconKeys.map((iconKey, index) => {
+        const Component = icons[iconKey];
+        return (
+            <Component key={index} title={iconKey} />
+        );
+    });
+}
 
-```
-<Refreshing />
-<Error />
-<Play />
-```
+<div style={{display: 'grid', columnGap: 24, rowGap: 24, gridTemplateColumns: 'repeat(auto-fill, minmax(24px, 1fr))', alignItems: 'center', justifyItems: 'center'}}>
+    <Grid />
+</div>

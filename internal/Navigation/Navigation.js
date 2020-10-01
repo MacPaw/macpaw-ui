@@ -11,6 +11,7 @@ const pages = [
   'checkbox',
   'colors',
   'dialog',
+  'icons',
   'input',
   'loader',
   'panel',
