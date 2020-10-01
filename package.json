@@ -11,7 +11,7 @@
     "lib:js": "babel src --out-dir ./lib --presets=@babel/env,@babel/preset-react",
     "lib:css": "sass ./src/ui.scss ./lib/ui.css",
     "lib": "yarn lib:css && yarn lib:js && yarn types",
-    "deploy:s3": "deploy-aws-s3-cloudfront --non-interactive --source=out --bucket=ui.macpaw.com --destination=/ --distribution=E2NQDOZEC6GH2E"
+    "deploy:s3": "deploy-aws-s3-cloudfront --non-interactive --source=out --bucket=ui.macpaw.com --destination=/"
   },
   "peerDependencies": {
     "clsx": "^1.1.1",
