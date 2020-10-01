@@ -35,7 +35,7 @@ const Input = (props) => {
     <label className={classNames} style={style}>
       {label && <span className="h6">{label}</span>}
       <span className="input-field">
-        <Component {...componentProps} {...other} />
+        <Component {...componentProps} {...other} aria-label={label && other.placeholder} />
         {action && <span className="input-action">{action}</span>}
       </span>
       {errorMessage && <Hint error>{errorMessage}</Hint>}

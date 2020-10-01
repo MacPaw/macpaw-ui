@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import cx from 'clsx';
 import PawIcon from '../Icons/jsx/Paw';
 
-// TODO: forwardRef: https://github.com/mui-org/material-ui/blob/master/packages/material-ui/src/ButtonBase/ButtonBase.js
-
-const Button = (props) => {
+const Button = forwardRef((props, ref) => {
   const {
     children,
     className,
@@ -49,13 +47,13 @@ const Button = (props) => {
   }
 
   return (
-    <Component className={classNames} {...componentProps} {...other}>
+    <Component className={classNames} {...componentProps} {...other} ref={ref}>
       {isIconLeft && <span className="button-icon -left">{iconLeft}</span>}
       {loading && <PawIcon className="button-loader" />}
       {loading ? <span className="button-content">{children}</span> : children}
       {isIconRight && <span className="button-icon -right">{iconRight}</span>}
     </Component>
   );
-};
+});
 
 export default Button;
