@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgAccount(props) {
+function SvgAccountIcon(props) {
   return (
     <svg height={24} viewBox="0 0 24 24" width={24} {...props}>
       <path
@@ -11,4 +11,4 @@ function SvgAccount(props) {
   );
 }
 
-export default SvgAccount;
+export default SvgAccountIcon;

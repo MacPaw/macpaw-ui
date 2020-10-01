@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgPaymentUnionpay(props) {
+function SvgPaymentUnionPay(props) {
   return (
     <svg width={70} height={54} viewBox="0 0 70 54" {...props}>
       <defs>
@@ -9,7 +9,7 @@ function SvgPaymentUnionpay(props) {
           y1="21.188%"
           x2="117.899%"
           y2="87.183%"
-          id="payment_unionpay_svg__a"
+          id="payment_union_pay_svg__a"
         >
           <stop stopColor="#93949A" offset="0%" />
           <stop stopColor="#B8BAC6" offset="100%" />
@@ -19,7 +19,7 @@ function SvgPaymentUnionpay(props) {
           y1="27.778%"
           x2="22.852%"
           y2="45.269%"
-          id="payment_unionpay_svg__b"
+          id="payment_union_pay_svg__b"
         >
           <stop stopColor="#FDD2FF" stopOpacity={0.386} offset="0%" />
           <stop stopColor="#F2AFFF" stopOpacity={0} offset="100%" />
@@ -29,7 +29,7 @@ function SvgPaymentUnionpay(props) {
           y1="44.587%"
           x2="74.595%"
           y2="72.222%"
-          id="payment_unionpay_svg__e"
+          id="payment_union_pay_svg__e"
         >
           <stop stopColor="#FFF" stopOpacity={0} offset="0%" />
           <stop stopColor="#5A1CDA" stopOpacity={0.338} offset="100%" />
@@ -39,19 +39,19 @@ function SvgPaymentUnionpay(props) {
           y1="19.256%"
           x2="50%"
           y2="72.045%"
-          id="payment_unionpay_svg__d"
+          id="payment_union_pay_svg__d"
         >
           <stop stopColor="#FFF" offset="0%" />
           <stop stopColor="#FFF" offset="100%" />
         </linearGradient>
         <path
           d="M39.877 0c1.478 0 2.397 1.271 2.05 2.836l-4.925 22.332C36.655 26.728 35.175 28 33.697 28H2.124c-1.48 0-2.397-1.272-2.05-2.832L4.997 2.836C5.343 1.27 6.82 0 8.298 0h31.579z"
-          id="payment_unionpay_svg__c"
+          id="payment_union_pay_svg__c"
         />
       </defs>
       <g transform="translate(-10 -17)" fill="none" fillRule="evenodd">
         <rect
-          fill="url(#payment_unionpay_svg__a)"
+          fill="url(#payment_union_pay_svg__a)"
           x={10}
           y={17}
           width={70}
@@ -83,14 +83,14 @@ function SvgPaymentUnionpay(props) {
             transform="translate(24 30)"
           >
             <use
-              fill="url(#payment_unionpay_svg__b)"
-              xlinkHref="#payment_unionpay_svg__c"
+              fill="url(#payment_union_pay_svg__b)"
+              xlinkHref="#payment_union_pay_svg__c"
             />
             <path
-              stroke="url(#payment_unionpay_svg__d)"
+              stroke="url(#payment_union_pay_svg__d)"
               strokeWidth={3.594}
               d="M39.877-1.797H8.299c-1.15 0-2.313.462-3.247 1.264C4.165.23 3.498 1.29 3.243 2.45l-4.925 22.33c-.3 1.354.004 2.563.64 3.443.688.949 1.784 1.573 3.166 1.573h31.573c1.147 0 2.31-.461 3.244-1.262.89-.762 1.558-1.82 1.816-2.976l4.925-22.336c.3-1.356-.003-2.565-.64-3.445-.686-.95-1.783-1.575-3.165-1.575z"
-              fill="url(#payment_unionpay_svg__e)"
+              fill="url(#payment_union_pay_svg__e)"
               fillRule="evenodd"
             />
           </g>
@@ -100,4 +100,4 @@ function SvgPaymentUnionpay(props) {
   );
 }
 
-export default SvgPaymentUnionpay;
+export default SvgPaymentUnionPay;

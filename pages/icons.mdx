@@ -4,7 +4,7 @@ import * as icons from '../src/Icons/jsx';
 ## Icons
 
 export const Grid = () => {
-    const iconKeys = Object.keys(icons).sort().filter((key) => !key.startsWith('Payment'));
+    const iconKeys = Object.keys(icons).sort().filter((key) => key.endsWith('Icon'));
     return iconKeys.map((iconKey, index) => {
         const Component = icons[iconKey];
         return (

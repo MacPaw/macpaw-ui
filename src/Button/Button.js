@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import cx from 'clsx';
-import PawIcon from '../Icons/jsx/Paw';
+import PawIcon from '../Icons/jsx/PawIcon';
 
 const Button = forwardRef((props, ref) => {
   const {

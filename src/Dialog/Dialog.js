@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import cx from 'clsx';
-import CloseIcon from '../Icons/jsx/Close';
+import CloseIcon from '../Icons/jsx/CloseIcon';
 
 const Dialog = (props) => {
   const {

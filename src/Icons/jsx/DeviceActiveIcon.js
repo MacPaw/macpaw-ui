@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgDeviceActive(props) {
+function SvgDeviceActiveIcon(props) {
   return (
     <svg width={24} height={24} viewBox="0 0 24 24" {...props}>
       <path d="M17 2H7a5 5 0 00-5 5v6a5 5 0 005 5h10a5 5 0 005-5V7a5 5 0 00-5-5zM7 4h10a3 3 0 013 3v6a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3z" />
@@ -9,4 +9,4 @@ function SvgDeviceActive(props) {
   );
 }
 
-export default SvgDeviceActive;
+export default SvgDeviceActiveIcon;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgRefreshing(props) {
+function SvgRefreshingIcon(props) {
   return (
     <svg width={24} height={24} viewBox="0 0 24 24" {...props}>
       <g fillRule="evenodd" transform="matrix(1 0 0 -1 0 21)">
@@ -24,4 +24,4 @@ function SvgRefreshing(props) {
   );
 }
 
-export default SvgRefreshing;
+export default SvgRefreshingIcon;

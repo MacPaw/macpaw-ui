@@ -7,7 +7,7 @@ import JCB from '../Icons/jsx/PaymentJcb';
 import Maestro from '../Icons/jsx/PaymentMaestro';
 import Master from '../Icons/jsx/PaymentMaster';
 import PayPal from '../Icons/jsx/PaymentPaypal';
-import UnionPay from '../Icons/jsx/PaymentUnionpay';
+import UnionPay from '../Icons/jsx/PaymentUnionPay';
 import Visa from '../Icons/jsx/PaymentVisa';
 
 const Payment = (props) => {
