@@ -4,7 +4,7 @@
   text-align: left;
 
   &.-medium input {
-    padding: 10px 15px;
+    padding: 8px 15px 9px;
   }
 
   &.-small input {
@@ -32,9 +32,9 @@
 
   input, textarea {
     width: 100%;
-    padding: 14px 18px;
+    padding: 12px 18px 13px;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 16px;
     font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
     line-height: 1.2;
     border: 2px solid rgba(111,114,121, .16);
