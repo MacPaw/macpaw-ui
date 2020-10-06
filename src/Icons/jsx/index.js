@@ -7,6 +7,7 @@ export { default as DropdownIcon } from './DropdownIcon';
 export { default as ErrorIcon } from './ErrorIcon';
 export { default as HelpIcon } from './HelpIcon';
 export { default as InfoIcon } from './InfoIcon';
+export { default as Macpaw } from './Macpaw';
 export { default as NotificationIcon } from './NotificationIcon';
 export { default as PawIcon } from './PawIcon';
 export { default as PaymentAmex } from './PaymentAmex';

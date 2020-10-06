@@ -11,6 +11,7 @@ export const DropdownIcon: SVGComponent;
 export const ErrorIcon: SVGComponent;
 export const HelpIcon: SVGComponent;
 export const InfoIcon: SVGComponent;
+export const Macpaw: SVGComponent;
 export const NotificationIcon: SVGComponent;
 export const PawIcon: SVGComponent;
 export const PaymentAmex: SVGComponent;
