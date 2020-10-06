@@ -1,7 +1,9 @@
 export { default as AccountIcon } from './AccountIcon';
+export { default as BackIcon } from './BackIcon';
 export { default as CloseIcon } from './CloseIcon';
 export { default as DeviceActiveIcon } from './DeviceActiveIcon';
 export { default as DeviceIcon } from './DeviceIcon';
+export { default as DropdownIcon } from './DropdownIcon';
 export { default as ErrorIcon } from './ErrorIcon';
 export { default as HelpIcon } from './HelpIcon';
 export { default as InfoIcon } from './InfoIcon';
