@@ -1,4 +1,4 @@
-import {FC, ReactNode, HTMLProps, MouseEvent} from 'react';
+import {FC, ReactNode, HTMLProps} from 'react';
 
 interface Props extends HTMLProps<HTMLButtonElement> {
   type?: 'button' | 'submit';

@@ -45,7 +45,7 @@
     "react-dom": "^16.13.1",
     "sass": "^1.26.11"
   },
-  "typings": "lib/ui.d.ts",
+  "types": "lib/ui.d.ts",
   "files": [
     "src",
     "lib"
