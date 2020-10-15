@@ -13,6 +13,7 @@ const pages = [
   'dialog',
   'icons',
   'input',
+  'language-switcher',
   'loader',
   'panel',
   'payment',
@@ -20,7 +21,6 @@ const pages = [
   'select',
   'table',
   'typography',
-  'languages-switcher'
 ]
 
 const Navigation = () => (
