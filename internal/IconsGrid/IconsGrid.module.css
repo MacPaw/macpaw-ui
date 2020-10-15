@@ -1,0 +1,9 @@
+.iconsGrid {
+    margin-top: 16px;
+    margin-bottom: 64px;
+    display: grid;
+    column-gap: 24px;
+    row-gap: 24px;
+    align-items: center;
+    justify-items: center;
+}

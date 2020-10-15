@@ -1,57 +1,14 @@
-import { useEffect } from "react";
-import * as icons from "../src/Icons/jsx";
-import * as languageIcons from "../src/LanguageIcons/jsx";
+import { useEffect } from 'react';
+import IconsGrid from '../internal/IconsGrid/IconsGrid';
 
-## Icons
+## UI Icons
 
-export const Grid = (props) => {
-  const iconKeys = Object.keys(props.icons)
-    .sort()
-    .filter((key) => key.endsWith("Icon"));
-  return iconKeys.map((iconKey, index) => {
-    const Component = props.icons[iconKey];
-    if (props.languages) {
-      return (
-        <div
-          key={index}
-          style={{
-            boxShadow: "1px 1px 3px rgba(0,0,0, .3)",
-            lineHeight: "0",
-          }}
-        >
-          <Component title={iconKey} />
-        </div>
-      );
-    }
-    return <Component key={index} title={iconKey} />;
-  });
-};
+<IconsGrid filterFunction={(key) => key.endsWith('Icon')} style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(24px, 1fr))' }} />
 
-<div
-  style={{
-    display: "grid",
-    columnGap: 24,
-    rowGap: 24,
-    gridTemplateColumns: "repeat(auto-fill, minmax(24px, 1fr))",
-    alignItems: "center",
-    justifyItems: "center",
-  }}
->
-  <Grid icons={icons} />
-</div>
-<br />
+## Languages Icons
 
-## Language Icons
+<IconsGrid filterFunction={(key) => key.startsWith('Language')} style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(22px, 1fr))' }} />
 
-<div
-  style={{
-    display: "grid",
-    columnGap: 24,
-    rowGap: 24,
-    gridTemplateColumns: "repeat(auto-fill, minmax(24px, 1fr))",
-    alignItems: "center",
-    justifyItems: "center",
-  }}
->
-  <Grid icons={languageIcons} languages />
-</div>
+## Payment Icons
+
+<IconsGrid filterFunction={(key) => key.startsWith('Payment')} style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(70px, 1fr))' }} />
