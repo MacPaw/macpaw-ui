@@ -1,0 +1,52 @@
+.lang {
+  display: inline-block;
+  &-switcher {
+    position: relative;
+    select {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-appearance: none;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 2;
+    }
+  }
+  &-selected {
+    vertical-align: top;
+    padding: 4px 27px 6px 0;
+    font-size: 0;
+    cursor: pointer;
+    white-space: nowrap;
+    .icon {
+      margin-right: 10px;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0, .18);
+    }
+    .lang-name {
+      font-size: 13px;
+      font-weight: 400;
+      color: #333;
+      transition: all .2s ease-in-out;
+    }
+    .icon, .lang-name {
+      display: inline-block;
+      vertical-align: middle;
+      pointer-events: none;
+    }
+    .arrow {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+      right: 0;
+      transition: all .2s ease-in-out;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

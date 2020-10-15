@@ -1,0 +1,28 @@
+import { LanguagesSwitcher } from "../src/ui";
+import EnIcon from "../src/LanguageIcons/jsx/EnIcon";
+import DropdownIcon from "../src/Icons/jsx/DropdownIcon";
+
+# Languages Switcher
+
+<LanguagesSwitcher
+  currentLanguage={{
+    icon: <EnIcon />,
+    languageName: "English",
+    languageCode: "en",
+  }}
+  languages={[
+    {
+      languageName: "English",
+      languageCode: "en",
+    },
+    {
+      languageName: "Deutcsh",
+      languageCode: "de",
+    },
+    {
+      languageName: "Italiano",
+      languageCode: "it",
+    },
+  ]}
+  arrow={<DropdownIcon />}
+/>

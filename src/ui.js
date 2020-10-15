@@ -20,3 +20,4 @@ export { default as Radio } from './Radio/Radio';
 export { default as Select } from './Select/Select';
 export { default as Table } from './Table/Table';
 export { default as TableRow } from './TableRow/TableRow';
+export { default as LanguagesSwitcher } from './LanguagesSwitcher/LanguagesSwitcher';

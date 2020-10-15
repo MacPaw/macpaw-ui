@@ -1,18 +1,57 @@
-import { useEffect } from 'react';
-import * as icons from '../src/Icons/jsx';
+import { useEffect } from "react";
+import * as icons from "../src/Icons/jsx";
+import * as languageIcons from "../src/LanguageIcons/jsx";
 
 ## Icons
 
-export const Grid = () => {
-    const iconKeys = Object.keys(icons).sort().filter((key) => key.endsWith('Icon'));
-    return iconKeys.map((iconKey, index) => {
-        const Component = icons[iconKey];
-        return (
-            <Component key={index} title={iconKey} />
-        );
-    });
-}
+export const Grid = (props) => {
+  const iconKeys = Object.keys(props.icons)
+    .sort()
+    .filter((key) => key.endsWith("Icon"));
+  return iconKeys.map((iconKey, index) => {
+    const Component = props.icons[iconKey];
+    if (props.languages) {
+      return (
+        <div
+          key={index}
+          style={{
+            boxShadow: "1px 1px 3px rgba(0,0,0, .3)",
+            lineHeight: "0",
+          }}
+        >
+          <Component title={iconKey} />
+        </div>
+      );
+    }
+    return <Component key={index} title={iconKey} />;
+  });
+};
 
-<div style={{display: 'grid', columnGap: 24, rowGap: 24, gridTemplateColumns: 'repeat(auto-fill, minmax(24px, 1fr))', alignItems: 'center', justifyItems: 'center'}}>
-    <Grid />
+<div
+  style={{
+    display: "grid",
+    columnGap: 24,
+    rowGap: 24,
+    gridTemplateColumns: "repeat(auto-fill, minmax(24px, 1fr))",
+    alignItems: "center",
+    justifyItems: "center",
+  }}
+>
+  <Grid icons={icons} />
+</div>
+<br />
+
+## Language Icons
+
+<div
+  style={{
+    display: "grid",
+    columnGap: 24,
+    rowGap: 24,
+    gridTemplateColumns: "repeat(auto-fill, minmax(24px, 1fr))",
+    alignItems: "center",
+    justifyItems: "center",
+  }}
+>
+  <Grid icons={languageIcons} languages />
 </div>

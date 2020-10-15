@@ -1,0 +1,13 @@
+export { default as EnIcon } from './EnIcon';
+export { default as DeIcon } from './DeIcon';
+export { default as EsIcon } from './EsIcon';
+export { default as FrIcon } from './FrIcon';
+export { default as ItIcon } from './ItIcon';
+export { default as JaIcon } from './JaIcon';
+export { default as KoIcon } from './KoIcon';
+export { default as NlIcon } from './NlIcon';
+export { default as PlIcon } from './PlIcon';
+export { default as PtIcon } from './PtIcon';
+export { default as RuIcon } from './RuIcon';
+export { default as UkIcon } from './UkIcon';
+export { default as ZhIcon } from './ZhIcon';

@@ -20,6 +20,7 @@ const pages = [
   'select',
   'table',
   'typography',
+  'languages-switcher'
 ]
 
 const Navigation = () => (
