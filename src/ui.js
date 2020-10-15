@@ -13,6 +13,8 @@ export { default as FormRow } from './FormRow/FormRow';
 export { default as Hint } from './Hint/Hint';
 export { default as Input } from './Input/Input';
 export { default as Label } from './Label/Label';
+export { default as LanguageIcon } from './LanguageIcon/LanguageIcon';
+export { default as LanguageSwitcher } from './LanguageSwitcher/LanguageSwitcher';
 export { default as Loader } from './Loader/Loader';
 export { default as Panel } from './Panel/Panel';
 export { default as Payment } from './Payment/Payment';

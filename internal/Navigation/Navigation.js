@@ -13,6 +13,7 @@ const pages = [
   'dialog',
   'icons',
   'input',
+  'language-switcher',
   'loader',
   'panel',
   'payment',

@@ -1,18 +1,14 @@
 import { useEffect } from 'react';
-import * as icons from '../src/Icons/jsx';
+import IconsGrid from '../internal/IconsGrid/IconsGrid';
 
-## Icons
+## UI Icons
 
-export const Grid = () => {
-    const iconKeys = Object.keys(icons).sort().filter((key) => key.endsWith('Icon'));
-    return iconKeys.map((iconKey, index) => {
-        const Component = icons[iconKey];
-        return (
-            <Component key={index} title={iconKey} />
-        );
-    });
-}
+<IconsGrid filterFunction={(key) => key.endsWith('Icon')} style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(24px, 1fr))' }} />
 
-<div style={{display: 'grid', columnGap: 24, rowGap: 24, gridTemplateColumns: 'repeat(auto-fill, minmax(24px, 1fr))', alignItems: 'center', justifyItems: 'center'}}>
-    <Grid />
-</div>
+## Languages Icons
+
+<IconsGrid filterFunction={(key) => key.startsWith('Language')} style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(22px, 1fr))' }} />
+
+## Payment Icons
+
+<IconsGrid filterFunction={(key) => key.startsWith('Payment')} style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(70px, 1fr))' }} />
