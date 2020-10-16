@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'clsx';
 import LanguageIcon from '../LanguageIcon/LanguageIcon';
 import DropdownIcon from '../Icons/jsx/DropdownIcon';
 
@@ -38,10 +39,15 @@ const getLocaleName = (locale) => {
 };
 
 const LanguageSwitcher = (props) => {
-  const { currentLanguage, availableLanguages, ...other } = props;
+  const {
+    currentLanguage,
+    availableLanguages,
+    className,
+    ...other
+  } = props;
 
   return (
-    <div className="languageSwitcher">
+    <div className={cx('languageSwitcher', className)}>
       <LanguageIcon language={currentLanguage} className="languageSwitcher-icon" />
       <div className="languageSwitcher-name">
         {getLocaleName(currentLanguage)}
