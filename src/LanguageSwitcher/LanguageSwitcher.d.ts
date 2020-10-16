@@ -1,4 +1,4 @@
-import {FC, ReactNode, HTMLProps} from 'react';
+import {FC, HTMLProps} from 'react';
 import {Language} from '../types';
 
 interface Props extends HTMLProps<HTMLSelectElement> {
@@ -6,6 +6,6 @@ interface Props extends HTMLProps<HTMLSelectElement> {
   availableLanguages: Language[];
 }
 
-declare const Input: FC<Props>;
+declare const LanguageSwitcher: FC<Props>;
 
-export default Input;
+export default LanguageSwitcher;
