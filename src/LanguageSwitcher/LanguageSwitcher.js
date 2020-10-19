@@ -13,12 +13,12 @@ const getLocaleName = (locale) => {
       return 'Español';
     case 'fr':
       return 'Français';
+    case 'it':
+      return 'Italiano';
     case 'ja':
       return '日本語';
     case 'ko':
       return '한국어';
-    case 'lv':
-      return 'Latvian';
     case 'nl':
       return 'Dutch';
     case 'pl':
@@ -27,8 +27,8 @@ const getLocaleName = (locale) => {
       return 'Português do Brasil';
     case 'ru':
       return 'Русский';
-    case 'sv':
-      return 'Swedish';
+    case 'tr':
+      return 'Turkish';
     case 'uk':
       return 'Українська';
     case 'zh':

@@ -3,15 +3,15 @@ import LanguageDe from '../Icons/jsx/LanguageDe';
 import LanguageEn from '../Icons/jsx/LanguageEn';
 import LanguageEs from '../Icons/jsx/LanguageEs';
 import LanguageFr from '../Icons/jsx/LanguageFr';
+import LanguageIt from '../Icons/jsx/LanguageIt';
 import LanguageJa from '../Icons/jsx/LanguageJa';
 import LanguageKo from '../Icons/jsx/LanguageKo';
-import LanguageLv from '../Icons/jsx/LanguageLv';
 import LanguageNl from '../Icons/jsx/LanguageNl';
 import LanguagePl from '../Icons/jsx/LanguagePl';
 import LanguagePt from '../Icons/jsx/LanguagePt';
-import LanguageSv from '../Icons/jsx/LanguageSv';
-import LanguageUk from '../Icons/jsx/LanguageUk';
 import LanguageRu from '../Icons/jsx/LanguageRu';
+import LanguageTr from '../Icons/jsx/LanguageTr';
+import LanguageUk from '../Icons/jsx/LanguageUk';
 import LanguageZh from '../Icons/jsx/LanguageZh';
 
 const LanguageIcon = (props) => {
@@ -26,12 +26,12 @@ const LanguageIcon = (props) => {
       return <LanguageEs {...other} />;
     case 'fr':
       return <LanguageFr {...other} />;
+    case 'it':
+      return <LanguageIt {...other} />;
     case 'ja':
       return <LanguageJa {...other} />;
     case 'ko':
       return <LanguageKo {...other} />;
-    case 'lv':
-      return <LanguageLv {...other} />;
     case 'nl':
       return <LanguageNl {...other} />;
     case 'pl':
@@ -40,8 +40,8 @@ const LanguageIcon = (props) => {
       return <LanguagePt {...other} />;
     case 'ru':
       return <LanguageRu {...other} />;
-    case 'sv':
-      return <LanguageSv {...other} />;
+    case 'tr':
+      return <LanguageTr {...other} />;
     case 'uk':
       return <LanguageUk {...other} />;
     case 'zh':

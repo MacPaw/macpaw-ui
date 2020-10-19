@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgLanguage(props) {
+function SvgLanguageIt(props) {
   return (
     <svg width={22} height={16} viewBox="0 0 320 240" {...props}>
       <g fill="none">
@@ -12,4 +12,4 @@ function SvgLanguage(props) {
   );
 }
 
-export default SvgLanguage;
+export default SvgLanguageIt;
