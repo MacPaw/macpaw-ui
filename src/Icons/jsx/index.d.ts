@@ -7,7 +7,6 @@ export const BackIcon: SVGComponent;
 export const CloseIcon: SVGComponent;
 export const DeviceActiveIcon: SVGComponent;
 export const DeviceIcon: SVGComponent;
-export const DropdownBoldIcon: SVGComponent;
 export const DropdownIcon: SVGComponent;
 export const ErrorIcon: SVGComponent;
 export const HelpIcon: SVGComponent;
