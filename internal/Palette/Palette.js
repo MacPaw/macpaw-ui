@@ -4,11 +4,12 @@ import styles from './Palette.module.css';
 const getTextColor = (value) => {
   const darkText = [
     '--color-white',
+    '--color-attention',
   ];
   return darkText.includes(value) ? '#000' : '#fff';
 };
 
-export default ({ items }) => {
+export default function Palette ({ items }) {
   const withGradients = items.find((item) => item.gradient);
 
   return (
@@ -17,7 +18,7 @@ export default ({ items }) => {
         const { name, color, gradient } = item;
         const colorStyle = {
           backgroundColor: `var(${color[0]})`,
-          color: getTextColor([0]),
+          color: getTextColor(color[0]),
         };
         let gradientStyle;
         if (gradient) {

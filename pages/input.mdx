@@ -7,10 +7,10 @@ import { Input, FormRow, Button } from '../src/ui';
         <Input type="text" name="name" placeholder="Name" onChange={() => {}} label="Default" />
     </FormRow>
     <FormRow>
-        <Input type="text" name="name" value="Wrong value" errorMessage="Error message" label="With error" />
+        <Input type="text" name="name" value="Wrong value" onChange={() => {}} errorMessage="Error message" label="With error" />
     </FormRow>
     <FormRow>
-        <Input type="text" name="name" value="None" placeholder="Disabled" disabled label="Disabled" />
+        <Input type="text" name="name" value="None" onChange={() => {}} placeholder="Disabled" disabled label="Disabled" />
     </FormRow>
 </div>
 
@@ -20,10 +20,10 @@ import { Input, FormRow, Button } from '../src/ui';
         <Input type="text" name="name" placeholder="Name" onChange={() => {}} label="Default" />
     </FormRow>
     <FormRow>
-        <Input type="text" name="name" value="Wrong value" errorMessage="Error message" label="With error" />
+        <Input type="text" name="name" value="Wrong value" onChange={() => {}} errorMessage="Error message" label="With error" />
     </FormRow>
     <FormRow>
-        <Input type="text" name="name" value="None" placeholder="Disabled" disabled label="Disabled" />
+        <Input type="text" name="name" value="None" onChange={() => {}} placeholder="Disabled" disabled label="Disabled" />
     </FormRow>
 </div>
 ```
@@ -31,12 +31,12 @@ import { Input, FormRow, Button } from '../src/ui';
 ## Input with Action
 
 <div style={{ width: 300 }}>
-    <Input type="password" name="password" value="password" placeholder="Password" action={<Button asLink>Forgot?</Button>} />
+    <Input type="password" name="password" value="password" onChange={() => {}} placeholder="Password" action={<Button asLink>Forgot?</Button>} />
 </div>
 
 ```
 <div style={{ width: 300 }}>
-    <Input type="password" name="password" value="password" placeholder="Password" action={<Button asLink>Forgot?</Button>} />
+    <Input type="password" name="password" value="password" onChange={() => {}} placeholder="Password" action={<Button asLink>Forgot?</Button>} />
 </div>
 ```
 
@@ -71,11 +71,11 @@ import { Input, FormRow, Button } from '../src/ui';
 ### Multiline
 
 <div style={{ width: 300 }}>
-    <Input multiline rows={5} name="feedback" value="Feedback message" label="Feedback" />
+    <Input multiline rows={5} name="feedback" value="Feedback message" onChange={() => {}} label="Feedback" />
 </div>
 
 ```
 <div style={{ width: 300 }}>
-    <Input multiline rows={5} name="feedback" value="Feedback message" label="Feedback" />
+    <Input multiline rows={5} name="feedback" value="Feedback message" onChange={() => {}} label="Feedback" />
 </div>
 ```
