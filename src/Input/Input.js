@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import cx from 'clsx';
 import Hint from '../Hint/Hint';
 
-const Input = (props) => {
+const Input = forwardRef((props, ref) => {
   const {
     type = 'text',
     multiline = false,
@@ -35,12 +35,12 @@ const Input = (props) => {
     <label className={classNames} style={style}>
       {label && <span className="h6">{label}</span>}
       <span className="input-field">
-        <Component {...componentProps} {...other} aria-label={label && other.placeholder} />
+        <Component {...componentProps} {...other} aria-label={label && other.placeholder} ref={ref} />
         {action && <span className="input-action">{action}</span>}
       </span>
       {errorMessage && <Hint error>{errorMessage}</Hint>}
     </label>
   );
-};
+});
 
 export default Input;
