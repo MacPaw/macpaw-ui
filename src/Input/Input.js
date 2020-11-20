@@ -35,7 +35,12 @@ const Input = forwardRef((props, ref) => {
     <label className={classNames} style={style}>
       {label && <span className="h6">{label}</span>}
       <span className="input-field">
-        <Component {...componentProps} {...other} aria-label={label && other.placeholder} ref={ref} />
+        <Component
+          {...componentProps}
+          {...other}
+          aria-label={label && other.placeholder}
+          ref={ref}
+        />
         {action && <span className="input-action">{action}</span>}
       </span>
       {errorMessage && <Hint error>{errorMessage}</Hint>}
