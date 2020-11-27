@@ -2,10 +2,9 @@ import {FC, HTMLProps} from 'react';
 
 interface Props extends HTMLProps<HTMLElement> {
   large?: boolean;
-  text: string;
   error?: boolean;
 }
 
-declare const Input: FC<Props>;
+declare const Hint: FC<Props>;
 
-export default Input;
+export default Hint;
