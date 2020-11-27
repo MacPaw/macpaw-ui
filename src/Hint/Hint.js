@@ -6,10 +6,11 @@ const Hint = (props) => {
     large,
     children,
     error,
+    className,
     ...other
   } = props;
 
-  const hintClassName = cx('hint', {
+  const hintClassName = cx('hint', className, {
     '-large': large,
     '-error': error,
   });
