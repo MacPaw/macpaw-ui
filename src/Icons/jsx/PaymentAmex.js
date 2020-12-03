@@ -2,7 +2,13 @@ import * as React from 'react';
 
 function SvgPaymentAmex(props) {
   return (
-    <svg width={70} height={54} viewBox="0 0 70 54" {...props}>
+    <svg
+      width={70}
+      height={54}
+      viewBox="0 0 70 54"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <defs>
         <linearGradient
           x1="0%"

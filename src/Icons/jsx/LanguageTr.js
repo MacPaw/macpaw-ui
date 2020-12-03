@@ -2,7 +2,13 @@ import * as React from 'react';
 
 function SvgLanguageTr(props) {
   return (
-    <svg width={22} height={16} viewBox="0 0 320 240" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={22}
+      height={16}
+      viewBox="0 0 320 240"
+      {...props}
+    >
       <g fill="none">
         <path fill="#F31930" d="M0 0h320v240H0z" />
         <path

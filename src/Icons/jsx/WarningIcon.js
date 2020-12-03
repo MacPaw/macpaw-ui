@@ -2,7 +2,14 @@ import * as React from 'react';
 
 function SvgWarningIcon(props) {
   return (
-    <svg width={22} height={18} viewBox="0 0 22 18" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      width={22}
+      height={18}
+      viewBox="0 0 22 18"
+      {...props}
+    >
       <defs>
         <path
           id="warning_icon_svg__a"

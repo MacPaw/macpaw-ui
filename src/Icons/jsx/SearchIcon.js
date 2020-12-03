@@ -2,7 +2,14 @@ import * as React from 'react';
 
 function SvgSearchIcon(props) {
   return (
-    <svg width={24} height={24} viewBox="0 0 24 24" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+      {...props}
+    >
       <defs>
         <path
           id="search_icon_svg__a"
