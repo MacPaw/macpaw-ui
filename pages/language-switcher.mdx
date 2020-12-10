@@ -8,13 +8,13 @@ export const Example = () => {
     const [currentLanguage, setCurrentLanguage] = useState('en');
     console.log(currentLanguage);
     return (
-        <>
+        <React.Fragment>
             <LanguageSwitcher
                 currentLanguage={currentLanguage}
                 availableLanguages={["en", "de", "uk"]}
                 onChange={(event) => setCurrentLanguage(event.target.value)}
             />
-        </>
+        </React.Fragment>
     );
 };
 

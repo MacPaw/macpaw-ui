@@ -8,7 +8,7 @@ export const Example = () => {
     const open = () => setIsOpen(true);
     const close = () => setIsOpen(false);
     return (
-        <>
+        <React.Fragment>
             <Button onClick={open}>Open Dialog</Button>
             <Dialog isOpen={isOpen} onRequestClose={close}>
                 <DialogContent>
@@ -26,7 +26,7 @@ export const Example = () => {
                     <Button color="warning">Cancel Subscription</Button>
                 </DialogActions>
             </Dialog>
-        </>
+        </React.Fragment>
     );
 };
 
