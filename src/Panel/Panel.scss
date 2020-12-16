@@ -6,6 +6,10 @@
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 
+  @include mobile {
+    padding: 16px;
+  }
+
   &.-outline {
     background: none;
     border: 2px solid rgba(0, 0, 0, 0.08);
