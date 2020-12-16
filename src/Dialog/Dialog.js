@@ -10,9 +10,6 @@ const Dialog = (props) => {
     onRequestClose,
     withCloseButton = true,
     className,
-    icon,
-    actionsRight,
-    actionsLeft,
     children,
     ...other
   } = props;
@@ -40,7 +37,7 @@ const Dialog = (props) => {
     return () => {
       document.removeEventListener('keydown', keyListener);
     };
-  }, []);
+  }, [shouldCloseOnEsc]);
 
   if (!isOpen) return null;
 

@@ -3,7 +3,7 @@ const path = require('path');
 const readline = require('readline');
 
 const typesFileLines = [
-  "import {FC, SVGAttributes} from 'react';",
+  'import {FC, SVGAttributes} from \'react\';',
   '',
   'interface SVGComponent extends FC<SVGAttributes<SVGElement>> {}',
   '',

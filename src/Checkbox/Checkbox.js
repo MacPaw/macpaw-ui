@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import cx from 'clsx';
 
+// eslint-disable-next-line react/display-name
 const Checkbox = forwardRef((props, ref) => {
   const {
     className,
