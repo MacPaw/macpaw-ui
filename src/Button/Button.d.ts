@@ -13,6 +13,7 @@ interface Props extends HTMLProps<HTMLButtonElement> {
   href?: string;
   component?: ReactNode;
   asLink?: boolean;
+  icon?: boolean;
   [x:string]: any;
 }
 

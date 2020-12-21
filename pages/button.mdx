@@ -1,5 +1,5 @@
-import { Button } from '../src//ui';
-import { PlayIcon } from '../src/Icons/jsx';
+import { Button } from '../src/ui';
+import { Refresh } from '../src/Icons/jsx';
 
 # Button
 
@@ -83,4 +83,14 @@ Used for main action on current page, usually it’s one of two, either Free Dow
 ```
 <Button href="#" color="primary" style={{margin: 8}}>Default</Button>
 <Button href="#" asLink style={{marginLeft: 8}}>Inline as Link</Button>
+```
+
+## Icon Button
+
+<Button color="primary" icon style={{margin: 8}}><Refresh /></Button>
+<Button color="secondary" icon outline style={{margin: 8}}><Refresh /></Button>
+
+```
+<Button color="primary" icon style={{margin: 8}}><Refresh /></Button>
+<Button color="secondary" icon outline style={{margin: 8}}><Refresh /></Button>
 ```

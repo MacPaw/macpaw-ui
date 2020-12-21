@@ -206,10 +206,6 @@
     }
   }
 
-  svg {
-    fill: currentColor;
-  }
-
   &.-asLink {
     padding: 0;
     min-width: auto;
@@ -219,6 +215,18 @@
     background: none !important;
     border: none !important;
     color: var(--color-secondary);
+  }
+
+  &.-icon {
+    min-width: auto;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  svg {
+    fill: currentColor;
   }
 }
 

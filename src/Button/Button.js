@@ -17,6 +17,7 @@ const Button = forwardRef((props, ref) => {
     iconLeft,
     iconRight,
     asLink,
+    icon,
     ...other
   } = props;
 
@@ -27,6 +28,7 @@ const Button = forwardRef((props, ref) => {
     '-loading': loading,
     '-outline': outline,
     '-asLink': asLink,
+    '-icon': icon,
   });
 
   const componentProps = {};
