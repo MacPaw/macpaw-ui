@@ -39,6 +39,7 @@ export const PaymentPaypal: SVGComponent;
 export const PaymentUnionPay: SVGComponent;
 export const PaymentVisa: SVGComponent;
 export const PlayIcon: SVGComponent;
+export const Refresh: SVGComponent;
 export const RefreshingIcon: SVGComponent;
 export const SearchIcon: SVGComponent;
 export const SettingsIcon: SVGComponent;
