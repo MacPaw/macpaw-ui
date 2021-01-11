@@ -1,6 +1,7 @@
 export { default as AccountIcon } from './AccountIcon';
 export { default as BackIcon } from './BackIcon';
 export { default as CloseIcon } from './CloseIcon';
+export { default as Copy } from './Copy';
 export { default as DeviceActiveIcon } from './DeviceActiveIcon';
 export { default as DeviceIcon } from './DeviceIcon';
 export { default as DropdownIcon } from './DropdownIcon';
@@ -41,4 +42,3 @@ export { default as SearchIcon } from './SearchIcon';
 export { default as SettingsIcon } from './SettingsIcon';
 export { default as UserIcon } from './UserIcon';
 export { default as WarningIcon } from './WarningIcon';
-export { default as CopyIcon } from './CopyIcon';
