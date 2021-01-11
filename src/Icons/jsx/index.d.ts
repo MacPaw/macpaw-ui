@@ -45,3 +45,4 @@ export const SearchIcon: SVGComponent;
 export const SettingsIcon: SVGComponent;
 export const UserIcon: SVGComponent;
 export const WarningIcon: SVGComponent;
+export const CopyIcon: SVGComponent;

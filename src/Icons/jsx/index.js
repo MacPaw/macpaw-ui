@@ -41,3 +41,4 @@ export { default as SearchIcon } from './SearchIcon';
 export { default as SettingsIcon } from './SettingsIcon';
 export { default as UserIcon } from './UserIcon';
 export { default as WarningIcon } from './WarningIcon';
+export { default as CopyIcon } from './CopyIcon';
