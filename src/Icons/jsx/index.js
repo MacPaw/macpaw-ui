@@ -6,6 +6,7 @@ export { default as DeviceActiveIcon } from './DeviceActiveIcon';
 export { default as DeviceIcon } from './DeviceIcon';
 export { default as DropdownIcon } from './DropdownIcon';
 export { default as ErrorIcon } from './ErrorIcon';
+export { default as ExternalIcon } from './ExternalIcon';
 export { default as HelpIcon } from './HelpIcon';
 export { default as InfoIcon } from './InfoIcon';
 export { default as LanguageDe } from './LanguageDe';
