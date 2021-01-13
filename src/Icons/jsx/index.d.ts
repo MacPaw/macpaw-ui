@@ -10,6 +10,7 @@ export const DeviceActiveIcon: SVGComponent;
 export const DeviceIcon: SVGComponent;
 export const DropdownIcon: SVGComponent;
 export const ErrorIcon: SVGComponent;
+export const ExternalIcon: SVGComponent;
 export const HelpIcon: SVGComponent;
 export const InfoIcon: SVGComponent;
 export const LanguageDe: SVGComponent;
