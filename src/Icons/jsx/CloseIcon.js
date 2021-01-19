@@ -3,27 +3,32 @@ import * as React from 'react';
 function SvgCloseIcon(props) {
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width={24}
       height={24}
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
       {...props}
     >
-      <defs>
-        <path
-          d="M12 3a1 1 0 011 1v6.999L20 11a1 1 0 010 2h-7v7a1 1 0 01-2 0v-7H4a1 1 0 010-2h7V4a1 1 0 011-1z"
-          id="close_icon_svg__a"
-        />
-      </defs>
       <g fillRule="evenodd">
         <path fill="none" d="M0 0h24v24H0z" />
-        <mask id="close_icon_svg__b" fill="#fff">
-          <use xlinkHref="#close_icon_svg__a" />
-        </mask>
-        <g mask="url(#close_icon_svg__b)" transform="rotate(45 12 12)">
-          <path d="M0 0h24v24H0z" />
-        </g>
+        <rect
+          width={2}
+          height={18}
+          x={11}
+          y={3}
+          fillRule="nonzero"
+          rx={1}
+          transform="rotate(45 12 12)"
+        />
+        <rect
+          width={2}
+          height={18}
+          x={11}
+          y={3}
+          fillRule="nonzero"
+          rx={1}
+          transform="rotate(-45 12 12)"
+        />
       </g>
     </svg>
   );
