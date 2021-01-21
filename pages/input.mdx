@@ -1,4 +1,4 @@
-import { Input, FormRow, Button } from '../src/ui';
+import { Input, FormRow, Button, Password } from '../src/ui';
 
 # Input
 
@@ -77,5 +77,39 @@ import { Input, FormRow, Button } from '../src/ui';
 ```
 <div style={{ width: 300 }}>
     <Input multiline rows={5} name="feedback" value="Feedback message" onChange={() => {}} label="Feedback" />
+</div>
+```
+
+### Password
+
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Password placeholder="Show/Hide Password" onShowHide={() => {}} />
+    </FormRow>
+    <FormRow>
+        <Password placeholder="With Forgot Action" onForgot={() => {}} />
+    </FormRow>
+    <FormRow>
+        <Password placeholder="Small Password" onForgot={() => {}} size="small" />
+    </FormRow>
+    <FormRow>
+        <Password placeholder="With Error Message" onShowHide errorMessage="Error message" />
+    </FormRow>
+</div>
+
+```
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Password placeholder="Show/Hide Password" onShowHide={() => {}} />
+    </FormRow>
+    <FormRow>
+        <Password placeholder="With Forgot Action" onForgot={() => {}} />
+    </FormRow>
+    <FormRow>
+        <Password placeholder="Small Password" onForgot={() => {}} size="small" />
+    </FormRow>
+    <FormRow>
+        <Password placeholder="With Error Message" onShowHide errorMessage="Error message" />
+    </FormRow>
 </div>
 ```
