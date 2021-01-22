@@ -37,6 +37,7 @@ export { default as PaymentPaypal } from './PaymentPaypal';
 export { default as PaymentUnionPay } from './PaymentUnionPay';
 export { default as PaymentVisa } from './PaymentVisa';
 export { default as PlayIcon } from './PlayIcon';
+export { default as PlusIcon } from './PlusIcon';
 export { default as Refresh } from './Refresh';
 export { default as RefreshingIcon } from './RefreshingIcon';
 export { default as SearchIcon } from './SearchIcon';
