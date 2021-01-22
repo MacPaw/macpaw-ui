@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import cx from 'clsx';
 import CloseIcon from '../Icons/jsx/CloseIcon';
 

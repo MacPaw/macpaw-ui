@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ExternalLink = ({ children, ...other }) => (
   <a target="_blank" rel="noopener noreferrer" {...other}>
     {children}

@@ -1,4 +1,3 @@
-import React from 'react';
 import cx from 'clsx';
 import LanguageIcon from '../LanguageIcon/LanguageIcon';
 import DropdownIcon from '../Icons/jsx/DropdownIcon';
