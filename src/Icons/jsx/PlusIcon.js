@@ -9,10 +9,9 @@ function SvgPlusIcon(props) {
       viewBox="0 0 24 24"
       {...props}
     >
-      <g fill="none" fillRule="evenodd">
-        <path d="M0 0h24v24H0z" />
+      <g fillRule="evenodd">
+        <path fill="none" d="M0 0h24v24H0z" />
         <path
-          fill="#000"
           fillRule="nonzero"
           d="M12 3a1 1 0 011 1v6.999L20 11a1 1 0 010 2h-7v7a1 1 0 01-2 0v-7H4a1 1 0 010-2h7V4a1 1 0 011-1z"
         />
