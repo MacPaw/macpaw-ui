@@ -1,4 +1,3 @@
-import React from 'react';
 import LanguageDe from '../Icons/jsx/LanguageDe';
 import LanguageEn from '../Icons/jsx/LanguageEn';
 import LanguageEs from '../Icons/jsx/LanguageEs';
