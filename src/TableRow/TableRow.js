@@ -1,3 +1,5 @@
+import React from 'react';
+
 const TableRow = (props) => {
   const { children, ...other } = props;
 

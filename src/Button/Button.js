@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import cx from 'clsx';
 import PawIcon from '../Icons/jsx/PawIcon';
 

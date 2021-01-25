@@ -1,3 +1,4 @@
+import React from 'react';
 import AmericanExpress from '../Icons/jsx/PaymentAmex';
 import Card from '../Icons/jsx/PaymentCard';
 import DinersClub from '../Icons/jsx/PaymentDinersClub';

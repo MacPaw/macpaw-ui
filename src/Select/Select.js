@@ -1,3 +1,4 @@
+import React from 'react';
 import cx from 'clsx';
 import Hint from '../Hint/Hint';
 

@@ -1,3 +1,5 @@
+import React from 'react';
+
 const DialogIconBackdrop = ({ className }) => (
   <svg className={className} width="280" height="107" viewBox="0 0 280 107" xmlns="http://www.w3.org/2000/svg">
     <defs>
