@@ -13,7 +13,7 @@
     box-shadow: 0 0 0 3px var(--color-outline);
   }
 
-  &:not(:focus):not([disabled]):not(.-error):hover {
+  &:not(:focus):not(:focus-within):not([disabled]):not(.-error):hover {
     border-color: var(--color-black);
   }
 
