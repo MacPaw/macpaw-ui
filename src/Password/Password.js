@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 
@@ -43,7 +43,7 @@ const Password = (props) => {
     <Input
       {...other}
       type={passwordVisible ? 'text' : 'password'}
-      action={withAction ? <Action /> : undefined}
+      action={withAction ? <Action/> : undefined}
     />
   );
 };

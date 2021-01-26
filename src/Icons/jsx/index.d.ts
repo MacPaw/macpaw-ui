@@ -4,6 +4,7 @@ interface SVGComponent extends FC<SVGAttributes<SVGElement>> {}
 
 export const AccountIcon: SVGComponent;
 export const BackIcon: SVGComponent;
+export const CheckIcon: SVGComponent;
 export const CloseIcon: SVGComponent;
 export const CopyIcon: SVGComponent;
 export const DeviceActiveIcon: SVGComponent;

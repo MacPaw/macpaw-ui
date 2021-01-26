@@ -1,7 +1,7 @@
 import {FC, ReactNode, HTMLProps} from 'react';
 
 interface Props extends HTMLProps<HTMLInputElement> {
-  size?: 'medium' | 'small'
+  size?: 'medium' | 'small';
   errorMessage?: string | ReactNode;
   action?: ReactNode;
   multiline?: boolean;
