@@ -23,7 +23,7 @@ import { Select, Multiselect } from '../src/ui';
 ## Multiselect
 
 <div style={{marginBottom: 16, maxWidth: 300}}>
-    <Multiselect placeholder="Select a product">
+    <Multiselect placeholder="Select a product" onChange={(values) => console.log(values)}>
         <option value="cmm" selected>CleanMyMac X</option>
         <option value="gmn" selected>Gemini</option>
         <option value="cmd">CleanMyDrive</option>
@@ -33,6 +33,15 @@ import { Select, Multiselect } from '../src/ui';
 </div>
 
 ```
+<div style={{marginBottom: 16, maxWidth: 300}}>
+    <Multiselect placeholder="Select a product" onChange={(values) => console.log(values)}>
+        <option value="cmm" selected>CleanMyMac X</option>
+        <option value="gmn" selected>Gemini</option>
+        <option value="cmd">CleanMyDrive</option>
+        <option value="stp">Setapp</option>
+        <option value="lst">Listen</option>
+    </Multiselect>
+</div>
 ```
 
 ## Disabled

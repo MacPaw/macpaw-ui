@@ -16,9 +16,10 @@ function getSelectedOptions(options) {
 }
 
 const Multiselect = (props) => {
-  const { className, children, placeholder, ...other } = props;
+  const { className, children, placeholder, onChange, ...other } = props;
   const [options, setOptions] = useState(childrenToOptions(children));
   const [listOpened, setListOpened] = useState(false);
+  const [isTouched, setIsTouched] = useState(false);
   const componentRef = useRef(null);
   const listRef = useRef(null);
   const selectedOptions = getSelectedOptions(options);
@@ -33,6 +34,7 @@ const Multiselect = (props) => {
         option.selected = !option.selected;
         return option;
       }));
+      setIsTouched(true);
     };
   }
 
@@ -57,6 +59,12 @@ const Multiselect = (props) => {
 
     return () => document.removeEventListener('mousedown', outsideClickListener);
   }, [listOpened]);
+
+  useEffect(() => {
+    if (isTouched && onChange) {
+      onChange(getSelectedOptions(options).map(o => o.value));
+    }
+  }, [options, isTouched, onChange]);
 
   return (
     <div
