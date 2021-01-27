@@ -1,7 +1,7 @@
 import {FC, ReactNode, HTMLProps} from 'react';
 
 interface Props extends HTMLProps<HTMLInputElement> {
-  onShowHide?: () => void | boolean;
+  onShowHide?: boolean | (() => void);
   onForgot?: () => void;
   size?: 'medium' | 'small'
   label?: string | ReactNode;
