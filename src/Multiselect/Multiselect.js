@@ -3,38 +3,32 @@ import React, { useState, useEffect, useRef } from 'react';
 import Tag from '../Tag/Tag';
 import CheckIcon from '../Icons/jsx/CheckIcon';
 
-function childrenToOptions(children) {
-  return React.Children.map(children, c => ({
+const Multiselect = (props) => {
+  const { className, children, placeholder, onChange, ...other } = props;
+  const options = React.Children.map(children, c => ({
     value: c.props.value,
     label: c.props.children,
     selected: Boolean(c.props.selected),
   }));
-}
-
-function getSelectedOptions(options) {
-  return options.filter(o => o.selected);
-}
-
-const Multiselect = (props) => {
-  const { className, children, placeholder, onChange, ...other } = props;
-  const [options, setOptions] = useState(childrenToOptions(children));
   const [listOpened, setListOpened] = useState(false);
-  const [isTouched, setIsTouched] = useState(false);
   const componentRef = useRef(null);
   const listRef = useRef(null);
-  const selectedOptions = getSelectedOptions(options);
+  const selectedOptions = options.filter(o => o.selected);
+  const selectedValues = selectedOptions.map(o => o.value);
   const showPlaceholder = !selectedOptions.length && placeholder;
 
   function toggleSelected(toggleOption) {
     return function (event) {
       if (event.key && event.key !== 'Enter') return;
       event.stopPropagation();
-      setOptions(options.map((option) => {
-        if (option.value !== toggleOption.value) return option;
-        option.selected = !option.selected;
-        return option;
-      }));
-      setIsTouched(true);
+
+      if (onChange) {
+        if (toggleOption.selected) {
+          onChange(selectedValues.filter(v => v !== toggleOption.value));
+        } else {
+          onChange([...selectedValues, toggleOption.value]);
+        }
+      }
     };
   }
 
@@ -59,12 +53,6 @@ const Multiselect = (props) => {
 
     return () => document.removeEventListener('mousedown', outsideClickListener);
   }, [listOpened]);
-
-  useEffect(() => {
-    if (isTouched && onChange) {
-      onChange(getSelectedOptions(options).map(o => o.value));
-    }
-  }, [options, isTouched, onChange]);
 
   return (
     <div
