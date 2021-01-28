@@ -2,7 +2,7 @@ import {FC, HTMLProps} from 'react';
 
 interface Props extends HTMLProps<HTMLElement> {
   placeholder?: string;
-  onChange?: (values: string[]|number[]) => void;
+  onChange?: (values: string[]) => void;
 }
 
 declare const Multiselect: FC<Props>;
