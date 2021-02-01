@@ -35,7 +35,7 @@ export const MultiselectExample = () => {
     return (
         <React.Fragment>
             <div style={{marginBottom: 16, maxWidth: 300}}>
-                <Multiselect placeholder="Select a product" onChange={setSelected}>
+                <Multiselect placeholder="Select a product" onChange={setSelected} error="Please select a product">
                     {items.map((i) => (
                         <option key={i.value} value={i.value} selected={selected.includes(i.value)}>
                             {i.label}

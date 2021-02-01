@@ -17,6 +17,18 @@
     border-color: var(--color-black);
   }
 
+  &.-error {
+    border-color: var(--color-error);
+  }
+
+  &.-empty {
+    height: 40px;
+
+    .select {
+      opacity: 1;
+    }
+  }
+
   .select {
     appearance: none;
     -webkit-appearance: none;
@@ -30,14 +42,6 @@
     border: none;
     box-shadow: none;
     outline: none;
-  }
-
-  &-empty {
-    height: 40px;
-
-    .select {
-      opacity: 1;
-    }
   }
 
   .tag {
