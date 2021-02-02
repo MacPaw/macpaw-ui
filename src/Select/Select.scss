@@ -42,6 +42,10 @@
     display: none;
   }
 
+  &.-big {
+    height: 48px;
+  }
+
   &.-error {
     border-color: var(--color-error);
   }
