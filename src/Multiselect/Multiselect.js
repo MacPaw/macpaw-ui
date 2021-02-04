@@ -43,7 +43,7 @@ const Multiselect = (props) => {
 
   return (
     <label>
-      {label && <span className='h6'>{label}</span>}
+      {label && <span className="h6">{label}</span>}
       <div className={rootClassnames} {...other}>
         {selectedOptions.map((o) => (
           <Tag key={o.value} onRemove={() => toggleSelected(o)}>

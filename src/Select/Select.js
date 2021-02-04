@@ -25,7 +25,7 @@ const Select = (props) => {
 
   return (
     <label className={classNames} style={style}>
-      {label && <span className='h6'>{label}</span>}
+      {label && <span className="h6">{label}</span>}
       <select value={selected} disabled={disabled} {...other}>
         {children}
       </select>
