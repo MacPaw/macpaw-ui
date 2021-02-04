@@ -51,12 +51,7 @@ const Multiselect = (props) => {
           </Tag>
         ))}
 
-        <Select
-          value=''
-          onChange={(event) =>
-            toggleSelected(options.find((o) => o.value === event.target.value))
-          }
-        >
+        <Select value='' onChange={(event) =>toggleSelected(options.find((o) => o.value === event.target.value))}>
           <option value='' disabled>
             {placeholder || ''}
           </option>
@@ -67,9 +62,7 @@ const Multiselect = (props) => {
           ))}
         </Select>
       </div>
-      {errorMessage && (
-        <Hint style={{ marginTop: 6 }} error>{`* ${errorMessage}`}</Hint>
-      )}
+      {errorMessage && (<Hint style={{ marginTop: 6 }} error>{`* ${errorMessage}`}</Hint>)}
     </label>
   );
 };
