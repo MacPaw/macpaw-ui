@@ -88,7 +88,6 @@ export const MultiselectExample = () => {
     <React.Fragment>
       <div style={{ marginBottom: 16, maxWidth: 300 }}>
         <Multiselect
-          size='medium'
           placeholder='Select a product'
           onChange={setSelected}
           errorMessage='Please select a product'
@@ -113,7 +112,7 @@ export const MultiselectExample = () => {
 
 ```
 <div style={{marginBottom: 16, maxWidth: 300}}>
-    <Multiselect placeholder="Select a product" onChange={setSelected}>
+    <Multiselect placeholder="Select a product" label="With Error" onChange={setSelected}>
         {items.map((i) => (
             <option key={i.value} value={i.value} selected={selected.includes(i.value)}>
                 {i.label}
