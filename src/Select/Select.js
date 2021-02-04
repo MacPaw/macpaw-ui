@@ -15,13 +15,7 @@ const Select = (props) => {
     ...other
   } = props;
 
-  const classNames = cx('select', {
-    className,
-    '-error': Boolean(errorMessage),
-    '-medium': size === 'medium',
-    '-small': size === 'small',
-    '-big': size === 'big',
-  });
+  const classNames = cx('select', { className, '-error': Boolean(errorMessage), '-medium': size === 'medium', '-small': size === 'small', '-big': size === 'big' });
 
   return (
     <label className={classNames} style={style}>

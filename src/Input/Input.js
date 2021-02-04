@@ -15,7 +15,7 @@ const Input = forwardRef((props, ref) => {
     ...other
   } = props;
 
-  const classNames = cx('input', {'-error': Boolean(errorMessage), '-medium': size === 'medium', '-small': size === 'small', '-big': size === 'big'});
+  const classNames = cx('input', { '-error': Boolean(errorMessage), '-medium': size === 'medium', '-small': size === 'small', '-big': size === 'big' });
 
   const componentProps = {
     className: cx(action && '-with-action', className),

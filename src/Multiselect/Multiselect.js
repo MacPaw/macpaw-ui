@@ -22,14 +22,7 @@ const Multiselect = (props) => {
   }));
   const selectedOptions = options.filter((o) => o.selected);
   const selectedValues = selectedOptions.map((o) => o.value);
-  const rootClassnames = cx('multiselect', {
-    className,
-    '-error': Boolean(errorMessage),
-    '-empty': !selectedOptions.length,
-    '-medium': size === 'medium',
-    '-small': size === 'small',
-    '-big': size === 'big',
-  });
+  const rootClassnames = cx('multiselect', { className, '-error': Boolean(errorMessage), '-empty': !selectedOptions.length, '-medium': size === 'medium', '-small': size === 'small' });
 
   function toggleSelected(toggleOption) {
     if (onChange) {
@@ -51,14 +44,10 @@ const Multiselect = (props) => {
           </Tag>
         ))}
 
-        <Select value='' onChange={(event) =>toggleSelected(options.find((o) => o.value === event.target.value))}>
-          <option value='' disabled>
-            {placeholder || ''}
-          </option>
+        <Select value="" onChange={(event) => toggleSelected(options.find((o) => o.value === event.target.value))}>
+          <option value="" disabled>{placeholder || ''}</option>
           {options.map((o) => (
-            <option key={o.value} value={o.value}>
-              {o.label}
-            </option>
+            <option key={o.value} value={o.value}>{o.label}</option>
           ))}
         </Select>
       </div>
