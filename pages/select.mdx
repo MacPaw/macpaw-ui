@@ -4,21 +4,21 @@ import { Select, Multiselect } from '../src/ui';
 # Select
 
 <div style={{ marginBottom: 16, maxWidth: 300 }}>
-  <Select label='Default'>
+  <Select label="Default">
     <option>CleanMyMac X</option>
     <option>Gemini</option>
     <option>CleanMyDrive</option>
   </Select>
 </div>
 <div style={{ marginBottom: 16, maxWidth: 300 }}>
-  <Select errorMessage='Error message' label='With Error'>
+  <Select errorMessage="Error message" label="With Error">
     <option>CleanMyMac X</option>
     <option>Gemini</option>
     <option>CleanMyDrive</option>
   </Select>
 </div>
 <div style={{ marginBottom: 16, maxWidth: 300 }}>
-  <Select disabled label='Disabled'>
+  <Select disabled label="Disabled">
     <option>CleanMyMac X</option>
     <option>Gemini</option>
     <option>CleanMyDrive</option>
@@ -27,21 +27,21 @@ import { Select, Multiselect } from '../src/ui';
 
 ```
 <div style={{ marginBottom: 16, maxWidth: 300 }}>
-  <Select label='Default'>
+  <Select label="Default">
     <option>CleanMyMac X</option>
     <option>Gemini</option>
     <option>CleanMyDrive</option>
   </Select>
 </div>
 <div style={{ marginBottom: 16, maxWidth: 300 }}>
-  <Select errorMessage='Error message' label='With Error'>
+  <Select errorMessage="Error message" label="With Error">
     <option>CleanMyMac X</option>
     <option>Gemini</option>
     <option>CleanMyDrive</option>
   </Select>
 </div>
 <div style={{ marginBottom: 16, maxWidth: 300 }}>
-  <Select disabled label='Disabled'>
+  <Select disabled label="Disabled">
     <option>CleanMyMac X</option>
     <option>Gemini</option>
     <option>CleanMyDrive</option>
@@ -52,21 +52,21 @@ import { Select, Multiselect } from '../src/ui';
 ## Sizes
 
 <div style={{ marginBottom: 16, maxWidth: 300 }}>
-  <Select label='Default'>
+  <Select label="Default">
     <option>CleanMyMac X</option>
     <option>Gemini</option>
     <option>CleanMyDrive</option>
   </Select>
 </div>
 <div style={{ marginBottom: 16, maxWidth: 300 }}>
-  <Select size='medium' label='Medium'>
+  <Select size="medium" label="Medium">
     <option>CleanMyMac X</option>
     <option>Gemini</option>
     <option>CleanMyDrive</option>
   </Select>
 </div>
 <div style={{ marginBottom: 16, maxWidth: 300 }}>
-  <Select size='small' label='Small'>
+  <Select size="small" label="Small">
     <option>CleanMyMac X</option>
     <option>Gemini</option>
     <option>CleanMyDrive</option>
@@ -88,10 +88,10 @@ export const MultiselectExample = () => {
     <React.Fragment>
       <div style={{ marginBottom: 16, maxWidth: 300 }}>
         <Multiselect
-          placeholder='Select a product'
+          placeholder="Select a product"
           onChange={setSelected}
-          errorMessage='Please select a product'
-          label='With Error'
+          errorMessage="Please select a product"
+          label="With Error"
         >
           {items.map((i) => (
             <option
@@ -112,7 +112,7 @@ export const MultiselectExample = () => {
 
 ```
 <div style={{marginBottom: 16, maxWidth: 300}}>
-    <Multiselect placeholder="Select a product" label="With Error" onChange={setSelected}>
+    <Multiselect label="With Error" placeholder="Select a product" onChange={setSelected}>
         {items.map((i) => (
             <option key={i.value} value={i.value} selected={selected.includes(i.value)}>
                 {i.label}
@@ -125,8 +125,8 @@ export const MultiselectExample = () => {
 ## Placeholder
 
 <div style={{ marginBottom: 16, maxWidth: 300 }}>
-  <Select defaultValue=''>
-    <option disabled value=''>
+  <Select defaultValue="">
+    <option disabled value="">
       Select a product
     </option>
     <option>CleanMyMac X</option>

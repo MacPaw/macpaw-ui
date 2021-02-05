@@ -23,8 +23,7 @@ const Select = (props) => {
       <select value={selected} disabled={disabled} {...other}>
         {children}
       </select>
-      {errorMessage && (
-        <Hint style={{ marginTop: 6 }} error>{`* ${errorMessage}`}</Hint>
+      {errorMessage && (<Hint style={{ marginTop: 6 }} error>{`* ${errorMessage}`}</Hint>
       )}
     </label>
   );
