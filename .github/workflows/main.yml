@@ -17,3 +17,5 @@ jobs:
       run: |
         yarn
         yarn lint
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
