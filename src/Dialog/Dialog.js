@@ -37,7 +37,7 @@ const Dialog = (props) => {
     return () => {
       document.removeEventListener('keydown', keyListener);
     };
-  }, [shouldCloseOnEsc]);
+  }, [shouldCloseOnEsc]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!isOpen) return null;
 

@@ -43,7 +43,7 @@ const Password = (props) => {
     <Input
       {...other}
       type={passwordVisible ? 'text' : 'password'}
-      action={withAction ? <Action/> : undefined}
+      action={withAction ? <Action /> : undefined}
     />
   );
 };

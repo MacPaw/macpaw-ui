@@ -55,7 +55,7 @@ const LanguageSwitcher = (props) => {
       <DropdownIcon className="languageSwitcher-arrow" />
       <label>
         <select value={currentLanguage} {...other}>
-          {availableLanguages.map(lang => (
+          {availableLanguages.map((lang) => (
             <option key={lang} value={lang}>
               {getLocaleName(lang)}
             </option>

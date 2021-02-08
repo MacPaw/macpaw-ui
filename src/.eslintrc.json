@@ -1,21 +1,6 @@
 {
   "extends": [
-    "xxx",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended"
-  ],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 11,
-    "sourceType": "module"
-  },
-  "plugins": [
-    "react"
-  ],
-  "rules": {
-    "react/prop-types": "off"
-  }
+    "@macpaw/eslint-config-base",
+    "@macpaw/eslint-config-react"
+  ]
 }
