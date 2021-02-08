@@ -11,7 +11,7 @@ import { Select, Multiselect } from '../src/ui';
   </Select>
 </div>
 <div style={{ marginBottom: 16, maxWidth: 300 }}>
-  <Select errorMessage="Error message" label="With Error">
+  <Select error="Error message" label="With Error">
     <option>CleanMyMac X</option>
     <option>Gemini</option>
     <option>CleanMyDrive</option>
@@ -34,7 +34,7 @@ import { Select, Multiselect } from '../src/ui';
   </Select>
 </div>
 <div style={{ marginBottom: 16, maxWidth: 300 }}>
-  <Select errorMessage="Error message" label="With Error">
+  <Select error="Error message" label="With Error">
     <option>CleanMyMac X</option>
     <option>Gemini</option>
     <option>CleanMyDrive</option>
@@ -73,9 +73,33 @@ import { Select, Multiselect } from '../src/ui';
   </Select>
 </div>
 
+```
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select label="Default">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
+</div>
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select size="medium" label="Medium">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
+</div>
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select size="small" label="Small">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
+</div>
+```
+
 ## Multiselect
 
-export const MultiselectExample = () => {
+export const MultiselectExample = (props) => {
   const [selected, setSelected] = useState([1, 2, 3]);
   const items = [
     { value: 'cmm', label: 'CleanMyMac X' },
@@ -90,8 +114,7 @@ export const MultiselectExample = () => {
         <Multiselect
           placeholder="Select a product"
           onChange={setSelected}
-          errorMessage="Please select a product"
-          label="With Error"
+          {...props}
         >
           {items.map((i) => (
             <option
@@ -108,7 +131,9 @@ export const MultiselectExample = () => {
   );
 };
 
-<MultiselectExample />
+<MultiselectExample label="Default" />
+<MultiselectExample label="Medium" size="medium" />
+<MultiselectExample label="With Error" error="Please select a product" />
 
 ```
 <div style={{marginBottom: 16, maxWidth: 300}}>

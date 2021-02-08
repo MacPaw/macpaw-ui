@@ -1,10 +1,11 @@
 import { FC, ReactNode, HTMLProps } from 'react';
+import { Error } from '../types';
 
 interface Props extends HTMLProps<HTMLElement> {
   placeholder?: string;
-  size?: 'medium' | 'small';
+  size?: 'medium';
   onChange?: (values: string[]) => void;
-  errorMessage?: string;
+  error?: Error;
   label?: string | ReactNode;
 }
 

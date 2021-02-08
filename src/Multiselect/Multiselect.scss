@@ -24,30 +24,22 @@
 
   &.-empty {
     height: 48px;
+
     .select select {
       opacity: 1;
     }
   }
 
   &.-medium {
-    padding: 4px 2px;
+    padding: 2px;
+
     .select select {
-      padding: 0 14px;
+      padding-top: 0;
+      padding-bottom: 0;
     }
+
     &.-empty {
       height: 40px;
-    }
-  }
-
-  &.-small {
-    padding: 2px 2px;
-
-    .select select {
-      font-size: 12px;
-      padding: 0 14px;
-    }
-    &.-empty {
-      height: 32px;
     }
   }
 
@@ -74,17 +66,6 @@
 
     button {
       pointer-events: auto;
-    }
-  }
-
-  &-wrapper {
-    .hint {
-      margin-top: 4px;
-    }
-
-    .h6 {
-      margin-bottom: 8px;
-      display: block;
     }
   }
 }

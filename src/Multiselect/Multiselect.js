@@ -10,31 +10,30 @@ const Multiselect = (props) => {
     children,
     placeholder,
     onChange,
-    errorMessage,
+    error,
     size,
     label,
     ...other
   } = props;
-  const options = React.Children.map(children, c => ({
+  const options = React.Children.map(children, (c) => ({
     value: c.props.value,
     label: c.props.children,
     selected: Boolean(c.props.selected),
   }));
-  const selectedOptions = options.filter(o => o.selected);
-  const selectedValues = selectedOptions.map(o => o.value);
+  const selectedOptions = options.filter((o) => o.selected);
+  const selectedValues = selectedOptions.map((o) => o.value);
   const rootClassnames = cx(
     'multiselect',
     !selectedOptions.length && '-empty',
-    errorMessage && '-error',
+    error && '-error',
     size === 'medium' && '-medium',
-    size === 'small' && '-small',
     className
   );
 
   function toggleSelected(toggleOption) {
     if (onChange) {
       if (toggleOption.selected) {
-        onChange(selectedValues.filter(v => v !== toggleOption.value));
+        onChange(selectedValues.filter((v) => v !== toggleOption.value));
       } else {
         onChange([...selectedValues, toggleOption.value]);
       }
@@ -42,11 +41,11 @@ const Multiselect = (props) => {
   }
 
   return (
-    <div className="multiselect-wrapper">
-      {label && <span className="h6">{label}</span>}
+    <>
+      {label && <div className="h6">{label}</div>}
       <div className={rootClassnames} {...other}>
-        <div className='tags'>
-          {selectedOptions.map(o => (
+        <div className="tags">
+          {selectedOptions.map((o) => (
             <Tag key={o.value} onRemove={() => toggleSelected(o)}>
               {o.label}
             </Tag>
@@ -54,21 +53,21 @@ const Multiselect = (props) => {
         </div>
 
         <Select
-          value=''
-          onChange={event => toggleSelected(options.find(o => o.value === event.target.value))}
+          value=""
+          onChange={(event) => toggleSelected(options.find((o) => o.value === event.target.value))}
         >
-          <option value='' disabled>
+          <option value="" disabled>
             {placeholder || ''}
           </option>
-          {options.map(o => (
+          {options.map((o) => (
             <option key={o.value} value={o.value}>
               {o.label}
             </option>
           ))}
         </Select>
       </div>
-      {errorMessage && <Hint style={{ marginTop: 6 }} error>{`* ${errorMessage}`}</Hint>}
-    </div>
+      {typeof error !== 'boolean' && <Hint style={{ marginTop: 6 }} error>{error}</Hint>}
+    </>
   );
 };
 
