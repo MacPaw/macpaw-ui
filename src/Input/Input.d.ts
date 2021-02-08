@@ -1,8 +1,9 @@
-import {FC, ReactNode, HTMLProps} from 'react';
+import { FC, ReactNode, HTMLProps } from 'react';
+import { Error } from '../types';
 
 interface Props extends HTMLProps<HTMLInputElement> {
   size?: 'medium' | 'small';
-  errorMessage?: string | ReactNode;
+  error?: Error;
   action?: ReactNode;
   multiline?: boolean;
   label?: string | ReactNode;

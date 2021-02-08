@@ -3,17 +3,29 @@
   font-size: 14px;
   text-align: left;
 
-  &.-medium input {
-    padding: 8px 15px 9px;
+  &.-medium {
+    input {
+      padding: 8px 15px 9px;
+    }
+
+    .button {
+      height: 40px;
+    }
   }
 
-  &.-small input {
-    padding: 7px 14px;
-    font-size: 12px;
+  &.-small {
+    input {
+      padding: 7px 14px;
+      font-size: 12px;
+    }
+
+    .button {
+      height: 32px;
+    }
   }
 
-  &.-error input, 
-  &.-error .select-box, 
+  &.-error input,
+  &.-error .select-box,
   &.-error textarea {
     border-color: red;
   }
@@ -30,6 +42,10 @@
     right: 18px;
   }
 
+  &-label {
+    display: block;
+  }
+
   input, textarea {
     width: 100%;
     padding: 12px 18px 13px;
@@ -37,9 +53,9 @@
     font-size: 16px;
     font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
     line-height: 1.2;
-    border: 2px solid rgba(111,114,121, .16);
+    border: 2px solid rgba(111, 114, 121, .16);
     background: var(--color-white);
-    transition: border-color 200ms cubic-bezier(0.25,0.1,0.25,1);
+    transition: border-color 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
 
     &:hover {
       border-color: var(--color-black)
@@ -68,14 +84,5 @@
   textarea {
     resize: none;
     vertical-align: top;
-  }
-
-  .hint {
-    margin-top: 4px;
-  }
-
-  .h6 {
-    margin-bottom: 8px;
-    display: block;
   }
 }

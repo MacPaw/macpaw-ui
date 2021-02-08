@@ -3,55 +3,141 @@ import { Select, Multiselect } from '../src/ui';
 
 # Select
 
-<div style={{marginBottom: 16, maxWidth: 300}}>
-    <Select>
-        <option>CleanMyMac X</option>
-        <option>Gemini</option>
-        <option>CleanMyDrive</option>
-    </Select>
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select label="Default">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
+</div>
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select error="Error message" label="With Error">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
+</div>
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select disabled label="Disabled">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
 </div>
 
 ```
-<div style={{marginBottom: 16, maxWidth: 300}}>
-    <Select>
-        <option>CleanMyMac X</option>
-        <option>Gemini</option>
-        <option>CleanMyDrive</option>
-    </Select>
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select label="Default">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
+</div>
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select error="Error message" label="With Error">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
+</div>
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select disabled label="Disabled">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
+</div>
+```
+
+## Sizes
+
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select label="Default">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
+</div>
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select size="medium" label="Medium">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
+</div>
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select size="small" label="Small">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
+</div>
+
+```
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select label="Default">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
+</div>
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select size="medium" label="Medium">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
+</div>
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select size="small" label="Small">
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
 </div>
 ```
 
 ## Multiselect
 
-export const MultiselectExample = () => {
-    const [selected, setSelected] = useState([1, 2, 3]);
-    const items = [
-        { value: 'cmm', label: 'CleanMyMac X' },
-        { value: 'gmn', label: 'Gemini' },
-        { value: 'cmd', label: 'CleanMyDrive' },
-        { value: 'stp', label: 'Setapp' },
-        { value: 'lst', label: 'Listen' },
-    ];
-    return (
-        <React.Fragment>
-            <div style={{marginBottom: 16, maxWidth: 300}}>
-                <Multiselect placeholder="Select a product" onChange={setSelected} error="Please select a product">
-                    {items.map((i) => (
-                        <option key={i.value} value={i.value} selected={selected.includes(i.value)}>
-                            {i.label}
-                        </option>
-                    ))}
-                </Multiselect>
-            </div>
-        </React.Fragment>
-    );
+export const MultiselectExample = (props) => {
+  const [selected, setSelected] = useState([1, 2, 3]);
+  const items = [
+    { value: 'cmm', label: 'CleanMyMac X' },
+    { value: 'gmn', label: 'Gemini' },
+    { value: 'cmd', label: 'CleanMyDrive' },
+    { value: 'stp', label: 'Setapp' },
+    { value: 'lst', label: 'Listen' },
+  ];
+  return (
+    <React.Fragment>
+      <div style={{ marginBottom: 16, maxWidth: 300 }}>
+        <Multiselect
+          placeholder="Select a product"
+          onChange={setSelected}
+          {...props}
+        >
+          {items.map((i) => (
+            <option
+              key={i.value}
+              value={i.value}
+              selected={selected.includes(i.value)}
+            >
+              {i.label}
+            </option>
+          ))}
+        </Multiselect>
+      </div>
+    </React.Fragment>
+  );
 };
 
-<MultiselectExample />
+<MultiselectExample label="Default" />
+<MultiselectExample label="Medium" size="medium" />
+<MultiselectExample label="With Error" error="Please select a product" />
 
 ```
 <div style={{marginBottom: 16, maxWidth: 300}}>
-    <Multiselect placeholder="Select a product" onChange={setSelected}>
+    <Multiselect label="With Error" placeholder="Select a product" onChange={setSelected}>
         {items.map((i) => (
             <option key={i.value} value={i.value} selected={selected.includes(i.value)}>
                 {i.label}
@@ -61,61 +147,23 @@ export const MultiselectExample = () => {
 </div>
 ```
 
-## Disabled
-
-<div style={{marginBottom: 16, maxWidth: 300}}>
-    <Select disabled>
-        <option>CleanMyMac X</option>
-        <option>Gemini</option>
-        <option>CleanMyDrive</option>
-    </Select>
-</div>
-
-```
-<div style={{marginBottom: 16, maxWidth: 300}}>
-    <Select disabled>
-        <option>CleanMyMac X</option>
-        <option>Gemini</option>
-        <option>CleanMyDrive</option>
-    </Select>
-</div>
-```
-
 ## Placeholder
 
-<div style={{marginBottom: 16, maxWidth: 300}}>
-    <Select defaultValue="">
-        <option disabled value="">Select a product</option>
-        <option>CleanMyMac X</option>
-        <option>Gemini</option>
-        <option>CleanMyDrive</option>
-    </Select>
+<div style={{ marginBottom: 16, maxWidth: 300 }}>
+  <Select defaultValue="">
+    <option disabled value="">
+      Select a product
+    </option>
+    <option>CleanMyMac X</option>
+    <option>Gemini</option>
+    <option>CleanMyDrive</option>
+  </Select>
 </div>
 
 ```
 <div style={{marginBottom: 16, maxWidth: 300}}>
     <Select defaultValue="">
         <option disabled value="">Select a product</option>
-        <option>CleanMyMac X</option>
-        <option>Gemini</option>
-        <option>CleanMyDrive</option>
-    </Select>
-</div>
-```
-
-## Error state
-
-<div style={{marginBottom: 16, maxWidth: 300}}>
-    <Select error="Please select a product">
-        <option>CleanMyMac X</option>
-        <option>Gemini</option>
-        <option>CleanMyDrive</option>
-    </Select>
-</div>
-
-```
-<div style={{marginBottom: 16, maxWidth: 300}}>
-    <Select error="Please select a product">
         <option>CleanMyMac X</option>
         <option>Gemini</option>
         <option>CleanMyDrive</option>

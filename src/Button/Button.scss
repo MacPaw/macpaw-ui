@@ -215,6 +215,10 @@
     background: none !important;
     border: none !important;
     color: var(--color-secondary);
+
+    &:focus {
+      box-shadow: none;
+    }
   }
 
   &.-icon {

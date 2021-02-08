@@ -3,12 +3,13 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 2px;
+  padding: 6px 2px;
   border-radius: 8px;
   border: 2px solid rgba(111, 114, 121, 0.16);
   outline: none;
 
-  &:focus, &:focus-within {
+  &:focus,
+  &:focus-within {
     border-color: var(--color-secondary);
     box-shadow: 0 0 0 3px var(--color-outline);
   }
@@ -22,14 +23,27 @@
   }
 
   &.-empty {
-    height: 40px;
+    height: 48px;
 
-    .select {
+    .select select {
       opacity: 1;
     }
   }
 
-  .select {
+  &.-medium {
+    padding: 2px;
+
+    .select select {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &.-empty {
+      height: 40px;
+    }
+  }
+
+  .select select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;

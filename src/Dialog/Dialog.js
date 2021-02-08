@@ -34,6 +34,7 @@ const Dialog = (props) => {
     if (shouldCloseOnEsc) {
       document.addEventListener('keydown', keyListener);
     }
+
     return () => {
       document.removeEventListener('keydown', keyListener);
     };

@@ -1,4 +1,4 @@
-import {FC, HTMLProps} from 'react';
+import { FC, HTMLProps } from 'react';
 
 interface Props extends HTMLProps<HTMLElement> {
   large?: boolean;

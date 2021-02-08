@@ -6,7 +6,7 @@ const Input = forwardRef((props, ref) => {
   const {
     type = 'text',
     multiline = false,
-    errorMessage,
+    error,
     size,
     style,
     action,
@@ -15,12 +15,7 @@ const Input = forwardRef((props, ref) => {
     ...other
   } = props;
 
-  const classNames = cx('input', {
-    '-error': Boolean(errorMessage),
-    '-medium': size === 'medium',
-    '-small': size === 'small',
-    '-big': size === 'big',
-  });
+  const classNames = cx('input', { '-error': Boolean(error), '-medium': size === 'medium', '-small': size === 'small', '-big': size === 'big' });
 
   const componentProps = {
     className: cx(action && '-with-action', className),
@@ -33,7 +28,7 @@ const Input = forwardRef((props, ref) => {
 
   return (
     <label className={classNames} style={style}>
-      {label && <span className="h6">{label}</span>}
+      {label && <span className="input-label h6">{label}</span>}
       <span className="input-field">
         <Component
           {...componentProps}
@@ -43,7 +38,7 @@ const Input = forwardRef((props, ref) => {
         />
         {action && <span className="input-action">{action}</span>}
       </span>
-      {errorMessage && <Hint error>{errorMessage}</Hint>}
+      {typeof error !== 'boolean' && <Hint error style={{ marginTop: 6 }}>{error}</Hint>}
     </label>
   );
 });

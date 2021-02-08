@@ -1,9 +1,12 @@
-import {FC, HTMLProps} from 'react';
+import { FC, ReactNode, HTMLProps } from 'react';
+import { Error } from '../types';
 
 interface Props extends HTMLProps<HTMLSelectElement> {
+  size?: 'medium' | 'small';
   selected?: string;
   disabled?: boolean;
-  error?: string;
+  error?: Error;
+  label?: string | ReactNode;
 }
 
 declare const Select: FC<Props>;

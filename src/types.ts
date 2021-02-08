@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export enum Language {
   DE = 'de',
   EN= 'en',
@@ -14,3 +16,5 @@ export enum Language {
   UK = 'uk',
   ZH = 'zh',
 }
+
+export type Error = boolean | string | ReactNode;
