@@ -5,36 +5,36 @@ import DropdownIcon from '../Icons/jsx/DropdownIcon';
 
 const getLocaleName = (locale) => {
   switch (locale) {
-  case 'en':
-    return 'English';
-  case 'de':
-    return 'Deutsch';
-  case 'es':
-    return 'Español';
-  case 'fr':
-    return 'Français';
-  case 'it':
-    return 'Italiano';
-  case 'ja':
-    return '日本語';
-  case 'ko':
-    return '한국어';
-  case 'nl':
-    return 'Dutch';
-  case 'pl':
-    return 'Polski';
-  case 'pt':
-    return 'Português do Brasil';
-  case 'ru':
-    return 'Русский';
-  case 'tr':
-    return 'Turkish';
-  case 'uk':
-    return 'Українська';
-  case 'zh':
-    return '繁體中文';
-  default:
-    return '';
+    case 'en':
+      return 'English';
+    case 'de':
+      return 'Deutsch';
+    case 'es':
+      return 'Español';
+    case 'fr':
+      return 'Français';
+    case 'it':
+      return 'Italiano';
+    case 'ja':
+      return '日本語';
+    case 'ko':
+      return '한국어';
+    case 'nl':
+      return 'Dutch';
+    case 'pl':
+      return 'Polski';
+    case 'pt':
+      return 'Português do Brasil';
+    case 'ru':
+      return 'Русский';
+    case 'tr':
+      return 'Turkish';
+    case 'uk':
+      return 'Українська';
+    case 'zh':
+      return '繁體中文';
+    default:
+      return '';
   }
 };
 

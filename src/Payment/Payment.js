@@ -14,26 +14,26 @@ const Payment = (props) => {
   const { type, ...other } = props;
 
   switch (type) {
-  case 'paypal':
-    return <PayPal {...other} />;
-  case 'american_express':
-    return <AmericanExpress {...other} />;
-  case 'diners_club':
-    return <DinersClub {...other} />;
-  case 'discover':
-    return <Discover {...other} />;
-  case 'jcb':
-    return <JCB {...other} />;
-  case 'maestro':
-    return <Maestro {...other} />;
-  case 'unionpay':
-    return <UnionPay {...other} />;
-  case 'visa':
-    return <Visa {...other} />;
-  case 'master':
-    return <Master {...other} />;
-  default:
-    return <Card {...other} />;
+    case 'paypal':
+      return <PayPal {...other} />;
+    case 'american_express':
+      return <AmericanExpress {...other} />;
+    case 'diners_club':
+      return <DinersClub {...other} />;
+    case 'discover':
+      return <Discover {...other} />;
+    case 'jcb':
+      return <JCB {...other} />;
+    case 'maestro':
+      return <Maestro {...other} />;
+    case 'unionpay':
+      return <UnionPay {...other} />;
+    case 'visa':
+      return <Visa {...other} />;
+    case 'master':
+      return <Master {...other} />;
+    default:
+      return <Card {...other} />;
   }
 };
 

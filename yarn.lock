@@ -1220,15 +1220,15 @@
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.1.0.tgz#6c9eafc78c1529248f8f4d92b0799a712b6052c6"
   integrity sha512-i9YbZPN3QgfighY/1X1Pu118VUz2Fmmhd6b2n0/O8YVgGGfw0FbUYoA97k7FkpGJ+pLCFEDLUmAPPV4D1kpeFw==
 
-"@macpaw/eslint-config-base@^0.0.7":
-  version "0.0.7"
-  resolved "https://npm.pkg.github.com/download/@macpaw/eslint-config-base/0.0.7/076235faf124461536494c1bf69e41b3dc40893e8bfed0fa57c63cb5551dd0eb#c57a0d41e645c19b0fcb3eb2a2fa563508d5450d"
-  integrity sha512-xD9PcqC7r6NiJXtW8cDQ2WFPDDg/bGOaqJUs8XeUc/MzsII9+VAoqMLwZvJCbSHxPu0Vkh7kHiAnw9Kl2Ekm2Q==
+"@macpaw/eslint-config-base@^0.0.9":
+  version "0.0.9"
+  resolved "https://npm.pkg.github.com/download/@macpaw/eslint-config-base/0.0.9/78dbff22e5d7fd734aee3d991f143225bf1b816278247f7242d8eef4e7de95d0#dc48a67111ffcfaf2e93ea92fe397c63628edea4"
+  integrity sha512-wWUNt9ouArOtFbraoGFXtfj6kPAKzWr3iU0rh2kvLZSfiJESLsMBQK6ID0qux5JmNxK0ZCPnGWGHGIVzyp6rsA==
 
-"@macpaw/eslint-config-react@^0.0.7":
-  version "0.0.7"
-  resolved "https://npm.pkg.github.com/download/@macpaw/eslint-config-react/0.0.7/85bdd9b3a9a45ab7760c0c8846c967194ddb77b3da9be48c1e1978a21eb8f73c#e32477305b42c365e010943c9cfdb4853ebde39d"
-  integrity sha512-3VzDFRswCcFvR2Vz6KwiTL8Sn57fyNcX0WIiOfG+kiou7FUVmut9/Q7fqxkRuwAuou64hpkfgcFD9fK8AyfO5g==
+"@macpaw/eslint-config-react@^0.0.9":
+  version "0.0.9"
+  resolved "https://npm.pkg.github.com/download/@macpaw/eslint-config-react/0.0.9/131bf33da03b69ec3a6fccd53d5b11627187722bee04fe64da61a66da1881453#950ddf1016deb69e3bca18ccda8ebe2320409e0b"
+  integrity sha512-+pcWphIIYR4F/ajdGAtRWsGfOmC2L4UmuoTa/XuzqSR2/PqEwEfkFIZJz0GcDvX/EhBTQdnc1Ndd/JLpmQ4VFg==
 
 "@mdx-js/loader@^1.6.22":
   version "1.6.22"
@@ -1279,10 +1279,10 @@
   resolved "https://registry.yarnpkg.com/@next/env/-/env-10.0.5.tgz#446e59ee7a8d05061be784b24732c369653038ab"
   integrity sha512-dw6Q7PALIo7nTFfaB4OnRDte3EikrApGtjX/4cRmYXLh+uudDI50aS39MaGeKKZ2mxPKoNiFcY6Slv1f6KIPOw==
 
-"@next/mdx@^10.0.5":
-  version "10.0.5"
-  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-10.0.5.tgz#4f877870f7bc11dadf6c95558e64578db0901b0d"
-  integrity sha512-gQHbEzclXb5IydhpOpHRUhpa5nZm3UCYJQ48e1W5vE7ywidLNeMmNKKtR0nSnRZu0LJMaSSoR5wM2Nppqj/ZFQ==
+"@next/mdx@^10.0.6":
+  version "10.0.6"
+  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-10.0.6.tgz#d3e7588f6c3a77a126d7b73e1f48a41032afadff"
+  integrity sha512-kVgIVvvqTCzShMmd/hdToRmwjP+JToOoqohCGQ1DLYj6PSp5uKxakm8a8J2zgeRcYe+2B9KNEnyQJYXFVlXfCg==
 
 "@next/polyfill-module@10.0.5":
   version "10.0.5"

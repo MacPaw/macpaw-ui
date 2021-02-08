@@ -18,36 +18,36 @@ const LanguageIcon = (props) => {
   const { language, ...other } = props;
 
   switch (language) {
-  case 'en':
-    return <LanguageEn {...other} />;
-  case 'de':
-    return <LanguageDe {...other} />;
-  case 'es':
-    return <LanguageEs {...other} />;
-  case 'fr':
-    return <LanguageFr {...other} />;
-  case 'it':
-    return <LanguageIt {...other} />;
-  case 'ja':
-    return <LanguageJa {...other} />;
-  case 'ko':
-    return <LanguageKo {...other} />;
-  case 'nl':
-    return <LanguageNl {...other} />;
-  case 'pl':
-    return <LanguagePl {...other} />;
-  case 'pt':
-    return <LanguagePt {...other} />;
-  case 'ru':
-    return <LanguageRu {...other} />;
-  case 'tr':
-    return <LanguageTr {...other} />;
-  case 'uk':
-    return <LanguageUk {...other} />;
-  case 'zh':
-    return <LanguageZh {...other} />;
-  default:
-    return <LanguageEn {...other} />;
+    case 'en':
+      return <LanguageEn {...other} />;
+    case 'de':
+      return <LanguageDe {...other} />;
+    case 'es':
+      return <LanguageEs {...other} />;
+    case 'fr':
+      return <LanguageFr {...other} />;
+    case 'it':
+      return <LanguageIt {...other} />;
+    case 'ja':
+      return <LanguageJa {...other} />;
+    case 'ko':
+      return <LanguageKo {...other} />;
+    case 'nl':
+      return <LanguageNl {...other} />;
+    case 'pl':
+      return <LanguagePl {...other} />;
+    case 'pt':
+      return <LanguagePt {...other} />;
+    case 'ru':
+      return <LanguageRu {...other} />;
+    case 'tr':
+      return <LanguageTr {...other} />;
+    case 'uk':
+      return <LanguageUk {...other} />;
+    case 'zh':
+      return <LanguageZh {...other} />;
+    default:
+      return <LanguageEn {...other} />;
   }
 };
 
