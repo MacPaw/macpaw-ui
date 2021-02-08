@@ -55,9 +55,7 @@ const Multiselect = (props) => {
 
         <Select
           value=''
-          onChange={(event) =>
-            toggleSelected(options.find(o => o.value === event.target.value))
-          }
+          onChange={event => toggleSelected(options.find(o => o.value === event.target.value))}
         >
           <option value='' disabled>
             {placeholder || ''}
