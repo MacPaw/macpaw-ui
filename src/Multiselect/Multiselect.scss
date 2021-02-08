@@ -76,4 +76,15 @@
       pointer-events: auto;
     }
   }
+
+  &-wrapper {
+    .hint {
+      margin-top: 4px;
+    }
+
+    .h6 {
+      margin-bottom: 8px;
+      display: block;
+    }
+  }
 }
