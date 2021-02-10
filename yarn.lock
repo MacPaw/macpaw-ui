@@ -1220,15 +1220,15 @@
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.1.0.tgz#6c9eafc78c1529248f8f4d92b0799a712b6052c6"
   integrity sha512-i9YbZPN3QgfighY/1X1Pu118VUz2Fmmhd6b2n0/O8YVgGGfw0FbUYoA97k7FkpGJ+pLCFEDLUmAPPV4D1kpeFw==
 
-"@macpaw/eslint-config-base@^0.0.9":
-  version "0.0.9"
-  resolved "https://npm.pkg.github.com/download/@macpaw/eslint-config-base/0.0.9/78dbff22e5d7fd734aee3d991f143225bf1b816278247f7242d8eef4e7de95d0#dc48a67111ffcfaf2e93ea92fe397c63628edea4"
-  integrity sha512-wWUNt9ouArOtFbraoGFXtfj6kPAKzWr3iU0rh2kvLZSfiJESLsMBQK6ID0qux5JmNxK0ZCPnGWGHGIVzyp6rsA==
+"@macpaw/eslint-config-base@^0.0.17":
+  version "0.0.17"
+  resolved "https://npm.pkg.github.com/download/@macpaw/eslint-config-base/0.0.17/369323ffaf5b3fefb9b199a24029963f40823e8ec7b04b83eb70a50ae41c90ff#a06830839171136b687b6bef131eb62b969b2648"
+  integrity sha512-/der92YPkj9TvbSRQiOZKlmJtSaCQaDY7kNNIjPx/c4YfWynntYCMLsFV+izDBIFTpcpBcOWnC/Oc6MvVbso2A==
 
-"@macpaw/eslint-config-react@^0.0.9":
-  version "0.0.9"
-  resolved "https://npm.pkg.github.com/download/@macpaw/eslint-config-react/0.0.9/131bf33da03b69ec3a6fccd53d5b11627187722bee04fe64da61a66da1881453#950ddf1016deb69e3bca18ccda8ebe2320409e0b"
-  integrity sha512-+pcWphIIYR4F/ajdGAtRWsGfOmC2L4UmuoTa/XuzqSR2/PqEwEfkFIZJz0GcDvX/EhBTQdnc1Ndd/JLpmQ4VFg==
+"@macpaw/eslint-config-react@^0.0.17":
+  version "0.0.17"
+  resolved "https://npm.pkg.github.com/download/@macpaw/eslint-config-react/0.0.17/49dba74e055b099a11e350d1e0077b0e6d1b53baea5528fb0e93ffa86a096114#098f39afd171f41b8c26495209aa88288d5734b3"
+  integrity sha512-94KvvAT46QNznbJ54MS2c6CxXQ4BCT7jPRnPM/EjS1HVcgDggbGyP1s6fJAvsyKLFB34352M+2NqIOJzYeiwTQ==
 
 "@mdx-js/loader@^1.6.22":
   version "1.6.22"
