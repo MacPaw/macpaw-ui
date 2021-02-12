@@ -32,8 +32,6 @@ const Button = forwardRef((props, ref) => {
   });
 
   const componentProps = {};
-  const isIconLeft = !loading && iconLeft;
-  const isIconRight = !loading && iconRight;
 
   let Component = component;
 
@@ -50,10 +48,10 @@ const Button = forwardRef((props, ref) => {
 
   return (
     <Component className={classNames} {...componentProps} {...other} ref={ref}>
-      {isIconLeft && <span className="button-icon -left">{iconLeft}</span>}
+      {iconLeft && <span className="button-icon -left">{iconLeft}</span>}
       {loading && <PawIcon className="button-loader" />}
       <span className="button-content">{children}</span>
-      {isIconRight && <span className="button-icon -right">{iconRight}</span>}
+      {iconRight && <span className="button-icon -right">{iconRight}</span>}
     </Component>
   );
 });
