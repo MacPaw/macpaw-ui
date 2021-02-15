@@ -5,7 +5,7 @@ const DialogContent = (props) => {
   const { children, className, ...other } = props;
 
   return (
-    <div className={cx('dialog-content', className)} {...other}>
+    <div className={cx('dialogContent', className)} {...other}>
       {children}
     </div>
   );

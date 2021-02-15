@@ -15,11 +15,18 @@ const Input = forwardRef((props, ref) => {
     ...other
   } = props;
 
-  const classNames = cx('input', { '-error': Boolean(error), '-medium': size === 'medium', '-small': size === 'small', '-big': size === 'big' });
+  const classNames = cx('input', {
+    '-error': Boolean(error),
+    '-medium': size === 'medium',
+    '-small': size === 'small',
+    '-big': size === 'big',
+  });
 
   const componentProps = {
     className: cx(action && '-with-action', className),
   };
+
+  const showHintError = error && typeof error !== 'boolean';
   const Component = multiline ? 'textarea' : 'input';
 
   if (Component === 'input') {
@@ -38,7 +45,7 @@ const Input = forwardRef((props, ref) => {
         />
         {action && <span className="input-action">{action}</span>}
       </span>
-      {typeof error !== 'boolean' && <Hint error style={{ marginTop: 6 }}>{error}</Hint>}
+      {showHintError && <Hint error style={{ marginTop: 6 }}>{error}</Hint>}
     </label>
   );
 });

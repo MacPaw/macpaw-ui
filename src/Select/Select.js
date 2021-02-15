@@ -15,7 +15,15 @@ const Select = (props) => {
     ...other
   } = props;
 
-  const classNames = cx('select', { className, '-error': Boolean(error), '-medium': size === 'medium', '-small': size === 'small', '-big': size === 'big' });
+  const classNames = cx('select', {
+    className,
+    '-error': Boolean(error),
+    '-medium': size === 'medium',
+    '-small': size === 'small',
+    '-big': size === 'big',
+  });
+
+  const showHintError = error && typeof error !== 'boolean';
 
   return (
     <label className={classNames} style={style}>
@@ -23,8 +31,7 @@ const Select = (props) => {
       <select value={selected} disabled={disabled} {...other}>
         {children}
       </select>
-      {typeof error !== 'boolean' && (<Hint style={{ marginTop: 6 }} error>{error}</Hint>
-      )}
+      {showHintError && (<Hint style={{ marginTop: 6 }} error>{error}</Hint>)}
     </label>
   );
 };

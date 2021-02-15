@@ -6,8 +6,8 @@ const DialogIcon = (props) => {
   const { className, children, ...other } = props;
 
   return (
-    <div className={cx('dialog-icon', className)} {...other}>
-      <DialogIconBackdrop className="dialog-icon-backdrop" />
+    <div className={cx('dialogIcon', className)} {...other}>
+      <DialogIconBackdrop className="dialogIcon-backdrop" />
       {children}
     </div>
   );

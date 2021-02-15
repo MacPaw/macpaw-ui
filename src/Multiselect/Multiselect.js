@@ -2,6 +2,7 @@ import cx from 'clsx';
 import React from 'react';
 import Select from '../Select/Select';
 import Tag from '../Tag/Tag';
+import TagList from '../TagList/TagList';
 import Hint from '../Hint/Hint';
 
 const Multiselect = (props) => {
@@ -15,11 +16,14 @@ const Multiselect = (props) => {
     label,
     ...other
   } = props;
+
   const options = React.Children.map(children, (c) => ({
     value: c.props.value,
     label: c.props.children,
     selected: Boolean(c.props.selected),
   }));
+
+  const showHintError = error && typeof error !== 'boolean';
   const selectedOptions = options.filter((o) => o.selected);
   const selectedValues = selectedOptions.map((o) => o.value);
   const rootClassnames = cx(
@@ -44,17 +48,21 @@ const Multiselect = (props) => {
     <>
       {label && <div className="h6">{label}</div>}
       <div className={rootClassnames} {...other}>
-        <div className="tags">
-          {selectedOptions.map((o) => (
-            <Tag key={o.value} onRemove={() => toggleSelected(o)}>
-              {o.label}
-            </Tag>
-          ))}
-        </div>
+        {selectedOptions.length && (
+          <TagList>
+            {selectedOptions.map((o) => (
+              <Tag key={o.value} onRemove={() => toggleSelected(o)}>
+                {o.label}
+              </Tag>
+            ))}
+          </TagList>
+        )}
 
         <Select
           value=""
-          onChange={(event) => toggleSelected(options.find((o) => o.value === event.target.value))}
+          onChange={(event) => toggleSelected(
+            options.find((o) => o.value === event.target.value)
+          )}
         >
           <option value="" disabled>
             {placeholder || ''}
@@ -66,7 +74,7 @@ const Multiselect = (props) => {
           ))}
         </Select>
       </div>
-      {typeof error !== 'boolean' && <Hint style={{ marginTop: 6 }} error>{error}</Hint>}
+      {showHintError && <Hint style={{ marginTop: 6 }} error>{error}</Hint>}
     </>
   );
 };

@@ -1,21 +1,47 @@
-import { Tag } from '../src/ui';
+import { Tag, TagList } from '../src/ui';
 
 # Tag
 
-<Tag>Support</Tag>
 <Tag>Affiliate Manager</Tag>
 
 ```
-<Tag>Support</Tag>
 <Tag>Affiliate Manager</Tag>
 ```
 
 ## With Remove Button
 
 <Tag onRemove={() => alert('remove event')}>Support</Tag>
-<Tag onRemove={() => alert('remove event')}>Affiliate Manager</Tag>
 
 ```
 <Tag onRemove={() => alert('remove event')}>Support</Tag>
-<Tag onRemove={() => alert('remove event')}>Affiliate Manager</Tag>
+```
+
+# TagList
+
+<TagList style={{ width: 300 }}>
+    <Tag>Kyiv</Tag>
+    <Tag>Kharkiv</Tag>
+    <Tag>Odesa</Tag>
+    <Tag>Dnipro</Tag>
+    <Tag>Donetsk</Tag>
+    <Tag>Zaporizhzhia</Tag>
+    <Tag>Lviv</Tag>
+    <Tag>Kryvyi Rih</Tag>
+    <Tag>Mykolaiv</Tag>
+    <Tag>Mariupol</Tag>
+</TagList>
+
+```
+<TagList style={{ width: 300 }}>
+    <Tag>Kyiv</Tag>
+    <Tag>Kharkiv</Tag>
+    <Tag>Odesa</Tag>
+    <Tag>Dnipro</Tag>
+    <Tag>Donetsk</Tag>
+    <Tag>Zaporizhzhia</Tag>
+    <Tag>Lviv</Tag>
+    <Tag>Kryvyi Rih</Tag>
+    <Tag>Mykolaiv</Tag>
+    <Tag>Mariupol</Tag>
+</TagList>
 ```

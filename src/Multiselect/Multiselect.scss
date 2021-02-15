@@ -3,7 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 6px 2px;
+  padding: 10px;
   border-radius: 8px;
   border: 2px solid rgba(111, 114, 121, 0.16);
   outline: none;
@@ -31,7 +31,7 @@
   }
 
   &.-medium {
-    padding: 2px;
+    padding: 6px;
 
     .select select {
       padding-top: 0;
@@ -59,7 +59,6 @@
   }
 
   .tag {
-    margin: 4px !important;
     position: relative;
     pointer-events: none;
     z-index: 1;

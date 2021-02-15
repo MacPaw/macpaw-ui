@@ -1,14 +1,14 @@
 import React from 'react';
 import cx from 'clsx';
 
-const DialogActions = (props) => {
+const TagList = (props) => {
   const { className, children, ...other } = props;
 
   return (
-    <div className={cx('dialogActions', className)} {...other}>
+    <div className={cx('tagList', className)} {...other}>
       {children}
     </div>
   );
 };
 
-export default DialogActions;
+export default TagList;

@@ -23,5 +23,6 @@ export { default as Payment } from './Payment/Payment';
 export { default as Radio } from './Radio/Radio';
 export { default as Select } from './Select/Select';
 export { default as Tag } from './Tag/Tag';
+export { default as TagList } from './TagList/TagList';
 export { default as Table } from './Table/Table';
 export { default as TableRow } from './TableRow/TableRow';

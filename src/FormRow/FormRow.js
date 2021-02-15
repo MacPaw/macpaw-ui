@@ -10,7 +10,7 @@ const FormRow = (props) => {
   } = props;
 
   return (
-    <div className={cx('form-row', variety && '-variety', className)} {...other}>
+    <div className={cx('formRow', variety && '-variety', className)} {...other}>
       {children}
     </div>
   );

@@ -5,7 +5,7 @@ const CardMask = (props) => {
   const { digits, short, className } = props;
 
   return (
-    <div className={cx('card-mask', className)}>
+    <div className={cx('cardMask', className)}>
       <span>●●●●</span>
       {!short && <span>●●●●</span>}
       {!short && <span>●●●●</span>}
