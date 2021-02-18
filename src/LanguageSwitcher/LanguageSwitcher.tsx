@@ -2,7 +2,6 @@ import React, { FC, HTMLAttributes } from 'react';
 import cx from 'clsx';
 import LanguageIcon from '../LanguageIcon/LanguageIcon';
 import DropdownIcon from '../Icons/jsx/DropdownIcon';
-import { Language } from '../types';
 
 const getLocaleName = (locale: string) => {
   switch (locale) {
@@ -40,8 +39,8 @@ const getLocaleName = (locale: string) => {
 };
 
 interface LanguageSwitcherProps extends HTMLAttributes<HTMLSelectElement> {
-  currentLanguage: Language;
-  availableLanguages: Language[];
+  currentLanguage: string;
+  availableLanguages: string[];
 }
 
 const LanguageSwitcher: FC<LanguageSwitcherProps> = (props) => {

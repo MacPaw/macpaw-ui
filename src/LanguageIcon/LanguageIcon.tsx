@@ -1,5 +1,4 @@
 import React, { FC, HTMLAttributes } from 'react';
-import { Language } from '../types';
 import LanguageDe from '../Icons/jsx/LanguageDe';
 import LanguageEn from '../Icons/jsx/LanguageEn';
 import LanguageEs from '../Icons/jsx/LanguageEs';
@@ -16,7 +15,7 @@ import LanguageUk from '../Icons/jsx/LanguageUk';
 import LanguageZh from '../Icons/jsx/LanguageZh';
 
 interface LanguageIconProps extends HTMLAttributes<SVGElement> {
-  language?: Language;
+  language?: string;
 }
 
 const LanguageIcon: FC<LanguageIconProps> = (props) => {
