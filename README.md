@@ -2,9 +2,9 @@
 
 ## Adding new Component
 
-* Add Component's JS / styles / typings files to [src/%ComponentName%](/src) directory
-* Import Component's JS, styles and typings to [ui.js](/src/ui.js), [ui.scss](/src/ui.scss) and [ui.d.ts](/src/ui.d.ts) correspondingly
-* Describe Component in `/pages/%component-name%.mdx`
+* Add Component's JSX and styles to [src/%ComponentName%](/src) directory
+* Import Component's JS, styles to [ui.js](/src/ui.js) and [ui.scss](/src/ui.scss) correspondingly
+* Add document page in `/pages/%component-name%.mdx`
 
 ## Adding new Icons
 

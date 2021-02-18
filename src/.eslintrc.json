@@ -1,6 +1,7 @@
 {
   "extends": [
     "@macpaw/eslint-config-base",
-    "@macpaw/eslint-config-react"
+    "@macpaw/eslint-config-react",
+    "@macpaw/eslint-config-typescript"
   ]
 }

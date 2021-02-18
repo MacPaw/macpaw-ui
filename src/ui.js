@@ -18,6 +18,7 @@ export { default as LanguageSwitcher } from './LanguageSwitcher/LanguageSwitcher
 export { default as Loader } from './Loader/Loader';
 export { default as Multiselect } from './Multiselect/Multiselect';
 export { default as Panel } from './Panel/Panel';
+export { default as Pagination } from './Pagination/Pagination';
 export { default as Password } from './Password/Password';
 export { default as Payment } from './Payment/Payment';
 export { default as Radio } from './Radio/Radio';

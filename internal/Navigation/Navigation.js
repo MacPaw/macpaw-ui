@@ -15,6 +15,7 @@ const pages = [
   'input',
   'language-switcher',
   'loader',
+  'pagination',
   'panel',
   'payment',
   'radio',
