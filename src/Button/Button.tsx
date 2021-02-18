@@ -14,6 +14,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   component?: ReactNode;
   asLink?: boolean;
   icon?: boolean;
+  [x: string]: any;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
