@@ -1,9 +1,9 @@
-import React, { FC, HTMLAttributes, ReactNode, useState } from 'react';
+import React, { FC, InputHTMLAttributes, ReactNode, useState } from 'react';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 import { Error } from '../types';
 
-interface PasswordProps extends HTMLAttributes<HTMLInputElement> {
+interface PasswordProps extends InputHTMLAttributes<HTMLInputElement> {
   onShowHide?: boolean | (() => void);
   onForgot?: () => void;
   scale?: 'medium' | 'small';
