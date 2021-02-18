@@ -1,7 +1,7 @@
-import React, { forwardRef, HTMLAttributes } from 'react';
+import React, { forwardRef, InputHTMLAttributes } from 'react';
 import cx from 'clsx';
 
-interface CheckboxProps extends HTMLAttributes<HTMLInputElement> {
+interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   checked?: boolean;
   disabled?: boolean;
   error?: boolean;

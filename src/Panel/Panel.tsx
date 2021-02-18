@@ -5,7 +5,7 @@ interface PanelProps extends HTMLAttributes<HTMLElement & HTMLLinkElement> {
   outline?: boolean;
   href?: string;
   component?: ReactNode;
-  [x:string]: any;
+  to?: string;
 }
 
 const Panel: FC<PanelProps> = (props) => {
