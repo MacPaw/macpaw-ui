@@ -24,8 +24,7 @@ const Select: FC<SelectProps> = (props) => {
     ...other
   } = props;
 
-  const classNames = cx('select', {
-    className,
+  const classNames = cx('select', className, {
     '-error': Boolean(error),
     '-medium': scale === 'medium',
     '-small': scale === 'small',
