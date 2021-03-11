@@ -1,5 +1,6 @@
 export { default as AccountIcon } from './AccountIcon';
 export { default as BackIcon } from './BackIcon';
+export { default as CancelIcon } from './CancelIcon';
 export { default as CheckIcon } from './CheckIcon';
 export { default as CloseIcon } from './CloseIcon';
 export { default as CopyIcon } from './CopyIcon';
@@ -26,6 +27,7 @@ export { default as LanguageUk } from './LanguageUk';
 export { default as LanguageZh } from './LanguageZh';
 export { default as MacpawText } from './MacpawText';
 export { default as NotificationIcon } from './NotificationIcon';
+export { default as PauseIcon } from './PauseIcon';
 export { default as PawIcon } from './PawIcon';
 export { default as PaymentAmex } from './PaymentAmex';
 export { default as PaymentCard } from './PaymentCard';
