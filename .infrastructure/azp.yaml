@@ -15,8 +15,8 @@ resources:
       endpoint: MacPaw
 
 variables:
-  - group: composer
-  - group: macpaw-ui-vault-role
+  - group: github
+  - group: vault
   - name: cluster
     value: production
   - name: project
@@ -37,6 +37,7 @@ stages:
         steps:
           - template: azp/templates/docker-build-push.yaml@ops-macpaw-io
             parameters:
+              containerRegistry: gcr
               imageName: $(component)
               buildArgs: --build-arg NPM_TOKEN=$(github_token)
               tag: $(dockerTag)-cli
@@ -47,16 +48,17 @@ stages:
           - task: VaultReadKV@2
             displayName: Read AWS credentials
             inputs:
-              strUrl: $(vault-addr)
+              strUrl: $(addr)
               ignoreCertificateChecks: true
               strAuthType: approle
-              strRoleID: $(vault-approle-id)
-              strSecretID: $(vault-approle-secret)
+              strRoleID: $(approle-id)
+              strSecretID: $(approle-secret)
               strKVEnginePath: aws
               kvVersion: 'v1'
               strSecretPath: /macpaw/creds/$(cluster)-$(project)-$(component)
           - template: azp/templates/docker-pm-run.yaml@ops-macpaw-io
             parameters:
+              containerRegistry: gcr
               imageName: $(component)
               command: deploy:s3
               envVars:
@@ -65,5 +67,6 @@ stages:
                 AWS_SESSION_TOKEN: $(security_token)
           - template: azp/templates/github-deployment.yaml@ops-macpaw-io
             parameters:
+              containerRegistry: gcr
               name: production
               url: https://ui.macpaw.com
