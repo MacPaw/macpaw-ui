@@ -4,58 +4,36 @@ import Button from '../Button/Button';
 import { Error } from '../types';
 
 interface PasswordProps extends InputHTMLAttributes<HTMLInputElement> {
-  onShowHide?: boolean | (() => void);
-  onForgot?: () => void;
   scale?: 'medium' | 'small';
   label?: string | ReactNode;
   error?: Error;
-  i18nShow?: string;
-  i18nHide?: string;
-  i18nForgot?: string;
+  withToggle?: boolean;
+  i18nToggle?: (isPasswordVisible: boolean) => string;
+  onToggle?: () => void;
+}
+
+function i18nToggleDefault(isPasswordVisible) {
+  return isPasswordVisible ? 'Hide' : 'Show';
 }
 
 const Password: FC<PasswordProps> = (props) => {
-  const {
-    onShowHide,
-    onForgot,
-    i18nShow = 'Show',
-    i18nHide = 'Hide',
-    i18nForgot = 'Forgot',
-    ...other
-  } = props;
-  const withAction = onShowHide || onForgot;
+  const { withToggle, i18nToggle = i18nToggleDefault, onToggle, ...other } = props;
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const showActionHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const toggleHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     setPasswordVisible(!passwordVisible);
-    if (typeof onShowHide === 'function') onShowHide();
-  };
-
-  const Action = () => {
-    if (onShowHide) {
-      return (
-        <Button asLink onClick={showActionHandler}>
-          {passwordVisible ? i18nHide : i18nShow}
-        </Button>
-      );
-    }
-
-    if (onForgot) {
-      return (
-        <Button asLink onClick={onForgot}>
-          {i18nForgot}
-        </Button>
-      );
-    }
-
-    return null;
+    if (onToggle) onToggle();
   };
 
   return (
     <Input
       {...other}
       type={passwordVisible ? 'text' : 'password'}
-      action={withAction ? <Action /> : undefined}
+      action={withToggle && (
+        <Button asLink onClick={toggleHandler}>
+          {i18nToggle(passwordVisible)}
+        </Button>
+      )}
     />
   );
 };

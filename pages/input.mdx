@@ -28,18 +28,6 @@ import { Input, FormRow, Button, Password } from '../src/ui';
 </div>
 ```
 
-## Input with Action
-
-<div style={{ width: 300 }}>
-    <Input type="password" name="password" value="password" onChange={() => {}} placeholder="Password" action={<Button asLink>Forgot?</Button>} />
-</div>
-
-```
-<div style={{ width: 300 }}>
-    <Input type="password" name="password" value="password" onChange={() => {}} placeholder="Password" action={<Button asLink>Forgot?</Button>} />
-</div>
-```
-
 ## Scale
 
 <div style={{ width: 300 }}>
@@ -71,12 +59,12 @@ import { Input, FormRow, Button, Password } from '../src/ui';
 ### Multiline
 
 <div style={{ width: 300 }}>
-    <Input multiline rows={5} name="feedback" value="Feedback message" onChange={() => {}} label="Feedback" />
+    <Input multiline rows={5} name="feedback" label="Feedback" placeholder="Your feedback" />
 </div>
 
 ```
 <div style={{ width: 300 }}>
-    <Input multiline rows={5} name="feedback" value="Feedback message" onChange={() => {}} label="Feedback" />
+    <Input multiline rows={5} name="feedback" label="Feedback" placeholder="Your feedback" />
 </div>
 ```
 
@@ -84,32 +72,26 @@ import { Input, FormRow, Button, Password } from '../src/ui';
 
 <div style={{ width: 300 }}>
     <FormRow>
-        <Password label="Show/Hide Password" placeholder="Your password" onShowHide />
+        <Password label="Show/Hide Password" placeholder="Your password" withToggle />
     </FormRow>
     <FormRow>
-        <Password label="With Forgot Action" placeholder="Medium" onForgot={() => {}} scale="medium" />
+        <Password label="Medium" placeholder="Your password" withToggle scale="medium" />
     </FormRow>
     <FormRow>
-        <Password placeholder="Small" onForgot={() => {}} scale="small" />
-    </FormRow>
-    <FormRow>
-        <Password label="With Error Message" onShowHide error="Error message" />
+        <Password label="With Error Message" placeholder="Your password" withToggle error="Error message" />
     </FormRow>
 </div>
 
 ```
 <div style={{ width: 300 }}>
     <FormRow>
-        <Password label="Show/Hide Password" placeholder="Your password" onShowHide />
+        <Password label="Show/Hide Password" placeholder="Your password" withToggle />
     </FormRow>
     <FormRow>
-        <Password label="With Forgot Action" placeholder="Medium" onForgot={() => {}} scale="medium" />
+        <Password label="With Toggle" placeholder="Medium" withToggle scale="medium" />
     </FormRow>
     <FormRow>
-        <Password placeholder="Small" onForgot={() => {}} scale="small" />
-    </FormRow>
-    <FormRow>
-        <Password label="With Error Message" onShowHide error="Error message" />
+        <Password label="With Error Message" placeholder="Your password" withToggle error="Error message" />
     </FormRow>
 </div>
 ```
