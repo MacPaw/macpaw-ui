@@ -12,7 +12,7 @@ interface PasswordProps extends InputHTMLAttributes<HTMLInputElement> {
   onToggle?: () => void;
 }
 
-function i18nToggleDefault(isPasswordVisible) {
+function i18nToggleDefault(isPasswordVisible: boolean) {
   return isPasswordVisible ? 'Hide' : 'Show';
 }
 
