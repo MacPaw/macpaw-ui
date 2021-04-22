@@ -3,7 +3,7 @@ import cx from 'clsx';
 import PawIcon from '../Icons/jsx/PawIcon';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  color?: 'primary' | 'secondary' | 'warning';
+  color?: 'primary' | 'secondary' | 'warning' | 'transparent';
   scale?: 'medium' | 'small';
   wide?: boolean;
   loading?: boolean;

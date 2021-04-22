@@ -29,26 +29,66 @@ import { Refresh, PlayIcon } from '../src/Icons/jsx';
 
 Used for main action on current page, usually it’s one of two, either Free Download or Buy Now
 
+<Button color="primary" style={{width: 200, margin: 8}}>Primary</Button>
+<Button color="primary" style={{width: 200, margin: 8}} loading>Loading</Button>
+<Button color="primary" style={{width: 200, margin: 8}} disabled>Disabled</Button>
+<Button color="primary" icon style={{margin: 8}}><Refresh /></Button>
+<Button color="primary" icon disabled style={{margin: 8}}><Refresh /></Button>
+
+```
+<Button color="primary" style={{width: 200, margin: 8}}>Primary</Button>
+<Button color="primary" style={{width: 200, margin: 8}} loading>Loading</Button>
+<Button color="primary" style={{width: 200, margin: 8}} disabled>Disabled</Button>
+<Button color="primary" icon style={{margin: 8}}><Refresh /></Button>
+<Button color="primary" icon disabled style={{margin: 8}}><Refresh /></Button>
+```
+
+## Primary outline
+
+<Button color="primary" outline style={{width: 200, margin: 8}}>Primary outline</Button>
+<Button color="primary" outline style={{width: 200, margin: 8}} loading>Loading</Button>
+<Button color="primary" outline style={{width: 200, margin: 8}} disabled>Disabled</Button>
+<Button color="primary" outline icon style={{margin: 8}}><Refresh /></Button>
+<Button color="primary" outline icon disabled style={{margin: 8}}><Refresh /></Button>
+
+```
+<Button color="primary" outline style={{width: 200, margin: 8}}>Primary outline</Button>
+<Button color="primary" outline style={{width: 200, margin: 8}} loading>Loading</Button>
+<Button color="primary" outline style={{width: 200, margin: 8}} disabled>Disabled</Button>
+<Button color="primary" outline icon style={{margin: 8}}><Refresh /></Button>
+<Button color="primary" outline icon disabled style={{margin: 8}}><Refresh /></Button>
+```
+
+## Secondary
+
 <Button color="secondary" style={{width: 200, margin: 8}}>Secondary</Button>
 <Button color="secondary" style={{width: 200, margin: 8}} loading>Loading</Button>
 <Button color="secondary" style={{width: 200, margin: 8}} disabled>Disabled</Button>
+<Button color="secondary" icon style={{margin: 8}}><Refresh /></Button>
+<Button color="secondary" icon disabled style={{margin: 8}}><Refresh /></Button>
 
 ```
 <Button color="secondary" style={{width: 200, margin: 8}}>Secondary</Button>
 <Button color="secondary" style={{width: 200, margin: 8}} loading>Loading</Button>
 <Button color="secondary" style={{width: 200, margin: 8}} disabled>Disabled</Button>
+<Button color="secondary" icon style={{margin: 8}}><Refresh /></Button>
+<Button color="secondary" icon disabled style={{margin: 8}}><Refresh /></Button>
 ```
 
-## Secondary - low priority
+## Secondary outline
 
-<Button color="secondary" outline style={{width: 200, margin: 8}}>Secondary</Button>
+<Button color="secondary" outline style={{width: 200, margin: 8}}>Secondary outline</Button>
 <Button color="secondary" outline style={{width: 200, margin: 8}} loading>Loading</Button>
 <Button color="secondary" outline style={{width: 200, margin: 8}} disabled>Disabled</Button>
+<Button color="secondary" outline icon style={{margin: 8}}><Refresh /></Button>
+<Button color="secondary" outline icon disabled style={{margin: 8}}><Refresh /></Button>
 
 ```
-<Button color="secondary" outline style={{width: 200, margin: 8}}>Secondary</Button>
+<Button color="secondary" outline style={{width: 200, margin: 8}}>Secondary outline</Button>
 <Button color="secondary" outline style={{width: 200, margin: 8}} loading>Loading</Button>
 <Button color="secondary" outline style={{width: 200, margin: 8}} disabled>Disabled</Button>
+<Button color="secondary" outline icon style={{margin: 8}}><Refresh /></Button>
+<Button color="secondary" outline icon disabled style={{margin: 8}}><Refresh /></Button>
 ```
 
 ## Warning
@@ -56,23 +96,31 @@ Used for main action on current page, usually it’s one of two, either Free Dow
 <Button color="warning" style={{width: 200, margin: 8}}>Warning</Button>
 <Button color="warning" style={{width: 200, margin: 8}} loading>Loading</Button>
 <Button color="warning" style={{width: 200, margin: 8}} disabled>Disabled</Button>
+<Button color="warning" icon style={{margin: 8}}><Refresh /></Button>
+<Button color="warning" icon disabled style={{margin: 8}}><Refresh /></Button>
 
 ```
 <Button color="warning" style={{width: 200, margin: 8}}>Warning</Button>
 <Button color="warning" style={{width: 200, margin: 8}} loading>Loading</Button>
 <Button color="warning" style={{width: 200, margin: 8}} disabled>Disabled</Button>
+<Button color="warning" icon style={{margin: 8}}><Refresh /></Button>
+<Button color="warning" icon disabled style={{margin: 8}}><Refresh /></Button>
 ```
 
-## Warning - low priority
+## Warning outline
 
-<Button color="warning" outline style={{width: 200, margin: 8}}>Warning</Button>
+<Button color="warning" outline style={{width: 200, margin: 8}}>Warning outline</Button>
 <Button color="warning" outline style={{width: 200, margin: 8}} loading>Loading</Button>
 <Button color="warning" outline style={{width: 200, margin: 8}} disabled>Disabled</Button>
+<Button color="warning" outline icon style={{margin: 8}}><Refresh /></Button>
+<Button color="warning" outline icon disabled style={{margin: 8}}><Refresh /></Button>
 
 ```
-<Button color="warning" outline style={{width: 200, margin: 8}}>Warning</Button>
+<Button color="warning" outline style={{width: 200, margin: 8}}>Warning outline</Button>
 <Button color="warning" outline style={{width: 200, margin: 8}} loading>Loading</Button>
 <Button color="warning" outline style={{width: 200, margin: 8}} disabled>Disabled</Button>
+<Button color="warning" outline icon style={{margin: 8}}><Refresh /></Button>
+<Button color="warning" outline icon disabled style={{margin: 8}}><Refresh /></Button>
 ```
 
 ## As a link tag
@@ -85,12 +133,12 @@ Used for main action on current page, usually it’s one of two, either Free Dow
 <Button href="#" asLink style={{marginLeft: 8}}>Inline as Link</Button>
 ```
 
-## Icon Button
+## Transparent
 
-<Button color="primary" icon style={{margin: 8}}><Refresh /></Button>
-<Button color="secondary" icon outline style={{margin: 8}}><Refresh /></Button>
+<Button color="transparent" icon style={{margin: 8}}><Refresh /></Button>
+<Button color="transparent" icon disabled style={{margin: 8}}><Refresh /></Button>
 
 ```
-<Button color="primary" icon style={{margin: 8}}><Refresh /></Button>
-<Button color="secondary" icon outline style={{margin: 8}}><Refresh /></Button>
+<Button color="transparent" icon style={{margin: 8}}><Refresh /></Button>
+<Button color="transparent" icon disabled style={{margin: 8}}><Refresh /></Button>
 ```

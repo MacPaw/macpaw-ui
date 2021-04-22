@@ -16,9 +16,9 @@
   box-shadow: none;
   white-space: nowrap;
   cursor: pointer;
-  transition: .1s all ease-in-out;
   user-select: none;
   outline: none;
+  transition: .1s all ease-in-out;
 
   &:focus {
     box-shadow: 0 0 0 3px var(--color-outline);
@@ -186,6 +186,16 @@
     transform: translate(-50%, -50%);
     animation: button-loading linear infinite 1s;
     fill: currentColor;
+  }
+
+  // transparent
+
+  &.-transparent {
+    background: none;
+
+    &:not(:disabled):hover {
+      background: var(--color-black-04);
+    }
   }
 
   // icons

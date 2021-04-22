@@ -27,6 +27,7 @@ export { default as LanguageUk } from './LanguageUk';
 export { default as LanguageZh } from './LanguageZh';
 export { default as MacpawText } from './MacpawText';
 export { default as MenuIcon } from './MenuIcon';
+export { default as MoreIcon } from './MoreIcon';
 export { default as NotificationIcon } from './NotificationIcon';
 export { default as PauseIcon } from './PauseIcon';
 export { default as PawIcon } from './PawIcon';

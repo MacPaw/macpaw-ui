@@ -8,6 +8,8 @@ export { default as Dialog } from './Dialog/Dialog';
 export { default as DialogActions } from './DialogActions/DialogActions';
 export { default as DialogContent } from './DialogContent/DialogContent';
 export { default as DialogIcon } from './DialogIcon/DialogIcon';
+export { default as Dropdown } from './Dropdown/Dropdown';
+export { default as DropdownItem } from './DropdownItem/DropdownItem';
 export { default as ExternalLink } from './ExternalLink/ExternalLink';
 export { default as FormRow } from './FormRow/FormRow';
 export { default as Hint } from './Hint/Hint';

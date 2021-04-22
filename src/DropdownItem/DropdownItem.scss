@@ -1,0 +1,38 @@
+.dropdownItem {
+  padding: 16px 32px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 14px;
+  line-height: 1;
+  box-shadow: none;
+  border-radius: 0;
+  text-align: left;
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+
+  &.-clickable {
+    cursor: pointer;
+
+    &:hover {
+      background: var(--color-black-04);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px var(--color-outline);
+    }
+  }
+
+  &.-attention {
+    color: var(--color-error);
+  }
+
+  &.-separator {
+    display: block;
+    width: auto;
+    height: 2px;
+    padding: 0;
+    margin: 12px 32px;
+    background: var(--color-black-08);
+  }
+}
