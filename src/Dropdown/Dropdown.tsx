@@ -26,7 +26,7 @@ const DropDown: React.FC<Dropdown> = (props) => {
   });
 
   useEffect(() => {
-    const listener = (event) => {
+    const listener = (event: PointerEvent) => {
       if (!rootRef.current || !menuRef.current) return;
       const clickOnRoot = rootRef.current.contains(event.target as Node);
       const clickOnMenu = menuRef.current.contains(event.target as Node);
