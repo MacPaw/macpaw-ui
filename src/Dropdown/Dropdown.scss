@@ -23,6 +23,7 @@
     box-shadow: 0 8px 16px 0 rgb(0 0 0 / 8%);
     border-radius: 12px;
     width: 260px;
+    transform-origin: 50% 0;
     transform: translateY(2px) scaleY(0.95);
     transition: .15s all ease-in-out;
     z-index: 1000;
