@@ -8,10 +8,6 @@
     transform: translateY(6px) scaleY(1);
   }
 
-  &.-open &-rotate svg {
-    transform: rotateZ(180deg);
-  }
-
   &-menu {
     visibility: hidden;
     opacity: 0;
@@ -39,12 +35,8 @@
     }
   }
 
-  &-rotate {
-    display: contents;
-
-    svg {
-      will-change: transform;
-      transition: .2s all ease-out;
-    }
+  .button:not(.-icon) svg {
+    width: 18px;
+    height: 18px;
   }
 }

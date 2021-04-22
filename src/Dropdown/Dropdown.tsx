@@ -4,11 +4,10 @@ import cx from 'clsx';
 interface Dropdown extends HTMLAttributes<HTMLDivElement> {
   trigger: React.ReactElement;
   position?: 'left' | 'center' | 'right';
-  rotateIcon?: boolean;
 }
 
 const DropDown: React.FC<Dropdown> = (props) => {
-  const { className, children, trigger, position, rotateIcon, ...other } = props;
+  const { className, children, trigger, position, ...other } = props;
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -42,12 +41,7 @@ const DropDown: React.FC<Dropdown> = (props) => {
 
   return (
     <div className={cx('dropdown', isOpen && '-open', className)} {...other} ref={rootRef}>
-      {rotateIcon ? (
-        <div className="dropdown-rotate">
-          {triggerClone}
-        </div>
-      ) : triggerClone}
-
+      {triggerClone}
       <div className={menuClassName} ref={menuRef}>
         {children}
       </div>
