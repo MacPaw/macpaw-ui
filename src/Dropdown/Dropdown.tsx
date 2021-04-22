@@ -42,9 +42,9 @@ const DropDown: React.FC<Dropdown> = (props) => {
   }, []);
 
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && onOpen) {
       onOpen();
-    } else {
+    } else if (onClose) {
       onClose();
     }
   }, [isOpen, onClose, onOpen]);
