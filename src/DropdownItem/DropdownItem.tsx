@@ -19,7 +19,7 @@ const DropdownItem: React.FC<DropdownItem> = (props) => {
     Component = 'a';
   }
 
-  if (separator) {
+  if (withoutAction || separator) {
     Component = 'div';
   }
 
