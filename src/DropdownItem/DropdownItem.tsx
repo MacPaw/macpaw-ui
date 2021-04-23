@@ -25,7 +25,7 @@ const DropdownItem: React.FC<DropdownItem> = (props) => {
 
   const classNames = cx('dropdownItem', className, {
     '-attention': attention,
-    '-clickable': !withoutAction,
+    '-clickable': !(separator || withoutAction),
     '-separator': separator,
   });
 
