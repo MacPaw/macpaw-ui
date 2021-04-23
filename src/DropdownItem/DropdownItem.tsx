@@ -7,6 +7,7 @@ interface DropdownItem extends ButtonHTMLAttributes<HTMLButtonElement> {
   attention?: boolean;
   withoutAction?: boolean;
   separator?: boolean;
+  to?: string;
 }
 
 const DropdownItem: React.FC<DropdownItem> = (props) => {
