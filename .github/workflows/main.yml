@@ -1,11 +1,10 @@
 name: CI
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,10 +13,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@macpaw'
+          registry-url: 'https://registry.npmjs.org'
       - run: |
-          yarn
-          yarn lint
+          npm
+          npm run lint
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -2,7 +2,7 @@ name: Publish
 
 on:
   release:
-    types: [ created ]
+    types: [created]
 
 jobs:
   build:
@@ -12,11 +12,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@macpaw'
+          registry-url: 'https://registry.npmjs.org'
       - run: |
-          yarn
-          yarn lib
+          npm
+          npm run lib
           npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
