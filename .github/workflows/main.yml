@@ -15,7 +15,7 @@ jobs:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
       - run: |
-          npm
+          npm i
           npm run lint
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
