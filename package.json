@@ -1,6 +1,6 @@
 {
   "name": "@macpaw/macpaw-ui",
-  "version": "1.9.2",
+  "version": "1.9.3",
   "main": "lib/ui.js",
   "scripts": {
     "dev": "next -p 1234",
@@ -49,5 +49,7 @@
     "src",
     "lib"
   ],
+  "homepage": "https://ui.macpaw.com/",
+  "repository": "macpaw/macpaw-ui",
   "license": "MIT"
 }
