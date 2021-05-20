@@ -2,19 +2,21 @@ import React, { FC, HTMLAttributes } from 'react';
 import cx from 'clsx';
 
 interface FormRowProps extends HTMLAttributes<HTMLDivElement> {
-  variety?: boolean;
+  asList?: boolean;
+  split?: boolean;
 }
 
 const FormRow: FC<FormRowProps> = (props) => {
   const {
     children,
-    variety,
+    asList,
+    split,
     className,
     ...other
   } = props;
 
   return (
-    <div className={cx('formRow', variety && '-variety', className)} {...other}>
+    <div className={cx('formRow', asList && '-asList', split && '-split', className)} {...other}>
       {children}
     </div>
   );

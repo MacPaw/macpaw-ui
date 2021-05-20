@@ -1,8 +1,20 @@
 .formRow {
   margin-bottom: 24px;
 
-  &.-variety {
+  &.-asList {
     margin-bottom: 8px;
+  }
+
+  &.-split {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-gap: 32px;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.5fr 0.5fr;
+      grid-gap: 16px;
+    }
   }
 
   &:last-child {

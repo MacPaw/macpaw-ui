@@ -9,6 +9,7 @@ interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   disabled?: boolean;
   error?: Error;
   label?: string | ReactNode;
+  requiredHint?: boolean;
 }
 
 const Select: FC<SelectProps> = (props) => {
@@ -21,6 +22,7 @@ const Select: FC<SelectProps> = (props) => {
     style,
     children,
     label,
+    requiredHint,
     ...other
   } = props;
 
@@ -35,7 +37,7 @@ const Select: FC<SelectProps> = (props) => {
 
   return (
     <label className={classNames} style={style}>
-      {label && <span className="h6">{label}</span>}
+      {label && <span className="h6">{label}{`${requiredHint ? ' *' : ''}`}</span>}
       <select value={selected} disabled={disabled} {...other}>
         {children}
       </select>
