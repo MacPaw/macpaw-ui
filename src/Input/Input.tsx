@@ -10,7 +10,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   multiline?: boolean;
   label?: string | ReactNode;
   rows?: number;
-  requiredHint?: boolean;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
@@ -23,7 +22,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     action,
     label,
     className,
-    requiredHint,
     ...other
   } = props;
 
@@ -47,7 +45,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 
   return (
     <label className={classNames} style={style}>
-      {label && <span className="input-label h6">{label}{`${requiredHint ? ' *' : ''}`}</span>}
+      {label && <span className="input-label h6">{label}{`${other.required ? ' *' : ''}`}</span>}
       <span className="input-field">
         <Component
           {...componentProps}
