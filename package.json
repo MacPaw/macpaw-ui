@@ -30,7 +30,7 @@
     "@types/react": "^17.0.1",
     "@types/react-dom": "^17.0.1",
     "clsx": "^1.1.1",
-    "deploy-aws-s3-cloudfront": "^3.3.0",
+    "deploy-aws-s3-cloudfront": "^3.4.0",
     "next": "^10.0.5",
     "prism-react-renderer": "^1.1.1",
     "react": "^17.0.1",
