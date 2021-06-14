@@ -1,7 +1,7 @@
 import React, { FC, HTMLAttributes } from 'react';
 import cx from 'clsx';
 
-interface FormRowProps extends HTMLAttributes<HTMLDivElement> {
+export interface FormRowProps extends HTMLAttributes<HTMLDivElement> {
   asList?: boolean;
   split?: boolean;
 }

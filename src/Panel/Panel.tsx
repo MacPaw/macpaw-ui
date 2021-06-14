@@ -1,7 +1,7 @@
 import React, { ElementType, FC, HTMLAttributes, ReactNode } from 'react';
 import cx from 'clsx';
 
-interface PanelProps extends HTMLAttributes<HTMLElement & HTMLLinkElement> {
+export interface PanelProps extends HTMLAttributes<HTMLElement & HTMLLinkElement> {
   outline?: boolean;
   href?: string;
   component?: ReactNode;

@@ -2,7 +2,7 @@ import React, { FC, HTMLAttributes, useEffect } from 'react';
 import cx from 'clsx';
 import CloseIcon from '../Icons/jsx/CloseIcon';
 
-interface DialogProps extends HTMLAttributes<HTMLDivElement> {
+export interface DialogProps extends HTMLAttributes<HTMLDivElement> {
   isOpen: boolean;
   shouldCloseOnEsc?: boolean;
   shouldCloseOnOverlayClick?: boolean;

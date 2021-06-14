@@ -1,7 +1,7 @@
 import React, { FC, HTMLAttributes } from 'react';
 import cx from 'clsx';
 
-interface LoaderProps extends HTMLAttributes<HTMLDivElement> {
+export interface LoaderProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
   inline?: boolean;
 }

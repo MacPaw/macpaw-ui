@@ -1,7 +1,7 @@
 import React, { FC, HTMLAttributes } from 'react';
 import cx from 'clsx';
 
-interface CardMaskProps extends HTMLAttributes<HTMLDivElement> {
+export interface CardMaskProps extends HTMLAttributes<HTMLDivElement> {
   digits?: string;
   short?: boolean;
 }

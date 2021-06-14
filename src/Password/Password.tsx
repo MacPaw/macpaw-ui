@@ -3,7 +3,7 @@ import Input from '../Input/Input';
 import Button from '../Button/Button';
 import { Error } from '../types';
 
-interface PasswordProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface PasswordProps extends InputHTMLAttributes<HTMLInputElement> {
   scale?: 'medium' | 'small';
   label?: string | ReactNode;
   error?: Error;

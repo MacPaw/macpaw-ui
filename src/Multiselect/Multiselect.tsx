@@ -6,7 +6,7 @@ import TagList from '../TagList/TagList';
 import Hint from '../Hint/Hint';
 import { Error } from '../types';
 
-interface MultiselectProps {
+export interface MultiselectProps {
   className?: string;
   placeholder?: string;
   scale?: 'medium';

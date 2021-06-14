@@ -10,7 +10,7 @@ import PayPal from '../Icons/jsx/PaymentPaypal';
 import UnionPay from '../Icons/jsx/PaymentUnionPay';
 import Visa from '../Icons/jsx/PaymentVisa';
 
-interface PaymentProps extends HTMLAttributes<SVGElement> {
+export interface PaymentProps extends HTMLAttributes<SVGElement> {
   type?: 'paypal' | 'american_express' | 'diners_club' | 'discover' | 'jcb' | 'maestro' | 'unionpay' | 'visa' | 'master';
 }
 

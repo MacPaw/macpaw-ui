@@ -1,7 +1,7 @@
 import cx from 'clsx';
 import React, { ButtonHTMLAttributes, ElementType, ReactNode } from 'react';
 
-interface DropdownItem extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface DropdownItem extends ButtonHTMLAttributes<HTMLButtonElement> {
   component?: ReactNode;
   href?: string;
   attention?: boolean;

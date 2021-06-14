@@ -1,8 +1,7 @@
 import React, { FC, HTMLAttributes, ReactNode } from 'react';
 import cx from 'clsx';
 
-
-interface BannerProps extends HTMLAttributes<HTMLDivElement> {
+export interface BannerProps extends HTMLAttributes<HTMLDivElement> {
   type?: 'secondary' | 'readonly';
   icon?: ReactNode;
   action?: ReactNode;

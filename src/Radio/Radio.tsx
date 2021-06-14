@@ -1,7 +1,7 @@
 import React, { FC, InputHTMLAttributes } from 'react';
 import cx from 'clsx';
 
-interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: boolean;
 }
 

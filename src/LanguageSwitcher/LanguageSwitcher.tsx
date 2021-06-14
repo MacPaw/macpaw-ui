@@ -38,7 +38,7 @@ const getLocaleName = (locale: string) => {
   }
 };
 
-interface LanguageSwitcherProps extends HTMLAttributes<HTMLSelectElement> {
+export interface LanguageSwitcherProps extends HTMLAttributes<HTMLSelectElement> {
   currentLanguage: string;
   availableLanguages: string[];
 }

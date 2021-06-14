@@ -2,7 +2,7 @@ import React, { FC, HTMLAttributes } from 'react';
 import cx from 'clsx';
 import CloseIcon from '../Icons/jsx/CloseIcon';
 
-interface TagProps extends HTMLAttributes<HTMLDivElement> {
+export interface TagProps extends HTMLAttributes<HTMLDivElement> {
   onRemove?: () => void;
 }
 

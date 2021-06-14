@@ -1,7 +1,7 @@
 import React, { FC, HTMLAttributes } from 'react';
 import cx from 'clsx';
 
-interface HintProps extends HTMLAttributes<HTMLSpanElement> {
+export interface HintProps extends HTMLAttributes<HTMLSpanElement> {
   large?: boolean;
   error?: boolean;
 }

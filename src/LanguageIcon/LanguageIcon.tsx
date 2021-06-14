@@ -14,7 +14,7 @@ import LanguageTr from '../Icons/jsx/LanguageTr';
 import LanguageUk from '../Icons/jsx/LanguageUk';
 import LanguageZh from '../Icons/jsx/LanguageZh';
 
-interface LanguageIconProps extends HTMLAttributes<SVGElement> {
+export interface LanguageIconProps extends HTMLAttributes<SVGElement> {
   language?: string;
 }
 

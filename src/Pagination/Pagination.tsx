@@ -2,7 +2,7 @@ import React, { FC, HTMLAttributes, ReactElement } from 'react';
 import cx from 'clsx';
 import BackIcon from '../Icons/jsx/BackIcon';
 
-interface PaginationProps extends HTMLAttributes<HTMLDivElement> {
+export interface PaginationProps extends HTMLAttributes<HTMLDivElement> {
   renderItem: (n: number) => JSX.Element;
   maxPage: number;
   currentPage: number;

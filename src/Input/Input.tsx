@@ -3,7 +3,7 @@ import cx from 'clsx';
 import Hint from '../Hint/Hint';
 import { Error } from '../types';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   scale?: 'medium' | 'small' | 'big';
   error?: Error;
   action?: ReactNode;

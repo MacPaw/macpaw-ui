@@ -1,7 +1,7 @@
 import React, { HTMLAttributes, useEffect, useRef, useState } from 'react';
 import cx from 'clsx';
 
-interface Dropdown extends HTMLAttributes<HTMLDivElement> {
+export interface Dropdown extends HTMLAttributes<HTMLDivElement> {
   trigger: React.ReactElement;
   position?: 'left' | 'center' | 'right';
   onOpen?: () => void;

@@ -1,6 +1,7 @@
 import React, { AnchorHTMLAttributes } from 'react';
 
-interface ExternalLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {}
+export interface ExternalLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+}
 
 const ExternalLink: React.FC<ExternalLinkProps> = (props) => {
   const { children, ...other } = props;

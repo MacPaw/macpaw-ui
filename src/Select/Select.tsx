@@ -3,7 +3,7 @@ import cx from 'clsx';
 import Hint from '../Hint/Hint';
 import { Error } from '../types';
 
-interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
+export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   scale?: 'medium' | 'small' | 'big';
   selected?: string;
   disabled?: boolean;

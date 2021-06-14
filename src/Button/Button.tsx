@@ -2,7 +2,7 @@ import React, { forwardRef, ReactNode, ElementType, ButtonHTMLAttributes } from 
 import cx from 'clsx';
 import PawIcon from '../Icons/jsx/PawIcon';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: 'primary' | 'secondary' | 'warning' | 'transparent';
   scale?: 'medium' | 'small';
   wide?: boolean;
