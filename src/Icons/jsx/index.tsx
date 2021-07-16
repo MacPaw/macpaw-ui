@@ -6,6 +6,7 @@ export { default as CloseIcon } from './CloseIcon';
 export { default as CopyIcon } from './CopyIcon';
 export { default as DeviceActiveIcon } from './DeviceActiveIcon';
 export { default as DeviceIcon } from './DeviceIcon';
+export { default as DownloadIcon } from './DownloadIcon';
 export { default as DropdownIcon } from './DropdownIcon';
 export { default as ErrorIcon } from './ErrorIcon';
 export { default as ExternalIcon } from './ExternalIcon';
