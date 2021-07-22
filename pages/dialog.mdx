@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Dialog, DialogContent, DialogActions, DialogIcon } from '../src/ui';
+import { Button, Dialog, DialogContent, DialogActions, DialogIcon, Hint } from '../src/ui';
 
 # Dialog
 
@@ -50,3 +50,52 @@ export const Example = () => {
     </DialogActions>
 </Dialog>
 ```
+
+## Dialog With Hint
+
+export const ExampleHint = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const open = () => setIsOpen(true);
+    const close = () => setIsOpen(false);
+    return (
+        <React.Fragment>
+            <Button onClick={open}>Open Dialog</Button>
+            <Dialog isOpen={isOpen} onRequestClose={close}>
+                <DialogContent>
+                    <DialogIcon>
+                        <img src="/example/warning.png" width={172} alt="" />
+                    </DialogIcon>
+                    <h3>Are you totally sure about it?</h3>
+                    Are you sure you want to cancel  CleanMyMac X – Subscription for 5 Macs.
+                    <br />
+                    Note that you would not be able to go back to this point in time.
+                </DialogContent>
+                <DialogActions>
+                    <Hint>Did your download not start? No worries, just click Download to try again.</Hint>
+                    <Button color="secondary">Download CSV</Button>
+                </DialogActions>
+            </Dialog>
+        </React.Fragment>
+    );
+};
+
+<ExampleHint />
+
+```
+<Dialog isOpen={isOpen} onRequestClose={close}>
+    <DialogContent>
+        <DialogIcon>
+            <img src="/example/warning.png" width={172} alt="" />
+        </DialogIcon>
+        <h3>Are you totally sure about it?</h3>
+        Are you sure you want to cancel  CleanMyMac X – Subscription for 5 Macs.
+        <br />
+        Note that you would not be able to go back to this point in time.
+    </DialogContent>
+    <DialogActions>
+        <Hint>Did your download not start? No worries, just click Download to try again.</Hint>
+        <Button color="secondary">Download CSV</Button>
+    </DialogActions>
+</Dialog>
+```
+

@@ -28,4 +28,16 @@
       font-weight: 600;
     }
   }
+
+  .hint {
+    margin-right: auto;
+    max-width: 50%;
+    color: var(--color-black-64);
+
+    @include mobile {
+      max-width: 100%;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+  }
 }
