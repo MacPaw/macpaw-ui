@@ -1,0 +1,15 @@
+.gridRow {
+  flex: 1;
+  display: flex;
+  @include mobile {
+    flex-direction: column;
+  }
+
+  &:last-child {
+    .gridCell:last-child {
+      @include mobile {
+        border-radius: 0 0 22px 22px;
+      }
+    }
+  }
+}

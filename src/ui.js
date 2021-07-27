@@ -1,4 +1,3 @@
-export { default as Badge } from './Badge/Badge';
 export { default as Banner } from './Banner/Banner';
 export { default as Breadcrumbs } from './Breadcrumbs/Breadcrumbs';
 export { default as Button } from './Button/Button';
@@ -12,6 +11,9 @@ export { default as Dropdown } from './Dropdown/Dropdown';
 export { default as DropdownItem } from './DropdownItem/DropdownItem';
 export { default as ExternalLink } from './ExternalLink/ExternalLink';
 export { default as FormRow } from './FormRow/FormRow';
+export { default as Grid } from './Grid/Grid';
+export { default as GridCell } from './GridCell/GridCell';
+export { default as GridRow } from './GridRow/GridRow';
 export { default as Hint } from './Hint/Hint';
 export { default as Input } from './Input/Input';
 export { default as Label } from './Label/Label';

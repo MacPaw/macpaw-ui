@@ -1,13 +1,7 @@
-@mixin mobile {
-  @media only screen and (max-width: 768px) {
-    @content;
-  }
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import './helpers.scss';
 @import './Normalize/Normalize.scss';
 @import './Breadcrumbs/Breadcrumbs.scss';
-@import './Badge/Badge.scss';
 @import './Banner/Banner.scss';
 @import './Button/Button.scss';
 @import './CardMask/CardMask.scss';
@@ -20,6 +14,9 @@
 @import './Dropdown/Dropdown.scss';
 @import './DropdownItem/DropdownItem.scss';
 @import './FormRow/FormRow.scss';
+@import './Grid/Grid.scss';
+@import './GridCell/GridCell.scss';
+@import './GridRow/GridRow.scss';
 @import './Input/Input.scss';
 @import './Hint/Hint.scss';
 @import './Label/Label.scss';

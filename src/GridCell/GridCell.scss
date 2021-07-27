@@ -1,0 +1,33 @@
+.gridCell {
+  margin: 16px;
+  flex: 0;
+  word-break: break-word;
+  @include mobile {
+    margin: 0;
+    padding: 8px 12px;
+    display: flex;
+    font-size: 14px;
+  }
+
+  &:empty {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &:nth-of-type(2n) {
+    @include mobile {
+      background: var(--color-black-04);
+    }
+  }
+
+  &.-primary {
+    flex-grow: 1;
+    flex-basis: 60%;
+  }
+
+  &.-secondary {
+    flex-grow: 1;
+    flex-basis: 40%;
+  }
+}
