@@ -33,6 +33,10 @@ export const Example = () => {
 <Example />
 
 ```
+const [isOpen, setIsOpen] = useState(false);
+const open = () => setIsOpen(true);
+const close = () => setIsOpen(false);
+
 <Dialog isOpen={isOpen} onRequestClose={close}>
     <DialogContent>
         <DialogIcon>
@@ -53,7 +57,7 @@ export const Example = () => {
 
 ## Dialog With Hint
 
-export const ExampleHint = () => {
+export const ExampleWithHint = () => {
     const [isOpen, setIsOpen] = useState(false);
     const open = () => setIsOpen(true);
     const close = () => setIsOpen(false);
@@ -79,9 +83,13 @@ export const ExampleHint = () => {
     );
 };
 
-<ExampleHint />
+<ExampleWithHint />
 
 ```
+const [isOpen, setIsOpen] = useState(false);
+const open = () => setIsOpen(true);
+const close = () => setIsOpen(false);
+
 <Dialog isOpen={isOpen} onRequestClose={close}>
     <DialogContent>
         <DialogIcon>

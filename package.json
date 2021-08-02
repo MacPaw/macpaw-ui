@@ -1,6 +1,6 @@
 {
   "name": "@macpaw/macpaw-ui",
-  "version": "3.5.1",
+  "version": "3.5.2",
   "main": "lib/ui.js",
   "scripts": {
     "dev": "next -p 1234",
@@ -17,7 +17,8 @@
   "peerDependencies": {
     "clsx": "^1.1.1",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^17.0.0",
+    "react-transition-group": "^4.4.0"
   },
   "devDependencies": {
     "@macpaw/eslint-config-base": "1.4.0",

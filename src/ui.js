@@ -1,3 +1,6 @@
+export { default as Accordion } from './Accordion/Accordion';
+export { default as AccordionTrigger } from './Accordion/AccordionTrigger';
+export { default as AccordionCollapsible } from './Accordion/AccordionCollapsible';
 export { default as Banner } from './Banner/Banner';
 export { default as Breadcrumbs } from './Breadcrumbs/Breadcrumbs';
 export { default as Button } from './Button/Button';
