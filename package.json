@@ -15,6 +15,7 @@
     "deploy:s3": "deploy-aws-s3-cloudfront --non-interactive --source=out --bucket=ui.macpaw.com --destination=/"
   },
   "peerDependencies": {
+    "@types/react-transition-group": "^4.4.0",
     "clsx": "^1.1.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
