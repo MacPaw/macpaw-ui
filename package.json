@@ -1,6 +1,6 @@
 {
   "name": "@macpaw/macpaw-ui",
-  "version": "3.5.2",
+  "version": "3.6.0",
   "main": "lib/ui.js",
   "scripts": {
     "dev": "next -p 1234",
@@ -14,8 +14,10 @@
     "lib": "yarn lib:css && yarn lib:js",
     "deploy:s3": "deploy-aws-s3-cloudfront --non-interactive --source=out --bucket=ui.macpaw.com --destination=/"
   },
+  "dependencies": {
+    "react-toastify": "^7.0.4"
+  },
   "peerDependencies": {
-    "@types/react-transition-group": "^4.4.0",
     "clsx": "^1.1.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
@@ -31,6 +33,7 @@
     "@types/node": "^16.4.3",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
+    "@types/react-transition-group": "^4.4.0",
     "clsx": "^1.1.1",
     "deploy-aws-s3-cloudfront": "^3.4.0",
     "eslint": "^7.31.0",

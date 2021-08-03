@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import '~react-toastify/dist/ReactToastify.min.css';
 @import './helpers.scss';
 @import './Normalize/Normalize.scss';
 @import './Breadcrumbs/Breadcrumbs.scss';
@@ -24,6 +25,7 @@
 @import './Layout/Layout.scss';
 @import './Loader/Loader.scss';
 @import './Multiselect/Multiselect.scss';
+@import './Notification/Notification.scss';
 @import './Pagination/Pagination.scss';
 @import './Panel/Panel.scss';
 @import './Radio/Radio.scss';

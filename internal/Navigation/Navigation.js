@@ -17,6 +17,7 @@ const pages = [
   'input',
   'language-switcher',
   'loader',
+  'notification',
   'pagination',
   'panel',
   'payment',
