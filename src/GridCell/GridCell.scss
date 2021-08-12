@@ -1,9 +1,8 @@
 .gridCell {
-  margin: 16px;
+  padding: 12px;
   flex: 0;
   word-break: break-word;
   @include mobile {
-    margin: 0;
     padding: 8px 12px;
     display: flex;
     font-size: 14px;

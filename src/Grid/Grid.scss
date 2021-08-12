@@ -6,7 +6,6 @@
   &-layout {
     position: relative;
     display: flex;
-    align-items: center;
     @include mobile {
       padding-top: 48px;
       flex-direction: column;
@@ -15,45 +14,38 @@
   }
 
   &-rows {
-    margin: -16px;
     flex: 1;
     display: flex;
     flex-direction: column;
-    @include mobile {
-      margin: 0;
-    }
   }
 
   &-icon {
     margin-right: 32px;
     display: inline-flex;
-    align-items: flex-start;
+    align-self: flex-start;
     @include mobile {
       position: absolute;
       top: 8px;
       left: 12px;
     }
 
-    &.-top {
-      align-self: flex-start;
-      position: relative;
-      top: -12px;
-    }
-
     picture, img, svg {
       width: 80px;
-      height: auto;
+      height: 80px;
       vertical-align: top;
       @include mobile {
         width: 32px;
+        height: 32px;
       }
     }
   }
 
   &-action {
+    margin-top: 16px;
     margin-left: 32px;
     width: 48px;
     height: 48px;
+    align-self: flex-start;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,12 +54,6 @@
       top: 0;
       right: 0;
       margin: 0;
-    }
-
-    &.-top {
-      align-self: flex-start;
-      position: relative;
-      top: -12px;
     }
   }
 
