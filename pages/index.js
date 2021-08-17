@@ -1,6 +1,6 @@
 function IndexPage() {
   return (
-    <div className="red">Welcome to Next.js!</div>
+    <div>Welcome to Next.js!</div>
   );
 }
 

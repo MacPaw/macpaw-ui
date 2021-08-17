@@ -3,7 +3,7 @@ import Link from 'next/link'
 import styles from './Navigation.module.css';
 
 const pages = [
-  'badge',
+  'accordion',
   'banner',
   'breadcrumbs',
   'button',
@@ -12,10 +12,12 @@ const pages = [
   'colors',
   'dialog',
   'dropdown',
+  'grid',
   'icons',
   'input',
   'language-switcher',
   'loader',
+  'notification',
   'pagination',
   'panel',
   'payment',

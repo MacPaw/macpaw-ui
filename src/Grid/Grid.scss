@@ -1,0 +1,86 @@
+.grid {
+  @include mobile {
+    padding: 0 2px 2px;
+  }
+
+  &-layout {
+    position: relative;
+    display: flex;
+    @include mobile {
+      padding-top: 48px;
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &-rows {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-icon {
+    margin-right: 32px;
+    display: inline-flex;
+    align-self: flex-start;
+    @include mobile {
+      position: absolute;
+      top: 8px;
+      left: 12px;
+    }
+
+    picture, img, svg {
+      width: 80px;
+      height: 80px;
+      vertical-align: top;
+      @include mobile {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  &-action {
+    margin-top: 16px;
+    margin-left: 32px;
+    width: 48px;
+    height: 48px;
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mobile {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+    }
+  }
+
+  &-notification {
+    &:not(:empty) {
+      margin-top: 24px;
+      @include mobile {
+        margin-top: 2px;
+      }
+    }
+  }
+
+  .label {
+    @include mobile {
+      width: 30%;
+      margin-bottom: 0;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+  }
+
+  .banner {
+    @include mobile {
+      margin-left: -2px;
+      margin-right: -2px;
+      margin-bottom: -2px;
+      border-radius: 0 0 24px 24px;
+    }
+  }
+}

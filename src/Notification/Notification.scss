@@ -1,0 +1,125 @@
+.notification {
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, .16);
+  cursor: default;
+  color: var(--color-white);
+  animation-duration: 750ms;
+  animation-fill-mode: forwards;
+
+  &:hover {
+    .notification {
+      &-close {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &.-success {
+    background: #16C670
+  }
+
+  &.-error {
+    background: #F3363F
+  }
+
+  &-container {
+    top: 0;
+    right: 0;
+    padding: 16px;
+    width: 440px;
+    @include mobile {
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-white);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+    z-index: 2;
+    @include mobile {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &-progress {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    z-index: 1;
+  }
+
+  &-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-white);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-success {
+      fill: var(--color-primary);
+    }
+
+    &-error {
+      fill: var(--color-error);
+    }
+  }
+
+  &-message {
+    padding-left: 52px; // padding to icon
+    padding-right: 60px; // padding to close button
+    position: relative;
+    z-index: 2;
+    font-size: 14px;
+  }
+}
+
+@keyframes notificationIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes notificationOut {
+  from {
+    opacity: 1;
+    transform: translateY(0)
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px)
+  }
+}
+
+.notificationIn {
+  animation-name: notificationIn;
+}
+
+.notificationOut {
+  animation-name: notificationOut;
+}

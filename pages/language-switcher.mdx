@@ -6,7 +6,6 @@ import DropdownIcon from '../src/Icons/jsx/DropdownIcon';
 
 export const Example = () => {
     const [currentLanguage, setCurrentLanguage] = useState('en');
-    console.log(currentLanguage);
     return (
         <React.Fragment>
             <LanguageSwitcher
@@ -21,6 +20,8 @@ export const Example = () => {
 <Example />
 
 ```
+const [currentLanguage, setCurrentLanguage] = useState('en');
+
 <LanguageSwitcher
     currentLanguage={currentLanguage}
     availableLanguages={["en", "de", "uk"]}

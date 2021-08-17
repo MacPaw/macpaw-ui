@@ -1,5 +1,6 @@
 export { default as AccountIcon } from './AccountIcon';
 export { default as BackIcon } from './BackIcon';
+export { default as BlockIcon } from './BlockIcon';
 export { default as CancelIcon } from './CancelIcon';
 export { default as CheckIcon } from './CheckIcon';
 export { default as CloseIcon } from './CloseIcon';
