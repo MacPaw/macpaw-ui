@@ -38,4 +38,9 @@
     margin: 12px 32px;
     background: var(--color-black-08);
   }
+
+  &[disabled] {
+    pointer-events: none;
+    color: var(--color-black-32);
+  }
 }
