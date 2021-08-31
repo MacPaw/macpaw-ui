@@ -25,7 +25,7 @@ const Pagination: FC<PaginationProps> = (props) => {
   const pageNumbersCapacity = maxPage < 7 ? maxPage : 7;
   const pageNumbers = [currentPage];
 
-  if (maxPage === 1) return null;
+  if (maxPage < 2) return null;
 
   if (maxPage < currentPage) {
     console.error(`[Pagination]: current[${currentPage}] > max[${maxPage}]`);
