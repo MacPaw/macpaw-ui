@@ -45,7 +45,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     componentProps.type = type;
   }
 
-  if (currency?.length > 3) {
+  if (currency && currency.length > 3) {
     throw Error('currency characters must not exceed 3');
   }
 
