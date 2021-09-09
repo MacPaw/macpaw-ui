@@ -10,6 +10,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   multiline?: boolean;
   label?: string | ReactNode;
   rows?: number;
+  currency?: string;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
@@ -21,6 +22,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     style,
     action,
     label,
+    currency,
     className,
     ...other
   } = props;
@@ -33,7 +35,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   });
 
   const componentProps: any = {
-    className: cx(action && '-with-action', className),
+    className: cx({ '-with-gap': action || currency }, className),
   };
 
   const showHintError = error && typeof error !== 'boolean';
@@ -41,6 +43,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 
   if (Component === 'input') {
     componentProps.type = type;
+  }
+
+  if (currency?.length > 3) {
+    throw Error('currency characters must not exceed 3');
+  }
+
+  if (action && currency) {
+    throw Error('action and currency cannot be set at the same time');
   }
 
   return (
@@ -54,6 +64,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           ref={ref}
         />
         {action && <span className="input-action">{action}</span>}
+        {currency && <span className="input-currency">{currency}</span>}
       </span>
       {showHintError && <Hint error style={{ marginTop: 6 }}>{error}</Hint>}
     </label>

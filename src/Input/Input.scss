@@ -42,6 +42,13 @@
     right: 18px;
   }
 
+  &-currency {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 18px;
+  }
+
   &-label {
     display: block;
   }
@@ -74,10 +81,14 @@
       background: var(--color-black-04);
       border-color: transparent;
       cursor: not-allowed;
+
+      + .input-currency {
+        color: var(--color-black-32);
+      }
     }
   }
 
-  input.-with-action {
+  input.-with-gap {
     padding-right: 90px;
   }
 

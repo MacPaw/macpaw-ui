@@ -113,3 +113,14 @@ import { Input, FormRow, Button, Password } from '../src/ui';
     </FormRow>
 </div>
 ```
+
+### With Currency Code
+
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Input type="text" name="currency" placeholder="0.00" onChange={() => {}} label="Enabled" currency="USD" />
+    </FormRow>
+    <FormRow>
+        <Input type="text" name="currency" placeholder="0.00" onChange={() => {}} label="Disabled" disabled currency="USD" />
+    </FormRow>
+</div>
