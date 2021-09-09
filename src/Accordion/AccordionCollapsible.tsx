@@ -21,6 +21,7 @@ const AccordionCollapsible: React.FC<AccordionCollapsible> = (props) => {
     height: 0,
     overflow: 'hidden',
     visibility: 'hidden',
+    position: 'relative',
     transition: `${timeout}ms cubic-bezier(0.4, 0, 0.2, 1)`,
   };
 
