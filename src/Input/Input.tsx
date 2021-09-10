@@ -35,7 +35,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   });
 
   const componentProps: any = {
-    className: cx({ '-with-gap': action || currency }, className),
+    className: cx(action && '-with-action', currency && '-with-currency', className),
   };
 
   const showHintError = error && typeof error !== 'boolean';

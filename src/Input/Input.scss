@@ -88,8 +88,14 @@
     }
   }
 
-  input.-with-gap {
-    padding-right: 90px;
+  input {
+    &.-with-action {
+      padding-right: 90px;
+    }
+
+    &.-with-currency {
+      padding-right: 60px;
+    }
   }
 
   textarea {
