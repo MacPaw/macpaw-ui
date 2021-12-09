@@ -14,6 +14,9 @@
     "lib": "yarn lib:css && yarn lib:js",
     "deploy:s3": "deploy-aws-s3-cloudfront --non-interactive --source=out --bucket=ui.macpaw.com --destination=/"
   },
+  "engines": {
+    "node": ">= 16"
+  },
   "dependencies": {
     "react-toastify": "^7.0.4"
   },
