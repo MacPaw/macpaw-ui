@@ -12,6 +12,11 @@
 * Add new SVG file icon to `src/Icons/svg/%name%_icon.svg`
 * Run `yarn icons` CLI command
 
+## Requirements
+
+* Node 16+
+* npm 7+ (lock file v2)
+
 ## Release
 
 Package published with Github Actions:
