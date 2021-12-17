@@ -124,3 +124,55 @@ import { Input, FormRow, Button, Password } from '../src/ui';
         <Input type="text" name="currency" placeholder="0.00" onChange={() => {}} label="Disabled" disabled currency="USD" />
     </FormRow>
 </div>
+
+```
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Input type="text" name="currency" placeholder="0.00" onChange={() => {}} label="Enabled" currency="USD" />
+    </FormRow>
+    <FormRow>
+        <Input type="text" name="currency" placeholder="0.00" onChange={() => {}} label="Disabled" disabled currency="USD" />
+    </FormRow>
+</div>
+```
+
+### Number with initial format
+
+export const InputWithFormat = () => {
+  const [value, setValue] = React.useState(10);
+  return (
+    <div style={{ width: 300 }}>
+        <FormRow>
+            <Input 
+                type="number"
+                value={value}
+                label="Number"
+                name="number"
+                placeholder="0.00"
+                formatInitialValue={(value) => Number(value).toFixed(2)}
+                onChange={(e) => setValue(e.target.value)}  
+            />
+        </FormRow>
+    </div>
+  );
+};
+
+<InputWithFormat />
+
+```
+const [value, setValue] = React.useState(10);
+
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Input 
+            type="number"
+            value={value}
+            label="Enabled"
+            name="number"
+            placeholder="0.00"
+            formatInitialValue={(value) => Number(value).toFixed(2)}
+            onChange={(e) => setValue(e.target.value)}  
+        />
+    </FormRow>
+</div>
+```
