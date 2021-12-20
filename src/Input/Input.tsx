@@ -11,7 +11,9 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string | ReactNode;
   rows?: number;
   currency?: string;
-  formatInitialValue?: (value: string | number | readonly string[]) => string | number | readonly string[];
+  formatOnEvent?: 'blur' | 'keyUp';
+  format?: (value: string | number | readonly string[]) => string | number | readonly string[];
+  setValue?: (value: string | number | readonly string[]) => void;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
@@ -27,12 +29,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     className,
     value,
     onChange,
-    formatInitialValue,
+    formatOnEvent = '',
+    format,
+    setValue,
     ...other
   } = props;
 
   const isDirtyRef = useRef(false);
-  const inputValue = !isDirtyRef.current ? (formatInitialValue?.(value) ?? value) : value;
 
   const classNames = cx('input', {
     '-error': Boolean(error),
@@ -41,16 +44,20 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     '-big': scale === 'big',
   });
 
-  const componentProps: any = {
-    className: cx(action && '-with-action', currency && '-with-currency', className),
-  };
-
-  const showHintError = error && typeof error !== 'boolean';
   const Component = multiline ? 'textarea' : 'input' as ElementType;
+  const showHintError = error && typeof error !== 'boolean';
+  const formatEvent = `on${formatOnEvent[0]?.toUpperCase() + formatOnEvent.slice(1)}`;
+  const inputValue = !isDirtyRef.current ? (format?.(value) ?? value) : value;
+  const inputClassNames = cx(className, {
+    '-with-action': action,
+    '-with-currency': currency
+  });
 
-  if (Component === 'input') {
-    componentProps.type = type;
-  }
+  const componentProps: any = {
+    className: inputClassNames,
+    ...(Component === 'input' && { type }),
+    ...(formatOnEvent && { [formatEvent]: () => setValue?.(format?.(value) ?? value) })
+  };
 
   if (currency && currency.length > 3) {
     throw Error('currency characters must not exceed 3');
