@@ -183,9 +183,9 @@ const [value, setValue] = React.useState(10);
 
 There are two events that can used for formatting:
 - `blur`
-- `keyUp`
+- `input`
 
-Pay attention, if you want to use formatting depends on events `blur` or `change`, you must pass the **setValue** prop.
+Pay attention, if you want to use formatting depends on events `blur` or `input`, you must pass the **setValue** prop.
 
 #### Blur event 
 
@@ -232,7 +232,7 @@ const [value, setValue] = React.useState(10);
 </div>
 ```
 
-#### KeyUp event 
+#### Input event 
 
 export const InputWithChangeFormat = () => {
   const [value, setValue] = React.useState('');
@@ -245,7 +245,7 @@ export const InputWithChangeFormat = () => {
                 label="Input"
                 name="value"
                 placeholder="LARGE TEXT"
-                formatOnEvent="keyUp"
+                formatOnEvent="input"
                 format={(value) => String(value).toUpperCase()}
                 onChange={(e) => setValue(e.target.value)}
                 setValue={setValue}
@@ -268,7 +268,7 @@ const [value, setValue] = React.useState(10);
             label="Input"
             name="value"
             placeholder="LARGE TEXT"
-            formatOnEvent="keyUp"
+            formatOnEvent="input"
             format={(value) => String(value).toUpperCase()}
             onChange={(e) => setValue(e.target.value)}
             setValue={setValue}
