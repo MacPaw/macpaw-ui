@@ -34,4 +34,5 @@ export { default as Select } from './Select/Select';
 export { default as Tag } from './Tag/Tag';
 export { default as TagList } from './TagList/TagList';
 export { default as Table } from './Table/Table';
+export { default as Tooltip } from './Tooltip/Tooltip';
 export { default as TableRow } from './TableRow/TableRow';

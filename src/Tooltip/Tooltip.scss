@@ -1,0 +1,107 @@
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+  &-message {
+    position: absolute;
+    min-width: 350px;
+    max-width: 350px;
+    width: 100%;
+    z-index: 10;
+    &::after {
+      content: '';
+      position: absolute;
+    }
+
+    &.-custom-width {
+      min-width: fit-content;
+      max-width: fit-content;
+    }
+
+    &.-top{
+      bottom: 100%;
+      left: 50%;
+      padding-bottom: 9px;
+      transform: translateX(-50%);
+      &::after {
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid var(--color-black);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &.-bottom {
+      top: 100%;
+      left: 50%;
+      padding-top: 9px;
+      transform: translateX(-50%);
+
+      &::after{
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-bottom: 9px solid var(--color-black);
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &.-left {
+      top: 50%;
+      right: 100%;
+      padding-right: 9px;
+      transform: translateY(-50%);
+
+      &::after {
+        border-left: 9px solid var(--color-black);
+        border-top: 9px solid transparent;
+        border-bottom: 9px solid transparent;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+    }
+
+    &.-right {
+      top: 50%;
+      left: 100%;
+      padding-left: 9px;
+      transform: translateY(-50%);
+
+      &::after {
+        border-right: 9px solid var(--color-black);
+        border-top: 9px solid transparent;
+        border-bottom: 9px solid transparent;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  &-content {
+    background: var(--color-black);
+    color: var(--color-white);
+    font-size: 14px;
+    line-height: 1.2;
+    border-radius: 12px;
+    margin: auto;
+    padding: 24px;
+  }
+  &-trigger-wrapper {
+    display: inline-block;
+    position: relative;
+
+    .tooltip-trigger-overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 999;
+    }
+  }
+}

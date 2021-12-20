@@ -1,0 +1,149 @@
+import { Tooltip, Button, Grid, GridRow, GridCell } from '../src/ui';
+
+# Tooltip
+
+<Tooltip position="top" content="Hi there!">
+  <Button>
+    Hover me
+  </Button>
+</Tooltip>
+
+```
+<Tooltip position="top" content="Hi there">
+  <Button>
+    Hover me
+  </Button>
+</Tooltip>
+```
+
+## Tooltip position
+
+<Grid>
+  <GridRow>
+    <GridCell>
+      <Tooltip position="top" content="Hi there! I'm on the top">
+        <Button>
+          Top
+        </Button>
+      </Tooltip>
+    </GridCell>
+     <GridCell>
+       <Tooltip position="bottom" content="Hi there! I'm on the bottom">
+        <Button>
+          Bottom
+        </Button>
+      </Tooltip>
+    </GridCell>
+     <GridCell>
+       <Tooltip position="left" content="Hi there! I'm on the left">
+        <Button>
+          Left
+        </Button>
+      </Tooltip>
+    </GridCell>
+     <GridCell>
+       <Tooltip position="right" content="Hi there! I'm on the right">
+        <Button>
+          Right
+        </Button>
+      </Tooltip>
+    </GridCell>
+  </GridRow>
+</Grid>
+
+```
+<Tooltip position="top" content="Hi there! I'm on the top">
+  <Button>
+    Top
+  </Button>
+</Tooltip>
+<Tooltip position="bottom" content="Hi there! I'm on the bottom">
+  <Button>
+    Bottom
+  </Button>
+</Tooltip>
+<Tooltip position="left" content="Hi there! I'm on the left">
+  <Button>
+    Left
+  </Button>
+</Tooltip>
+<Tooltip position="right" content="Hi there! I'm on the right">
+  <Button>
+    Right
+  </Button>
+</Tooltip>
+```
+
+## Tooltip with max width
+
+<Tooltip 
+  maxWidth={100}
+  position="right"
+  content="So small"
+>
+  <Button>
+    Hover me
+  </Button>
+</Tooltip>
+
+```
+<Tooltip 
+  maxWidth={100}
+  position="right"
+  content="Hi there"
+>
+  <Button>
+    Hover me
+  </Button>
+</Tooltip>
+```
+
+## Tooltip controlled from outside
+
+export const ControlledTooltip = () => {
+  const [isVisible, setIsVisible] = React.useState(false);
+  return (
+    <Grid>
+      <GridRow>
+        <GridCell>
+            <Button onClick={() => setIsVisible(current=>!current)}>
+              Toggle tooltip
+            </Button>
+        </GridCell>
+        <GridCell>
+          <Tooltip 
+            position="top"
+            content="Hi there! I'm controlled by a parent."
+            forceIsVisible={isVisible}
+            onVisibleTooltipChange={setIsVisible}
+          >
+            <Button>
+              Button with tooltip
+            </Button>
+          </Tooltip>
+        </GridCell>
+      </GridRow>     
+    </Grid>
+  );
+};
+
+<ControlledTooltip />
+
+```
+const [isVisible, setIsVisible] = React.useState(false);
+
+<Button onClick={() => setIsVisible(current=>!current)}>
+  Toggle tooltip
+</Button>
+<Tooltip 
+  position="top"
+  content="Hi there! I'm controlled by a parent."
+  forceIsVisible={isVisible}
+  onVisibleTooltipChange={setIsVisible}
+>
+  <Button>
+    Button with tooltip
+  </Button>
+</Tooltip>
+
+```
