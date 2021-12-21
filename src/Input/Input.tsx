@@ -11,7 +11,12 @@ import cx from 'clsx';
 import Hint from '../Hint/Hint';
 import { Error } from '../types';
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+
+type InputElementType = HTMLInputElement | HTMLTextAreaElement;
+
+type InputValueType = string | number | readonly string[];
+
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   scale?: 'medium' | 'small' | 'big';
   error?: Error;
   action?: ReactNode;
@@ -20,11 +25,10 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   rows?: number;
   currency?: string;
   formatOnEvent?: 'blur' | 'input';
-  format?: (value: string | number | readonly string[]) => string | number | readonly string[];
-  setValue?: (value: string | number | readonly string[]) => void;
+  format?: (value: InputValueType) => InputValueType;
+  onChange?: (value:InputValueType, event?: React.ChangeEvent<InputElementType>) => void;
 }
 
-type InputElementType = HTMLInputElement | HTMLTextAreaElement;
 
 const Input = forwardRef<InputElementType, InputProps>((props, ref) => {
   const {
@@ -41,7 +45,6 @@ const Input = forwardRef<InputElementType, InputProps>((props, ref) => {
     onChange,
     formatOnEvent = '',
     format,
-    setValue,
     ...other
   } = props;
 
@@ -83,10 +86,11 @@ const Input = forwardRef<InputElementType, InputProps>((props, ref) => {
     inputRef.current = element;
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!isDirtyRef.current) isDirtyRef.current = true;
 
-    onChange?.(e);
+    const inputValue = (event.target as InputElementType).value;
+    onChange?.(inputValue, event);
   };
 
   useEffect(() => {
@@ -96,7 +100,7 @@ const Input = forwardRef<InputElementType, InputProps>((props, ref) => {
 
     const handleFormatOnEvent = (event: InputEvent | FocusEvent) => {
       const inputValue = (event.target as InputElementType).value;
-      setValue?.(format?.(inputValue) ?? inputValue);
+      onChange?.(format?.(inputValue) ?? inputValue);
     };
 
     input.addEventListener(formatOnEvent, handleFormatOnEvent as EventListener);

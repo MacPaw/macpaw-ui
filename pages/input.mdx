@@ -152,7 +152,7 @@ export const InputWithInitialFormat = () => {
                 name="number"
                 placeholder="0.00"
                 format={(value) => Number(value).toFixed(2)}
-                onChange={(e) => setValue(e.target.value)}
+                onChange={setValue}
             />
         </FormRow>
     </div>
@@ -173,7 +173,7 @@ const [value, setValue] = React.useState(10);
             name="number"
             placeholder="0.00"
             format={(value) => Number(value).toFixed(2)}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={setValue}
         />
     </FormRow>
 </div>
@@ -184,8 +184,6 @@ const [value, setValue] = React.useState(10);
 There are two events that can used for formatting:
 - `blur`
 - `input`
-
-Pay attention, if you want to use formatting depends on events `blur` or `input`, you must pass the **setValue** prop.
 
 #### Blur event 
 
@@ -202,8 +200,7 @@ export const InputWithBlurFormat = () => {
                 placeholder="0.00"
                 formatOnEvent="blur"
                 format={(value) => Number(value).toFixed(2)}
-                onChange={(e) => setValue(e.target.value)}
-                setValue={setValue}
+                onChange={setValue}
             />
         </FormRow>
     </div>
@@ -225,8 +222,7 @@ const [value, setValue] = React.useState(10);
             placeholder="0.00"
             formatOnEvent="blur"
             format={(value) => Number(value).toFixed(2)}
-            onChange={(e) => setValue(e.target.value)}
-            setValue={setValue}
+            onChange={setValue}
         />
     </FormRow>
 </div>
@@ -247,8 +243,7 @@ export const InputWithChangeFormat = () => {
                 placeholder="LARGE TEXT"
                 formatOnEvent="input"
                 format={(value) => String(value).toUpperCase()}
-                onChange={(e) => setValue(e.target.value)}
-                setValue={setValue}
+                onChange={setValue}
             />
         </FormRow>
     </div>
@@ -270,8 +265,7 @@ const [value, setValue] = React.useState(10);
             placeholder="LARGE TEXT"
             formatOnEvent="input"
             format={(value) => String(value).toUpperCase()}
-            onChange={(e) => setValue(e.target.value)}
-            setValue={setValue}
+            onChange={setValue}
         />
     </FormRow>
 </div>
