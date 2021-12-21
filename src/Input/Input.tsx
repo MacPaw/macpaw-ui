@@ -9,9 +9,11 @@ import React, {
 } from 'react';
 import cx from 'clsx';
 import Hint from '../Hint/Hint';
-import { Error } from '../types';
+import { Error, InputValueType } from '../types';
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+type InputElementType = HTMLInputElement | HTMLTextAreaElement;
+
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   scale?: 'medium' | 'small' | 'big';
   error?: Error;
   action?: ReactNode;
@@ -20,11 +22,10 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   rows?: number;
   currency?: string;
   formatOnEvent?: 'blur' | 'input';
-  format?: (value: string | number | readonly string[]) => string | number | readonly string[];
-  setValue?: (value: string | number | readonly string[]) => void;
+  format?: (value: InputValueType) => InputValueType;
+  onChange?: (value:InputValueType, event?: React.ChangeEvent<InputElementType>) => void;
 }
 
-type InputElementType = HTMLInputElement | HTMLTextAreaElement;
 
 const Input = forwardRef<InputElementType, InputProps>((props, ref) => {
   const {
@@ -37,16 +38,15 @@ const Input = forwardRef<InputElementType, InputProps>((props, ref) => {
     label,
     currency,
     className,
-    value,
+    value = '',
     onChange,
     formatOnEvent = '',
     format,
-    setValue,
     ...other
   } = props;
 
   const isDirtyRef = useRef(false);
-  const inputRef = useRef<InputElementType>(null);
+  const inputRef = useRef<InputElementType>();
 
   const classNames = cx('input', {
     '-error': Boolean(error),
@@ -83,26 +83,27 @@ const Input = forwardRef<InputElementType, InputProps>((props, ref) => {
     inputRef.current = element;
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!isDirtyRef.current) isDirtyRef.current = true;
 
-    onChange(e);
+    const inputValue = (event.target as InputElementType).value;
+    onChange?.(inputValue, event);
   };
 
   useEffect(() => {
-    if (!formatOnEvent) return () => {};
-
     const { current: input } = inputRef;
+
+    if (!formatOnEvent || !input) return () => {};
 
     const handleFormatOnEvent = (event: InputEvent | FocusEvent) => {
       const inputValue = (event.target as InputElementType).value;
-      setValue?.(format?.(inputValue) ?? inputValue);
+      onChange?.(format?.(inputValue) ?? inputValue);
     };
 
-    input.addEventListener(formatOnEvent, handleFormatOnEvent);
+    input.addEventListener(formatOnEvent, handleFormatOnEvent as EventListener);
 
     return () => {
-      input.removeEventListener(formatOnEvent, handleFormatOnEvent);
+      input.removeEventListener(formatOnEvent, handleFormatOnEvent as EventListener);
     };
   }, []);
 

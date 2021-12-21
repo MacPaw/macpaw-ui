@@ -1,15 +1,16 @@
 import React, { FC, InputHTMLAttributes, ReactNode, useState } from 'react';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
-import { Error } from '../types';
+import { Error, InputValueType } from '../types';
 
-export interface PasswordProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface PasswordProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   scale?: 'medium' | 'small';
   label?: string | ReactNode;
   error?: Error;
   withToggle?: boolean;
   i18nToggle?: (isPasswordVisible: boolean) => string;
   onToggle?: () => void;
+  onChange?:(value: InputValueType, event?: React.ChangeEvent) => void;
 }
 
 function i18nToggleDefault(isPasswordVisible: boolean) {
