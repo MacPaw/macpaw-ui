@@ -9,12 +9,9 @@ import React, {
 } from 'react';
 import cx from 'clsx';
 import Hint from '../Hint/Hint';
-import { Error } from '../types';
-
+import { Error, InputValueType } from '../types';
 
 type InputElementType = HTMLInputElement | HTMLTextAreaElement;
-
-type InputValueType = string | number | readonly string[];
 
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   scale?: 'medium' | 'small' | 'big';
