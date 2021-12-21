@@ -37,7 +37,7 @@ const Input = forwardRef<InputElementType, InputProps>((props, ref) => {
     label,
     currency,
     className,
-    value,
+    value = '',
     onChange,
     formatOnEvent = '',
     format,
@@ -46,7 +46,7 @@ const Input = forwardRef<InputElementType, InputProps>((props, ref) => {
   } = props;
 
   const isDirtyRef = useRef(false);
-  const inputRef = useRef<InputElementType>(null);
+  const inputRef = useRef<InputElementType>();
 
   const classNames = cx('input', {
     '-error': Boolean(error),
@@ -86,23 +86,23 @@ const Input = forwardRef<InputElementType, InputProps>((props, ref) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!isDirtyRef.current) isDirtyRef.current = true;
 
-    onChange(e);
+    onChange?.(e);
   };
 
   useEffect(() => {
-    if (!formatOnEvent) return () => {};
-
     const { current: input } = inputRef;
+
+    if (!formatOnEvent || !input) return () => {};
 
     const handleFormatOnEvent = (event: InputEvent | FocusEvent) => {
       const inputValue = (event.target as InputElementType).value;
       setValue?.(format?.(inputValue) ?? inputValue);
     };
 
-    input.addEventListener(formatOnEvent, handleFormatOnEvent);
+    input.addEventListener(formatOnEvent, handleFormatOnEvent as EventListener);
 
     return () => {
-      input.removeEventListener(formatOnEvent, handleFormatOnEvent);
+      input.removeEventListener(formatOnEvent, handleFormatOnEvent as EventListener);
     };
   }, []);
 
