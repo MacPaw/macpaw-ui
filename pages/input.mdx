@@ -124,3 +124,155 @@ import { Input, FormRow, Button, Password } from '../src/ui';
         <Input type="text" name="currency" placeholder="0.00" onChange={() => {}} label="Disabled" disabled currency="USD" />
     </FormRow>
 </div>
+
+```
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Input type="text" name="currency" placeholder="0.00" onChange={() => {}} label="Enabled" currency="USD" />
+    </FormRow>
+    <FormRow>
+        <Input type="text" name="currency" placeholder="0.00" onChange={() => {}} label="Disabled" disabled currency="USD" />
+    </FormRow>
+</div>
+```
+
+### Number with initial format
+
+In general, formatting function executes for initial values.
+
+export const InputWithInitialFormat = () => {
+  const [value, setValue] = React.useState(10);
+  return (
+    <div style={{ width: 300 }}>
+        <FormRow>
+            <Input 
+                type="number"
+                value={value}
+                label="Number"
+                name="number"
+                placeholder="0.00"
+                format={(value) => Number(value).toFixed(2)}
+                onChange={(e) => setValue(e.target.value)}
+            />
+        </FormRow>
+    </div>
+  );
+};
+
+<InputWithInitialFormat />
+
+```
+const [value, setValue] = React.useState(10);
+
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Input 
+            type="number"
+            value={value}
+            label="Number"
+            name="number"
+            placeholder="0.00"
+            format={(value) => Number(value).toFixed(2)}
+            onChange={(e) => setValue(e.target.value)}
+        />
+    </FormRow>
+</div>
+```
+
+### Event-driven formatted input
+
+There are two events that can used for formatting:
+- `blur`
+- `input`
+
+Pay attention, if you want to use formatting depends on events `blur` or `input`, you must pass the **setValue** prop.
+
+#### Blur event 
+
+export const InputWithBlurFormat = () => {
+  const [value, setValue] = React.useState(10);
+  return (
+    <div style={{ width: 300 }}>
+        <FormRow>
+            <Input 
+                type="number"
+                value={value}
+                label="Number"
+                name="number"
+                placeholder="0.00"
+                formatOnEvent="blur"
+                format={(value) => Number(value).toFixed(2)}
+                onChange={(e) => setValue(e.target.value)}
+                setValue={setValue}
+            />
+        </FormRow>
+    </div>
+  );
+};
+
+<InputWithBlurFormat />
+
+```
+const [value, setValue] = React.useState(10);
+
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Input 
+            type="number"
+            value={value}
+            label="Number"
+            name="number"
+            placeholder="0.00"
+            formatOnEvent="blur"
+            format={(value) => Number(value).toFixed(2)}
+            onChange={(e) => setValue(e.target.value)}
+            setValue={setValue}
+        />
+    </FormRow>
+</div>
+```
+
+#### Input event 
+
+export const InputWithChangeFormat = () => {
+  const [value, setValue] = React.useState('');
+  return (
+    <div style={{ width: 300 }}>
+        <FormRow>
+            <Input 
+                type="text"
+                value={value}
+                label="Input"
+                name="value"
+                placeholder="LARGE TEXT"
+                formatOnEvent="input"
+                format={(value) => String(value).toUpperCase()}
+                onChange={(e) => setValue(e.target.value)}
+                setValue={setValue}
+            />
+        </FormRow>
+    </div>
+  );
+};
+
+<InputWithChangeFormat />
+
+```
+const [value, setValue] = React.useState(10);
+
+<div style={{ width: 300 }}>
+    <FormRow>
+        <Input 
+            type="text"
+            value={value}
+            label="Input"
+            name="value"
+            placeholder="LARGE TEXT"
+            formatOnEvent="input"
+            format={(value) => String(value).toUpperCase()}
+            onChange={(e) => setValue(e.target.value)}
+            setValue={setValue}
+        />
+    </FormRow>
+</div>
+```
