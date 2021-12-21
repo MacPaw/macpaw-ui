@@ -9,13 +9,13 @@ import React, {
 } from 'react';
 import cx from 'clsx';
 import Hint from '../Hint/Hint';
-import { Error, InputValueType } from '../types';
+import { Error as InputError, InputValueType } from '../types';
 
 type InputElementType = HTMLInputElement | HTMLTextAreaElement;
 
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   scale?: 'medium' | 'small' | 'big';
-  error?: Error;
+  error?: InputError;
   action?: ReactNode;
   multiline?: boolean;
   label?: string | ReactNode;
