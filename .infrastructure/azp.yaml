@@ -1,4 +1,4 @@
-# pr: none
+pr: none
 
 trigger:
   batch: true
@@ -41,32 +41,32 @@ stages:
               imageName: $(component)
               buildArgs: --build-arg NPM_TOKEN=$(github_token)
               tag: $(dockerTag)-cli
-      # - job: deploy
-      #   displayName: Deploy
-      #   dependsOn: build
-      #   steps:
-      #     - task: VaultReadKV@2
-      #       displayName: Read AWS credentials
-      #       inputs:
-      #         strUrl: $(addr)
-      #         ignoreCertificateChecks: true
-      #         strAuthType: approle
-      #         strRoleID: $(approle-id)
-      #         strSecretID: $(approle-secret)
-      #         strKVEnginePath: aws
-      #         kvVersion: 'v1'
-      #         strSecretPath: /macpaw/creds/$(cluster)-$(project)-$(component)
-      #     - template: azp/templates/docker-pm-run.yaml@ops-macpaw-io
-      #       parameters:
-      #         containerRegistry: gcr
-      #         imageName: $(component)
-      #         command: deploy:s3
-      #         envVars:
-      #           AWS_ACCESS_KEY_ID: $(access_key)
-      #           AWS_SECRET_ACCESS_KEY: $(secret_key)
-      #           AWS_SESSION_TOKEN: $(security_token)
-      #     - template: azp/templates/github-deployment.yaml@ops-macpaw-io
-      #       parameters:
-      #         containerRegistry: gcr
-      #         name: production
-      #         url: https://ui.macpaw.com
+      - job: deploy
+        displayName: Deploy
+        dependsOn: build
+        steps:
+          - task: VaultReadKV@2
+            displayName: Read AWS credentials
+            inputs:
+              strUrl: $(addr)
+              ignoreCertificateChecks: true
+              strAuthType: approle
+              strRoleID: $(approle-id)
+              strSecretID: $(approle-secret)
+              strKVEnginePath: aws
+              kvVersion: 'v1'
+              strSecretPath: /macpaw/creds/$(cluster)-$(project)-$(component)
+          - template: azp/templates/docker-pm-run.yaml@ops-macpaw-io
+            parameters:
+              containerRegistry: gcr
+              imageName: $(component)
+              command: deploy:s3
+              envVars:
+                AWS_ACCESS_KEY_ID: $(access_key)
+                AWS_SECRET_ACCESS_KEY: $(secret_key)
+                AWS_SESSION_TOKEN: $(security_token)
+          - template: azp/templates/github-deployment.yaml@ops-macpaw-io
+            parameters:
+              containerRegistry: gcr
+              name: production
+              url: https://ui.macpaw.com
