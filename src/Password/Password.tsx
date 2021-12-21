@@ -10,7 +10,7 @@ export interface PasswordProps extends Omit<InputHTMLAttributes<HTMLInputElement
   withToggle?: boolean;
   i18nToggle?: (isPasswordVisible: boolean) => string;
   onToggle?: () => void;
-  onChange?:(value: InputValueType, event?: React.ChangeEvent) => void;
+  onChange?:(value: InputValueType, event?: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 function i18nToggleDefault(isPasswordVisible: boolean) {

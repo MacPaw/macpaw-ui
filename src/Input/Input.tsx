@@ -11,7 +11,6 @@ import cx from 'clsx';
 import Hint from '../Hint/Hint';
 import { Error as InputError, InputValueType } from '../types';
 
-type InputElementType = HTMLInputElement | HTMLTextAreaElement;
 
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   scale?: 'medium' | 'small' | 'big';
@@ -23,11 +22,11 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   currency?: string;
   formatOnEvent?: 'blur' | 'input';
   format?: (value: InputValueType) => InputValueType;
-  onChange?: (value:InputValueType, event?: React.ChangeEvent<InputElementType>) => void;
+  onChange?: (value:InputValueType, event?: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 
-const Input = forwardRef<InputElementType, InputProps>((props, ref) => {
+const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
     type = 'text',
     multiline = false,
@@ -46,7 +45,7 @@ const Input = forwardRef<InputElementType, InputProps>((props, ref) => {
   } = props;
 
   const isDirtyRef = useRef(false);
-  const inputRef = useRef<InputElementType>();
+  const inputRef = useRef<HTMLInputElement>();
 
   const classNames = cx('input', {
     '-error': Boolean(error),
@@ -76,7 +75,7 @@ const Input = forwardRef<InputElementType, InputProps>((props, ref) => {
     throw Error('action and currency cannot be set at the same time');
   }
 
-  const setRef = (element: InputElementType) => {
+  const setRef = (element: HTMLInputElement) => {
     if (typeof ref === 'function') ref(element);
     else if (ref) ref.current = element;
 
@@ -86,7 +85,7 @@ const Input = forwardRef<InputElementType, InputProps>((props, ref) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!isDirtyRef.current) isDirtyRef.current = true;
 
-    const inputValue = (event.target as InputElementType).value;
+    const inputValue = (event.target as HTMLInputElement).value;
     onChange?.(inputValue, event);
   };
 
@@ -96,7 +95,7 @@ const Input = forwardRef<InputElementType, InputProps>((props, ref) => {
     if (!formatOnEvent || !input) return () => {};
 
     const handleFormatOnEvent = (event: InputEvent | FocusEvent) => {
-      const inputValue = (event.target as InputElementType).value;
+      const inputValue = (event.target as HTMLInputElement).value;
       onChange?.(format?.(inputValue) ?? inputValue);
     };
 
