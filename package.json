@@ -1,6 +1,6 @@
 {
   "name": "@macpaw/macpaw-ui",
-  "version": "3.7.9",
+  "version": "3.8.0",
   "main": "lib/ui.js",
   "scripts": {
     "dev": "next -p 1234",
@@ -27,6 +27,7 @@
     "react-transition-group": "^4.4.0"
   },
   "devDependencies": {
+    "@babel/runtime": "^7.16.5",
     "@macpaw/eslint-config-base": "1.4.0",
     "@macpaw/eslint-config-react": "1.4.0",
     "@macpaw/eslint-config-typescript": "1.4.0",
