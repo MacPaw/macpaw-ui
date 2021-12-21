@@ -12,7 +12,7 @@
     "lib:js": "tsc --project tsconfig.lib.json",
     "lib:css": "sass src/ui.scss lib/ui.css",
     "lib": "yarn lib:css && yarn lib:js",
-    "deploy:s3": "deploy-aws-s3-cloudfront --non-interactive --source=out --bucket=ui.macpaw.com --destination=/"
+    "deploy:s3": "deploy-aws-s3-cloudfront --non-interactive --source=out --bucket=ui.macpaw.com --destination=/ --distribution=E2NQDOZEC6GH2E --acl=public-read"
   },
   "engines": {
     "node": ">= 16"
