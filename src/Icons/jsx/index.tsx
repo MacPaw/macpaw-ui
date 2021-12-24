@@ -52,3 +52,4 @@ export { default as SettingsIcon } from './SettingsIcon';
 export { default as StoreIcon } from './StoreIcon';
 export { default as UserIcon } from './UserIcon';
 export { default as WarningIcon } from './WarningIcon';
+export { default as BusinessIcon } from './BusinessIcon';
