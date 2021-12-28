@@ -24,10 +24,6 @@
     transition: .15s all ease-in-out;
     z-index: 1000;
 
-    &.-small {
-      width: 220px;
-    }
-
     &.-right {
       left: auto;
       right: 0;

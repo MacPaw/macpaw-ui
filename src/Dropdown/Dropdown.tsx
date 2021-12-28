@@ -4,13 +4,12 @@ import cx from 'clsx';
 export interface Dropdown extends HTMLAttributes<HTMLDivElement> {
   trigger: React.ReactElement;
   position?: 'left' | 'center' | 'right';
-  small?: boolean;
   onOpen?: () => void;
   onClose?: () => void;
 }
 
 const DropDown: React.FC<Dropdown> = (props) => {
-  const { className, children, trigger, position, small, onOpen, onClose, ...other } = props;
+  const { className, children, trigger, position, onOpen, onClose, ...other } = props;
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -25,7 +24,6 @@ const DropDown: React.FC<Dropdown> = (props) => {
     '-left': !position || position === 'left',
     '-right': position === 'right',
     '-center': position === 'center',
-    '-small': small,
   });
 
   useEffect(() => {
