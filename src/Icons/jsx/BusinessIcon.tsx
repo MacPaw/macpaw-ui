@@ -3,7 +3,6 @@ import * as React from 'react';
 function SvgBusinessIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
-      fill="none"
       height={24}
       viewBox="0 0 24 24"
       width={24}
