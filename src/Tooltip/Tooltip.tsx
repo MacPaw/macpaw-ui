@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import cx from 'clsx';
 
 interface Tooltip {
   content: React.ReactNode;
   position: 'top' | 'bottom' | 'left' | 'right';
   maxWidth?: number | string;
-  forceIsVisible?: boolean;
-  onVisibleTooltipChange?: (isVisible: boolean) => void;
+  forceShow?: boolean;
+  forceHide?: boolean;
 }
 
 const Tooltip: React.FC<Tooltip> = ({
@@ -14,46 +14,28 @@ const Tooltip: React.FC<Tooltip> = ({
   content,
   position,
   maxWidth,
-  forceIsVisible = false,
-  onVisibleTooltipChange,
+  forceShow = false,
+  forceHide = false,
 }) => {
-  const [isVisible, setIsVisible] = useState(forceIsVisible);
-
-  const messageStyles = maxWidth && { width: maxWidth };
-
+  const messageStyles = maxWidth ? ({ width: maxWidth } as React.CSSProperties) : {};
   const messageClassNames = cx(
     'tooltip-message',
     `-${position}`,
     {
+      '-show': forceShow,
+      '-hide': forceHide,
       '-custom-width': !!maxWidth,
     }
   );
 
-  const handleChangeVisibility = (nextIsVisible: boolean) => {
-    setIsVisible(nextIsVisible);
-    onVisibleTooltipChange?.(nextIsVisible);
-  };
-
-  const showTooltip = () => handleChangeVisibility(true);
-
-  const hideTooltip = () => handleChangeVisibility(false);
-
-  useEffect(() => setIsVisible(forceIsVisible), [forceIsVisible]);
-
   return (
-    <div className="tooltip" onMouseLeave={hideTooltip}>
-      {isVisible && (
-        <div className={messageClassNames}>
-          <div className="tooltip-content" style={messageStyles}>{content}</div>
-        </div>
-      )}
-      <span
-        className="tooltip-trigger"
-        onMouseOver={showTooltip}
-        onFocus={showTooltip}
-      >
+    <div className="tooltip">
+      <div className={messageClassNames}>
+        <div className="tooltip-content" style={messageStyles}>{content}</div>
+      </div>
+      <div className="tooltip-trigger">
         {children}
-      </span>
+      </div>
     </div>
   );
 };

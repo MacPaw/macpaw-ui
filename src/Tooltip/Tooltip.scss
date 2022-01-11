@@ -2,15 +2,35 @@
   position: relative;
   display: inline-block;
 
+  &:hover {
+    .tooltip {
+      &-message {
+        @include visibility(visible, 1);
+
+        &.-hide {
+          @include visibility(hidden, 0);
+        }
+      }
+      
+    }
+  }
+
   &-message {
+    @include visibility(hidden, 0);
     position: absolute;
     min-width: 350px;
     max-width: 350px;
     width: 100%;
     z-index: 10;
+    transition: all .1s linear;
+    
     &::after {
       content: '';
       position: absolute;
+    }
+
+    &.-show {
+      @include visibility(visible, 1);
     }
 
     &.-custom-width {
