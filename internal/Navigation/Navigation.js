@@ -25,6 +25,7 @@ const pages = [
   'select',
   'tag',
   'table',
+  'tooltip',
   'typography',
 ]
 

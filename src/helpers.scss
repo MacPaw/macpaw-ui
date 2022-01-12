@@ -3,3 +3,8 @@
     @content;
   }
 }
+
+@mixin visibility($visibility, $opacity) {
+  visibility: $visibility;
+  opacity: $opacity;
+}

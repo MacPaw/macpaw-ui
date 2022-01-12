@@ -1,6 +1,20 @@
+# dependencies
 node_modules
+
+# idea setting
 .idea
+
+# MacOS filesystem
 .DS_Store
+
+# next.js
 .next
+
+# built components
 lib
+
+# static pages
 out
+
+# VS code setting
+**/.vscode/*

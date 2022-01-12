@@ -1,0 +1,251 @@
+import { Tooltip, Button, Grid, GridRow, GridCell } from '../src/ui';
+
+# Tooltip
+
+<Tooltip position="top" content="Hi there!">
+  <Button>
+    Hover me
+  </Button>
+</Tooltip>
+
+```
+<Tooltip position="top" content="Hi there">
+  <Button>
+    Hover me
+  </Button>
+</Tooltip>
+```
+
+## Tooltip position
+
+<Grid>
+  <GridRow>
+    <GridCell>
+      <Tooltip position="top" content="Hi there! I'm on the top">
+        <Button>
+          Top
+        </Button>
+      </Tooltip>
+    </GridCell>
+     <GridCell>
+       <Tooltip position="bottom" content="Hi there! I'm on the bottom">
+        <Button>
+          Bottom
+        </Button>
+      </Tooltip>
+    </GridCell>
+     <GridCell>
+       <Tooltip position="left" content="Hi there! I'm on the left">
+        <Button>
+          Left
+        </Button>
+      </Tooltip>
+    </GridCell>
+     <GridCell>
+       <Tooltip position="right" content="Hi there! I'm on the right">
+        <Button>
+          Right
+        </Button>
+      </Tooltip>
+    </GridCell>
+  </GridRow>
+</Grid>
+
+```
+<Tooltip position="top" content="Hi there! I'm on the top">
+  <Button>
+    Top
+  </Button>
+</Tooltip>
+<Tooltip position="bottom" content="Hi there! I'm on the bottom">
+  <Button>
+    Bottom
+  </Button>
+</Tooltip>
+<Tooltip position="left" content="Hi there! I'm on the left">
+  <Button>
+    Left
+  </Button>
+</Tooltip>
+<Tooltip position="right" content="Hi there! I'm on the right">
+  <Button>
+    Right
+  </Button>
+</Tooltip>
+```
+
+## Tooltip with max width
+
+<Tooltip 
+  maxWidth={100}
+  position="right"
+  content="So small"
+>
+  <Button>
+    Hover me
+  </Button>
+</Tooltip>
+
+```
+<Tooltip 
+  maxWidth={100}
+  position="right"
+  content="Hi there"
+>
+  <Button>
+    Hover me
+  </Button>
+</Tooltip>
+```
+
+## Tooltip force showing
+
+export const ControlledTooltip = () => {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const tooltipBehaviorTitle = isVisible ? 'always visible' : 'normal'
+  return (
+    <Grid>
+      <GridRow>
+        <GridCell>
+            <Button onClick={() => setIsVisible(current=>!current)}>
+              Toggle behavior: {tooltipBehaviorTitle}
+            </Button>
+        </GridCell>
+        <GridCell>
+          <Tooltip 
+            position="top"
+            content={`Hi there! I'm ${tooltipBehaviorTitle} tooltip.`}
+            forceShow={isVisible}
+          >
+            <Button>
+              Button with tooltip
+            </Button>
+          </Tooltip>
+        </GridCell>
+      </GridRow>     
+    </Grid>
+  );
+};
+
+<ControlledTooltip />
+
+```
+const [isVisible, setIsVisible] = React.useState(false);
+const tooltipBehaviorTitle = isVisible ? 'always visible' : 'normal'
+
+<Button onClick={() => setIsVisible(current=>!current)}>
+  Toggle behavior: {tooltipBehaviorTitle}
+</Button>
+<Tooltip 
+  position="top"
+  content={`Hi there! I'm ${tooltipBehaviorTitle} tooltip.`}
+  forceShow={isVisible}
+>
+  <Button>
+    Button with tooltip
+  </Button>
+</Tooltip>
+
+```
+
+## Tooltip force hidding 
+
+export const HiddenTooltip = () => {
+  const [isHidden, setIsHidden] = React.useState(false);
+  const tooltipBehaviorTitle = isHidden ? 'always hidden' : 'normal';
+  return (
+    <Grid>
+      <GridRow>
+        <GridCell>
+            <Button onClick={() => setIsHidden(current=>!current)}>
+              Toggle behavior: {tooltipBehaviorTitle}
+            </Button>
+        </GridCell>
+        <GridCell>
+          <Tooltip 
+            position="top"
+            content={`Hi there! I'm ${tooltipBehaviorTitle} tooltip.`}
+            forceHide={isHidden}
+          >
+            <Button>
+              Button with tooltip
+            </Button>
+          </Tooltip>
+        </GridCell>
+      </GridRow>     
+    </Grid>
+  );
+};
+
+<HiddenTooltip />
+
+```
+const [isHidden, setIsHidden] = React.useState(false);
+const tooltipBehaviorTitle = isHidden ? 'always hidden' : 'normal';
+
+<Button onClick={() => setIsHidden(current=>!current)}>
+  Toggle behavior: {tooltipBehaviorTitle}
+</Button>
+<Tooltip 
+  position="top"
+  content={`Hi there! I'm ${tooltipBehaviorTitle} tooltip.`}
+  forceHide={isHidden}
+>
+  <Button>
+    Button with tooltip
+  </Button>
+</Tooltip>
+
+```
+
+## Fully controlled
+
+export const FullyControlledTooltip = () => {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const tooltipBehaviorTitle = isVisible ? 'always visible' : 'always hidden';
+  return (
+    <Grid>
+      <GridRow>
+        <GridCell>
+            <Button onClick={() => setIsVisible(current=>!current)}>
+              Toggle behavior: {tooltipBehaviorTitle}
+            </Button>
+        </GridCell>
+        <GridCell>
+          <Tooltip 
+            position="top"
+            content={`Hi there! I'm ${tooltipBehaviorTitle} tooltip.`}
+            forceShow={isVisible}
+            forceHide={!isVisible}
+          >
+            <Button>
+              Button with tooltip
+            </Button>
+          </Tooltip>
+        </GridCell>
+      </GridRow>     
+    </Grid>
+  );
+};
+
+<FullyControlledTooltip />
+
+```
+const [isVisible, setIsVisible] = React.useState(false);
+const tooltipBehaviorTitle = isVisible ? 'always visible' : 'always hidden';
+
+<Button onClick={() => setIsVisible(current=>!current)}>
+  Toggle behavior: {tooltipBehaviorTitle}
+</Button>
+<Tooltip 
+  position="top"
+  content={`Hi there! I'm ${tooltipBehaviorTitle} tooltip.`}
+  forceShow={isVisible}
+  forceHide={!isVisible}
+>
+  <Button>
+    Button with tooltip
+  </Button>
+</Tooltip>
+
+```
