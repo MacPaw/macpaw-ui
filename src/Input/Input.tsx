@@ -37,7 +37,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     label,
     currency,
     className,
-    value = '',
+    value,
     onChange,
     formatOnEvent = '',
     format,
@@ -56,7 +56,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 
   const Component = multiline ? 'textarea' : 'input' as ElementType;
   const showHintError = error && typeof error !== 'boolean';
-  const inputValue = !isDirtyRef.current ? (format?.(value) ?? value) : value;
+  const inputValue = !isDirtyRef.current ? (format?.(value ?? '') ?? value) : value;
   const inputClassNames = cx(className, {
     '-with-action': action,
     '-with-currency': currency
