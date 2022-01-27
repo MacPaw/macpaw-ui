@@ -24,6 +24,7 @@ const pages = [
   'radio',
   'select',
   'tag',
+  'tag-input',
   'table',
   'tooltip',
   'typography',

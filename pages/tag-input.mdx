@@ -1,0 +1,288 @@
+import { TagInput } from '../src/ui';
+
+# TagInput
+
+export const BasicTagInput = () => {
+    const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+    return (
+      <div style={{ width: 300 }}>
+          <TagInput 
+            id="BasicTagInput"
+            tags={values}
+            label="Tags"
+            placeholder="Enter your tags here"
+            onChange={setValues}
+        />
+      </div>
+    )
+}
+
+<BasicTagInput />
+
+```
+const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+
+<TagInput 
+    id="BasicTagInput"
+    tags={values}
+    label="Tags"
+    placeholder="Enter your tags here"
+    onChange={setValues}
+/>
+```
+
+## With max height
+
+export const MaxHeightTagInput = () => {
+    const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+    return (
+      <div style={{ width: 300 }}>
+          <TagInput 
+            id="MaxHeightTagInput"
+            tags={values}
+            label="Tags"
+            placeholder="Enter your tags here"
+            onChange={setValues}
+            maxHeight={100}
+        />
+      </div>
+    )
+}
+
+<MaxHeightTagInput />
+
+```
+const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+
+<TagInput 
+    id="MaxHeightTagInput"
+    tags={values}
+    label="Tags"
+    placeholder="Enter your tags here"
+    onChange={setValues}
+    maxHeight={100}
+/>
+```
+
+## With submitting and removing tags on custom key events
+
+You can set triggers for adding and removing. Default value for addition: `['Enter']`, for removing: `[]`.
+
+Multiple trigger values can be set.
+
+export const KeyCodeTagInput = () => {
+    const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+    const addKeyCodes = ['Enter', 'Space', 'Comma'];
+    const removeKeyCodes = ['Delete', 'Backspace', 'Escape'];
+    return (
+      <div style={{ width: 300 }}>
+          <TagInput 
+            id="KeyCodeTagInput"
+            tags={values}
+            label="Tags"
+            placeholder="Enter your tags here"
+            addKeyCodes={addKeyCodes}
+            removeKeyCodes={removeKeyCodes}
+            onChange={setValues}
+        />
+      </div>
+    )
+}
+
+<KeyCodeTagInput />
+
+```
+const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+const addKeyCodes = ['Enter', 'Space', 'Comma'];
+const removeKeyCodes = ['Delete', 'Backspace', 'Escape'];
+
+<TagInput 
+    id="KeyCodeTagInput"
+    tags={values}
+    label="Tags"
+    placeholder="Enter your tags here"
+    addKeyCodes={addKeyCodes}
+    removeKeyCodes={removeKeyCodes}
+    onChange={setValues}
+/>
+
+```
+
+## Read only tag input
+
+export const ReadOnlyTagInput = () => {
+    const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+    return (
+      <div style={{ width: 300 }}>
+          <TagInput 
+            id="ReadOnlyTagInput"
+            tags={values}
+            label="Read only tags"
+            isReadOnly
+        />
+      </div>
+    )
+}
+
+<ReadOnlyTagInput />
+
+```
+const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+
+<TagInput 
+    id="ReadOnlyTagInput"
+    tags={values}
+    label="Read only tags"
+    isReadOnly
+/>
+```
+
+## With unique values
+
+export const UniqueTagInput = () => {
+    const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+    return (
+      <div style={{ width: 300 }}>
+          <TagInput 
+            id="UniqueTagInput"
+            tags={values}
+            label="Unique tags"
+            placeholder="Enter your tags here"
+            onChange={setValues}
+            isUnique
+        />
+      </div>
+    )
+}
+
+<UniqueTagInput />
+
+```
+const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+
+<TagInput 
+    id="UniqueTagInput"
+    tags={values}
+    label="Unique tags"
+    placeholder="Enter your tags here"
+    onChange={setValues}
+    isUnique
+/>
+```
+
+## With formatted tags
+
+export const FormattedTagInput = () => {
+    const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+    return (
+      <div style={{ width: 300 }}>
+        <TagInput 
+          id="FormattedTagInput"
+          tags={values}
+          label="Hash tags"
+          placeholder="Enter your tags here"
+          onChange={setValues}
+          formatter={(value)=>`#${value}`}
+        />
+      </div>
+    )
+}
+
+<FormattedTagInput />
+
+```
+const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+
+<TagInput 
+    id="FormattedTagInput"
+    tags={values}
+    label="Hash tags"
+    placeholder="Enter your tags here"
+    onChange={setValues}
+    formatter={(value)=>`#${value}`}
+/>
+```
+
+## With validation and clipboard handling
+
+Tag input with validation and items should be unique and separated by *,*.
+
+Try to copy and paste:
+
+> `name1@mail.com, name1@mail.com, name2mail.com, name3@mail.com`
+
+export const TagInputWithValidation = () => {
+  const [values, setValues] = React.useState([{ id:1, value:'testmail@macpaw.com' }]);
+  const [error, setError] = React.useState('');
+  const validateEmail = (tag) => {
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,14}$/g;
+    const isValid = emailRegex.test(tag);
+    if(!isValid) setError('Please enter a valid email address');
+    return isValid;
+  };
+  const onChangeInput = () => setError('');
+  const handleChange = (nextValues) => {
+    setValues(nextValues);
+    const hasWrongValues = nextValues.some(({color})=>color === 'warning');
+    if(error && !hasWrongValues) setError('');
+  } 
+  return (
+    <div style={{ width: 300 }}>
+      <TagInput 
+          id="TagInputWithValidation"
+          tags={values}
+          error={error}
+          label="Email list"
+          placeholder="Enter your emails here"
+          clipboardSeparator=","
+          isUnique
+          isHandleClipboard
+          validate={validateEmail}
+          onChange={handleChange}
+          onValueChange={onChangeInput}
+      />
+    </div>
+  );
+};
+
+<TagInputWithValidation />
+
+```
+const [values, setValues] = React.useState([{ id:1, value:'testmail@macpaw.com' }]);
+const [error, setError] = React.useState('');
+
+const validateEmail = (tag) => {
+  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,14}$/g;
+  const isValid = emailRegex.test(tag);
+
+  if(!isValid) setError('Please enter a valid email address');
+
+  return isValid;
+};
+
+const onChangeInput = () => setError('');
+
+const handleChange = (nextValues) => {
+  setValues(nextValues);
+  
+  const hasWrongValues = nextValues.some(({color})=>color === 'warning');
+  
+  if(error && !hasWrongValues) setError('');
+} 
+
+<TagInput 
+    id="TagInputWithValidation"
+    tags={values}
+    error={error}
+    label="Email list"
+    placeholder="Enter your emails here"
+    clipboardSeparator=","
+    isUnique
+    isHandleClipboard
+    validate={validateEmail}
+    onChange={handleChange}
+    onValueChange={onChangeInput}
+/>
+
+);
+```
