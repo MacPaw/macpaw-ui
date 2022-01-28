@@ -33,6 +33,8 @@ export interface TagInput {
   formatter?: (value: string) => ReactNode;
 }
 
+const defaultValidation = (tag: string) => Boolean(tag.trim());
+
 const DEFAULT_ADD_KEY_CODES = ['Enter'];
 
 const TagInput: React.FC<TagInput> = ({
@@ -51,7 +53,7 @@ const TagInput: React.FC<TagInput> = ({
   isHandleClipboard,
   onChange,
   onValueChange,
-  validate,
+  validate = defaultValidation,
   formatter,
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
