@@ -3,22 +3,37 @@ import cx from 'clsx';
 import CloseIcon from '../Icons/jsx/CloseIcon';
 
 export interface TagProps extends HTMLAttributes<HTMLDivElement> {
+  color?: 'primary' | 'secondary' | 'warning';
+  as?: 'div' | 'span';
+  borderRadius?: string | number;
   onRemove?: () => void;
 }
 
-const Tag: FC<TagProps> = (props) => {
-  const { onRemove, className, children, ...other } = props;
+const Tag: FC<TagProps> = ({
+  onRemove,
+  className,
+  borderRadius,
+  color = 'secondary',
+  as: Element = 'div',
+  children,
+  ...other
+}) => {
+  const tagClassNames = cx('tag', className, {
+    [`-${color}`]: color,
+    'tag-action': onRemove
+  });
 
   return (
-    <div className={cx('tag', onRemove && 'tag-action', className)} {...other}>
+    <Element className={tagClassNames} style={{ borderRadius }} {...other}>
       {onRemove && (
         <button type="button" onClick={onRemove}>
           <CloseIcon />
         </button>
       )}
       {children}
-    </div>
+    </Element>
   );
 };
+
 
 export default Tag;
