@@ -29,7 +29,7 @@ export interface TagInput {
   isHandleClipboard?: boolean;
   onChange: (nextTags: TagInputListItem[]) => void;
   onValueChange?: (value: string) => void;
-  validate?: (tag: string) => boolean;
+  validate?: (tag: string) => boolean | Promise<boolean>;
   formatter?: (value: string) => ReactNode;
 }
 
@@ -79,8 +79,8 @@ const TagInput: React.FC<TagInput> = ({
     onChange(tags.filter(({ id }) => tagId !== id));
   };
 
-  const handleAddTag = () => {
-    const isValid = validate?.(value) ?? true;
+  const handleAddTag = async () => {
+    const isValid = await validate?.(value) ?? true;
     const isUniqueTag = checkIsUniqueTag(value, tags);
 
     if (!isValid) return;
@@ -95,14 +95,14 @@ const TagInput: React.FC<TagInput> = ({
     }]);
   };
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = async (event: KeyboardEvent<HTMLInputElement>) => {
     const isAddEvent = addKeyCodes.includes(event.code);
     const isRemoveEvent = removeKeyCodes.includes(event.code) && !value && tags.length;
 
     if (isAddEvent) {
       event.preventDefault();
       event.stopPropagation();
-      handleAddTag();
+      await handleAddTag();
     } else if (isRemoveEvent) {
       event.preventDefault();
       event.stopPropagation();
