@@ -110,7 +110,7 @@ const TagInput: React.FC<TagInput> = ({
     }
   };
 
-  const handlePaste = (event: ClipboardEvent<HTMLInputElement>) => {
+  const handlePaste = async (event: ClipboardEvent<HTMLInputElement>) => {
     if (!isHandleClipboard) return;
 
     const clipboardItems = event.clipboardData
@@ -123,21 +123,27 @@ const TagInput: React.FC<TagInput> = ({
 
     event.preventDefault();
 
-    const clipboardTags = clipboardItems.reduce((acc: TagInputListItem[], tag: string): TagInputListItem[] => {
-      const isValid = validate?.(tag) ?? true;
-      const isUniqueTag = checkIsUniqueTag(tag, acc);
+    const clipboardTagValidationPromises = clipboardItems.map((tag: string) => validate?.(tag) ?? true);
+    const clipboardTagValidationArray = await Promise.all(clipboardTagValidationPromises);
 
-      if (!isUniqueTag) return acc;
+    const clipboardTags = clipboardItems.reduce(
+      (acc: TagInputListItem[], tag: string, index: number): TagInputListItem[] => {
+        const isValid = clipboardTagValidationArray[index];
+        const isUniqueTag = checkIsUniqueTag(tag, acc);
 
-      return [
-        ...acc,
-        {
-          id: uniqId(),
-          value: tag,
-          ...(!isValid ? { color: 'warning' } : {})
-        }
-      ];
-    }, tags);
+        if (!isUniqueTag) return acc;
+
+        return [
+          ...acc,
+          {
+            id: uniqId(),
+            value: tag,
+            ...(!isValid ? { color: 'warning' } : {}),
+          },
+        ];
+      },
+      tags,
+    );
 
     onChange(clipboardTags);
   };
