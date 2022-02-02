@@ -3,7 +3,7 @@ import cx from 'clsx';
 import CloseIcon from '../Icons/jsx/CloseIcon';
 
 export interface TagProps extends HTMLAttributes<HTMLDivElement> {
-  color?: 'primary' | 'secondary' | 'warning';
+  color?: 'primary' | 'secondary' | 'warning' | 'custom';
   as?: 'div' | 'span';
   borderRadius?: string | number;
   onRemove?: () => void;
