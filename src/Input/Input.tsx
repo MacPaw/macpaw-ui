@@ -18,6 +18,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   action?: ReactNode;
   multiline?: boolean;
   label?: string | ReactNode;
+  icon?: ReactNode;
   rows?: number;
   currency?: string;
   formatOnEvent?: 'blur' | 'input';
@@ -37,6 +38,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     label,
     currency,
     className,
+    icon,
     value,
     onChange,
     formatOnEvent = '',
@@ -59,7 +61,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const inputValue = !isDirtyRef.current ? (format?.(value ?? '') ?? value) : value;
   const inputClassNames = cx(className, {
     '-with-action': action,
-    '-with-currency': currency
+    '-with-currency': currency,
+    '-with-icon': icon
   });
 
   const componentProps: any = {
@@ -110,6 +113,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     <label className={classNames} style={style}>
       {label && <span className="input-label h6">{label}{`${other.required ? ' *' : ''}`}</span>}
       <span className="input-field">
+        {icon && <span className="input-icon">{icon}</span>}
         <Component
           {...componentProps}
           {...other}

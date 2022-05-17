@@ -42,6 +42,14 @@
     right: 18px;
   }
 
+  &-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    line-height: 1;
+  }
+
   &-currency {
     position: absolute;
     top: 50%;
@@ -95,6 +103,10 @@
 
     &.-with-currency {
       padding-right: 60px;
+    }
+
+    &.-with-icon {
+      padding-left: 44px;
     }
   }
 
