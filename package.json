@@ -1,6 +1,6 @@
 {
   "name": "@macpaw/macpaw-ui",
-  "version": "3.9.8",
+  "version": "3.10.0",
   "main": "lib/ui.js",
   "scripts": {
     "dev": "next -p 1234",
