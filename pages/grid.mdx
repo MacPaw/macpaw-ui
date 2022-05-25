@@ -1,4 +1,4 @@
-import { Grid, GridRow, GridCell, Label, Button } from '../src/ui';
+import { Grid, GridRow, GridCell, Label, Button, Panel } from '../src/ui';
 import { MoreIcon } from '../src/Icons/jsx';
 
 # Grid
@@ -129,4 +129,61 @@ import { MoreIcon } from '../src/Icons/jsx';
         </GridCell>
     </GridRow>
 </Grid>
+```
+
+## Grid with custom parent component
+
+<Panel>
+    <Grid component={'div'} outline icon={<img src="/example/cmm.png" alt=""/>} action={<Button icon color="transparent"><MoreIcon /></Button>}>
+        <GridRow>
+            <GridCell type="primary">
+                <Label>Plan</Label>
+                <b>Plan for 1 Mac</b>
+            </GridCell>
+            <GridCell type="primary">
+                <Label>Owner</Label>
+                example@email.com
+            </GridCell>
+            <GridCell type="secondary">
+                <Label>Duration</Label>
+                ∞
+            </GridCell>
+            <GridCell type="secondary">
+                <Label>Purchase Date</Label>
+                Jul 26, 2021
+            </GridCell>
+        </GridRow>
+    </Grid>
+    <div style={{borderTop: '2px solid rgba(0, 0, 0, 0.04)', marginTop: '32px', paddingTop: '24px'}}>
+       <p>Some additional content</p>
+    </div>
+</Panel>
+
+
+```
+<Panel>
+    <Grid component={'div'} outline icon={<img src="/example/cmm.png" alt=""/>} action={<Button icon color="transparent"><MoreIcon /></Button>}>
+        <GridRow>
+            <GridCell type="primary">
+                <Label>Plan</Label>
+                <b>Plan for 1 Mac</b>
+            </GridCell>
+            <GridCell type="primary">
+                <Label>Owner</Label>
+                example@email.com
+            </GridCell>
+            <GridCell type="secondary">
+                <Label>Duration</Label>
+                ∞
+            </GridCell>
+            <GridCell type="secondary">
+                <Label>Purchase Date</Label>
+                Jul 26, 2021
+            </GridCell>
+        </GridRow>
+    </Grid>
+    <div style={{borderTop: '2px solid rgba(0, 0, 0, 0.04)', marginTop: '32px', paddingTop: '24px'}}>
+       <p>Some additional content</p>
+    </div>
+</Panel>
 ```

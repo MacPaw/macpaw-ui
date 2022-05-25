@@ -1,19 +1,29 @@
-import React, { ReactNode } from 'react';
+import React, { ElementType, ReactNode } from 'react';
 import Panel, { PanelProps }  from '../Panel/Panel';
 
 interface Grid extends PanelProps {
   icon?: ReactNode;
   action?: ReactNode;
   notification?: ReactNode;
+  component?: ReactNode;
 }
 
 const Grid: React.FC<Grid> = (props) => {
-  const { icon, action, notification, children, className, ...other } = props;
+  const {
+    icon,
+    action,
+    notification,
+    children,
+    className,
+    component,
+    ...other
+  } = props;
   let gridClassNames = 'grid';
   if (className) gridClassNames += ` ${className}`;
+  const Component = component ? component as ElementType : Panel;
 
   return (
-    <Panel {...other} className={gridClassNames}>
+    <Component {...other} className={gridClassNames}>
       <div className="grid-layout">
         {icon && <div className="grid-icon">{icon}</div>}
         <div className="grid-rows">
@@ -22,7 +32,7 @@ const Grid: React.FC<Grid> = (props) => {
         <div className="grid-action">{action}</div>
       </div>
       {notification && <div className="grid-notification">{notification}</div>}
-    </Panel>
+    </Component>
   );
 };
 
