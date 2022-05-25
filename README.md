@@ -27,4 +27,4 @@ Package published with Github Actions:
 ## Host
 
 * run `yarn build`
-* serve `out` and `.next` directories as public
+* serve `out` directory as public
