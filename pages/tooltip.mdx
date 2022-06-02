@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Tooltip, Button, Grid, GridRow, GridCell } from '../src/ui';
 
 # Tooltip
@@ -101,7 +102,7 @@ import { Tooltip, Button, Grid, GridRow, GridCell } from '../src/ui';
 ## Tooltip force showing
 
 export const ControlledTooltip = () => {
-  const [isVisible, setIsVisible] = React.useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const tooltipBehaviorTitle = isVisible ? 'always visible' : 'normal'
   return (
     <Grid>
@@ -130,7 +131,7 @@ export const ControlledTooltip = () => {
 <ControlledTooltip />
 
 ```
-const [isVisible, setIsVisible] = React.useState(false);
+const [isVisible, setIsVisible] = useState(false);
 const tooltipBehaviorTitle = isVisible ? 'always visible' : 'normal'
 
 <Button onClick={() => setIsVisible(current=>!current)}>
@@ -151,7 +152,7 @@ const tooltipBehaviorTitle = isVisible ? 'always visible' : 'normal'
 ## Tooltip force hidding 
 
 export const HiddenTooltip = () => {
-  const [isHidden, setIsHidden] = React.useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const tooltipBehaviorTitle = isHidden ? 'always hidden' : 'normal';
   return (
     <Grid>
@@ -180,7 +181,7 @@ export const HiddenTooltip = () => {
 <HiddenTooltip />
 
 ```
-const [isHidden, setIsHidden] = React.useState(false);
+const [isHidden, setIsHidden] = useState(false);
 const tooltipBehaviorTitle = isHidden ? 'always hidden' : 'normal';
 
 <Button onClick={() => setIsHidden(current=>!current)}>
@@ -201,7 +202,7 @@ const tooltipBehaviorTitle = isHidden ? 'always hidden' : 'normal';
 ## Fully controlled
 
 export const FullyControlledTooltip = () => {
-  const [isVisible, setIsVisible] = React.useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const tooltipBehaviorTitle = isVisible ? 'always visible' : 'always hidden';
   return (
     <Grid>
@@ -231,7 +232,7 @@ export const FullyControlledTooltip = () => {
 <FullyControlledTooltip />
 
 ```
-const [isVisible, setIsVisible] = React.useState(false);
+const [isVisible, setIsVisible] = useState(false);
 const tooltipBehaviorTitle = isVisible ? 'always visible' : 'always hidden';
 
 <Button onClick={() => setIsVisible(current=>!current)}>

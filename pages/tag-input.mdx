@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import { TagInput } from '../src/ui';
 
 # TagInput
 
 export const BasicTagInput = () => {
-    const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+    const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     return (
       <div style={{ width: 300 }}>
           <TagInput 
@@ -20,7 +21,7 @@ export const BasicTagInput = () => {
 <BasicTagInput />
 
 ```
-const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 
 <TagInput 
     id="BasicTagInput"
@@ -34,7 +35,7 @@ const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
 ## With max height
 
 export const MaxHeightTagInput = () => {
-    const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+    const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     return (
       <div style={{ width: 300 }}>
           <TagInput 
@@ -52,7 +53,7 @@ export const MaxHeightTagInput = () => {
 <MaxHeightTagInput />
 
 ```
-const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 
 <TagInput 
     id="MaxHeightTagInput"
@@ -71,7 +72,7 @@ You can set triggers for adding and removing. Default value for addition: `['Ent
 Multiple trigger values can be set.
 
 export const KeyCodeTagInput = () => {
-    const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+    const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     const addKeyCodes = ['Enter', 'Space', 'Comma'];
     const removeKeyCodes = ['Delete', 'Backspace', 'Escape'];
     return (
@@ -92,7 +93,7 @@ export const KeyCodeTagInput = () => {
 <KeyCodeTagInput />
 
 ```
-const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 const addKeyCodes = ['Enter', 'Space', 'Comma'];
 const removeKeyCodes = ['Delete', 'Backspace', 'Escape'];
 
@@ -111,7 +112,7 @@ const removeKeyCodes = ['Delete', 'Backspace', 'Escape'];
 ## Read only tag input
 
 export const ReadOnlyTagInput = () => {
-    const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+    const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     return (
       <div style={{ width: 300 }}>
           <TagInput 
@@ -127,7 +128,7 @@ export const ReadOnlyTagInput = () => {
 <ReadOnlyTagInput />
 
 ```
-const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 
 <TagInput 
     id="ReadOnlyTagInput"
@@ -140,7 +141,7 @@ const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
 ## With unique values
 
 export const UniqueTagInput = () => {
-    const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+    const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     return (
       <div style={{ width: 300 }}>
           <TagInput 
@@ -158,7 +159,7 @@ export const UniqueTagInput = () => {
 <UniqueTagInput />
 
 ```
-const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 
 <TagInput 
     id="UniqueTagInput"
@@ -173,7 +174,7 @@ const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
 ## With formatted tags
 
 export const FormattedTagInput = () => {
-    const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+    const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     return (
       <div style={{ width: 300 }}>
         <TagInput 
@@ -191,7 +192,7 @@ export const FormattedTagInput = () => {
 <FormattedTagInput />
 
 ```
-const [values, setValues] = React.useState([{ id:1, value:'Tag 1' }]);
+const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 
 <TagInput 
     id="FormattedTagInput"
@@ -212,8 +213,8 @@ Try to copy and paste:
 > `name1@mail.com, name1@mail.com, name2mail.com, name3@mail.com`
 
 export const TagInputWithValidation = () => {
-  const [values, setValues] = React.useState([{ id:1, value:'testmail@macpaw.com' }]);
-  const [error, setError] = React.useState('');
+  const [values, setValues] = useState([{ id:1, value:'testmail@macpaw.com' }]);
+  const [error, setError] = useState('');
   const validateEmail = (tag) => {
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,14}$/g;
     const isValid = emailRegex.test(tag);
@@ -248,8 +249,8 @@ export const TagInputWithValidation = () => {
 <TagInputWithValidation />
 
 ```
-const [values, setValues] = React.useState([{ id:1, value:'testmail@macpaw.com' }]);
-const [error, setError] = React.useState('');
+const [values, setValues] = useState([{ id:1, value:'testmail@macpaw.com' }]);
+const [error, setError] = useState('');
 
 const validateEmail = (tag) => {
   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,14}$/g;
