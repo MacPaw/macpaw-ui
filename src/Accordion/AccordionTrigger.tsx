@@ -6,7 +6,7 @@ export interface AccordionTrigger extends HTMLAttributes<HTMLDivElement> {
   onClick?: (event: React.SyntheticEvent) => void;
 }
 
-const AccordionTrigger: React.FC<AccordionTrigger> = (props) => {
+const AccordionTrigger: React.FC<React.PropsWithChildren<AccordionTrigger>> = (props) => {
   const { children, sectionKey, onClick, ...other } = props;
   const { activeKey, onToggle } = useContext(AccordionContext);
   const onTrigger = (event: React.SyntheticEvent) => {

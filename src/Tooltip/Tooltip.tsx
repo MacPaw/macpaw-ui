@@ -9,7 +9,7 @@ interface Tooltip {
   forceHide?: boolean;
 }
 
-const Tooltip: React.FC<Tooltip> = ({
+const Tooltip: React.FC<React.PropsWithChildren<Tooltip>> = ({
   children,
   content,
   position,

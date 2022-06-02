@@ -5,7 +5,7 @@ export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: boolean;
 }
 
-const Radio: FC<RadioProps> = (props) => {
+const Radio: FC<React.PropsWithChildren<RadioProps>> = (props) => {
   const {
     className,
     error,

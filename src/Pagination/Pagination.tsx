@@ -10,7 +10,7 @@ export interface PaginationProps extends HTMLAttributes<HTMLDivElement> {
   prevLabel?: string;
 }
 
-const Pagination: FC<PaginationProps> = (props) => {
+const Pagination: FC<React.PropsWithChildren<PaginationProps>> = (props) => {
   const {
     className,
     currentPage,

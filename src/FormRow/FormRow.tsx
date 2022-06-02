@@ -6,7 +6,7 @@ export interface FormRowProps extends HTMLAttributes<HTMLDivElement> {
   split?: boolean;
 }
 
-const FormRow: FC<FormRowProps> = (props) => {
+const FormRow: FC<React.PropsWithChildren<FormRowProps>> = (props) => {
   const {
     children,
     asList,

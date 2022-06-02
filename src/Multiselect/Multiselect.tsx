@@ -22,7 +22,7 @@ interface Option {
   selected: boolean;
 }
 
-const Multiselect: FC<MultiselectProps> = (props) => {
+const Multiselect: FC<React.PropsWithChildren<MultiselectProps>> = (props) => {
   const {
     className,
     children,

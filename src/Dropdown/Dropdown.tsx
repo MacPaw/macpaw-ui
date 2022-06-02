@@ -8,7 +8,7 @@ export interface Dropdown extends HTMLAttributes<HTMLDivElement> {
   onClose?: () => void;
 }
 
-const DropDown: React.FC<Dropdown> = (props) => {
+const DropDown: React.FC<React.PropsWithChildren<Dropdown>> = (props) => {
   const { className, children, trigger, position, onOpen, onClose, ...other } = props;
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);

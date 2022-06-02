@@ -10,7 +10,7 @@ export interface DialogProps extends HTMLAttributes<HTMLDivElement> {
   onRequestClose: () => void;
 }
 
-const Dialog: FC<DialogProps> = (props) => {
+const Dialog: FC<React.PropsWithChildren<DialogProps>> = (props) => {
   const {
     isOpen,
     shouldCloseOnEsc = true,

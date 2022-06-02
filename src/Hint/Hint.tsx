@@ -6,7 +6,7 @@ export interface HintProps extends HTMLAttributes<HTMLSpanElement> {
   error?: boolean;
 }
 
-const Hint: FC<HintProps> = (props) => {
+const Hint: FC<React.PropsWithChildren<HintProps>> = (props) => {
   const {
     large,
     children,

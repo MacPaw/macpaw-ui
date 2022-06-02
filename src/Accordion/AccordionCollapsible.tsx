@@ -6,7 +6,7 @@ export interface AccordionCollapsible extends HTMLAttributes<HTMLDivElement> {
   sectionKey: string;
 }
 
-const AccordionCollapsible: React.FC<AccordionCollapsible> = (props) => {
+const AccordionCollapsible: React.FC<React.PropsWithChildren<AccordionCollapsible>> = (props) => {
   const timeout = 300;
   const { sectionKey, children, ...other } = props;
   const [isExpanded, setIsExpanded] = useState(false);

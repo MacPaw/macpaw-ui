@@ -14,7 +14,7 @@ export interface PaymentProps extends HTMLAttributes<SVGElement> {
   type?: 'paypal' | 'american_express' | 'diners_club' | 'discover' | 'jcb' | 'maestro' | 'unionpay' | 'visa' | 'master';
 }
 
-const Payment: FC<PaymentProps> = (props) => {
+const Payment: FC<React.PropsWithChildren<PaymentProps>> = (props) => {
   const { type, ...other } = props;
 
   switch (type) {

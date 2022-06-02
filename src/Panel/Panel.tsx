@@ -8,7 +8,7 @@ export interface PanelProps extends HTMLAttributes<HTMLElement & HTMLLinkElement
   to?: string;
 }
 
-const Panel: FC<PanelProps> = (props) => {
+const Panel: FC<React.PropsWithChildren<PanelProps>> = (props) => {
   const {
     className,
     outline,

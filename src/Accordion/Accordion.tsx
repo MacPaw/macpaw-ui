@@ -5,7 +5,7 @@ interface Accordion {
   onChange?: (activeKey: string | null) => void;
 }
 
-const Accordion: React.FC<Accordion> = (props) => {
+const Accordion: React.FC<React.PropsWithChildren<Accordion>> = (props) => {
   const { children, onChange } = props;
   const [activeKey, setActiveKey] = useState<string | null>(null);
 

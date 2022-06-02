@@ -7,7 +7,7 @@ export interface BannerProps extends HTMLAttributes<HTMLDivElement> {
   action?: ReactNode;
 }
 
-const Banner: FC<BannerProps> = (props) => {
+const Banner: FC<React.PropsWithChildren<BannerProps>> = (props) => {
   const {
     className,
     children,
