@@ -4,7 +4,7 @@ import cx from 'clsx';
 export interface LabelProps extends HTMLAttributes<HTMLDivElement> {
 }
 
-const Label: FC<LabelProps> = (props) => {
+const Label: FC<React.PropsWithChildren<LabelProps>> = (props) => {
   const { className, children, ...other } = props;
 
   return (

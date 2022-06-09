@@ -6,11 +6,11 @@ export const Example = () => {
     const onSuccess = () => notify('Success notification', 'success');
     const onError = () => notify('Error notification', 'error');
     return (
-        <React.Fragment>
+        <>
             <NotificationsContainer />
             <Button onClick={onSuccess} color="primary" style={{ marginRight: 16 }}>Success</Button>
             <Button onClick={onError} color="warning">Error</Button>
-        </React.Fragment>
+        </>
     );
 };
 

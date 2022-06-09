@@ -43,7 +43,7 @@ export interface LanguageSwitcherProps extends HTMLAttributes<HTMLSelectElement>
   availableLanguages: string[];
 }
 
-const LanguageSwitcher: FC<LanguageSwitcherProps> = (props) => {
+const LanguageSwitcher: FC<React.PropsWithChildren<LanguageSwitcherProps>> = (props) => {
   const {
     currentLanguage,
     availableLanguages,

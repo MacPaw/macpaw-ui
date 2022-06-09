@@ -4,6 +4,7 @@
     top: 0;
     height: 100vh;
     width: 300px;
+    overflow-y: auto;
     background: #000;
     color: #fff;
 }

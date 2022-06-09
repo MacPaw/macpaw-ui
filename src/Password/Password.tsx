@@ -17,7 +17,7 @@ function i18nToggleDefault(isPasswordVisible: boolean) {
   return isPasswordVisible ? 'Hide' : 'Show';
 }
 
-const Password: FC<PasswordProps> = (props) => {
+const Password: FC<React.PropsWithChildren<PasswordProps>> = (props) => {
   const { withToggle, i18nToggle = i18nToggleDefault, onToggle, ...other } = props;
   const [passwordVisible, setPasswordVisible] = useState(false);
   const toggleHandler = (event: React.MouseEvent<HTMLButtonElement>) => {

@@ -11,7 +11,7 @@ export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   label?: string | ReactNode;
 }
 
-const Select: FC<SelectProps> = (props) => {
+const Select: FC<React.PropsWithChildren<SelectProps>> = (props) => {
   const {
     className,
     selected,

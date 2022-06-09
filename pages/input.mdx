@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Input, FormRow, Button, Password } from '../src/ui';
 import { SearchIcon } from '../src/Icons/jsx';
 
@@ -142,7 +143,7 @@ import { SearchIcon } from '../src/Icons/jsx';
 In general, formatting function executes for initial values.
 
 export const InputWithInitialFormat = () => {
-  const [value, setValue] = React.useState(10);
+  const [value, setValue] = useState(10);
   return (
     <div style={{ width: 300 }}>
         <FormRow>
@@ -163,7 +164,7 @@ export const InputWithInitialFormat = () => {
 <InputWithInitialFormat />
 
 ```
-const [value, setValue] = React.useState(10);
+const [value, setValue] = useState(10);
 
 <div style={{ width: 300 }}>
     <FormRow>
@@ -189,7 +190,7 @@ There are two events that can used for formatting:
 #### Blur event 
 
 export const InputWithBlurFormat = () => {
-  const [value, setValue] = React.useState(10);
+  const [value, setValue] = useState(10);
   return (
     <div style={{ width: 300 }}>
         <FormRow>
@@ -211,7 +212,7 @@ export const InputWithBlurFormat = () => {
 <InputWithBlurFormat />
 
 ```
-const [value, setValue] = React.useState(10);
+const [value, setValue] = useState(10);
 
 <div style={{ width: 300 }}>
     <FormRow>
@@ -232,7 +233,7 @@ const [value, setValue] = React.useState(10);
 #### Input event 
 
 export const InputWithChangeFormat = () => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = useState('');
   return (
     <div style={{ width: 300 }}>
         <FormRow>
@@ -254,7 +255,7 @@ export const InputWithChangeFormat = () => {
 <InputWithChangeFormat />
 
 ```
-const [value, setValue] = React.useState(10);
+const [value, setValue] = useState(10);
 
 <div style={{ width: 300 }}>
     <FormRow>

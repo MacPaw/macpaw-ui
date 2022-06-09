@@ -37,7 +37,7 @@ const defaultValidation = (tag: string) => Boolean(tag.trim());
 
 const DEFAULT_ADD_KEY_CODES = ['Enter'];
 
-const TagInput: React.FC<TagInput> = ({
+const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
   id,
   tags,
   label,
@@ -80,7 +80,7 @@ const TagInput: React.FC<TagInput> = ({
   };
 
   const handleAddTag = async () => {
-    const isValid = await validate?.(value) ?? true;
+    const isValid = (await validate?.(value)) ?? true;
     const isUniqueTag = checkIsUniqueTag(value, tags);
 
     if (!isValid) return;

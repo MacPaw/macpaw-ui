@@ -18,7 +18,7 @@ export interface LanguageIconProps extends HTMLAttributes<SVGElement> {
   language?: string;
 }
 
-const LanguageIcon: FC<LanguageIconProps> = (props) => {
+const LanguageIcon: FC<React.PropsWithChildren<LanguageIconProps>> = (props) => {
   const { language, ...other } = props;
 
   switch (language) {

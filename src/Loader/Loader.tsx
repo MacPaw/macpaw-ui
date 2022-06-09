@@ -6,7 +6,7 @@ export interface LoaderProps extends HTMLAttributes<HTMLDivElement> {
   inline?: boolean;
 }
 
-const Loader: FC<LoaderProps> = (props) => {
+const Loader: FC<React.PropsWithChildren<LoaderProps>> = (props) => {
   const { size = 75, inline = false, className, ...other } = props;
 
   return (

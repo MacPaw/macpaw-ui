@@ -8,7 +8,7 @@ interface Grid extends PanelProps {
   component?: ReactNode;
 }
 
-const Grid: React.FC<Grid> = (props) => {
+const Grid: React.FC<React.PropsWithChildren<Grid>> = (props) => {
   const {
     icon,
     action,

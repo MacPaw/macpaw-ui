@@ -6,7 +6,7 @@ export interface CardMaskProps extends HTMLAttributes<HTMLDivElement> {
   short?: boolean;
 }
 
-const CardMask: FC<CardMaskProps> = (props) => {
+const CardMask: FC<React.PropsWithChildren<CardMaskProps>> = (props) => {
   const { digits, short, className, ...other } = props;
 
   return (

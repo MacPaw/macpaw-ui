@@ -9,7 +9,7 @@ export interface TagProps extends HTMLAttributes<HTMLDivElement> {
   onRemove?: () => void;
 }
 
-const Tag: FC<TagProps> = ({
+const Tag: FC<React.PropsWithChildren<TagProps>> = ({
   onRemove,
   className,
   borderRadius,

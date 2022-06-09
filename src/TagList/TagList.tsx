@@ -5,7 +5,7 @@ export interface TagListProps extends HTMLAttributes<HTMLDivElement | HTMLSpanEl
   as?: 'div' | 'span';
 }
 
-const TagList: FC<TagListProps> = ({ className, children, as: Element = 'div', ...other }) =>  (
+const TagList: FC<React.PropsWithChildren<TagListProps>> = ({ className, children, as: Element = 'div', ...other }) =>  (
   <Element className={cx('tagList', className)} {...other}>
     {children}
   </Element>

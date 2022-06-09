@@ -5,7 +5,7 @@ import DialogIconBackdrop from './DialogIconBackdrop';
 export interface DialogIconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
-const DialogIcon: FC<DialogIconProps> = (props) => {
+const DialogIcon: FC<React.PropsWithChildren<DialogIconProps>> = (props) => {
   const { className, children, ...other } = props;
 
   return (

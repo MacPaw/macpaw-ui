@@ -23,7 +23,7 @@ const CloseButton = ({ closeToast }: { closeToast?: () => void }) => (
   </Button>
 );
 
-const Notification: FC<Notification> = ({ type, children }) => (
+const Notification: FC<React.PropsWithChildren<Notification>> = ({ type, children }) => (
   <>
     <div className="notification-icon">
       {type === 'success' && <CheckIcon className="notification-icon-success" />}
@@ -33,7 +33,7 @@ const Notification: FC<Notification> = ({ type, children }) => (
   </>
 );
 
-const NotificationsContainer: FC = () => (
+const NotificationsContainer: FC<React.PropsWithChildren<unknown>> = () => (
   <ToastContainer
     className="notification-container"
     transition={transition}
