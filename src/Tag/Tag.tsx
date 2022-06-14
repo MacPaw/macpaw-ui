@@ -20,7 +20,7 @@ const Tag: FC<React.PropsWithChildren<TagProps>> = ({
 }) => {
   const tagClassNames = cx('tag', className, {
     [`-${color}`]: color,
-    'tag-action': onRemove
+    'tag-action': onRemove,
   });
 
   return (

@@ -62,7 +62,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const inputClassNames = cx(className, {
     '-with-action': action,
     '-with-currency': currency,
-    '-with-icon': icon
+    '-with-icon': icon,
   });
 
   const componentProps: any = {

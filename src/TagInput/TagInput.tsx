@@ -62,7 +62,7 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
 
   const tagInputClassNames = cx('tag-input', className, {
     '-readonly': isReadOnly,
-    '-error': showError
+    '-error': showError,
   });
 
   const checkIsUniqueTag = (tag: string, list: TagInputListItem[]) => {
@@ -161,7 +161,7 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
             as: 'span',
             color,
             borderRadius: 24,
-            ...(!isReadOnly && { onRemove: () => handleRemoveTag(id) })
+            ...(!isReadOnly && { onRemove: () => handleRemoveTag(id) }),
           };
 
           return (<Tag key={id} {...tagProps}>{formatter?.(value) ?? value}</Tag>);

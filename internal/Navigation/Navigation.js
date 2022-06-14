@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link'
+import Link from 'next/link';
 import styles from './Navigation.module.css';
 
 const pages = [
@@ -23,12 +23,13 @@ const pages = [
   'payment',
   'radio',
   'select',
+  'switch',
   'tag',
   'tag-input',
   'table',
   'tooltip',
   'typography',
-]
+];
 
 const Navigation = () => (
   <div className={styles.navigation}>

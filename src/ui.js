@@ -37,3 +37,4 @@ export { default as Table } from './Table/Table';
 export { default as Tooltip } from './Tooltip/Tooltip';
 export { default as TableRow } from './TableRow/TableRow';
 export { default as TagInput, TagInputListItem } from './TagInput/TagInput';
+export { default as Switch } from './Switch/Switch';
