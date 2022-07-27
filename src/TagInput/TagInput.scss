@@ -5,7 +5,7 @@
 
   &-label {
     display: block;
-    
+
     &:hover + .tagList {
       border-color: var(--color-black)
     }
@@ -21,7 +21,30 @@
     .tag-input-label,
     .tagList {
       cursor: inherit;
-      pointer-events: none;
+    }
+    .tagList:hover {
+      border-color: rgba(111, 114, 121, .16);
+    }
+    .tag-input-label {
+      &:hover + .tagList {
+        border-color: rgba(111, 114, 121, .16);
+      }
+    }
+  }
+
+  &.-disabled {
+    cursor: not-allowed;
+    .tagList {
+      border: 2px solid rgba(255, 255, 255, .0);
+      background: var(--color-black-08);
+    }
+    .tagList:hover {
+      border-color: rgba(255, 255, 255, .0);
+    }
+    .tag-input-label {
+      &:hover + .tagList {
+        border-color: rgba(255, 255, 255, .0);
+      }
     }
   }
 
@@ -53,7 +76,7 @@
       padding: 4px 8px 5px;
       box-sizing: border-box;
       background-color: transparent;
-      
+
       &:focus {
         outline: none;
       }

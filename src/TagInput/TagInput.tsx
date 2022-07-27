@@ -25,6 +25,7 @@ export interface TagInput {
   removeKeyCodes?: string[];
   maxHeight?: string | number;
   isReadOnly?: boolean;
+  disabled?: boolean;
   isUnique?: boolean;
   isHandleClipboard?: boolean;
   onChange: (nextTags: TagInputListItem[]) => void;
@@ -49,6 +50,7 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
   removeKeyCodes = [],
   maxHeight,
   isReadOnly,
+  disabled,
   isUnique,
   isHandleClipboard,
   onChange,
@@ -63,6 +65,7 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
   const tagInputClassNames = cx('tag-input', className, {
     '-readonly': isReadOnly,
     '-error': showError,
+    '-disabled': disabled,
   });
 
   const checkIsUniqueTag = (tag: string, list: TagInputListItem[]) => {
