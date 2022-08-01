@@ -5,7 +5,7 @@
 
   &-label {
     display: block;
-    
+
     &:hover + .tagList {
       border-color: var(--color-black)
     }
@@ -21,7 +21,30 @@
     .tag-input-label,
     .tagList {
       cursor: inherit;
-      pointer-events: none;
+    }
+    .tagList:hover {
+      border-color: var(--color-black-04);
+    }
+    .tag-input-label {
+      &:hover + .tagList {
+        border-color: var(--color-black-04);
+      }
+    }
+  }
+
+  &.-disabled {
+    cursor: not-allowed;
+    .tagList {
+      border: 2px solid transparent;
+      background: var(--color-black-08);
+    }
+    .tagList:hover {
+      border-color: transparent;
+    }
+    .tag-input-label {
+      &:hover + .tagList {
+        border-color: transparent;
+      }
     }
   }
 
@@ -32,7 +55,7 @@
     padding: 8px 10px;
     cursor: text;
     transition: border-color 200ms cubic-bezier(.25, .1, .25, 1);
-    border: 2px solid rgba(111, 114, 121, .16);
+    border: 2px solid var(--color-black-04);
     border-radius: 8px;
     flex-wrap: wrap;
 
@@ -53,7 +76,7 @@
       padding: 4px 8px 5px;
       box-sizing: border-box;
       background-color: transparent;
-      
+
       &:focus {
         outline: none;
       }

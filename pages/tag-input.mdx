@@ -7,7 +7,7 @@ export const BasicTagInput = () => {
     const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     return (
       <div style={{ width: 300 }}>
-          <TagInput 
+          <TagInput
             id="BasicTagInput"
             tags={values}
             label="Tags"
@@ -23,7 +23,7 @@ export const BasicTagInput = () => {
 ```
 const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 
-<TagInput 
+<TagInput
     id="BasicTagInput"
     tags={values}
     label="Tags"
@@ -38,7 +38,7 @@ export const MaxHeightTagInput = () => {
     const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     return (
       <div style={{ width: 300 }}>
-          <TagInput 
+          <TagInput
             id="MaxHeightTagInput"
             tags={values}
             label="Tags"
@@ -55,7 +55,7 @@ export const MaxHeightTagInput = () => {
 ```
 const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 
-<TagInput 
+<TagInput
     id="MaxHeightTagInput"
     tags={values}
     label="Tags"
@@ -77,7 +77,7 @@ export const KeyCodeTagInput = () => {
     const removeKeyCodes = ['Delete', 'Backspace', 'Escape'];
     return (
       <div style={{ width: 300 }}>
-          <TagInput 
+          <TagInput
             id="KeyCodeTagInput"
             tags={values}
             label="Tags"
@@ -97,7 +97,7 @@ const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 const addKeyCodes = ['Enter', 'Space', 'Comma'];
 const removeKeyCodes = ['Delete', 'Backspace', 'Escape'];
 
-<TagInput 
+<TagInput
     id="KeyCodeTagInput"
     tags={values}
     label="Tags"
@@ -115,7 +115,7 @@ export const ReadOnlyTagInput = () => {
     const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     return (
       <div style={{ width: 300 }}>
-          <TagInput 
+          <TagInput
             id="ReadOnlyTagInput"
             tags={values}
             label="Read only tags"
@@ -130,12 +130,44 @@ export const ReadOnlyTagInput = () => {
 ```
 const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 
-<TagInput 
+<TagInput
     id="ReadOnlyTagInput"
     tags={values}
     label="Read only tags"
     isReadOnly
 />
+```
+
+## Disabled tag input
+
+export const DisabledTagInput = () => {
+    const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+    return (
+        <div style={{ width: 300 }}>
+            <TagInput
+                id="ReadOnlyTagInput"
+                tags={values}
+                label="Disabled input field"
+                disabled
+                isReadOnly
+            />
+        </div>
+    )
+}
+
+<DisabledTagInput />
+
+```
+const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+
+<TagInput
+  id="ReadOnlyTagInput"
+  tags={values}
+  label="Disabled input field"
+  disabled
+  isReadOnly
+/>
+
 ```
 
 ## With unique values
@@ -144,7 +176,7 @@ export const UniqueTagInput = () => {
     const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     return (
       <div style={{ width: 300 }}>
-          <TagInput 
+          <TagInput
             id="UniqueTagInput"
             tags={values}
             label="Unique tags"
@@ -161,7 +193,7 @@ export const UniqueTagInput = () => {
 ```
 const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 
-<TagInput 
+<TagInput
     id="UniqueTagInput"
     tags={values}
     label="Unique tags"
@@ -177,7 +209,7 @@ export const FormattedTagInput = () => {
     const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     return (
       <div style={{ width: 300 }}>
-        <TagInput 
+        <TagInput
           id="FormattedTagInput"
           tags={values}
           label="Hash tags"
@@ -194,7 +226,7 @@ export const FormattedTagInput = () => {
 ```
 const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 
-<TagInput 
+<TagInput
     id="FormattedTagInput"
     tags={values}
     label="Hash tags"
@@ -226,10 +258,10 @@ export const TagInputWithValidation = () => {
     setValues(nextValues);
     const hasWrongValues = nextValues.some(({color})=>color === 'warning');
     if(error && !hasWrongValues) setError('');
-  } 
+  }
   return (
     <div style={{ width: 300 }}>
-      <TagInput 
+      <TagInput
           id="TagInputWithValidation"
           tags={values}
           error={error}
@@ -265,13 +297,13 @@ const onChangeInput = () => setError('');
 
 const handleChange = (nextValues) => {
   setValues(nextValues);
-  
-  const hasWrongValues = nextValues.some(({color})=>color === 'warning');
-  
-  if(error && !hasWrongValues) setError('');
-} 
 
-<TagInput 
+  const hasWrongValues = nextValues.some(({color})=>color === 'warning');
+
+  if(error && !hasWrongValues) setError('');
+}
+
+<TagInput
     id="TagInputWithValidation"
     tags={values}
     error={error}
