@@ -14,6 +14,11 @@ or with yarn:
     yarn add @macpaw/macpaw-ui
 ```
 
+And import stylesheets manually:
+
+```jsx
+import '@macpaw/macpaw-ui/lib/ui.css'
+```
 ## Adding new Component
 
 - Add Component's JSX and styles to [src/%ComponentName%](/src) directory
