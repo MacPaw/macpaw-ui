@@ -23,11 +23,11 @@
       cursor: inherit;
     }
     .tagList:hover {
-      border-color: rgba(111, 114, 121, .16);
+      border-color: var(--color-black-04);
     }
     .tag-input-label {
       &:hover + .tagList {
-        border-color: rgba(111, 114, 121, .16);
+        border-color: var(--color-black-04);
       }
     }
   }
@@ -35,15 +35,15 @@
   &.-disabled {
     cursor: not-allowed;
     .tagList {
-      border: 2px solid rgba(255, 255, 255, .0);
+      border: 2px solid transparent;
       background: var(--color-black-08);
     }
     .tagList:hover {
-      border-color: rgba(255, 255, 255, .0);
+      border-color: transparent;
     }
     .tag-input-label {
       &:hover + .tagList {
-        border-color: rgba(255, 255, 255, .0);
+        border-color: transparent;
       }
     }
   }
@@ -55,7 +55,7 @@
     padding: 8px 10px;
     cursor: text;
     transition: border-color 200ms cubic-bezier(.25, .1, .25, 1);
-    border: 2px solid rgba(111, 114, 121, .16);
+    border: 2px solid var(--color-black-04);
     border-radius: 8px;
     flex-wrap: wrap;
 
