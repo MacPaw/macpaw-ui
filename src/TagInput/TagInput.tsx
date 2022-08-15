@@ -1,5 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { ReactNode, ChangeEvent, KeyboardEvent, ClipboardEvent, useState, useRef, useEffect } from 'react';
+import React, {
+  ReactNode,
+  ChangeEvent,
+  KeyboardEvent,
+  ClipboardEvent,
+  useState,
+  useRef,
+  useEffect,
+  FocusEvent,
+} from 'react';
 import cx from 'clsx';
 import Hint from '../Hint/Hint';
 import Tag, { TagProps } from '../Tag/Tag';
@@ -28,6 +37,7 @@ export interface TagInput {
   disabled?: boolean;
   isUnique?: boolean;
   isHandleClipboard?: boolean;
+  isHandleOnBlur?: boolean;
   onChange: (nextTags: TagInputListItem[]) => void;
   onValueChange?: (value: string) => void;
   validate?: (tag: string) => boolean | Promise<boolean>;
@@ -50,6 +60,7 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
   removeKeyCodes = [],
   maxHeight,
   isReadOnly,
+  isHandleOnBlur,
   disabled,
   isUnique,
   isHandleClipboard,
@@ -111,6 +122,10 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
       event.stopPropagation();
       handleRemoveTag(tags[tags.length - 1].id);
     }
+  };
+
+  const handleBlur = async () => {
+    if (value && isHandleOnBlur) await handleAddTag();
   };
 
   const handlePaste = async (event: ClipboardEvent<HTMLInputElement>) => {
@@ -181,6 +196,7 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
             onPaste={handlePaste}
             onChange={handleChangeInput}
             onKeyDown={handleKeyDown}
+            onBlur={handleBlur}
           />
         )}
       </TagList>

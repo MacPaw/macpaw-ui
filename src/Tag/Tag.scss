@@ -34,13 +34,17 @@ $active-colors: (
     &.-#{$color} {
       color: var(--color-white);
       background-color: var(#{map-get($main-color-names, $color)});
-      
+
       &.tag-action {
         button {
           &:not(:disabled):hover {
             background-color: map-get($hover-colors, $color);
           }
-  
+
+          &:not(:disabled):focus {
+            background-color: map-get($hover-colors, $color);
+          }
+
           &:not(:disabled):active {
             background-color: map-get($active-colors, $color);
           }
