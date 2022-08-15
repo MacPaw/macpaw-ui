@@ -32,6 +32,39 @@ const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 />
 ```
 
+## Add tags when focus has left the input
+
+export const HandleOnBlurEventTagInput = () => {
+    const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+    return (
+        <div style={{ width: 300 }}>
+            <TagInput
+                id="HandleOnBlueTagInput"
+                tags={values}
+                label="Tags"
+                placeholder="Enter your tags here"
+                onChange={setValues}
+                isHandleOnBlur
+            />
+        </div>
+    )
+}
+
+<HandleOnBlurEventTagInput />
+
+```
+const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+
+<TagInput
+    id="HandleOnBlurEventTagInput"
+    tags={values}
+    label="Tags"
+    placeholder="Enter your tags here"
+    onChange={setValues}
+    isHandleOnBlur
+/>
+```
+
 ## With max height
 
 export const MaxHeightTagInput = () => {
