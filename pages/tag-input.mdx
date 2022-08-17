@@ -5,6 +5,8 @@ import { TagInput } from '../src/ui';
 
 export const BasicTagInput = () => {
     const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+    const [inputValue, setInputValue] = useState('');
+
     return (
       <div style={{ width: 300 }}>
           <TagInput
@@ -13,6 +15,8 @@ export const BasicTagInput = () => {
             label="Tags"
             placeholder="Enter your tags here"
             onChange={setValues}
+            inputValue={inputValue}
+            setInputValue={setInputValue}
         />
       </div>
     )
@@ -22,6 +26,7 @@ export const BasicTagInput = () => {
 
 ```
 const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+const [inputValue, setInputValue] = useState('');
 
 <TagInput
     id="BasicTagInput"
@@ -29,6 +34,8 @@ const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     label="Tags"
     placeholder="Enter your tags here"
     onChange={setValues}
+    inputValue={inputValue}
+    setInputValue={setInputValue}
 />
 ```
 
@@ -36,6 +43,8 @@ const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 
 export const HandleOnBlurEventTagInput = () => {
     const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+    const [inputValue, setInputValue] = useState('');
+
     return (
         <div style={{ width: 300 }}>
             <TagInput
@@ -45,6 +54,8 @@ export const HandleOnBlurEventTagInput = () => {
                 placeholder="Enter your tags here"
                 onChange={setValues}
                 isHandleOnBlur
+                inputValue={inputValue}
+                setInputValue={setInputValue}
             />
         </div>
     )
@@ -54,6 +65,7 @@ export const HandleOnBlurEventTagInput = () => {
 
 ```
 const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+const [inputValue, setInputValue] = useState('');
 
 <TagInput
     id="HandleOnBlurEventTagInput"
@@ -62,6 +74,8 @@ const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     placeholder="Enter your tags here"
     onChange={setValues}
     isHandleOnBlur
+    inputValue={inputValue}
+    setInputValue={setInputValue}
 />
 ```
 
@@ -69,6 +83,8 @@ const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 
 export const MaxHeightTagInput = () => {
     const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+    const [inputValue, setInputValue] = useState('');
+
     return (
       <div style={{ width: 300 }}>
           <TagInput
@@ -78,6 +94,8 @@ export const MaxHeightTagInput = () => {
             placeholder="Enter your tags here"
             onChange={setValues}
             maxHeight={100}
+            inputValue={inputValue}
+            setInputValue={setInputValue}
         />
       </div>
     )
@@ -87,6 +105,7 @@ export const MaxHeightTagInput = () => {
 
 ```
 const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+const [inputValue, setInputValue] = useState('');
 
 <TagInput
     id="MaxHeightTagInput"
@@ -95,6 +114,8 @@ const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     placeholder="Enter your tags here"
     onChange={setValues}
     maxHeight={100}
+    inputValue={inputValue}
+    setInputValue={setInputValue}
 />
 ```
 
@@ -106,6 +127,8 @@ Multiple trigger values can be set.
 
 export const KeyCodeTagInput = () => {
     const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+    const [inputValue, setInputValue] = useState('');
+
     const addKeyCodes = ['Enter', 'Space', 'Comma'];
     const removeKeyCodes = ['Delete', 'Backspace', 'Escape'];
     return (
@@ -118,6 +141,8 @@ export const KeyCodeTagInput = () => {
             addKeyCodes={addKeyCodes}
             removeKeyCodes={removeKeyCodes}
             onChange={setValues}
+            inputValue={inputValue}
+            setInputValue={setInputValue}
         />
       </div>
     )
@@ -127,6 +152,8 @@ export const KeyCodeTagInput = () => {
 
 ```
 const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+const [inputValue, setInputValue] = useState('');
+
 const addKeyCodes = ['Enter', 'Space', 'Comma'];
 const removeKeyCodes = ['Delete', 'Backspace', 'Escape'];
 
@@ -138,6 +165,8 @@ const removeKeyCodes = ['Delete', 'Backspace', 'Escape'];
     addKeyCodes={addKeyCodes}
     removeKeyCodes={removeKeyCodes}
     onChange={setValues}
+    inputValue={inputValue}
+    setInputValue={setInputValue}
 />
 
 ```
@@ -145,7 +174,8 @@ const removeKeyCodes = ['Delete', 'Backspace', 'Escape'];
 ## Read only tag input
 
 export const ReadOnlyTagInput = () => {
-    const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+    const [values] = useState([{ id:1, value:'Tag 1' }]);
+
     return (
       <div style={{ width: 300 }}>
           <TagInput
@@ -174,7 +204,8 @@ const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 ## Disabled tag input
 
 export const DisabledTagInput = () => {
-    const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+    const [values] = useState([{ id:1, value:'Tag 1' }]);
+
     return (
         <div style={{ width: 300 }}>
             <TagInput
@@ -207,6 +238,8 @@ const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 
 export const UniqueTagInput = () => {
     const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+    const [inputValue, setInputValue] = useState('');
+
     return (
       <div style={{ width: 300 }}>
           <TagInput
@@ -216,6 +249,8 @@ export const UniqueTagInput = () => {
             placeholder="Enter your tags here"
             onChange={setValues}
             isUnique
+            inputValue={inputValue}
+            setInputValue={setInputValue}
         />
       </div>
     )
@@ -225,6 +260,7 @@ export const UniqueTagInput = () => {
 
 ```
 const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+const [inputValue, setInputValue] = useState('');
 
 <TagInput
     id="UniqueTagInput"
@@ -233,6 +269,8 @@ const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     placeholder="Enter your tags here"
     onChange={setValues}
     isUnique
+    inputValue={inputValue}
+    setInputValue={setInputValue}
 />
 ```
 
@@ -240,6 +278,8 @@ const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
 
 export const FormattedTagInput = () => {
     const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+    const [inputValue, setInputValue] = useState('');
+
     return (
       <div style={{ width: 300 }}>
         <TagInput
@@ -249,6 +289,8 @@ export const FormattedTagInput = () => {
           placeholder="Enter your tags here"
           onChange={setValues}
           formatter={(value)=>`#${value}`}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
         />
       </div>
     )
@@ -258,6 +300,7 @@ export const FormattedTagInput = () => {
 
 ```
 const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
+const [inputValue, setInputValue] = useState('');
 
 <TagInput
     id="FormattedTagInput"
@@ -266,6 +309,8 @@ const [values, setValues] = useState([{ id:1, value:'Tag 1' }]);
     placeholder="Enter your tags here"
     onChange={setValues}
     formatter={(value)=>`#${value}`}
+    inputValue={inputValue}
+    setInputValue={setInputValue}
 />
 ```
 
@@ -279,6 +324,8 @@ Try to copy and paste:
 
 export const TagInputWithValidation = () => {
   const [values, setValues] = useState([{ id:1, value:'testmail@macpaw.com' }]);
+  const [inputValue, setInputValue] = useState('');
+
   const [error, setError] = useState('');
   const validateEmail = (tag) => {
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,14}$/g;
@@ -306,6 +353,8 @@ export const TagInputWithValidation = () => {
           validate={validateEmail}
           onChange={handleChange}
           onValueChange={onChangeInput}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
       />
     </div>
   );
@@ -315,6 +364,8 @@ export const TagInputWithValidation = () => {
 
 ```
 const [values, setValues] = useState([{ id:1, value:'testmail@macpaw.com' }]);
+const [inputValue, setInputValue] = useState('');
+
 const [error, setError] = useState('');
 
 const validateEmail = (tag) => {
@@ -348,6 +399,8 @@ const handleChange = (nextValues) => {
     validate={validateEmail}
     onChange={handleChange}
     onValueChange={onChangeInput}
+    inputValue={inputValue}
+    setInputValue={setInputValue}
 />
 
 );
