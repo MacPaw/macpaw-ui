@@ -4,10 +4,7 @@ import React, {
   ChangeEvent,
   KeyboardEvent,
   ClipboardEvent,
-  useState,
-  useRef,
   useEffect,
-  FocusEvent,
 } from 'react';
 import cx from 'clsx';
 import Hint from '../Hint/Hint';
@@ -42,6 +39,9 @@ export interface TagInput {
   onValueChange?: (value: string) => void;
   validate?: (tag: string) => boolean | Promise<boolean>;
   formatter?: (value: string) => ReactNode;
+  inputValue: string;
+  setInputValue: (value: string) => void;
+  onBlur?: () => void;
 }
 
 const defaultValidation = (tag: string) => Boolean(tag.trim());
@@ -68,9 +68,10 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
   onValueChange,
   validate = defaultValidation,
   formatter,
+  inputValue: value = '',
+  setInputValue: setValue,
+  onBlur,
 }) => {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [value, setValue] = useState('');
   const showError = error && typeof error !== 'boolean';
 
   const tagInputClassNames = cx('tag-input', className, {
@@ -125,7 +126,11 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
   };
 
   const handleBlur = async () => {
-    if (value && isHandleOnBlur) await handleAddTag();
+    if (value && isHandleOnBlur) {
+      await handleAddTag();
+    }
+
+    onBlur?.();
   };
 
   const handlePaste = async (event: ClipboardEvent<HTMLInputElement>) => {
@@ -190,7 +195,6 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
             type="text"
             id={id}
             className=""
-            ref={inputRef}
             value={value}
             placeholder={placeholder}
             onPaste={handlePaste}
