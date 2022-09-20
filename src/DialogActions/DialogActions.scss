@@ -9,6 +9,8 @@
   }
 
   .button {
+    flex-shrink: 0;
+
     @include mobile {
       width: 100%;
     }
@@ -31,7 +33,7 @@
 
   .hint {
     margin-right: auto;
-    max-width: 50%;
+    padding-right: 32px;
     color: var(--color-black-64);
 
     @include mobile {
