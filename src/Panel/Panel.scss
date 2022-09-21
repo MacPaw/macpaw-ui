@@ -5,6 +5,7 @@
   background: var(--color-white);
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.08);
   border-radius: 24px;
+  font-size: 14px;
 
   @include mobile {
     padding: 16px;
