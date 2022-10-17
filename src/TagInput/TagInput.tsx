@@ -11,7 +11,7 @@ import Hint from '../Hint/Hint';
 import Tag, { TagProps } from '../Tag/Tag';
 import TagList from '../TagList/TagList';
 import { Error } from '../types';
-import { uniqId } from '../helpers';
+import { uniqId, isAutofill } from '../helpers';
 
 export interface TagInputListItem {
   id: string;
@@ -35,6 +35,7 @@ export interface TagInput {
   isUnique?: boolean;
   isHandleClipboard?: boolean;
   isHandleOnBlur?: boolean;
+  ignoreAutofill?: boolean;
   onChange: (nextTags: TagInputListItem[]) => void;
   onValueChange?: (value: string) => void;
   validate?: (tag: string) => boolean | Promise<boolean>;
@@ -42,6 +43,7 @@ export interface TagInput {
   inputValue: string;
   setInputValue: (value: string) => void;
   onBlur?: () => void;
+  onAutofill?: () => void;
 }
 
 const defaultValidation = (tag: string) => Boolean(tag.trim());
@@ -64,6 +66,7 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
   disabled,
   isUnique,
   isHandleClipboard,
+  ignoreAutofill,
   onChange,
   onValueChange,
   validate = defaultValidation,
@@ -71,6 +74,7 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
   inputValue: value = '',
   setInputValue: setValue,
   onBlur,
+  onAutofill,
 }) => {
   const showError = error && typeof error !== 'boolean';
 
@@ -122,6 +126,20 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
       event.preventDefault();
       event.stopPropagation();
       handleRemoveTag(tags[tags.length - 1].id);
+    }
+  };
+
+  const handleKeyUp = async (event: KeyboardEvent<HTMLInputElement>) => {
+    const isAutofillDetected = isAutofill(event);
+
+    if (!ignoreAutofill && isAutofillDetected) {
+      event.preventDefault();
+      event.stopPropagation();
+      await handleAddTag();
+    }
+
+    if (isAutofillDetected) {
+      onAutofill?.();
     }
   };
 
@@ -200,6 +218,7 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
             onPaste={handlePaste}
             onChange={handleChangeInput}
             onKeyDown={handleKeyDown}
+            onKeyUpCapture={handleKeyUp}
             onBlur={handleBlur}
           />
         )}

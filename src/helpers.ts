@@ -1,3 +1,5 @@
+import { KeyboardEvent } from 'react';
+
 // eslint-disable-next-line import/prefer-default-export
 export const uniqId = () => {
   const array = new Uint32Array(10);
@@ -11,3 +13,6 @@ export const uniqId = () => {
         .join('')
   ).replace(/\./g, '');
 };
+
+
+export const isAutofill = (e: KeyboardEvent<HTMLInputElement>) => e.key === 'Unidentified' && e.code === undefined && e.view === undefined;
