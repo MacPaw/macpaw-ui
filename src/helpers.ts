@@ -14,5 +14,4 @@ export const uniqId = () => {
   ).replace(/\./g, '');
 };
 
-
 export const isAutofill = (e: KeyboardEvent<HTMLInputElement>) => e.key === 'Unidentified' && e.code === undefined && e.view === undefined;
