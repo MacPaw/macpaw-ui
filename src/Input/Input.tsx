@@ -6,10 +6,12 @@ import React, {
   ReactNode,
   useRef,
   useEffect,
+  KeyboardEvent,
 } from 'react';
 import cx from 'clsx';
 import Hint from '../Hint/Hint';
 import { Error as InputError, InputValueType } from '../types';
+import { isAutofill } from '../helpers';
 
 
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
@@ -24,6 +26,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   formatOnEvent?: 'blur' | 'input';
   format?: (value: InputValueType) => InputValueType;
   onChange?: (value:InputValueType, event?: React.ChangeEvent<HTMLInputElement>) => void;
+  onAutofill?: () => void;
 }
 
 
@@ -43,6 +46,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     onChange,
     formatOnEvent = '',
     format,
+    onAutofill,
     ...other
   } = props;
 
@@ -92,6 +96,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     onChange?.(inputValue, event);
   };
 
+  const handleKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {
+    const isAutofillDetected = isAutofill(event);
+
+    if (isAutofillDetected) {
+      onAutofill?.();
+    }
+  };
+
   useEffect(() => {
     const { current: input } = inputRef;
 
@@ -119,6 +131,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           {...other}
           value={inputValue}
           onChange={handleChange}
+          onKeyUpCapture={handleKeyUp}
           aria-label={label && other.placeholder}
           ref={setRef}
         />
