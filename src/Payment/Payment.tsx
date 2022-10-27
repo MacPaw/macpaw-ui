@@ -11,7 +11,7 @@ import UnionPay from '../Icons/jsx/PaymentUnionPay';
 import Visa from '../Icons/jsx/PaymentVisa';
 
 export interface PaymentProps extends HTMLAttributes<SVGElement> {
-  type?: 'paypal' | 'american_express' | 'diners_club' | 'discover' | 'jcb' | 'maestro' | 'unionpay' | 'visa' | 'master' | 'mastercard';
+  type?: 'paypal' | 'american_express' | 'diners_club' | 'discover' | 'jcb' | 'maestro' | 'unionpay' | 'union_pay' | 'visa' | 'master' | 'mastercard';
 }
 
 const Payment: FC<React.PropsWithChildren<PaymentProps>> = (props) => {
@@ -31,6 +31,7 @@ const Payment: FC<React.PropsWithChildren<PaymentProps>> = (props) => {
     case 'maestro':
       return <Maestro {...other} />;
     case 'unionpay':
+    case 'union_pay':
       return <UnionPay {...other} />;
     case 'visa':
       return <Visa {...other} />;
