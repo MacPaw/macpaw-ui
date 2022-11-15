@@ -10,32 +10,22 @@ import PayPal from '../Icons/jsx/PaymentPaypal';
 import UnionPay from '../Icons/jsx/PaymentUnionPay';
 import Visa from '../Icons/jsx/PaymentVisa';
 
-enum CardType {
-  Master = 'master',
-  Mastercard = 'mastercard',
-  Visa = 'visa',
-  Amex = 'amex',
-  Discover = 'discover',
-  JCB = 'jcb',
-  Maestro = 'maestro',
-  DinersClub = 'diners_club',
-  UnionPay = 'unionpay',
-  Union_Pay = 'union_pay',
-  Paypal = 'paypal',
-}
+const CardType = {
+  Master: 'master',
+  Mastercard: 'mastercard',
+  Visa: 'visa',
+  Amex: 'amex',
+  Discover: 'discover',
+  JCB: 'jcb',
+  Maestro: 'maestro',
+  DinersClub: 'diners_club',
+  UnionPay: 'unionpay',
+  'Union_Pay': 'union_pay',
+  Paypal: 'paypal',
+};
 
 export interface PaymentProps extends HTMLAttributes<SVGElement> {
-  type?: CardType.Paypal |
-          CardType.Amex |
-          CardType.DinersClub |
-          CardType.Discover |
-          CardType.JCB |
-          CardType.Maestro |
-          CardType.UnionPay |
-          CardType.Union_Pay |
-          CardType.Visa |
-          CardType.Master
-          | CardType.Mastercard;
+  type?: typeof CardType[keyof typeof CardType];
 }
 
 const Payment: FC<React.PropsWithChildren<PaymentProps>> = (props) => {
