@@ -42,6 +42,7 @@ export { default as PaymentDiscover } from './PaymentDiscover';
 export { default as PaymentJcb } from './PaymentJcb';
 export { default as PaymentMaestro } from './PaymentMaestro';
 export { default as PaymentMaster } from './PaymentMaster';
+export { default as PaymentMada } from './PaymentMada';
 export { default as PaymentPaypal } from './PaymentPaypal';
 export { default as PaymentUnionPay } from './PaymentUnionPay';
 export { default as PaymentVisa } from './PaymentVisa';
