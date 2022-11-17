@@ -6,6 +6,7 @@ import Discover from '../Icons/jsx/PaymentDiscover';
 import JCB from '../Icons/jsx/PaymentJcb';
 import Maestro from '../Icons/jsx/PaymentMaestro';
 import Master from '../Icons/jsx/PaymentMaster';
+import Mada from '../Icons/jsx/PaymentMada';
 import PayPal from '../Icons/jsx/PaymentPaypal';
 import UnionPay from '../Icons/jsx/PaymentUnionPay';
 import Visa from '../Icons/jsx/PaymentVisa';
@@ -18,6 +19,7 @@ const CardType = {
   Discover: 'discover',
   JCB: 'jcb',
   Maestro: 'maestro',
+  Mada: 'mada',
   DinersClub: 'diners_club',
   UnionPay: 'unionpay',
   'Union_Pay': 'union_pay',
@@ -52,6 +54,8 @@ const Payment: FC<React.PropsWithChildren<PaymentProps>> = (props) => {
     case CardType.Master:
     case CardType.Mastercard:
       return <Master {...other} />;
+    case CardType.Mada:
+      return <Mada {...other} />;
     default:
       return <Card {...other} />;
   }
