@@ -1,0 +1,26 @@
+.clipboard {
+  position: absolute;
+  top: 58%;
+  right: 12px;
+  transform: translateY(-50%);
+
+  &__icon {
+    fill: var(--color-black);
+    transition: fill .1s;
+
+    &:hover {
+      fill: var(--color-secondary);
+    }
+  }
+
+  &__done-icon {
+    fill: var(--color-primary);
+  }
+
+  &__button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
