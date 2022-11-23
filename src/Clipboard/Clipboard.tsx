@@ -19,8 +19,7 @@ const Clipboard: React.FC<ClipboardProps> = ({ copy, element }) => {
 
   const iconHandler = () => {
     if (element.current?.value) {
-      element.current?.select();
-      document.execCommand('copy');
+      navigator.clipboard.writeText(element.current?.value);
       setCanBeCopied(false);
     }
   };
