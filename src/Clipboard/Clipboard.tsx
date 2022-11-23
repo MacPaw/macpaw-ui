@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useState } from 'react';
+import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { CheckCircleIcon, CopyIcon as CopyIconUi } from '../Icons/jsx';
 import Tooltip from '../Tooltip/Tooltip';
 
@@ -9,16 +9,19 @@ interface ClipboardProps {
 
 const Clipboard: React.FC<ClipboardProps> = ({ copy, element }) => {
   const [canBeCopied, setCanBeCopied] = useState(true);
+  const timerRef = useRef<NodeJS.Timeout>();
+
+  useEffect(() => {
+    if (!canBeCopied) timerRef.current = setTimeout(() => setCanBeCopied(true), 1600);
+
+    return () => clearTimeout(timerRef.current as NodeJS.Timeout);
+  }, [canBeCopied]);
 
   const iconHandler = () => {
     if (element.current?.value) {
       element.current?.select();
       document.execCommand('copy');
       setCanBeCopied(false);
-
-      setTimeout(() => {
-        setCanBeCopied(true);
-      }, 1600);
     }
   };
 
