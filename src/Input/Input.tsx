@@ -10,6 +10,7 @@ import React, {
 } from 'react';
 import cx from 'clsx';
 import Hint from '../Hint/Hint';
+import Clipboard from '../Clipboard/Clipboard';
 import { Error as InputError, InputValueType } from '../types';
 import { isAutofill } from '../helpers';
 
@@ -27,6 +28,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   format?: (value: InputValueType) => InputValueType;
   onChange?: (value:InputValueType, event?: React.ChangeEvent<HTMLInputElement>) => void;
   onAutofill?: () => void;
+  clipboard?: boolean | string | React.ReactElement;
 }
 
 
@@ -47,6 +49,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     formatOnEvent = '',
     format,
     onAutofill,
+    clipboard,
     ...other
   } = props;
 
@@ -67,6 +70,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     '-with-action': action,
     '-with-currency': currency,
     '-with-icon': icon,
+    '-with-clipboard': clipboard,
   });
 
   const componentProps: any = {
@@ -137,6 +141,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         />
         {action && <span className="input-action">{action}</span>}
         {currency && <span className="input-currency">{currency}</span>}
+        {clipboard && <Clipboard element={inputRef} copy={typeof clipboard !== 'boolean' ? clipboard : undefined} />}
       </span>
       {showHintError && <Hint error style={{ marginTop: 6 }}>{error}</Hint>}
     </label>
