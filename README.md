@@ -41,6 +41,9 @@ import '@macpaw/macpaw-ui/lib/ui.css'
 Package published with Github Actions:
 
 - Update version in [package.json](package.json) file
+    - `npm run version:patch` - for patch update e.g. X.X.*1*
+    - `npm run version:minor` - for minor update e.g. X.*1*.0
+    - `npm run version:major` - for minor update e.g. *1*.0.0
 - Create new release at Github
 
 ## Host
