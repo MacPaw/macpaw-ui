@@ -24,7 +24,6 @@ export { default as LanguageKo } from './LanguageKo';
 export { default as LanguageNl } from './LanguageNl';
 export { default as LanguagePl } from './LanguagePl';
 export { default as LanguagePt } from './LanguagePt';
-export { default as LanguageRu } from './LanguageRu';
 export { default as LanguageTr } from './LanguageTr';
 export { default as LanguageUk } from './LanguageUk';
 export { default as LanguageZh } from './LanguageZh';
