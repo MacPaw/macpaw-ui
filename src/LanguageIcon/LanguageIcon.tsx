@@ -9,7 +9,6 @@ import LanguageKo from '../Icons/jsx/LanguageKo';
 import LanguageNl from '../Icons/jsx/LanguageNl';
 import LanguagePl from '../Icons/jsx/LanguagePl';
 import LanguagePt from '../Icons/jsx/LanguagePt';
-import LanguageRu from '../Icons/jsx/LanguageRu';
 import LanguageTr from '../Icons/jsx/LanguageTr';
 import LanguageUk from '../Icons/jsx/LanguageUk';
 import LanguageZh from '../Icons/jsx/LanguageZh';
@@ -43,7 +42,7 @@ const LanguageIcon: FC<React.PropsWithChildren<LanguageIconProps>> = (props) => 
     case 'pt':
       return <LanguagePt {...other} />;
     case 'ru':
-      return <LanguageRu {...other} />;
+      return <span className="ru-placeholder" />;
     case 'tr':
       return <LanguageTr {...other} />;
     case 'uk':
