@@ -45,7 +45,7 @@ const LanguageIcon: FC<React.PropsWithChildren<LanguageIconProps>> = (props) => 
     case 'pt':
       return <LanguagePt {...other} />;
     case 'ru':
-      return <LanguagePlaceholder {...other} className={cx(other.className, 'ru-placeholder')} />;
+      return <LanguagePlaceholder {...other} className={cx(other.className, 'placeholder')} />;
     case 'tr':
       return <LanguageTr {...other} />;
     case 'uk':
