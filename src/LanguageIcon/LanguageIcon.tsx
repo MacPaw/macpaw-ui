@@ -1,4 +1,5 @@
 import React, { FC, HTMLAttributes } from 'react';
+import cx from 'clsx';
 import LanguageDe from '../Icons/jsx/LanguageDe';
 import LanguageEn from '../Icons/jsx/LanguageEn';
 import LanguageEs from '../Icons/jsx/LanguageEs';
@@ -12,6 +13,8 @@ import LanguagePt from '../Icons/jsx/LanguagePt';
 import LanguageTr from '../Icons/jsx/LanguageTr';
 import LanguageUk from '../Icons/jsx/LanguageUk';
 import LanguageZh from '../Icons/jsx/LanguageZh';
+import LanguagePlaceholder from '../Icons/jsx/LanguagePlaceholder';
+
 
 export interface LanguageIconProps extends HTMLAttributes<SVGElement> {
   language?: string;
@@ -42,7 +45,7 @@ const LanguageIcon: FC<React.PropsWithChildren<LanguageIconProps>> = (props) => 
     case 'pt':
       return <LanguagePt {...other} />;
     case 'ru':
-      return <span className="ru-placeholder" />;
+      return <LanguagePlaceholder {...other} className={cx(other.className, 'ru-placeholder')} />;
     case 'tr':
       return <LanguageTr {...other} />;
     case 'uk':
