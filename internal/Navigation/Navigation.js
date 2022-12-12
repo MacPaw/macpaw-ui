@@ -25,6 +25,7 @@ const pages = [
   'radio',
   'select',
   'switch',
+  'tabs',
   'tag',
   'tag-input',
   'table',

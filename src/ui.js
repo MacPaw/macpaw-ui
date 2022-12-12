@@ -39,3 +39,4 @@ export { default as TableRow } from './TableRow/TableRow';
 export { default as TagInput, TagInputListItem } from './TagInput/TagInput';
 export { default as Switch } from './Switch/Switch';
 export { default as DatePicker } from './DatePicker/DatePicker';
+export { TabsProvider, TabsContext, Tab, TabList, TabPanel } from './Tabs';
