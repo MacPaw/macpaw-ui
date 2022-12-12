@@ -21,6 +21,8 @@
     "node": ">= 16"
   },
   "dependencies": {
+    "date-fns": "^2.29.3",
+    "react-day-picker": "^8.3.7",
     "react-toastify": "^7.0.4"
   },
   "peerDependencies": {

@@ -10,6 +10,7 @@ const pages = [
   'card-mask',
   'checkbox',
   'colors',
+  'date-picker',
   'dialog',
   'dropdown',
   'grid',
