@@ -1,0 +1,60 @@
+.date-picker {
+  position: relative;
+  
+  .calendar {
+    background: var(--color-white);
+    position: absolute;
+    left: 0;
+    border-radius: 8px;
+    box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.08);
+    filter: drop-shadow(0px 4px 14px rgba(0, 0, 0, 0.04));
+    padding: 16px;
+    z-index: 2;
+
+    &.site {
+      &-top {
+        bottom: calc(100% - 16px);
+        transform: translateY(0);
+      }
+      &-bottom {
+        top: 100%;
+        transform: translateY(0);
+      }
+      &-center {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .rdp {
+    --rdp-cell-size: 40px;
+    --rdp-accent-color: var(--color-secondary);
+    --rdp-background-color: var(--color-black-04);
+    
+    &-caption_label {
+      font-weight: 700;
+      font-size: 20px;
+      padding: 0;
+      border: none;
+    }
+    &-day_selected {
+      border: none;
+      
+      &:focus-visible {
+        border: none;
+        outline-offset: 0;
+      }
+    }
+    &-day {
+      &:focus-visible {
+        outline: var(--rdp-outline);
+      }
+    }
+
+    &-dropdown_year {
+      margin-left: 16px;
+    }
+  }
+}
+

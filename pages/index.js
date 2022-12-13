@@ -1,6 +1,6 @@
 function IndexPage() {
   return (
-    <div>Welcome to Next.js!</div>
+    <div>Welcome to Macpaw UI Kit!</div>
   );
 }
 
