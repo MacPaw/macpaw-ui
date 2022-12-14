@@ -4,8 +4,9 @@ import React, {
   useRef,
   useEffect,
   useMemo,
-  KeyboardEventHandler,
   MouseEvent as ReactMouseEvent,
+  InputHTMLAttributes,
+  forwardRef,
 } from 'react';
 import { DayPicker, DateRange } from 'react-day-picker';
 import cx from 'clsx';
@@ -16,7 +17,7 @@ import { Error as InputError } from '../types';
 
 const BOTTOM_OFFSET = 320;
 
-type PossibleDateType = Date | Date[] | DateRange | undefined;
+export type PossibleDateType = Date | Date[] | DateRange | undefined;
 
 interface NavigationSelectableProps {
   captionLayout: 'dropdown' | 'buttons';
@@ -26,9 +27,9 @@ interface NavigationDisabledProps {
   disableNavigation: boolean;
 }
 
-type NavigationProps = NavigationSelectableProps | NavigationDisabledProps;
+export type NavigationProps = NavigationSelectableProps | NavigationDisabledProps;
 
-interface DatePickerCommonProps {
+export interface DatePickerCommonProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value'>  {
   value?: PossibleDateType;
   error?: InputError;
   className?: string;
@@ -46,30 +47,29 @@ interface DatePickerCommonProps {
   fromDate?: Date;
   toDate?: Date;
   navigation?: 'pagination' | 'dropdown' | 'disabled';
-  onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
 }
 
-interface DatePickerRangeSingleProps extends DatePickerCommonProps {
+export interface DatePickerRangeSingleProps extends DatePickerCommonProps {
   selectionMode: 'single';
   onChange?: (date: Date) => void;
   formatter?: (date: Date) => string;
 }
 
-interface DatePickerRangeMultipleProps extends DatePickerCommonProps {
+export interface DatePickerRangeMultipleProps extends DatePickerCommonProps {
   selectionMode: 'multiple';
   onChange?: (date: Date[] | undefined) => void;
   formatter?: (date: Date[]) => string;
 }
 
-interface DatePickerRangeRangeProps extends DatePickerCommonProps {
+export interface DatePickerRangeRangeProps extends DatePickerCommonProps {
   selectionMode:  'range';
   onChange?: (date: DateRange | undefined) => void;
   formatter?: (date: DateRange[]) => string;
 }
 
-type DatePickerProps = DatePickerRangeSingleProps | DatePickerRangeMultipleProps | DatePickerRangeRangeProps
+export type DatePickerProps = DatePickerRangeSingleProps | DatePickerRangeMultipleProps | DatePickerRangeRangeProps
 
-const DatePicker: React.FC<DatePickerProps> = ({
+const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
   label,
   placeholder = '',
   value: initialValue,
@@ -90,8 +90,8 @@ const DatePicker: React.FC<DatePickerProps> = ({
   selectionMode = 'single',
   navigation,
   onChange,
-  onKeyDown,
-}) => {
+  ...restProps
+}, ref) => {
   const [value, setValue] = useState<PossibleDateType>(initialValue);
   const [isOpenOnTop, setIsOpenOnTop] = useState(openSite === 'top');
   const [isActive, setIsActive] = useState(false);
@@ -202,7 +202,8 @@ const DatePicker: React.FC<DatePickerProps> = ({
         placeholder={placeholder}
         onChange={() => {}}
         onClick={handleInputClick}
-        onKeyDown={onKeyDown}
+        ref={ref}
+        {...restProps}
       />
       {isActive && (
         <DayPicker
@@ -221,6 +222,6 @@ const DatePicker: React.FC<DatePickerProps> = ({
       )}
     </div>
   );
-};
+});
 
 export default DatePicker;
