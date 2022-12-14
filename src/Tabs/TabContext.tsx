@@ -24,8 +24,7 @@ export const TabsContext = createContext<TabsContextValue>(initialContextValue a
 
 export const useTabsContext = (): TabsContextValue => useContext(TabsContext);
 
-interface TabProviderProps extends Omit<Partial<TabsContextValue>, 'activeTab'|'activeTab'> {
-  activeTab: string;
+interface TabProviderProps extends Omit<Partial<TabsContextValue>, 'activeTab'> {
   innerRef?: MutableRefObject<TabsContextValue | null>;
 }
 

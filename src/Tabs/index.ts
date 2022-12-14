@@ -1,4 +1,4 @@
-export { default as Tab } from './Tab';
+export { default as Tab, type TabProps } from './Tab';
 export { default as TabList } from './TabList';
 export { default as TabPanel } from './TabPanel';
-export { TabsProvider, TabsContext } from './TabContext';
+export { TabsProvider, useTabsContext, type TabsContextValue } from './TabContext';
