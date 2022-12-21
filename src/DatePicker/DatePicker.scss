@@ -1,6 +1,6 @@
 .date-picker {
   position: relative;
-  
+
   .calendar {
     background: var(--color-white);
     position: absolute;
@@ -31,7 +31,7 @@
     --rdp-cell-size: 40px;
     --rdp-accent-color: var(--color-secondary);
     --rdp-background-color: var(--color-black-04);
-    
+
     &-caption_label {
       font-weight: 700;
       font-size: 20px;
@@ -40,7 +40,7 @@
     }
     &-day_selected {
       border: none;
-      
+
       &:focus-visible {
         border: none;
         outline-offset: 0;
@@ -58,3 +58,15 @@
   }
 }
 
+@media screen and (max-width: 375px) {
+  .rdp.calendar {
+    &.site {
+      &-top,
+      &-bottom,
+      &-center {
+        margin-left: 0;
+        left: calc(50% - 156px);
+      }
+    }
+  }
+}
