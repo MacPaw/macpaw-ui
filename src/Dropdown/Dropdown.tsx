@@ -1,5 +1,6 @@
 import React, { HTMLAttributes, useEffect, useRef, useState } from 'react';
 import cx from 'clsx';
+import debounce from 'lodash.debounce';
 
 export interface Dropdown extends HTMLAttributes<HTMLDivElement> {
   trigger: React.ReactElement;
@@ -7,6 +8,8 @@ export interface Dropdown extends HTMLAttributes<HTMLDivElement> {
   onOpen?: () => void;
   onClose?: () => void;
 }
+
+const VISIBILITY_DELAY = 150;
 
 const DropDown: React.FC<React.PropsWithChildren<Dropdown>> = (props) => {
   const { className, children, trigger, position, onOpen, onClose, ...other } = props;
@@ -26,6 +29,10 @@ const DropDown: React.FC<React.PropsWithChildren<Dropdown>> = (props) => {
     '-center': position === 'center',
   });
 
+  const debouncedSetIsOpen = debounce((value: boolean) => {
+    setIsOpen(value);
+  }, VISIBILITY_DELAY);
+
   useEffect(() => {
     const listener = (event: PointerEvent) => {
       if (!rootRef.current || !menuRef.current) return;
@@ -33,12 +40,21 @@ const DropDown: React.FC<React.PropsWithChildren<Dropdown>> = (props) => {
       const clickOnMenu = menuRef.current.contains(event.target as Node);
       // do not handle if click is on trigger
       if (clickOnRoot && !clickOnMenu) return;
+
+      if (clickOnRoot && clickOnMenu) {
+        // use debounced set isOpen to make sure that event fires before set visibility: hidden to menu item
+        debouncedSetIsOpen(false);
+
+        return;
+      }
+
       setIsOpen(false);
     };
 
     document.addEventListener('pointerdown', listener);
 
     return () => document.removeEventListener('pointerdown', listener);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
