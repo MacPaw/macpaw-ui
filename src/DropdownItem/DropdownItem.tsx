@@ -11,11 +11,18 @@ export interface DropdownItem extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const DropdownItem: React.FC<React.PropsWithChildren<DropdownItem>> = (props) => {
-  const { children, component = 'button', className, attention, withoutAction, separator, ...other } = props;
+  const {
+    children,
+    component = 'button',
+    className, attention,
+    withoutAction,
+    separator,
+    href,
+    ...other } = props;
 
   let Component = component as ElementType;
 
-  if (Component === 'button' && other.href) {
+  if (Component === 'button' && href) {
     Component = 'a';
   }
 
