@@ -9,7 +9,7 @@ export interface Dropdown extends HTMLAttributes<HTMLDivElement> {
   onClose?: () => void;
 }
 
-const VISIBILITY_DELAY = 150;
+const VISIBILITY_DELAY = 100;
 
 const DropDown: React.FC<React.PropsWithChildren<Dropdown>> = (props) => {
   const { className, children, trigger, position, onOpen, onClose, ...other } = props;

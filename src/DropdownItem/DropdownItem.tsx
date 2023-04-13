@@ -8,7 +8,6 @@ export interface DropdownItem extends ButtonHTMLAttributes<HTMLButtonElement> {
   withoutAction?: boolean;
   separator?: boolean;
   to?: string;
-  onClick?: () => void | Promise<void>;
 }
 
 const DropdownItem: React.FC<React.PropsWithChildren<DropdownItem>> = (props) => {
