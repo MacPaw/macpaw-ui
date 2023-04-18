@@ -17,12 +17,11 @@ const DropdownItem: React.FC<React.PropsWithChildren<DropdownItem>> = (props) =>
     className, attention,
     withoutAction,
     separator,
-    href,
     ...other } = props;
 
   let Component = component as ElementType;
 
-  if (Component === 'button' && href) {
+  if (Component === 'button' && other?.href) {
     Component = 'a';
   }
 
