@@ -1,3 +1,12 @@
+@use "sass:map";
+
+$buttonHoverBoxShadow: (
+  primary: 0px 2px 4px rgba(0, 147, 61, 0.32),
+  secondary: 0px 2px 4px rgba(0, 101, 207, 0.32),
+  warning: 0px 2px 4px rgba(206, 46, 46, 0.32),
+  contrast: 0px 2px 4px rgba(0, 0, 0, 0.32),
+);
+
 .button {
   position: relative;
   display: inline-flex;
@@ -55,7 +64,7 @@
 
   &.-primary:not(:disabled):hover {
     background-color: #2ecf80;
-    box-shadow: 0px 2px 4px rgba(0, 147, 61, 0.32);
+    box-shadow: map.get($buttonHoverBoxShadow, 'primary');
   }
 
   &.-primary:not(:disabled):active {
@@ -100,7 +109,7 @@
 
   &.-secondary:not(:disabled):hover {
     background-color: #3FADFF;
-    box-shadow: 0px 2px 4px rgba(0, 101, 207, 0.32);
+    box-shadow: map.get($buttonHoverBoxShadow, 'secondary');
   }
 
   &.-secondary:not(:disabled):active {
@@ -123,7 +132,7 @@
     background: var(--color-secondary);
     color: var(--color-white);
     border: 2px solid var(--color-secondary);
-    box-shadow: 0px 2px 4px rgba(0, 101, 207, 0.32);
+    box-shadow: map.get($buttonHoverBoxShadow, 'secondary');
   }
 
   &.-secondary.-outline:not(:disabled):active {
@@ -146,7 +155,7 @@
 
   &.-warning:not(:disabled):hover {
     background-color: #E55D5D;
-    box-shadow: 0px 2px 4px rgba(206, 46, 46, 0.32);
+    box-shadow: map.get($buttonHoverBoxShadow, 'warning');
   }
 
   &.-warning:not(:disabled):active {
@@ -169,7 +178,7 @@
     background: var(--color-error);
     color: var(--color-white);
     border: 2px solid var(--color-error);
-    box-shadow: 0px 2px 4px rgba(206, 46, 46, 0.32);
+    box-shadow: map.get($buttonHoverBoxShadow, 'warning');
   }
 
   &.-warning.-outline:not(:disabled):active {
@@ -192,7 +201,7 @@
 
   &.-contrast:not(:disabled):hover {
     background-color: #3D3D3D;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.32);
+    box-shadow: map.get($buttonHoverBoxShadow, 'contrast');
   }
 
   &.-contrast:not(:disabled):active {
@@ -215,12 +224,12 @@
     background: #3D3D3D;
     color: var(--color-white);
     border: 2px solid #3D3D3D;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.32);
+    box-shadow: map.get($buttonHoverBoxShadow, 'contrast');
   }
 
   &.-contrast.-outline:not(:disabled):active {
-    background-color: var(--color-black);;
-    border: 2px solid var(--color-black);;
+    background-color: var(--color-black);
+    border: 2px solid var(--color-black);
   }
 
   &.-contrast.-outline[disabled]:not(.-loading) {
