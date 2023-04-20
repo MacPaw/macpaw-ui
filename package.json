@@ -35,7 +35,7 @@
   "devDependencies": {
     "@babel/runtime": "^7.18.3",
     "@macpaw/eslint-config-react": "^2.0.1",
-    "@macpaw/eslint-config-typescript": "^2.0.1",
+    "@macpaw/eslint-config-typescript": "^3.0.3",
     "@mdx-js/loader": "^2.1.1",
     "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^12.1.6",
