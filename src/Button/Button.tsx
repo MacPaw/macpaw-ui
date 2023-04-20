@@ -2,7 +2,7 @@ import React, { forwardRef, ReactNode, ElementType, ButtonHTMLAttributes } from 
 import cx from 'clsx';
 import PawIcon from '../Icons/jsx/PawIcon';
 
-export type ButtonColor = 'primary' | 'secondary' | 'warning' | 'transparent';
+export type ButtonColor = 'primary' | 'secondary' | 'warning' | 'contrast' | 'transparent';
 
 export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {
   color?: ButtonColor;

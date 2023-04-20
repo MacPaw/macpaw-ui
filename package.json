@@ -1,6 +1,6 @@
 {
   "name": "@macpaw/macpaw-ui",
-  "version": "4.8.0",
+  "version": "4.9.0",
   "main": "lib/ui.js",
   "scripts": {
     "dev": "next -p 1234",
@@ -37,6 +37,7 @@
     "@macpaw/eslint-config-react": "^2.0.1",
     "@macpaw/eslint-config-typescript": "^2.0.1",
     "@mdx-js/loader": "^2.1.1",
+    "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^12.1.6",
     "@svgr/cli": "^6.3.1",
     "@types/lodash.debounce": "^4.0.7",

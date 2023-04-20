@@ -6,7 +6,7 @@
   padding: 20px 24px;
   font-size: 14px;
   background: var(--color-attention);
-  border-radius: 10px;
+  border-radius: 20px;
   min-height: 72px; // banner with button should be the same height as without
 
   @include mobile {
