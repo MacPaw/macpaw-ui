@@ -5,6 +5,7 @@ import Navigation from '../Navigation/Navigation';
 import styles from './Layout.module.css';
 
 const components = {
+  p: (props) => <p className={styles.paragraph} {...props} />,
   pre: (props) => <div {...props} />,
   code: CodeBlock,
 }

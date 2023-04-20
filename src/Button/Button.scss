@@ -37,14 +37,12 @@
   &.-medium {
     height: 40px;
     padding: 0 24px;
-    border-radius: 8px;
     font-size: 14px;
   }
 
   &.-small {
     height: 32px;
     padding: 0 24px;
-    border-radius: 8px;
     font-size: 14px;
   }
 
@@ -57,6 +55,7 @@
 
   &.-primary:not(:disabled):hover {
     background-color: #2ecf80;
+    box-shadow: 0px 2px 4px rgba(0, 147, 61, 0.32);
   }
 
   &.-primary:not(:disabled):active {
@@ -78,6 +77,7 @@
   &.-primary.-outline:not(:disabled):hover {
     background-color: transparent;
     border: 2px solid var(--color-black);
+    box-shadow: none;
   }
 
   &.-primary.-outline:not(:disabled):active {
@@ -100,6 +100,7 @@
 
   &.-secondary:not(:disabled):hover {
     background-color: #3FADFF;
+    box-shadow: 0px 2px 4px rgba(0, 101, 207, 0.32);
   }
 
   &.-secondary:not(:disabled):active {
@@ -122,6 +123,7 @@
     background: var(--color-secondary);
     color: var(--color-white);
     border: 2px solid var(--color-secondary);
+    box-shadow: 0px 2px 4px rgba(0, 101, 207, 0.32);
   }
 
   &.-secondary.-outline:not(:disabled):active {
@@ -144,6 +146,7 @@
 
   &.-warning:not(:disabled):hover {
     background-color: #E55D5D;
+    box-shadow: 0px 2px 4px rgba(206, 46, 46, 0.32);
   }
 
   &.-warning:not(:disabled):active {
@@ -166,6 +169,7 @@
     background: var(--color-error);
     color: var(--color-white);
     border: 2px solid var(--color-error);
+    box-shadow: 0px 2px 4px rgba(206, 46, 46, 0.32);
   }
 
   &.-warning.-outline:not(:disabled):active {
@@ -174,6 +178,52 @@
   }
 
   &.-warning.-outline[disabled]:not(.-loading) {
+    color: var(--color-black-08);
+    background-color: transparent;
+    border: 2px solid var(--color-black-08);
+  }
+
+  // contrast
+
+  &.-contrast {
+    color: var(--color-white);
+    background-color: var(--color-black);
+  }
+
+  &.-contrast:not(:disabled):hover {
+    background-color: #3D3D3D;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.32);
+  }
+
+  &.-contrast:not(:disabled):active {
+    background-color: var(--color-black);
+  }
+
+  &.-contrast[disabled]:not(.-loading) {
+    background-color: var(--color-black-16);
+  }
+
+  // contrast outline
+
+  &.-contrast.-outline {
+    color: var(--color-black);
+    background-color: transparent;
+    border: 2px solid var(--color-black);
+  }
+
+  &.-contrast.-outline:not(:disabled):hover {
+    background: #3D3D3D;
+    color: var(--color-white);
+    border: 2px solid #3D3D3D;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.32);
+  }
+
+  &.-contrast.-outline:not(:disabled):active {
+    background-color: var(--color-black);;
+    border: 2px solid var(--color-black);;
+  }
+
+  &.-contrast.-outline[disabled]:not(.-loading) {
     color: var(--color-black-08);
     background-color: transparent;
     border: 2px solid var(--color-black-08);
