@@ -7,13 +7,11 @@ import DropdownIcon from '../src/Icons/jsx/DropdownIcon';
 export const Example = () => {
   const [currentLanguage, setCurrentLanguage] = useState('en');
   return (
-    <>
-      <LanguageSwitcher
-        currentLanguage={currentLanguage}
-        availableLanguages={['en', 'de', 'uk']}
-        onChange={(event) => setCurrentLanguage(event.target.value)}
-      />
-    </>
+    <LanguageSwitcher
+      currentLanguage={currentLanguage}
+      availableLanguages={['en', 'de', 'uk']}
+      onChange={(event) => setCurrentLanguage(event.target.value)}
+    />
   );
 };
 
