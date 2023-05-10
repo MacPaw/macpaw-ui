@@ -25,8 +25,6 @@ const getLocaleName = (locale: string) => {
       return 'Polski';
     case 'pt':
       return 'Português do Brasil';
-    case 'ru':
-      return 'Русский';
     case 'tr':
       return 'Turkish';
     case 'uk':
@@ -38,22 +36,23 @@ const getLocaleName = (locale: string) => {
   }
 };
 
-export interface LanguageSwitcherProps extends HTMLAttributes<HTMLSelectElement> {
+export interface LanguageSwitcherProps
+  extends HTMLAttributes<HTMLSelectElement> {
   currentLanguage: string;
   availableLanguages: string[];
 }
 
-const LanguageSwitcher: FC<React.PropsWithChildren<LanguageSwitcherProps>> = (props) => {
-  const {
-    currentLanguage,
-    availableLanguages,
-    className,
-    ...other
-  } = props;
+const LanguageSwitcher: FC<React.PropsWithChildren<LanguageSwitcherProps>> = (
+  props,
+) => {
+  const { currentLanguage, availableLanguages, className, ...other } = props;
 
   return (
     <div className={cx('languageSwitcher', className)}>
-      <LanguageIcon language={currentLanguage} className="languageSwitcher-icon" />
+      <LanguageIcon
+        language={currentLanguage}
+        className="languageSwitcher-icon"
+      />
       <div className="languageSwitcher-name">
         {getLocaleName(currentLanguage)}
       </div>
