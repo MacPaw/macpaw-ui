@@ -1,4 +1,6 @@
-import React, { useContext, useState, useRef, useEffect, CSSProperties, HTMLAttributes } from 'react';
+import React, {
+  useContext, useState, useRef, useEffect, CSSProperties, HTMLAttributes,
+} from 'react';
 import { Transition } from 'react-transition-group';
 import AccordionContext from './AccordionContext';
 
@@ -33,9 +35,8 @@ const AccordionCollapsible: React.FC<React.PropsWithChildren<AccordionCollapsibl
   }
 
   function onEntering() {
-    if (nodeRef.current) {
+    if (nodeRef.current)
       nodeRef.current.style.height = `${nodeRef.current.scrollHeight}px`;
-    }
   }
 
   function onEntered() {
@@ -54,16 +55,14 @@ const AccordionCollapsible: React.FC<React.PropsWithChildren<AccordionCollapsibl
 
   function onExiting() {
     setTimeout(() => {
-      if (nodeRef.current) {
+      if (nodeRef.current)
         nodeRef.current.style.height = `${0}px`;
-      }
     }, 20);
   }
 
   function onExited() {
-    if (nodeRef.current) {
+    if (nodeRef.current)
       nodeRef.current.style.visibility = 'hidden';
-    }
   }
 
   return (

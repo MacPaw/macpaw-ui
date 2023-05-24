@@ -1,5 +1,5 @@
 import React, { ElementType, ReactNode } from 'react';
-import Panel, { PanelProps }  from '../Panel/Panel';
+import Panel, { PanelProps } from '../Panel/Panel';
 
 interface Grid extends PanelProps {
   icon?: ReactNode;
@@ -19,6 +19,7 @@ const Grid: React.FC<React.PropsWithChildren<Grid>> = (props) => {
     ...other
   } = props;
   let gridClassNames = 'grid';
+
   if (className) gridClassNames += ` ${className}`;
   const Component = component ? component as ElementType : Panel;
 

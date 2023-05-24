@@ -25,23 +25,22 @@ const Dialog: FC<React.PropsWithChildren<DialogProps>> = (props) => {
   const dialogClassName = cx('dialog', className);
 
   function keyListener(event: KeyboardEvent) {
-    if (event.keyCode === 27) {
+    if (event.keyCode === 27)
       onRequestClose();
-    }
   }
 
   function overlayClickListener() {
-    if (!shouldCloseOnOverlayClick) {
+    if (!shouldCloseOnOverlayClick)
       return;
-    }
+
 
     onRequestClose();
   }
 
   useEffect(() => {
-    if (shouldCloseOnEsc) {
+    if (shouldCloseOnEsc)
       document.addEventListener('keydown', keyListener);
-    }
+
 
     return () => {
       document.removeEventListener('keydown', keyListener);

@@ -1,5 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect, createContext, MutableRefObject, PropsWithChildren, useContext } from 'react';
+import React, {
+  useState, useEffect, createContext, MutableRefObject, PropsWithChildren, useContext,
+} from 'react';
 import { ButtonColor } from '../Button/Button';
 
 export interface TabsContextValue {
@@ -66,4 +68,3 @@ export const TabsProvider: React.FC<PropsWithChildren<TabProviderProps>> = ({
     </TabsContext.Provider>
   );
 };
-

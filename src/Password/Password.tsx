@@ -1,4 +1,6 @@
-import React, { FC, InputHTMLAttributes, ReactNode, useState } from 'react';
+import React, {
+  FC, InputHTMLAttributes, ReactNode, useState,
+} from 'react';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 import { Error, InputValueType } from '../types';
@@ -18,7 +20,9 @@ function i18nToggleDefault(isPasswordVisible: boolean) {
 }
 
 const Password: FC<React.PropsWithChildren<PasswordProps>> = (props) => {
-  const { withToggle, i18nToggle = i18nToggleDefault, onToggle, ...other } = props;
+  const {
+    withToggle, i18nToggle = i18nToggleDefault, onToggle, ...other
+  } = props;
   const [passwordVisible, setPasswordVisible] = useState(false);
   const toggleHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();

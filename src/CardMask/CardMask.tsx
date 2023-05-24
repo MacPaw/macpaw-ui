@@ -7,7 +7,9 @@ export interface CardMaskProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const CardMask: FC<React.PropsWithChildren<CardMaskProps>> = (props) => {
-  const { digits, short, className, ...other } = props;
+  const {
+    digits, short, className, ...other
+  } = props;
 
   return (
     <div className={cx('cardMask', className)} {...other}>

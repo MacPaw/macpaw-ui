@@ -89,9 +89,9 @@ const Pagination: FC<React.PropsWithChildren<PaginationProps>> = (props) => {
       {pageNumbers.map((n, index) => {
         const key = `${n}-${index}`;
 
-        if (n === rangeValue) {
+        if (n === rangeValue)
           return <div key={key} className="pagination-page -disabled">...</div>;
-        }
+
 
         return React.cloneElement(renderItem(n), {
           key,

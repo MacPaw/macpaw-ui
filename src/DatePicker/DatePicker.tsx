@@ -29,7 +29,7 @@ interface NavigationDisabledProps {
 
 export type NavigationProps = NavigationSelectableProps | NavigationDisabledProps;
 
-export interface DatePickerCommonProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value'>  {
+export interface DatePickerCommonProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value'> {
   value?: PossibleDateType;
   error?: InputError;
   className?: string;
@@ -62,7 +62,7 @@ export interface DatePickerRangeMultipleProps extends DatePickerCommonProps {
 }
 
 export interface DatePickerRangeRangeProps extends DatePickerCommonProps {
-  selectionMode:  'range';
+  selectionMode: 'range';
   onChange?: (date: DateRange | undefined) => void;
   formatter?: (date: DateRange[]) => string;
 }
@@ -130,7 +130,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(({
       if (Array.isArray(value)) return value.map((dateItem) => format(dateItem, dateFormat));
       if (typeof value === 'object') {
         const formattedFrom = value.from ? format(value.from, dateFormat) : '';
-        const formattedTo =  value.to ? format(value.to, dateFormat) : '';
+        const formattedTo = value.to ? format(value.to, dateFormat) : '';
 
         if (!formattedFrom && formattedTo) return '';
 

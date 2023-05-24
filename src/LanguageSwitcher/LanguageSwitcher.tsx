@@ -45,7 +45,9 @@ export interface LanguageSwitcherProps
 const LanguageSwitcher: FC<React.PropsWithChildren<LanguageSwitcherProps>> = (
   props,
 ) => {
-  const { currentLanguage, availableLanguages, className, ...other } = props;
+  const {
+    currentLanguage, availableLanguages, className, ...other
+  } = props;
 
   return (
     <div className={cx('languageSwitcher', className)}>

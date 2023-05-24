@@ -22,7 +22,7 @@ const CardType = {
   Mada: 'mada',
   DinersClub: 'diners_club',
   UnionPay: 'unionpay',
-  'Union_Pay': 'union_pay',
+  Union_Pay: 'union_pay',
   Paypal: 'paypal',
 };
 

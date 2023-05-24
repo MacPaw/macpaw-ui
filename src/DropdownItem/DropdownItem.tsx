@@ -17,17 +17,18 @@ const DropdownItem: React.FC<React.PropsWithChildren<DropdownItem>> = (props) =>
     className, attention,
     withoutAction,
     separator,
-    ...other } = props;
+    ...other
+  } = props;
 
   let Component = component as ElementType;
 
-  if (Component === 'button' && other?.href) {
+  if (Component === 'button' && other?.href)
     Component = 'a';
-  }
 
-  if (withoutAction || separator) {
+
+  if (withoutAction || separator)
     Component = 'div';
-  }
+
 
   const classNames = cx('dropdownItem', className, {
     '-attention': attention,

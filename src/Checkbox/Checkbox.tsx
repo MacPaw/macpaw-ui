@@ -8,7 +8,9 @@ export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
-  const { className, error, children, style, ...other } = props;
+  const {
+    className, error, children, style, ...other
+  } = props;
 
   return (
     <label className={cx('checkbox', className, error && '-error')} style={style}>

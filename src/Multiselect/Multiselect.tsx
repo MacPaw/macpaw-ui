@@ -55,11 +55,10 @@ const Multiselect: FC<React.PropsWithChildren<MultiselectProps>> = (props) => {
 
   function toggleSelected(toggleOption: Option) {
     if (onChange) {
-      if (toggleOption.selected) {
+      if (toggleOption.selected)
         onChange(selectedValues.filter((v) => v !== toggleOption.value));
-      } else {
+      else
         onChange([...selectedValues, toggleOption.value]);
-      }
     }
   }
 
@@ -81,6 +80,7 @@ const Multiselect: FC<React.PropsWithChildren<MultiselectProps>> = (props) => {
           value=""
           onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
             const selectedOption = options.find((o) => o.value === event.target.value)!;
+
             toggleSelected(selectedOption);
           }}
         >

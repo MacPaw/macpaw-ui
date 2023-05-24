@@ -7,7 +7,9 @@ export interface LoaderProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Loader: FC<React.PropsWithChildren<LoaderProps>> = (props) => {
-  const { size = 75, inline = false, className, ...other } = props;
+  const {
+    size = 75, inline = false, className, ...other
+  } = props;
 
   return (
     <div className={cx('loader', inline && '-inline', className)} {...other}>

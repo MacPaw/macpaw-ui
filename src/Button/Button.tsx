@@ -1,4 +1,6 @@
-import React, { forwardRef, ReactNode, ElementType, ButtonHTMLAttributes } from 'react';
+import React, {
+  forwardRef, ReactNode, ElementType, ButtonHTMLAttributes,
+} from 'react';
 import cx from 'clsx';
 import PawIcon from '../Icons/jsx/PawIcon';
 
@@ -52,9 +54,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
 
   let Component = component as ElementType;
 
-  if (Component === 'button' && other.href) {
+  if (Component === 'button' && other.href)
     Component = 'a';
-  }
+
 
   if (Component === 'button') {
     componentProps.type = type;

@@ -108,10 +108,12 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
 
     if (!isUniqueTag) return;
 
-    onChange([...tags, {
-      id: uniqId(),
-      value,
-    }]);
+    onChange([
+      ...tags, {
+        id: uniqId(),
+        value,
+      },
+    ]);
   };
 
   const handleKeyDown = async (event: KeyboardEvent<HTMLInputElement>) => {
@@ -138,15 +140,14 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
       await handleAddTag();
     }
 
-    if (isAutofillDetected) {
+    if (isAutofillDetected)
       onAutofill?.();
-    }
   };
 
   const handleBlur = async () => {
-    if (value && isHandleOnBlur) {
+    if (value && isHandleOnBlur)
       await handleAddTag();
-    }
+
 
     onBlur?.();
   };
@@ -206,8 +207,7 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
           };
 
           return (<Tag key={id} {...tagProps}>{formatter?.(value) ?? value}</Tag>);
-        }
-        )}
+        })}
         {!isReadOnly && (
           <input
             type="text"

@@ -1,4 +1,6 @@
-import React, { HTMLAttributes, useEffect, useRef, useState } from 'react';
+import React, {
+  HTMLAttributes, useEffect, useRef, useState,
+} from 'react';
 import cx from 'clsx';
 import debounce from 'lodash.debounce';
 
@@ -12,7 +14,9 @@ export interface Dropdown extends HTMLAttributes<HTMLDivElement> {
 const VISIBILITY_DELAY = 100;
 
 const DropDown: React.FC<React.PropsWithChildren<Dropdown>> = (props) => {
-  const { className, children, trigger, position, onOpen, onClose, ...other } = props;
+  const {
+    className, children, trigger, position, onOpen, onClose, ...other
+  } = props;
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -39,6 +43,7 @@ const DropDown: React.FC<React.PropsWithChildren<Dropdown>> = (props) => {
       const clickOnRoot = rootRef.current.contains(event.target as Node);
       const clickOnMenu = menuRef.current.contains(event.target as Node);
       // do not handle if click is on trigger
+
       if (clickOnRoot && !clickOnMenu) return;
 
       if (clickOnRoot && clickOnMenu) {
@@ -58,11 +63,10 @@ const DropDown: React.FC<React.PropsWithChildren<Dropdown>> = (props) => {
   }, []);
 
   useEffect(() => {
-    if (isOpen && onOpen) {
+    if (isOpen && onOpen)
       onOpen();
-    } else if (onClose) {
+    else if (onClose)
       onClose();
-    }
   }, [isOpen, onClose, onOpen]);
 
   return (

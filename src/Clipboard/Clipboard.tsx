@@ -1,4 +1,6 @@
-import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
+import React, {
+  MutableRefObject, useEffect, useRef, useState,
+} from 'react';
 import { CheckCircleIcon, CopyIcon as CopyIconUi } from '../Icons/jsx';
 import Tooltip from '../Tooltip/Tooltip';
 import { InputValueType } from '../types';
@@ -29,7 +31,7 @@ const Clipboard: React.FC<ClipboardProps> = ({ copy, element, onCopyEvent }) => 
 
   const CopyButton = () => <button className="clipboard__button" onClick={iconHandler}><CopyIconUi className="clipboard__icon" /></button>;
 
-  const CopyIcon = () => (copy ? <Tooltip maxWidth={'auto'} content={copy} position="top"><CopyButton /></Tooltip> : <CopyButton />);
+  const CopyIcon = () => (copy ? <Tooltip maxWidth="auto" content={copy} position="top"><CopyButton /></Tooltip> : <CopyButton />);
 
   return <div className="clipboard">{canBeCopied ? <CopyIcon /> : <CheckCircleIcon className="clipboard__done-icon" />}</div>;
 };
