@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: false
     steps:
-      - name: Checkout    
+      - name: Checkout
         uses: actions/checkout@v2
 
       - name: Setup node
@@ -21,7 +21,7 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
-       
+
       - name: Install dependencies
         run: npm i
         env:
@@ -47,7 +47,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: ui-kit-artifact
-      
+
       - name: Unpack artifact
         run: tar xf artifact.tar.gz
 
@@ -67,7 +67,7 @@ jobs:
 
       - name: Unpack artifact
         run: tar xf artifact.tar.gz
-          
+
       - name: Run typescript compile
         run: yarn tsc --noEmit
 
@@ -87,3 +87,15 @@ jobs:
 
       - name: Build application
         run: npm run build
+
+  validate-dependabot-yml:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: marocchino/validate-dependabot@v2
+        id: validate
+      - uses: marocchino/sticky-pull-request-comment@v2
+        if: always()
+        with:
+          header: validate-dependabot
+          message: ${{ steps.validate.outputs.markdown }}
