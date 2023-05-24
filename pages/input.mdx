@@ -294,7 +294,9 @@ const [value, setValue] = useState(10);
 <div style={{ width: 800 }}>
     <FormRow split>
         <Input type="text" name="key" placeholder="Your key" label="Key" clipboard />
-        <Input type="text" name="link" name="Your link" placeholder="Your link" label="Key" clipboard="copy" />
+        <Input type="text" name="link" name="Your link" placeholder="Your link" label="Key" clipboard="copy" onCopyEvent={(value) => {
+            console.log(`Copied with value: ${value}`);
+        }} />
     </FormRow>
 </div>
 
@@ -302,7 +304,9 @@ const [value, setValue] = useState(10);
 <div style={{ width: 800 }}>
     <FormRow split>
         <Input type="text" name="key" placeholder="Your key" label="Key" clipboard />
-        <Input type="text" name="link" name="Your link" placeholder="Your link" label="Key" clipboard="copy" />
+        <Input type="text" name="link" name="Your link" placeholder="Your link" label="Key" clipboard="copy" onCopyEvent={(value) => {
+            console.log(`Copied with value: ${value}`);
+        }} />
     </FormRow>
 </div>
 ```
