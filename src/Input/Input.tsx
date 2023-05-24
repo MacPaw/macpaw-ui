@@ -27,6 +27,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   formatOnEvent?: 'blur' | 'input';
   format?: (value: InputValueType) => InputValueType;
   onChange?: (value:InputValueType, event?: React.ChangeEvent<HTMLInputElement>) => void;
+  onCopyEvent?: (value: InputValueType) => void;
   onAutofill?: () => void;
   clipboard?: boolean | string | React.ReactElement;
 }
@@ -46,6 +47,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     icon,
     value,
     onChange,
+    onCopyEvent,
     formatOnEvent = '',
     format,
     onAutofill,
@@ -141,7 +143,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         />
         {action && <span className="input-action">{action}</span>}
         {currency && <span className="input-currency">{currency}</span>}
-        {clipboard && <Clipboard element={inputRef} copy={typeof clipboard !== 'boolean' ? clipboard : undefined} />}
+        {clipboard && <Clipboard element={inputRef} copy={typeof clipboard !== 'boolean' ? clipboard : undefined} onCopyEvent={onCopyEvent} />}
       </span>
       {showHintError && <Hint error style={{ marginTop: 6 }}>{error}</Hint>}
     </label>
