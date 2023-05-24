@@ -64,7 +64,7 @@ const Tooltip: React.FC<React.PropsWithChildren<Tooltip>> = ({
   });
 
   const { styles } = useTransitionStyles(context, {
-    duration: 400,
+    duration: 300,
   });
 
   const getArrowPosition = () => {
@@ -112,7 +112,7 @@ const Tooltip: React.FC<React.PropsWithChildren<Tooltip>> = ({
         {children}
       </div>
       {isOpen && (
-        <div ref={refs.setFloating} style={{ ...floatingStyles, ...styles }}>
+        <div ref={refs.setFloating} className="tooltip" style={{ ...floatingStyles, ...styles }}>
           <FloatingArrow
             ref={arrowRef}
             context={context}

@@ -35,17 +35,17 @@ import { Tooltip, Button, Grid, GridRow, GridCell } from '../src/ui';
         </Button>
       </Tooltip>
     </GridCell>
-     <GridCell>
-       <Tooltip position="left" content="Hi there! I'm on the left">
+    <GridCell>
+       <Tooltip position="right" content="Hi there! I'm on the right">
         <Button>
-          Left
+          Right
         </Button>
       </Tooltip>
     </GridCell>
      <GridCell>
-       <Tooltip position="right" content="Hi there! I'm on the right">
+       <Tooltip position="left" content="Hi there! I'm on the left">
         <Button>
-          Right
+          Left
         </Button>
       </Tooltip>
     </GridCell>
@@ -95,6 +95,31 @@ import { Tooltip, Button, Grid, GridRow, GridCell } from '../src/ui';
 >
   <Button>
     Hover me
+  </Button>
+</Tooltip>
+
+```
+
+## Tooltip that opens on click
+
+<Tooltip 
+  position="right"
+  content="Hi there!"
+  openOnСlick
+>
+  <Button>
+    Click me
+  </Button>
+</Tooltip>
+
+```
+<Tooltip 
+  position="right"
+  content="Hi there!"
+  openOnСlick
+>
+  <Button>
+    Click me
   </Button>
 </Tooltip>
 ```

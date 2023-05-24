@@ -1,4 +1,6 @@
 .tooltip {
+  z-index: 1;
+  
   &-trigger {
     position: relative;
     display: inline-block;
