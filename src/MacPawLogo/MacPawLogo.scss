@@ -8,8 +8,12 @@
   &_inline {
     display: inline-block;
   }
-}
 
-.mac-paw-logo__paw {
-  transition: all .5s ease-in-out;
+  &__text{
+    margin-left: 5.8px;
+  }
+
+  &__paw {
+    transition: all .5s ease-in-out;
+  }
 }
