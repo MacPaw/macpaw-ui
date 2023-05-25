@@ -1,3 +1,4 @@
+import { HTMLProps, useMemo } from 'react';
 import {
   useFloating,
   autoUpdate,
@@ -13,10 +14,12 @@ import {
   arrow,
   safePolygon,
   Placement,
+  ReferenceType,
+  UseFloatingReturn,
+  FloatingContext,
 } from '@floating-ui/react';
-import { useMemo } from 'react';
 
-interface useTooltip {
+interface useTooltipProps {
   isForce: boolean;
   arrowRef: React.MutableRefObject<null>;
   openOnСlick: boolean;
@@ -25,8 +28,16 @@ interface useTooltip {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+interface useTooltip  extends Partial<UseFloatingReturn> {
+  setReference: (node: ReferenceType | null) => void;
+  setFloating: (node: HTMLElement | null) => void;
+  getReferenceProps: (userProps?: HTMLProps<Element> | undefined) => Record<string, unknown>;
+  getFloatingProps: (userProps?: HTMLProps<HTMLElement> | undefined) => Record<string, unknown>;
+  getArrowPosition: string | number;
+  context: FloatingContext;
+}
 
-const useTooltip = ({ isForce, arrowRef, openOnСlick, position, isOpen, setIsOpen }: useTooltip) => {
+const useTooltip = ({ isForce, arrowRef, openOnСlick, position, isOpen, setIsOpen }: useTooltipProps): useTooltip => {
 
   const { middlewareData, refs: { setReference, setFloating }, floatingStyles, context } = useFloating({
     open: isOpen,
