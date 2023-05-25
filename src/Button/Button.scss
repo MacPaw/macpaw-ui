@@ -284,6 +284,10 @@ $buttonHoverBoxShadow: (
     &:focus {
       box-shadow: none;
     }
+
+    &:not(:disabled):hover {
+      box-shadow: none;
+    }
   }
 
   &.-icon {
