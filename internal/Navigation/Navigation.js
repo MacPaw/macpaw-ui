@@ -17,6 +17,7 @@ const pages = [
   'icons',
   'input',
   'language-switcher',
+  'logo',
   'loader',
   'notification',
   'pagination',

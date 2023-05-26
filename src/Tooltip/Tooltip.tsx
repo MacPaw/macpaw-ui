@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import cx from 'clsx';
+import { FloatingArrow, Placement } from '@floating-ui/react';
+import useTooltip from './useTooltip.hook';
 
 interface Tooltip {
   content: React.ReactNode;
-  position: 'top' | 'bottom' | 'left' | 'right';
+  position: Placement;
   maxWidth?: number | string;
   forceShow?: boolean;
   forceHide?: boolean;
+  openOnСlick?: boolean;
 }
 
 const Tooltip: React.FC<React.PropsWithChildren<Tooltip>> = ({
@@ -14,29 +17,63 @@ const Tooltip: React.FC<React.PropsWithChildren<Tooltip>> = ({
   content,
   position,
   maxWidth,
-  forceShow = false,
-  forceHide = false,
+  forceShow,
+  forceHide,
+  openOnСlick = false,
 }) => {
-  const messageStyles = maxWidth ? ({ width: maxWidth } as React.CSSProperties) : {};
-  const messageClassNames = cx(
-    'tooltip-message',
-    `-${position}`,
-    {
-      '-show': forceShow,
-      '-hide': forceHide,
-      '-custom-width': !!maxWidth,
-    }
-  );
+  const messageStyles = maxWidth
+    ? ({ width: maxWidth } as React.CSSProperties)
+    : {};
+
+  const arrowRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const {
+    setReference,
+    setFloating,
+    getReferenceProps,
+    getFloatingProps,
+    getArrowPosition,
+    floatingStyles,
+    context,
+  } = useTooltip({ isForce: Boolean(forceShow || forceHide), arrowRef, openOnСlick, position, isOpen, setIsOpen  });
+
+  useEffect(() => {
+    setIsOpen(Boolean(forceShow && !forceHide));
+  }, [forceShow, forceHide]);
+
 
   return (
-    <div className="tooltip">
-      <div className={messageClassNames}>
-        <div className="tooltip-content" style={messageStyles}>{content}</div>
-      </div>
-      <div className="tooltip-trigger">
+    <>
+      <div
+        className="tooltip-trigger"
+        ref={setReference}
+        {...getReferenceProps()}
+      >
         {children}
       </div>
-    </div>
+      {isOpen && (
+        <div ref={setFloating} className="tooltip" style={floatingStyles}>
+          <FloatingArrow
+            ref={arrowRef}
+            context={context}
+            tipRadius={2}
+            height={9}
+            width={18}
+            staticOffset={getArrowPosition}
+          />
+          <div
+            className={cx('tooltip-content tooltip-message', {
+              '-custom-width': !!maxWidth,
+            })}
+            style={messageStyles}
+            {...getFloatingProps()}
+          >
+            {content}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

@@ -1,0 +1,19 @@
+.mac-paw-logo {
+  &:hover {
+    &>.mac-paw-logo__paw_rotate {
+        transform: rotate(1turn);
+    }
+  }
+
+  &_inline {
+    display: inline-block;
+  }
+
+  &__text{
+    margin-left: 5.8px;
+  }
+
+  &__paw {
+    transition: all .5s ease-in-out;
+  }
+}
