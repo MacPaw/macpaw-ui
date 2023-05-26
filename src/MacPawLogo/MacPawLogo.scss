@@ -1,4 +1,7 @@
 .mac-paw-logo {
+
+  color: var(--color-black);
+
   &:hover {
     &>.mac-paw-logo__paw_rotate {
         transform: rotate(1turn);
