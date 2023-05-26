@@ -5,10 +5,13 @@ import { MacpawText, PawIcon } from '../Icons/jsx';
 export interface MacPawLogoProps extends HTMLAttributes<HTMLButtonElement> {
   className?: string;
   disableRotate?: boolean;
-  component?: ReactNode;
+  component?: ReactNode | string;
   pawProps?: { [key: string]: any};
   textProps?: { [key: string]: any};
   inline?: boolean;
+  href?: string;
+  target?: string;
+  to?: string;
 }
 
 const MacPawLogo: FC<React.PropsWithChildren<MacPawLogoProps>> = (props) => {
