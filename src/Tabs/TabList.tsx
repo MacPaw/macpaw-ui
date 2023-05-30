@@ -5,7 +5,7 @@ import { useTabsContext } from './TabContext';
 
 interface TabListProps extends Omit<HTMLAttributes<HTMLDivElement>, 'role'> {}
 
-const TabList: React.FC<PropsWithChildren<TabListProps> > = ({ children, ...restProps }) => {
+const TabList: React.FC<PropsWithChildren<TabListProps>> = ({ children, ...restProps }) => {
   const { activeTab, onSelectTab } = useTabsContext();
 
   useEffect(() => {
@@ -15,7 +15,6 @@ const TabList: React.FC<PropsWithChildren<TabListProps> > = ({ children, ...rest
 
     if (!React.isValidElement(firstTab) || firstTab.props.__TYPE !== DEFAULT_TAB_TYPE)
       throw new Error('TabList must have only Tab component as a child.');
-
 
     onSelectTab(firstTab.props.tab);
   }, [children, activeTab]);

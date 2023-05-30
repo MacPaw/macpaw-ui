@@ -1,9 +1,9 @@
+import React, { FC, PropsWithChildren, ReactElement, ReactNode } from 'react';
 import cx from 'clsx';
-import React, { FC, ReactNode } from 'react';
+import Hint from '../Hint/Hint';
 import Select from '../Select/Select';
 import Tag from '../Tag/Tag';
 import TagList from '../TagList/TagList';
-import Hint from '../Hint/Hint';
 import { Error } from '../types';
 
 export interface MultiselectProps {
@@ -13,7 +13,6 @@ export interface MultiselectProps {
   onChange?: (values: string[]) => void;
   error?: Error;
   label?: string | ReactNode;
-  [x:string]: any;
 }
 
 interface Option {
@@ -23,21 +22,12 @@ interface Option {
 }
 
 const Multiselect: FC<React.PropsWithChildren<MultiselectProps>> = (props) => {
-  const {
-    className,
-    children,
-    placeholder,
-    onChange,
-    error,
-    scale,
-    label,
-    ...other
-  } = props;
+  const { className, children, placeholder, onChange, error, scale, label, ...other } = props;
 
-  const options: Option[] = React.Children.map(children, (c: any) => ({
-    value: String(c.props.value),
-    label: String(c.props.children),
-    selected: Boolean(c.props.selected),
+  const options: Option[] = React.Children.map(children, (child) => ({
+    value: String((child as ReactElement<PropsWithChildren<Option>>)?.props?.value),
+    label: String((child as ReactElement<PropsWithChildren<Option>>)?.props?.children),
+    selected: Boolean((child as ReactElement<PropsWithChildren<Option>>)?.props?.selected),
   }))!;
 
   if (!options) return null;
@@ -50,17 +40,15 @@ const Multiselect: FC<React.PropsWithChildren<MultiselectProps>> = (props) => {
     !selectedOptions.length && '-empty',
     error && '-error',
     scale === 'medium' && '-medium',
-    className
+    className,
   );
 
-  function toggleSelected(toggleOption: Option) {
+  const toggleSelected = (toggleOption: Option) => {
     if (onChange) {
-      if (toggleOption.selected)
-        onChange(selectedValues.filter((v) => v !== toggleOption.value));
-      else
-        onChange([...selectedValues, toggleOption.value]);
+      if (toggleOption.selected) onChange(selectedValues.filter((v) => v !== toggleOption.value));
+      else onChange([...selectedValues, toggleOption.value]);
     }
-  }
+  };
 
   return (
     <>
@@ -94,7 +82,11 @@ const Multiselect: FC<React.PropsWithChildren<MultiselectProps>> = (props) => {
           ))}
         </Select>
       </div>
-      {showHintError && <Hint style={{ marginTop: 6 }} error>{error}</Hint>}
+      {showHintError && (
+        <Hint style={{ marginTop: 6 }} error>
+          {error}
+        </Hint>
+      )}
     </>
   );
 };

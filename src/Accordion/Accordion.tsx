@@ -11,8 +11,7 @@ const Accordion: React.FC<React.PropsWithChildren<Accordion>> = (props) => {
 
   const onToggle = (key: string | null) => {
     setActiveKey(key);
-    if (onChange)
-      onChange(key);
+    if (onChange) onChange(key);
   };
 
   return <AccordionContext.Provider value={{ activeKey, onToggle }}>{children}</AccordionContext.Provider>;

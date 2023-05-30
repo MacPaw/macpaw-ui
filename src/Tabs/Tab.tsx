@@ -19,9 +19,7 @@ const Tab: React.FC<PropsWithChildren<TabProps>> = ({
   __TYPE,
   ...restProps
 }) => {
-  const {
-    activeTab, onSelectTab, color, activeColor, scale,
-  } = useTabsContext();
+  const { activeTab, onSelectTab, color, activeColor, scale } = useTabsContext();
 
   const isActive = tab === activeTab;
 
@@ -34,8 +32,7 @@ const Tab: React.FC<PropsWithChildren<TabProps>> = ({
   const handleSelectTab = (): void => onSelectTab(tab);
 
   useEffect(() => {
-    if (__TYPE !== DEFAULT_TAB_TYPE)
-      throw new Error('You may NOT pass in a prop value for __TYPE.');
+    if (__TYPE !== DEFAULT_TAB_TYPE) throw new Error('You may NOT pass in a prop value for __TYPE.');
   }, [__TYPE]);
 
   return (

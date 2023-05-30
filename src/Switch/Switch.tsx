@@ -6,9 +6,7 @@ export interface SwitchProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Switch: FC<PropsWithChildren<SwitchProps>> = (props) => {
-  const {
-    className, style, children, error, ...other
-  } = props;
+  const { className, style, children, error, ...other } = props;
 
   return (
     <span className={cx('switch', className, error && '-error')} style={style}>

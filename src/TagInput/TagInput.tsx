@@ -1,17 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, {
-  ReactNode,
-  ChangeEvent,
-  KeyboardEvent,
-  ClipboardEvent,
-  useEffect,
-} from 'react';
+import React, { ReactNode, ChangeEvent, KeyboardEvent, ClipboardEvent, useEffect } from 'react';
 import cx from 'clsx';
+import { uniqId, isAutofill } from '../helpers';
 import Hint from '../Hint/Hint';
 import Tag, { TagProps } from '../Tag/Tag';
 import TagList from '../TagList/TagList';
 import { Error } from '../types';
-import { uniqId, isAutofill } from '../helpers';
 
 export interface TagInputListItem {
   id: string;
@@ -95,7 +89,7 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
   };
 
   const handleRemoveTag = (tagId: string) => {
-    onChange(tags.filter(({ id }) => tagId !== id));
+    onChange(tags.filter(({ id: currentId }) => tagId !== currentId));
   };
 
   const handleAddTag = async () => {
@@ -109,7 +103,8 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
     if (!isUniqueTag) return;
 
     onChange([
-      ...tags, {
+      ...tags,
+      {
         id: uniqId(),
         value,
       },
@@ -117,8 +112,8 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
   };
 
   const handleKeyDown = async (event: KeyboardEvent<HTMLInputElement>) => {
-    const isAddEvent = addKeyCodes.includes(event.code);
-    const isRemoveEvent = removeKeyCodes.includes(event.code) && !value && tags.length;
+    const isAddEvent = addKeyCodes?.includes(event.code);
+    const isRemoveEvent = removeKeyCodes?.includes(event.code) && !value && tags.length;
 
     if (isAddEvent) {
       event.preventDefault();
@@ -140,14 +135,11 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
       await handleAddTag();
     }
 
-    if (isAutofillDetected)
-      onAutofill?.();
+    if (isAutofillDetected) onAutofill?.();
   };
 
   const handleBlur = async () => {
-    if (value && isHandleOnBlur)
-      await handleAddTag();
-
+    if (value && isHandleOnBlur) await handleAddTag();
 
     onBlur?.();
   };
@@ -157,8 +149,8 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
 
     const clipboardItems = event.clipboardData
       .getData('text')
-      .split(clipboardSeparator)
-      .map((value: string) => value.trim())
+      .split(clipboardSeparator as RegExp | string)
+      .map((currentValue: string) => currentValue.trim())
       .filter(Boolean);
 
     if (clipboardItems.length === 1) return;
@@ -198,15 +190,19 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
     <label className={tagInputClassNames} htmlFor={id}>
       {!!label && <span className="tag-input-label h6">{label}</span>}
       <TagList as="span" style={{ maxHeight }}>
-        {tags.map(({ id, value, color }) => {
+        {tags.map(({ id: currentId, value: currentValue, color }) => {
           const tagProps: TagProps = {
             as: 'span',
             color,
             borderRadius: 24,
-            ...(!isReadOnly && { onRemove: () => handleRemoveTag(id) }),
+            ...(!isReadOnly && { onRemove: () => handleRemoveTag(currentId) }),
           };
 
-          return (<Tag key={id} {...tagProps}>{formatter?.(value) ?? value}</Tag>);
+          return (
+            <Tag key={currentId} {...tagProps}>
+              {formatter?.(currentValue) ?? currentValue}
+            </Tag>
+          );
         })}
         {!isReadOnly && (
           <input
@@ -223,7 +219,11 @@ const TagInput: React.FC<React.PropsWithChildren<TagInput>> = ({
           />
         )}
       </TagList>
-      {showError && (<Hint style={{ marginTop: 6 }} error>{error}</Hint>)}
+      {showError && (
+        <Hint style={{ marginTop: 6 }} error>
+          {error}
+        </Hint>
+      )}
     </label>
   );
 };
