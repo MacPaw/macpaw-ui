@@ -9,7 +9,7 @@ interface Tooltip {
   maxWidth?: number | string;
   forceShow?: boolean;
   forceHide?: boolean;
-  openOnСlick?: boolean;
+  openOnClick?: boolean;
 }
 
 const Tooltip: React.FC<React.PropsWithChildren<Tooltip>> = ({
@@ -19,7 +19,7 @@ const Tooltip: React.FC<React.PropsWithChildren<Tooltip>> = ({
   maxWidth,
   forceShow,
   forceHide,
-  openOnСlick = false,
+  openOnClick = false,
 }) => {
   const messageStyles = maxWidth
     ? ({ width: maxWidth } as React.CSSProperties)
@@ -36,7 +36,7 @@ const Tooltip: React.FC<React.PropsWithChildren<Tooltip>> = ({
     getArrowPosition,
     floatingStyles,
     context,
-  } = useTooltip({ isForce: Boolean(forceShow || forceHide), arrowRef, openOnСlick, position, isOpen, setIsOpen  });
+  } = useTooltip({ isForce: Boolean(forceShow || forceHide), arrowRef, openOnClick, position, isOpen, setIsOpen  });
 
   useEffect(() => {
     setIsOpen(Boolean(forceShow && !forceHide));

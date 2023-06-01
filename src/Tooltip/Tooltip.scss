@@ -11,6 +11,11 @@
     min-width: 350px;
     max-width: 350px;
     transition: all 0.1s linear;
+
+    &.-custom-width {
+      min-width: max-content;
+      max-width: auto;
+    }
   }
 
   &-content {
@@ -22,9 +27,4 @@
     margin: auto;
     padding: 24px;
   }
-}
-
-.-custom-width {
-  min-width: fit-content;
-  max-width: fit-content;
 }
