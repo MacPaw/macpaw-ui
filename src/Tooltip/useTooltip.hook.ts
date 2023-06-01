@@ -22,7 +22,7 @@ import {
 interface useTooltipProps {
   isForce: boolean;
   arrowRef: React.MutableRefObject<null>;
-  openOnСlick: boolean;
+  openOnClick: boolean;
   position: Placement;
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -37,7 +37,7 @@ interface useTooltip  extends Partial<UseFloatingReturn> {
   context: FloatingContext;
 }
 
-const useTooltip = ({ isForce, arrowRef, openOnСlick, position, isOpen, setIsOpen }: useTooltipProps): useTooltip => {
+const useTooltip = ({ isForce, arrowRef, openOnClick, position, isOpen, setIsOpen }: useTooltipProps): useTooltip => {
 
   const { middlewareData, refs: { setReference, setFloating }, floatingStyles, context } = useFloating({
     open: isOpen,
@@ -63,7 +63,7 @@ const useTooltip = ({ isForce, arrowRef, openOnСlick, position, isOpen, setIsOp
   const focus = useFocus(context);
   const click = useClick(context);
   const hover = useHover(context, {
-    enabled: !openOnСlick,
+    enabled: !openOnClick,
     handleClose: safePolygon({
       requireIntent: false,
     }),
@@ -72,7 +72,7 @@ const useTooltip = ({ isForce, arrowRef, openOnСlick, position, isOpen, setIsOp
   const { getReferenceProps, getFloatingProps } = useInteractions([
     hover,
     focus,
-    openOnСlick ? click : undefined,
+    openOnClick ? click : undefined,
   ]);
 
   const getArrowPosition = useMemo(() => {
