@@ -9,18 +9,14 @@ export interface PanelProps extends HTMLAttributes<HTMLElement & HTMLLinkElement
 }
 
 const Panel: FC<React.PropsWithChildren<PanelProps>> = (props) => {
-  const {
-    className,
-    outline,
-    children,
-    component = 'div',
-    ...other
-  } = props;
+  const { className, outline, children, component = 'div', ...other } = props;
 
-  const Component = other.href ? 'a' : component as ElementType;
+  const Component = other.href ? 'a' : (component as ElementType);
 
   return (
-    <Component className={cx('panel', outline && '-outline', className)} {...other}>{children}</Component>
+    <Component className={cx('panel', outline && '-outline', className)} {...other}>
+      {children}
+    </Component>
   );
 };
 

@@ -48,13 +48,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
     '-icon': icon,
   });
 
-  const componentProps: any = {};
+  const componentProps: ObjectLiteral = {};
 
   let Component = component as ElementType;
 
-  if (Component === 'button' && other.href) {
-    Component = 'a';
-  }
+  if (Component === 'button' && other.href) Component = 'a';
 
   if (Component === 'button') {
     componentProps.type = type;

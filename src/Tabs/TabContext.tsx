@@ -41,7 +41,7 @@ export const TabsProvider: React.FC<PropsWithChildren<TabProviderProps>> = ({
   const [activeTab, setActiveTab] = useState(initialTab || '');
 
   const handleSelectTab = (tab: string): void => {
-    onSelectTab(tab);
+    onSelectTab?.(tab);
     if (tab !== activeTab) setActiveTab(tab);
   };
 
@@ -60,10 +60,5 @@ export const TabsProvider: React.FC<PropsWithChildren<TabProviderProps>> = ({
     innerRef.current = providerValue;
   }, [providerValue]);
 
-  return (
-    <TabsContext.Provider value={providerValue}>
-      {children}
-    </TabsContext.Provider>
-  );
+  return <TabsContext.Provider value={providerValue}>{children}</TabsContext.Provider>;
 };
-

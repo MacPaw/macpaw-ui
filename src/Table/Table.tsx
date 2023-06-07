@@ -1,8 +1,7 @@
 import React, { FC, TableHTMLAttributes } from 'react';
 import cx from 'clsx';
 
-export interface TableProps extends TableHTMLAttributes<HTMLTableElement> {
-}
+export interface TableProps extends TableHTMLAttributes<HTMLTableElement> {}
 
 const Table: FC<React.PropsWithChildren<TableProps>> = (props) => {
   const { className, children, ...other } = props;

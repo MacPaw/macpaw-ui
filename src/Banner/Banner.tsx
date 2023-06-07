@@ -8,14 +8,7 @@ export interface BannerProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Banner: FC<React.PropsWithChildren<BannerProps>> = (props) => {
-  const {
-    className,
-    children,
-    type,
-    icon,
-    action,
-    ...other
-  } = props;
+  const { className, children, type, icon, action, ...other } = props;
 
   const classNames = cx('banner', className, {
     '-secondary': type === 'secondary',

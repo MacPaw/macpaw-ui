@@ -1,5 +1,5 @@
-import cx from 'clsx';
 import React, { ButtonHTMLAttributes, ElementType, ReactNode } from 'react';
+import cx from 'clsx';
 
 export interface DropdownItem extends ButtonHTMLAttributes<HTMLButtonElement> {
   component?: ReactNode;
@@ -11,23 +11,13 @@ export interface DropdownItem extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const DropdownItem: React.FC<React.PropsWithChildren<DropdownItem>> = (props) => {
-  const {
-    children,
-    component = 'button',
-    className, attention,
-    withoutAction,
-    separator,
-    ...other } = props;
+  const { children, component = 'button', className, attention, withoutAction, separator, ...other } = props;
 
   let Component = component as ElementType;
 
-  if (Component === 'button' && other?.href) {
-    Component = 'a';
-  }
+  if (Component === 'button' && other?.href) Component = 'a';
 
-  if (withoutAction || separator) {
-    Component = 'div';
-  }
+  if (withoutAction || separator) Component = 'div';
 
   const classNames = cx('dropdownItem', className, {
     '-attention': attention,

@@ -1,8 +1,7 @@
 import React, { FC, HTMLAttributes } from 'react';
 import cx from 'clsx';
 
-export interface DialogActionsProps extends HTMLAttributes<HTMLDivElement> {
-}
+export interface DialogActionsProps extends HTMLAttributes<HTMLDivElement> {}
 
 const DialogActions: FC<React.PropsWithChildren<DialogActionsProps>> = (props) => {
   const { className, children, ...other } = props;

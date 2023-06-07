@@ -1,6 +1,6 @@
 import React, { FC, InputHTMLAttributes, ReactNode, useState } from 'react';
-import Input from '../Input/Input';
 import Button from '../Button/Button';
+import Input from '../Input/Input';
 import { Error, InputValueType } from '../types';
 
 export interface PasswordProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
@@ -10,12 +10,10 @@ export interface PasswordProps extends Omit<InputHTMLAttributes<HTMLInputElement
   withToggle?: boolean;
   i18nToggle?: (isPasswordVisible: boolean) => string;
   onToggle?: () => void;
-  onChange?:(value: InputValueType, event?: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (value: InputValueType, event?: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function i18nToggleDefault(isPasswordVisible: boolean) {
-  return isPasswordVisible ? 'Hide' : 'Show';
-}
+const i18nToggleDefault = (isPasswordVisible: boolean) => (isPasswordVisible ? 'Hide' : 'Show');
 
 const Password: FC<React.PropsWithChildren<PasswordProps>> = (props) => {
   const { withToggle, i18nToggle = i18nToggleDefault, onToggle, ...other } = props;
@@ -30,11 +28,13 @@ const Password: FC<React.PropsWithChildren<PasswordProps>> = (props) => {
     <Input
       {...other}
       type={passwordVisible ? 'text' : 'password'}
-      action={withToggle && (
-        <Button asLink onClick={toggleHandler}>
-          {i18nToggle(passwordVisible)}
-        </Button>
-      )}
+      action={
+        withToggle && (
+          <Button asLink onClick={toggleHandler}>
+            {i18nToggle(passwordVisible)}
+          </Button>
+        )
+      }
     />
   );
 };
