@@ -6,11 +6,13 @@ export interface AccordionCollapsible extends HTMLAttributes<HTMLDivElement> {
   sectionKey: string;
 }
 
+const TIMEOUT = 20;
+
 const AccordionCollapsible: React.FC<React.PropsWithChildren<AccordionCollapsible>> = (props) => {
   const timeout = 300;
   const { sectionKey, children, ...other } = props;
   const [isExpanded, setIsExpanded] = useState(false);
-  const nodeRef = useRef<HTMLDivElement>(null);
+  const nodeRef = useRef<HTMLDivElement>(null as unknown as HTMLDivElement);
   const { activeKey } = useContext(AccordionContext);
 
   useEffect(() => {
@@ -25,46 +27,40 @@ const AccordionCollapsible: React.FC<React.PropsWithChildren<AccordionCollapsibl
     transition: `${timeout}ms cubic-bezier(0.4, 0, 0.2, 1)`,
   };
 
-  function onEnter() {
+  const onEnter = () => {
     if (nodeRef.current) {
       nodeRef.current.style.height = `${0}px`;
       nodeRef.current.style.visibility = 'visible';
     }
-  }
+  };
 
-  function onEntering() {
-    if (nodeRef.current) {
-      nodeRef.current.style.height = `${nodeRef.current.scrollHeight}px`;
-    }
-  }
+  const onEntering = () => {
+    if (nodeRef.current) nodeRef.current.style.height = `${nodeRef.current.scrollHeight}px`;
+  };
 
-  function onEntered() {
+  const onEntered = () => {
     if (nodeRef.current) {
       nodeRef.current.style.height = 'auto';
       nodeRef.current.style.overflow = 'visible';
     }
-  }
+  };
 
-  function onExit() {
+  const onExit = () => {
     if (nodeRef.current) {
       nodeRef.current.style.overflow = 'hidden';
       nodeRef.current.style.height = `${nodeRef.current.clientHeight}px`;
     }
-  }
+  };
 
-  function onExiting() {
+  const onExiting = () => {
     setTimeout(() => {
-      if (nodeRef.current) {
-        nodeRef.current.style.height = `${0}px`;
-      }
-    }, 20);
-  }
+      if (nodeRef.current) nodeRef.current.style.height = `${0}px`;
+    }, TIMEOUT);
+  };
 
-  function onExited() {
-    if (nodeRef.current) {
-      nodeRef.current.style.visibility = 'hidden';
-    }
-  }
+  const onExited = () => {
+    if (nodeRef.current) nodeRef.current.style.visibility = 'hidden';
+  };
 
   return (
     <Transition

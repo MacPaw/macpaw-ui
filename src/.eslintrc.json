@@ -1,6 +1,62 @@
 {
   "extends": [
     "@macpaw/eslint-config-react",
-    "@macpaw/eslint-config-typescript"
-  ]
+    "@macpaw/eslint-config-typescript",
+    "@macpaw/eslint-config-prettier"
+  ],
+  "rules": {
+    "no-param-reassign": [2, { "props": true, "ignorePropertyModificationsForRegex": ["(R|r)ef"] }],
+    "no-multiple-empty-lines": [2, { "max": 1, "maxBOF": 0, "maxEOF": 0 }],
+    "import/order": [2, {
+      "alphabetize": {
+        "order": "asc",
+        "caseInsensitive": true
+      },
+      "pathGroups": [
+        {
+          "pattern": "react",
+          "group": "builtin",
+          "position": "before"
+        },
+        {
+          "pattern": "react*",
+          "group": "builtin"
+        },
+        {
+          "pattern": "@macpaw/**",
+          "group": "internal",
+          "position": "before"
+        },
+        {
+          "pattern": "*.sass",
+          "group": "index",
+          "position": "after"
+        }
+      ],
+      "pathGroupsExcludedImportTypes": ["react"],
+      "groups": [
+        "builtin",
+        "external",
+        "internal",
+        "parent",
+        "sibling",
+        "index",
+        "object",
+        "type"
+      ]
+    }],
+    "@typescript-eslint/no-explicit-any": 2,
+    "no-magic-numbers": 0,
+    "@typescript-eslint/no-magic-numbers": [
+      2,
+      {
+        "ignore": [0, 1],
+        "ignoreEnums": true,
+        "ignoreNumericLiteralTypes": true,
+        "ignoreTypeIndexes": true
+      }
+    ],
+    "import/no-cycle": 2,
+    "react/react-in-jsx-scope": 0
+  }
 }
