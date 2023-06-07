@@ -1,10 +1,10 @@
-import React, { DetailedReactHTMLElement, FC, HTMLAttributes } from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 import cx from 'clsx';
 import NextComponent from './NextComponent';
 import PrevComponent from './PrevComponent';
 
 export interface PaginationProps extends HTMLAttributes<HTMLDivElement> {
-  renderItem: (n: number) => DetailedReactHTMLElement<{ children: JSX.Element; className: string }, HTMLElement>;
+  renderItem: (n: number) => JSX.Element;
   maxPage: number;
   currentPage: number;
   nextLabel?: string;
@@ -66,6 +66,7 @@ const Pagination: FC<React.PropsWithChildren<PaginationProps>> = (props) => {
             </div>
           );
 
+        // @ts-ignore
         return React.cloneElement(renderItem(n), {
           key,
           className: cx('pagination-page', currentPage === n && '-active'),

@@ -6,7 +6,7 @@ import Tag from '../Tag/Tag';
 import TagList from '../TagList/TagList';
 import { Error } from '../types';
 
-export interface MultiselectProps {
+export interface MultiselectProps extends ObjectLiteral {
   className?: string;
   placeholder?: string;
   scale?: 'medium';
