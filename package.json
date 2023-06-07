@@ -34,7 +34,7 @@
     "react-transition-group": "^4.4.0"
   },
   "devDependencies": {
-    "@babel/runtime": "^7.18.3",
+    "@babel/runtime": "^7.22.3",
     "@macpaw/eslint-config-react": "^2.0.1",
     "@macpaw/eslint-config-typescript": "^2.0.1",
     "@mdx-js/loader": "^2.1.1",
