@@ -6,8 +6,8 @@ export interface MacPawLogoProps extends HTMLAttributes<HTMLButtonElement> {
   className?: string;
   disableRotate?: boolean;
   component?: ReactNode | string;
-  pawProps?: ObjectLiteral;
-  textProps?: ObjectLiteral;
+  pawProps?: { [key: string]: any};
+  textProps?: { [key: string]: any};
   inline?: boolean;
   href?: string;
   target?: string;

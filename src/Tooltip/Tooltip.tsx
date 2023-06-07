@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FloatingArrow, Placement } from '@floating-ui/react';
 import cx from 'clsx';
+import { FloatingArrow, Placement } from '@floating-ui/react';
 import useTooltip from './useTooltip.hook';
 
 interface Tooltip {
@@ -21,21 +21,35 @@ const Tooltip: React.FC<React.PropsWithChildren<Tooltip>> = ({
   forceHide,
   openOnClick = false,
 }) => {
-  const messageStyles = maxWidth ? ({ width: maxWidth } as React.CSSProperties) : {};
+  const messageStyles = maxWidth
+    ? ({ width: maxWidth } as React.CSSProperties)
+    : {};
 
   const arrowRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const { setReference, setFloating, getReferenceProps, getFloatingProps, getArrowPosition, floatingStyles, context } =
-    useTooltip({ isForce: Boolean(forceShow || forceHide), arrowRef, openOnClick, position, isOpen, setIsOpen });
+  const {
+    setReference,
+    setFloating,
+    getReferenceProps,
+    getFloatingProps,
+    getArrowPosition,
+    floatingStyles,
+    context,
+  } = useTooltip({ isForce: Boolean(forceShow || forceHide), arrowRef, openOnClick, position, isOpen, setIsOpen  });
 
   useEffect(() => {
     setIsOpen(Boolean(forceShow && !forceHide));
   }, [forceShow, forceHide]);
 
+
   return (
     <>
-      <div className="tooltip-trigger" ref={setReference} {...getReferenceProps()}>
+      <div
+        className="tooltip-trigger"
+        ref={setReference}
+        {...getReferenceProps()}
+      >
         {children}
       </div>
       {isOpen && (

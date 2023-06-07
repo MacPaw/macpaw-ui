@@ -5,10 +5,9 @@ export interface LoaderProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
   inline?: boolean;
 }
-const DEFAULT_LOADER_SIZE = 75;
 
 const Loader: FC<React.PropsWithChildren<LoaderProps>> = (props) => {
-  const { size = DEFAULT_LOADER_SIZE, inline = false, className, ...other } = props;
+  const { size = 75, inline = false, className, ...other } = props;
 
   return (
     <div className={cx('loader', inline && '-inline', className)} {...other}>

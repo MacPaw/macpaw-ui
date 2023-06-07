@@ -6,7 +6,12 @@ export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Radio: FC<React.PropsWithChildren<RadioProps>> = (props) => {
-  const { className, error, children, ...other } = props;
+  const {
+    className,
+    error,
+    children,
+    ...other
+  } = props;
 
   return (
     <label className={cx('radio', className, error && '-error')}>
