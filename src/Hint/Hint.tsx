@@ -7,7 +7,13 @@ export interface HintProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 const Hint: FC<React.PropsWithChildren<HintProps>> = (props) => {
-  const { large, children, error, className, ...other } = props;
+  const {
+    large,
+    children,
+    error,
+    className,
+    ...other
+  } = props;
 
   const hintClassName = cx('hint', className, {
     '-large': large,

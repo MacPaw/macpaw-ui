@@ -11,7 +11,9 @@ const AccordionTrigger: React.FC<React.PropsWithChildren<AccordionTrigger>> = (p
   const { activeKey, onToggle } = useContext(AccordionContext);
   const onTrigger = (event: React.SyntheticEvent) => {
     onToggle(sectionKey === activeKey ? null : sectionKey);
-    if (onClick) onClick(event);
+    if (onClick) {
+      onClick(event);
+    }
   };
 
   return (
@@ -20,7 +22,9 @@ const AccordionTrigger: React.FC<React.PropsWithChildren<AccordionTrigger>> = (p
       tabIndex={0}
       onClick={onTrigger}
       onKeyPress={(event: React.KeyboardEvent) => {
-        if (event.key === 'Enter') onTrigger(event);
+        if (event.which === 13) {
+          onTrigger(event);
+        }
       }}
       {...other}
     >

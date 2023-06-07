@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { ToastContainer, toast, cssTransition } from 'react-toastify';
 import Button from '../Button/Button';
-import BlockIcon from '../Icons/jsx/BlockIcon';
-import CheckIcon from '../Icons/jsx/CheckIcon';
 import CloseIcon from '../Icons/jsx/CloseIcon';
+import CheckIcon from '../Icons/jsx/CheckIcon';
+import BlockIcon from '../Icons/jsx/BlockIcon';
 
 type NotificationType = 'success' | 'error';
 
@@ -34,12 +34,17 @@ const Notification: FC<React.PropsWithChildren<Notification>> = ({ type, childre
 );
 
 const NotificationsContainer: FC<React.PropsWithChildren<unknown>> = () => (
-  <ToastContainer className="notification-container" transition={transition} closeOnClick={false} autoClose={5000} />
+  <ToastContainer
+    className="notification-container"
+    transition={transition}
+    closeOnClick={false}
+    autoClose={5000}
+  />
 );
 
 export default NotificationsContainer;
 
-export const notify = (text: string | React.ReactNode, type: NotificationType) => {
+export function notify(text: string | React.ReactNode, type: NotificationType) {
   toast(<Notification type={type}>{text}</Notification>, {
     draggable: true,
     draggablePercent: 60,
@@ -49,4 +54,4 @@ export const notify = (text: string | React.ReactNode, type: NotificationType) =
   });
 
   return null;
-};
+}

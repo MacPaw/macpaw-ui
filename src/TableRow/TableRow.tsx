@@ -1,6 +1,7 @@
 import React, { FC, HTMLAttributes } from 'react';
 
-export interface TableRowProps extends HTMLAttributes<HTMLTableRowElement> {}
+export interface TableRowProps extends HTMLAttributes<HTMLTableRowElement> {
+}
 
 const TableRow: FC<React.PropsWithChildren<TableRowProps>> = (props) => {
   const { children, ...other } = props;

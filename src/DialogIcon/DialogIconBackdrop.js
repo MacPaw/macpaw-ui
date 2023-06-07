@@ -27,12 +27,7 @@ const DialogIconBackdrop = ({ className }) => (
       </linearGradient>
     </defs>
     <g fill="none" fillRule="evenodd">
-      <path
-        fill="url(#modal-backdrop-a)"
-        opacity=".227"
-        transform="rotate(45 43.97 16.97)"
-        d="M31.971 4.971h24v24h-24z"
-      />
+      <path fill="url(#modal-backdrop-a)" opacity=".227" transform="rotate(45 43.97 16.97)" d="M31.971 4.971h24v24h-24z" />
       <path
         fill="url(#modal-backdrop-b)"
         opacity=".167"
