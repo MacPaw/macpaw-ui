@@ -4,9 +4,9 @@ import Card from '../Icons/jsx/PaymentCard';
 import DinersClub from '../Icons/jsx/PaymentDinersClub';
 import Discover from '../Icons/jsx/PaymentDiscover';
 import JCB from '../Icons/jsx/PaymentJcb';
+import Mada from '../Icons/jsx/PaymentMada';
 import Maestro from '../Icons/jsx/PaymentMaestro';
 import Master from '../Icons/jsx/PaymentMaster';
-import Mada from '../Icons/jsx/PaymentMada';
 import PayPal from '../Icons/jsx/PaymentPaypal';
 import UnionPay from '../Icons/jsx/PaymentUnionPay';
 import Visa from '../Icons/jsx/PaymentVisa';
@@ -22,43 +22,36 @@ const CardType = {
   Mada: 'mada',
   DinersClub: 'diners_club',
   UnionPay: 'unionpay',
-  'Union_Pay': 'union_pay',
+  // eslint-disable-next-line camelcase
+  Union_Pay: 'union_pay',
   Paypal: 'paypal',
+};
+
+const PaymentComponents = {
+  [CardType.Master]: Master,
+  [CardType.Mastercard]: Master,
+  [CardType.Paypal]: PayPal,
+  [CardType.Amex]: Amex,
+  [CardType.DinersClub]: DinersClub,
+  [CardType.Discover]: Discover,
+  [CardType.JCB]: JCB,
+  [CardType.Maestro]: Maestro,
+  [CardType.UnionPay]: UnionPay,
+  [CardType.Union_Pay]: UnionPay,
+  [CardType.Visa]: Visa,
+  [CardType.Mada]: Mada,
 };
 
 export interface PaymentProps extends HTMLAttributes<SVGElement> {
   type?: typeof CardType[keyof typeof CardType];
 }
 
-const Payment: FC<React.PropsWithChildren<PaymentProps>> = (props) => {
-  const { type, ...other } = props;
+const Payment: FC<React.PropsWithChildren<PaymentProps>> = ({ type, ...other }) => {
+  const Component = type ? PaymentComponents[type] : null;
 
-  switch (type) {
-    case CardType.Paypal:
-      return <PayPal {...other} />;
-    case CardType.Amex:
-      return <Amex {...other} />;
-    case CardType.DinersClub:
-      return <DinersClub {...other} />;
-    case CardType.Discover:
-      return <Discover {...other} />;
-    case CardType.JCB:
-      return <JCB {...other} />;
-    case CardType.Maestro:
-      return <Maestro {...other} />;
-    case CardType.UnionPay:
-    case CardType.Union_Pay:
-      return <UnionPay {...other} />;
-    case CardType.Visa:
-      return <Visa {...other} />;
-    case CardType.Master:
-    case CardType.Mastercard:
-      return <Master {...other} />;
-    case CardType.Mada:
-      return <Mada {...other} />;
-    default:
-      return <Card {...other} />;
-  }
+  if (Component) return <Component {...other} />;
+
+  return <Card {...other} />;
 };
 
 export default Payment;

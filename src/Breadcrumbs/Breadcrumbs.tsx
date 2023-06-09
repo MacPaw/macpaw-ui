@@ -1,8 +1,7 @@
 import React, { FC, HTMLAttributes } from 'react';
 import cx from 'clsx';
 
-export interface BreadcrumbsProps extends HTMLAttributes<HTMLUListElement> {
-}
+export interface BreadcrumbsProps extends HTMLAttributes<HTMLUListElement> {}
 
 const Breadcrumbs: FC<React.PropsWithChildren<BreadcrumbsProps>> = (props) => {
   const { className, children, ...other } = props;

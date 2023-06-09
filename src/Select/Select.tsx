@@ -12,17 +12,7 @@ export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
 }
 
 const Select: FC<React.PropsWithChildren<SelectProps>> = (props) => {
-  const {
-    className,
-    selected,
-    disabled,
-    error,
-    scale,
-    style,
-    children,
-    label,
-    ...other
-  } = props;
+  const { className, selected, disabled, error, scale, style, children, label, ...other } = props;
 
   const classNames = cx('select', className, {
     '-error': Boolean(error),
@@ -35,11 +25,20 @@ const Select: FC<React.PropsWithChildren<SelectProps>> = (props) => {
 
   return (
     <label className={classNames} style={style}>
-      {label && <span className="h6">{label}{`${other.required ? ' *' : ''}`}</span>}
+      {label && (
+        <span className="h6">
+          {label}
+          {`${other.required ? ' *' : ''}`}
+        </span>
+      )}
       <select value={selected} disabled={disabled} {...other}>
         {children}
       </select>
-      {showHintError && (<Hint style={{ marginTop: 6 }} error>{error}</Hint>)}
+      {showHintError && (
+        <Hint style={{ marginTop: 6 }} error>
+          {error}
+        </Hint>
+      )}
     </label>
   );
 };
