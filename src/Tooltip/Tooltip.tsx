@@ -21,7 +21,7 @@ const Tooltip: React.FC<React.PropsWithChildren<Tooltip>> = ({
   forceHide,
   openOnClick = false,
 }) => {
-  const messageStyles = maxWidth ? ({ width: maxWidth } as React.CSSProperties) : {};
+  const messageStyles = maxWidth ? ({ width: maxWidth, maxWidth } as React.CSSProperties) : {};
 
   const arrowRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
