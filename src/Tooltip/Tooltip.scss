@@ -13,7 +13,7 @@
     transition: all 0.1s linear;
 
     &.-custom-width {
-      min-width: max-content;
+      min-width: min-content;
       max-width: auto;
     }
   }
