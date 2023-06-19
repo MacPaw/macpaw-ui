@@ -71,6 +71,23 @@ jobs:
       - name: Run typescript compile
         run: yarn tsc --noEmit
 
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    needs: [install]
+    continue-on-error: false
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: ui-kit-artifact
+
+      - name: Unpack artifact
+        run: tar xf artifact.tar.gz
+
+      - name: Run typescript compile
+        run: npm run test
+
   build:
     name: Build
     runs-on: ubuntu-latest

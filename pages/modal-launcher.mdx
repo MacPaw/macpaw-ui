@@ -1,0 +1,209 @@
+import {
+  ModalLauncherProvider,
+  useModals,
+  ModalLauncher,
+} from '../src/ModalLauncher';
+import { DialogContent, DialogActions, Button } from '../src/ui';
+
+## Modal Launcher
+
+### Example of usage
+
+export const Modal1 = ({ title = 'Modal 1' }) => { 
+    const { closeModal } = useModals();
+
+    return (
+        <>
+            <DialogContent>
+                <h3>{title}</h3>
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={() => closeModal('Modal1')}>
+                    Close Modal 1
+                </Button>
+            </DialogActions>
+        </>
+    );
+}
+
+export const Modal2 = () => { 
+    const { closeModal, openModal } = useModals();
+
+    return (
+        <>
+            <DialogContent>
+                <h3>Modal 2</h3>
+            </DialogContent>
+            <DialogActions>
+                <Button outline onClick={() => openModal({ name: 'Modal3' })}>
+                    Open Modal 3
+                </Button>
+                <Button onClick={() => closeModal('Modal2')}>
+                    Close Modal 2
+                </Button>
+            </DialogActions>
+        </>
+    );
+}
+
+export const Modal3 = () => { 
+    const { closeModal, closeAllModals } = useModals();
+
+    return (
+        <>
+            <DialogContent>
+               <h3>Modal 3</h3>
+            </DialogContent>
+            <DialogActions>
+                <Button outline onClick={() => closeAllModals()}>
+                    Close All Modals
+                </Button>
+                <Button onClick={() => closeModal('Modal3')}>
+                    Close Modal 3
+                </Button>
+            </DialogActions>
+        </>
+    );
+}
+
+export const Buttons = () => {
+    const { openModal } = useModals();
+
+    return (
+        <div style={{ marginBottom: 40 }}>
+            <Button style={{ margin: 8 }} onClick={() => openModal({ name: 'Modal1' })}>Open Modal 1</Button>
+            <Button style={{ margin: 8 }} onClick={() => openModal({ name: 'Modal2' })}>Open Modal 2</Button>
+        </div>
+    );
+}
+
+export const Example = () => {
+    const modalComponents = {
+        Modal1,
+        Modal2,
+        Modal3,
+    };
+
+    return (
+        <ModalLauncherProvider modalComponents={modalComponents}>
+            <Buttons />
+            <ModalLauncher />
+        </ModalLauncherProvider>
+    );
+};
+
+<Example />
+
+### How to add Modal Laucher to the project?
+
+#### 1. Create mapping modal name to modal component
+
+<div style={{ marginBottom: -24 }}>For example:</div>
+
+```
+const modalComponents = {
+    UpsellModal,
+    RemoveMemberDeviceModal,
+    RemoveDeviceModal,
+};
+```
+
+#### 2. Add Modal Laucner Provider to your app
+
+<div style={{ marginBottom: -24 }}>Add modalComponents as a prop to provider</div>
+
+```
+<ModalLauncherProvider modalComponents={modalComponents}>
+    {chidlren}
+</ModalLauncherProvider>
+```
+
+<div style={{ marginTop: -40, marginBottom: 64 }}>Modal provider add context to your app. With this context is easy to open or close modals</div>
+
+#### 3. Add ModalLauncher component inside ModalLauncherProvider
+
+<div style={{ marginBottom: -24 }}>Modal Launcer component create base wrap for all modals from modalComponents</div>
+
+```
+<ModalLauncherProvider modalComponents={modalComponents}>
+    {chidlren}
+    <ModalLauncher />
+</ModalLauncherProvider>
+```
+
+#### 4. Use useModals hook for manipulating modals
+
+<div style={{ marginBottom: -24 }}>If you want to open some modal, you should use <strong>openModal</strong> method</div>
+
+```
+const { openModal } = useModals();
+...
+<Button onClick={() => openModal({ name: 'UpsellModal' })}>Open UpsellModal</Button>
+```
+
+<div style={{ marginBottom: -24, marginTop: -40 }}>If you want to close some modal, you should use <strong>closeModal</strong> method</div>
+
+```
+const { closeModal } = useModals();
+...
+<Button onClick={() => closeModal('UpsellModal')}>Open UpsellModal</Button>
+```
+
+<div style={{ marginBottom: -24, marginTop: -40 }}>If you want to all stack of opened modals, you should use <strong>closeAllModals</strong> method</div>
+
+```
+const { closeAllModals } = useModals();
+...
+<Button onClick={() => closeAllModals()}>Close All Modals</Button>
+```
+
+### Detailed look for openModal method
+
+The <strong>openModal</strong> method is helpful for opening modal components.
+
+Also, with this method we can pass <strong>props</strong> to the modal,
+set additional <strong>styles</strong> and <strong>classNames</strong>,
+and call additional <strong>onCloseModal</strong> method
+
+<div style={{ marginTop: 16 }}>For example, lets open modal1 from example above with cutom title:</div>
+
+export const ShowModalButton = (props = {}) => {
+    const { openModal } = useModals();
+
+    return (
+        <div style={{ marginBottom: 40 }}>
+            <Button style={{ margin: 8 }} onClick={() => openModal({ name: 'Modal1', props })}>Open Modal 1</Button>
+        </div>
+    );
+}
+
+export const CutomPropsExample = (props = {}) => {
+    const modalComponents = { Modal1 };
+
+    return (
+        <ModalLauncherProvider modalComponents={modalComponents}>
+            <ShowModalButton {...props} />
+            <ModalLauncher />
+        </ModalLauncherProvider>
+    );
+};
+
+<CutomPropsExample title="Custom Title" />
+
+<div style={{ marginBottom: -24, marginTop: -40 }}>Here is the code for method <strong>openModal</strong> that describe current behavior:</div>
+
+```
+<Button onClick={() => openModal({ name: 'Modal1', props: { title: 'Custom Title' }})}>Open Modal1</Button>
+```
+
+<div style={{ marginBottom: -24, marginTop: -40 }}>Interface that describe the input params for open modal method</div>
+
+```
+export interface ModalItem {
+  name: string;
+  props?: ObjectLiteral;
+  style?: ObjectLiteral;
+  className?: string;
+  onCloseModal?: () => void;
+}
+```
