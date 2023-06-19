@@ -11,14 +11,15 @@ npm install --save @macpaw/macpaw-ui
 or with yarn:
 
 ```bash
-    yarn add @macpaw/macpaw-ui
+yarn add @macpaw/macpaw-ui
 ```
 
 And import stylesheets manually:
 
 ```jsx
-import '@macpaw/macpaw-ui/lib/ui.css'
+import '@macpaw/macpaw-ui/lib/ui.css';
 ```
+
 ## Adding new Component
 
 - Add Component's JSX and styles to [src/%ComponentName%](/src) directory
@@ -41,9 +42,9 @@ import '@macpaw/macpaw-ui/lib/ui.css'
 Package published with Github Actions:
 
 - Update version in [package.json](package.json) file
-    - `npm run version:patch` - for patch update e.g. X.X.*1*
-    - `npm run version:minor` - for minor update e.g. X.*1*.0
-    - `npm run version:major` - for minor update e.g. *1*.0.0
+  - `npm run version:patch` - for patch update e.g. X.X._1_
+  - `npm run version:minor` - for minor update e.g. X._1_.0
+  - `npm run version:major` - for minor update e.g. _1_.0.0
 - Create new release at Github
 
 ## Host

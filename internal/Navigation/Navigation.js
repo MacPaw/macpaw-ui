@@ -32,6 +32,7 @@ const pages = [
   'table',
   'tooltip',
   'typography',
+  'modal-launcher',
 ];
 
 const Navigation = () => (

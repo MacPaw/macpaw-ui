@@ -41,3 +41,4 @@ export { default as TagInput, TagInputListItem } from './TagInput/TagInput';
 export { default as Switch } from './Switch/Switch';
 export { default as DatePicker } from './DatePicker/DatePicker';
 export { Tab, TabList, TabPanel, TabsProvider, useTabsContext } from './Tabs';
+export { ModalLauncher, ModalLauncherProvider, useModals } from './ModalLauncher';
