@@ -7,7 +7,7 @@
     display: block;
 
     &:hover + .tagList {
-      border-color: var(--color-black)
+      border-color: var(--color-black);
     }
   }
 
@@ -54,13 +54,13 @@
     margin: 0 auto;
     padding: 8px 10px;
     cursor: text;
-    transition: border-color 200ms cubic-bezier(.25, .1, .25, 1);
-    border: 2px solid var(--color-black-04);
+    transition: border-color 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    border: 2px solid var(--color-black-08);
     border-radius: 8px;
     flex-wrap: wrap;
 
     &:hover {
-      border-color: var(--color-black)
+      border-color: var(--color-black);
     }
 
     &:focus-within {

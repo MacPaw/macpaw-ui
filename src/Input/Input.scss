@@ -61,19 +61,20 @@
     display: block;
   }
 
-  input, textarea {
+  input,
+  textarea {
     width: 100%;
     padding: 12px 18px 13px;
     border-radius: 8px;
     font-size: 16px;
     font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
     line-height: 1.2;
-    border: 2px solid var(--color-black-04);
+    border: 2px solid var(--color-black-08);
     background: var(--color-white);
     transition: border-color 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
 
     &:hover {
-      border-color: var(--color-black)
+      border-color: var(--color-black);
     }
 
     &::placeholder {
