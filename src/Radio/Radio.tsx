@@ -10,7 +10,7 @@ const Radio: FC<React.PropsWithChildren<RadioProps>> = (props) => {
 
   return (
     <label className={cx('radio', className, error && '-error')}>
-      <input type="radio" {...other} />
+      <input type="radio" {...other} className={cx('radio__input', 'radio__input_default', error && '-error')} />
       {children}
     </label>
   );
