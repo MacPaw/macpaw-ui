@@ -5,15 +5,55 @@
   cursor: pointer;
   user-select: none;
 
-  input {
-    margin-right: 12px;
+  &__input[type=radio].radio__input_default {
+    color: var(--color-black-16);
 
-    &[disabled] {
-      cursor: not-allowed;
+    &:checked, &:hover {
+      color: var(--color-secondary);
     }
   }
 
-  &.-error {
+  &.-error, .-error[type=radio] {
     color: var(--color-error);
+    cursor: not-allowed;
+
+    &:hover, &:checked {
+      color: var(--color-error);
+    }
+  }
+
+  input[type=radio] {
+    width: 1em;
+    height: 1em;
+    margin: 0;
+    margin-right: 12px;
+    font: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+    color: currentColor;
+    background-color: transparent;
+    border: 0.125em solid currentColor;
+    border-radius: 50%;
+    transition: color .3s;
+
+    &:checked {
+      border: 0.3125em solid currentColor;
+    }
+
+    &:focus-visible {
+      outline: 0.15em solid color-mix(in srgb, currentColor 30%, transparent);
+      outline-offset: 0;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: var(--color-black-16);
+      border: 0;
+
+      &:checked {
+        background-color: transparent;
+        border: 0.125em solid var(--color-black-16);
+      }
+    }
   }
 }
