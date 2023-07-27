@@ -38,7 +38,7 @@
     "react-transition-group": "^4.4.0"
   },
   "devDependencies": {
-    "@babel/runtime": "^7.18.3",
+    "@babel/runtime": "^7.22.6",
     "@macpaw/eslint-config-prettier": "^1.1.0",
     "@macpaw/eslint-config-react": "^3.1.0",
     "@macpaw/eslint-config-typescript": "^3.1.0",
