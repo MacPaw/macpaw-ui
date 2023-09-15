@@ -1,0 +1,63 @@
+name: "Publish package to registry"
+description: "Publishes the package to the registry"
+inputs:
+  node-version:
+    description: 'The version of Node.js to use'
+    required: true
+  node-cache:
+    description: 'The cache key to use for caching Node.js'
+    required: false
+  package-manager:
+    description: 'The package manager to use'
+    required: false
+    default: 'npm'
+  registry-url:
+    description: 'The registry URL to use'
+    required: false
+  artifact-name:
+    description: 'The name of the artifact to download'
+    required: false
+    default: 'package-artifact'
+  scope:
+    description: 'The scope to use'
+    required: false
+    default: ''
+  auth-token:
+    description: 'The auth token to use'
+    required: true
+  use-public-flag:
+    description: 'Whether to use the public flag'
+    required: false
+    default: false
+
+runs:
+  using: composite
+  steps:
+    - name: Prepare node
+      uses: ./.github/actions/prepare-node
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: ${{ inputs.node-cache }}
+        registry-url: ${{ inputs.registry-url }}
+        install-dependencies: false
+        scope: ${{ inputs.scope }}
+
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: ${{ inputs.artifact-name }}
+
+    - name: Unpack artifact
+      shell: bash
+      run: tar xf artifact.tar.gz
+
+    - name: Publish
+      shell: bash
+      run: |
+        if [ "${{ inputs.use-public-flag }}" = "true" ]; then
+          npm publish --access public
+        else
+          npm publish
+        fi
+      env:
+        NODE_AUTH_TOKEN: ${{ inputs.auth-token }}
