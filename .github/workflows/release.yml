@@ -1,0 +1,96 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  release:
+    name: Create release
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    outputs:
+      releaseReady: ${{ steps.releaseOutputs.outputs.releaseReady }}
+    steps:
+      - name: Cancel previous jobs
+        uses: styfle/cancel-workflow-action@0.11.0
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Make a release if needed
+        uses: ./.github/actions/release
+        id: release
+        with:
+          node-version: 16
+          release-pr-title: 'chore(release): :package: version update for packages'
+          release-commit-message: 'chore(release): version update for packages'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          release-command: 'changes:release'
+
+      - name: Generate outputs
+        id: releaseOutputs
+        if: steps.release.outputs.release-ready == 'true'
+        run: echo "releaseReady=true" >> $GITHUB_OUTPUT
+
+  prepare:
+    name: Prepare packages
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    needs: release
+    if: ${{ needs.release.outputs.releaseReady == 'true' }}
+    steps:
+      - name: Cancel previous jobs
+        uses: styfle/cancel-workflow-action@0.11.0
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Prepare
+        uses: ./.github/actions/prepare-packages
+        with:
+          node-version: 18
+          build-command: 'lib'
+
+  publish-npm:
+    name: Publish to NPM Registry
+    needs: prepare
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    steps:
+      - name: Cancel previous jobs
+        uses: styfle/cancel-workflow-action@0.11.0
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Publish to NPM
+        uses: ./.github/actions/publish
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org/'
+          artifact-name: 'package-artifact'
+          scope: '@macpaw'
+          auth-token: ${{ secrets.NPM_TOKEN }}
+
+  publish-github:
+    name: Publish to Github Registry
+    needs: prepare
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    steps:
+      - name: Cancel previous jobs
+        uses: styfle/cancel-workflow-action@0.11.0
+      
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Publish to NPM
+        uses: ./.github/actions/publish
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/
+          artifact-name: 'package-artifact'
+          scope: '@macpaw'
+          auth-token: ${{ secrets.GITHUB_TOKEN }}

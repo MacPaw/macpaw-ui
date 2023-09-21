@@ -1,0 +1,62 @@
+name: "Release package action"
+description: "Matches changesets if they are in the release branch, creates a release PR with version updates, otherwise if there are versions update, it will create a release."
+inputs:
+  node-version:
+    description: 'The version of Node.js to use'
+    required: true
+  node-cache:
+    description: 'The cache key to use for caching Node.js'
+    required: false
+  package-manager:
+    description: 'The package manager to use'
+    required: false
+    default: 'npm'
+  registry-url:
+    description: 'The registry URL to use'
+    required: false
+  release-pr-title:
+    description: 'The title of the release PR'
+    required: false
+    default: 'ci(changesets): :package: version packages'
+  release-commit-message:
+    description: 'The commit message of the release PR'
+    required: false
+    default: 'ci(changesets): version packages'
+  github-token:
+    description: 'The github token to use'
+    required: true
+  release-command: 
+    description: 'The command to use to release'
+    required: false
+    default: 'release'
+outputs:
+  release-ready:
+    description: "Random number"
+    value: ${{ steps.output-generator.outputs.release-ready }}
+runs:
+  using: composite
+  steps:    
+    - name: Prepare node
+      uses: ./.github/actions/prepare-node
+      id: prepare-node
+      with:
+        node-version: ${{ inputs.node-version }}
+        node-cache: ${{ inputs.node-cache }}
+        package-manager: ${{ inputs.package-manager }}
+        registry-url: ${{ inputs.registry-url }}
+
+    - name: Create Release
+      id: changesets
+      uses: changesets/action@v1
+      with:
+        publish: ${{ inputs.package-manager == 'npm' && format('npm run {0}', inputs.release-command) || format('{0} {1}', inputs.package-manager, inputs.release-command) }}
+        title: ${{ inputs.release-pr-title }}
+        commit: ${{ inputs.release-commit-message }}
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+
+    - name: Generate outputs
+      shell: bash
+      id: output-generator
+      if: steps.changesets.outputs.published == 'true'
+      run: echo "release-ready=true" >> $GITHUB_OUTPUT

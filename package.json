@@ -15,9 +15,8 @@
     "lib:css": "sass src/ui.scss lib/ui.css",
     "lib": "yarn lib:css && yarn lib:js",
     "deploy:s3": "deploy-aws-s3-cloudfront --non-interactive --source=out --bucket=ui.macpaw.com --destination=/ --distribution=E2NQDOZEC6GH2E --acl **:public-read",
-    "version:patch": "npm --no-git-tag-version version patch",
-    "version:minor": "npm --no-git-tag-version version minor",
-    "version:major": "npm --no-git-tag-version version major"
+    "changes:release": "changeset tag",
+    "changes:add": "changeset add"
   },
   "engines": {
     "node": ">= 16"
@@ -39,6 +38,7 @@
   },
   "devDependencies": {
     "@babel/runtime": "^7.18.3",
+    "@changesets/cli": "^2.26.2",
     "@macpaw/eslint-config-prettier": "^1.1.0",
     "@macpaw/eslint-config-react": "^3.1.0",
     "@macpaw/eslint-config-typescript": "^3.1.0",
