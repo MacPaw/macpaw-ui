@@ -32,7 +32,6 @@ inputs:
   gpg-key-base64:
     description: 'The base64 encoded GPG key to use'
     required: true
-    default: ''
 outputs:
   release-ready:
     description: "Random number"
