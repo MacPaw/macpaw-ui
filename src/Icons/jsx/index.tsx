@@ -55,3 +55,4 @@ export { default as StoreIcon } from './StoreIcon';
 export { default as UserIcon } from './UserIcon';
 export { default as WarningIcon } from './WarningIcon';
 export { default as CheckCircleIcon } from './CheckCircle';
+export { default as AppStoreIcon } from './AppStoreIcon';
