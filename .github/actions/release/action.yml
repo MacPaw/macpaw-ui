@@ -29,13 +29,22 @@ inputs:
     description: 'The command to use to release'
     required: false
     default: 'release'
+  gpg-key-base64:
+    description: 'The base64 encoded GPG key to use'
+    required: true
+    default: ''
 outputs:
   release-ready:
     description: "Random number"
     value: ${{ steps.output-generator.outputs.release-ready }}
 runs:
   using: composite
-  steps:    
+  steps: 
+    - name: Configure git user
+      uses: ./.github/actions/github-config
+      with:
+        gpg-key-base64: ${{ inputs.gpg-key-base64 }}
+
     - name: Prepare node
       uses: ./.github/actions/prepare-node
       id: prepare-node
@@ -52,6 +61,7 @@ runs:
         publish: ${{ inputs.package-manager == 'npm' && format('npm run {0}', inputs.release-command) || format('{0} {1}', inputs.package-manager, inputs.release-command) }}
         title: ${{ inputs.release-pr-title }}
         commit: ${{ inputs.release-commit-message }}
+        setupGitUser: false
       env:
         GITHUB_TOKEN: ${{ inputs.github-token }}
 
