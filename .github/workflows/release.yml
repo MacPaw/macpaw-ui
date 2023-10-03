@@ -28,6 +28,7 @@ jobs:
           release-commit-message: 'chore(release): version update for packages'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           release-command: 'changes:release'
+          gpg-key-base64: ${{ secrets.CI_GITHUB_GPG_KEY_BASE64 }}
 
       - name: Generate outputs
         id: releaseOutputs
