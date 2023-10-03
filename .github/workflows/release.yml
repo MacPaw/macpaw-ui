@@ -18,6 +18,12 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v3
+      
+      - name: Configure git user
+        uses: ./.github/actions/github-config
+        with:
+          gpg-key-base64: ${{ secrets.CI_GITHUB_GPG_KEY_BASE64 }}
+          gpg-key-signing: ${{ secrets.CI_GITHUB_GPG_KEY_SIGNING }}
 
       - name: Make a release if needed
         uses: ./.github/actions/release
@@ -28,8 +34,7 @@ jobs:
           release-commit-message: 'chore(release): version update for packages'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           release-command: 'changes:release'
-          gpg-key-base64: ${{ secrets.CI_GITHUB_GPG_KEY_BASE64 }}
-
+          
       - name: Generate outputs
         id: releaseOutputs
         if: steps.release.outputs.release-ready == 'true'
@@ -51,7 +56,7 @@ jobs:
       - name: Prepare
         uses: ./.github/actions/prepare-packages
         with:
-          node-version: 18
+          node-version: 16
           build-command: 'lib'
 
   publish-npm:
