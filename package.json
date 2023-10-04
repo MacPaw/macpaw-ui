@@ -32,12 +32,12 @@
   },
   "peerDependencies": {
     "clsx": "^1.1.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-transition-group": "^4.4.0"
   },
   "devDependencies": {
-    "@babel/runtime": "^7.18.3",
+    "@babel/runtime": "^7.23.1",
     "@changesets/cli": "^2.26.2",
     "@macpaw/eslint-config-prettier": "^1.1.0",
     "@macpaw/eslint-config-react": "^3.1.0",
@@ -57,7 +57,7 @@
     "@types/lodash.unionwith": "^4.6.7",
     "@types/node": "^16.4.3",
     "@types/react": "^18.0.10",
-    "@types/react-dom": "^18.0.5",
+    "@types/react-dom": "^18.2.8",
     "@types/react-transition-group": "^4.4.0",
     "clsx": "^1.1.1",
     "deploy-aws-s3-cloudfront": "^3.7.0",
