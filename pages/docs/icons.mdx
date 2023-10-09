@@ -1,0 +1,14 @@
+import { useEffect } from 'react';
+import IconsGrid from '../../internal/IconsGrid/IconsGrid';
+
+## UI Icons
+
+<IconsGrid filterFunction={(key) => key.endsWith('Icon')} style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(24px, 1fr))' }} />
+
+## Languages Icons
+
+<IconsGrid filterFunction={(key) => key.startsWith('Language')} style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(22px, 1fr))' }} />
+
+## Payment Icons
+
+<IconsGrid filterFunction={(key) => key.startsWith('Payment')} style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(70px, 1fr))' }} />

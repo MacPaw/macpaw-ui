@@ -1,0 +1,33 @@
+import { Pagination } from '../../src/ui';
+
+# Pagination
+
+<Pagination maxPage={10} currentPage={2} renderItem={(n) => (<a href={`#page=${n}`}>{n}</a>)} />
+
+```
+<Pagination maxPage={10} currentPage={2} renderItem={(n) => (<a href={`#page=${n}`}>{n}</a>)} />
+```
+
+## Left range
+
+<Pagination maxPage={10} currentPage={1} renderItem={(n) => (<a href={`#page=${n}`}>{n}</a>)} />
+
+```
+<Pagination maxPage={10} currentPage={1} renderItem={(n) => (<a href={`#page=${n}`}>{n}</a>)} />
+```
+
+## Right range
+
+<Pagination maxPage={10} currentPage={10} renderItem={(n) => (<a href={`#page=${n}`}>{n}</a>)} />
+
+```
+<Pagination maxPage={10} currentPage={10} renderItem={(n) => (<a href={`#page=${n}`}>{n}</a>)} />
+```
+
+## Small range
+
+<Pagination maxPage={3} currentPage={2} renderItem={(n) => (<a href={`#page=${n}`}>{n}</a>)} />
+
+```
+<Pagination maxPage={3} currentPage={2} renderItem={(n) => (<a href={`#page=${n}`}>{n}</a>)} />
+```

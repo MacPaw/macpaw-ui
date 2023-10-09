@@ -1,51 +1,36 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './Navigation.module.css';
+import { pages } from '../config/pages';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
-const pages = [
-  'accordion',
-  'banner',
-  'breadcrumbs',
-  'button',
-  'card-mask',
-  'checkbox',
-  'colors',
-  'date-picker',
-  'dialog',
-  'dropdown',
-  'grid',
-  'icons',
-  'input',
-  'language-switcher',
-  'logo',
-  'loader',
-  'notification',
-  'pagination',
-  'panel',
-  'payment',
-  'radio',
-  'select',
-  'switch',
-  'tabs',
-  'tag',
-  'tag-input',
-  'table',
-  'tooltip',
-  'typography',
-  'modal-launcher',
-];
-
-const Navigation = () => (
-  <div className={styles.navigation}>
-    <div className={styles.projectName}>MacPaw UI Kit</div>
-    <div className={styles.navigationLinks}>
-      {pages.sort().map((link) => (
-        <Link href={`/${link}/`} key={link}>
-          <a className={styles.navigationLink}>{link.replace('-', ' ')}</a>
-        </Link>
-      ))}
+const Navigation = () => {
+  return (
+    <div className={styles.navigation}>
+      <Link href="/">
+        <a className={styles.projectLink}>MacPaw UI Kit</a>
+      </Link>
+      <div className={styles.navigationLinks}>
+        <ActiveLink
+          href={'/docs'}
+          className={styles.navigationLink}
+          activeClassName={styles.activeLink}
+        >
+          Installation
+        </ActiveLink>
+        {pages.sort().map((link) => (
+          <ActiveLink
+            href={`/docs/${link}`}
+            className={styles.navigationLink}
+            activeClassName={styles.activeLink}
+            key={link}
+          >
+            {link.replace('-', ' ')}
+          </ActiveLink>
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Navigation;

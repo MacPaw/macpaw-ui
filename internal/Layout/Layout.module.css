@@ -12,3 +12,12 @@
 .paragraph {
     margin: 0;
 }
+
+@media screen and (max-width: 1280px){
+    .layout {
+        flex-direction: column;
+    }
+    .content {
+        max-width: 100%;
+    }
+}
