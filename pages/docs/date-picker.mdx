@@ -1,0 +1,369 @@
+import React from 'react';
+import { DatePicker } from '../../src/ui';
+
+# Date picker
+
+## Import
+
+```
+import { DatePicker } from '@macpaw/macaw-ui'; 
+```
+
+## Usage
+
+### Default
+
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+/>
+
+
+```
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+/>
+
+```
+
+### Selection mode
+
+***Single date picker.*** 
+
+This is the default mode.
+
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  selectionMode="single"
+/>
+
+```
+<DatePicker
+  label="Select date range"
+  placeholder="Select date"
+  selectionMode="single"
+/>
+```
+
+***Multiple date picker.*** 
+
+This mode allows to select multiple dates.
+
+<DatePicker
+  label="Select dates"
+  placeholder="Select date"
+  selectionMode="multiple"
+  closeOnSelect={false}
+/>
+
+```
+<DatePicker
+  label="Select date range"
+  placeholder="Select date"
+  selectionMode="multiple"
+/>
+```
+
+***Range date picker.*** 
+
+This mode allows to select a range of dates.
+
+<DatePicker
+  label="Select date range"
+  placeholder="Select date"
+  selectionMode="range"
+  closeOnSelect={false}
+/>
+
+```
+<DatePicker
+  label="Select date range"
+  placeholder="Select date"
+  selectionMode="range"
+/>
+```
+
+
+### Scale
+
+<DatePicker
+  placeholder="Select date"
+  scale="big"
+/>
+<br/>
+<DatePicker
+  placeholder="Select date"
+  scale="medium"
+/>
+<br/>
+<DatePicker
+  placeholder="Select date"
+  scale="small"
+/>
+
+```
+<DatePicker
+  placeholder="Select date"
+  scale="big"
+/>
+
+<DatePicker
+  placeholder="Select date"
+  scale="medium"
+/>
+
+<DatePicker
+  placeholder="Select date"
+  scale="small"
+/>
+
+```
+
+### Opening on any side
+
+Calendar can be opened on **top**, **bottom**, **center** of the input or in the automatic mode on **top** or **bottom**.
+
+Opening in automatic mode is the default mode.
+
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  openSite="auto"
+/>
+
+```
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  openSite="auto"
+/>
+```
+
+**Opening on top.**
+
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  openSite="top"
+/>
+
+```
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  openSite="top"
+/>
+```
+
+**Opening on bottom.**
+
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  openSite="bottom"
+/>
+
+```
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  openSite="bottom"
+/>
+```
+
+**Opening in the center.**
+
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  openSite="center"
+/>
+
+```
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  openSite="center"
+/>
+```
+
+### Formatting
+
+You able to format the date using format and dateFormat props.
+
+- **formatter** - the function that gets selected value as parameter and should return formatted string value.
+- **dateFormat** - the date formatting pattern that will be used to format the date. This prop is used only if ***formatter***  is not provided. You can use any of the [formatting tokens](https://date-fns.org/v2.0.0-alpha.27/docs/format) to format the date.
+
+<DatePicker
+  value={new Date()}
+  label="Select date"
+  placeholder="Select date"
+  dateFormat="dd.MM.yyyy"
+/>
+
+```
+<DatePicker
+  value={new Date()}
+  label="Select date"
+  placeholder="Select date"
+  dateFormat="dd.MM.yyyy"
+/>
+```
+
+<DatePicker
+  value={new Date()}
+  label="Select date"
+  placeholder="Select date"
+  dateFormat="P"
+/>
+
+```
+<DatePicker
+  value={new Date()}
+  label="Select date"
+  placeholder="Select date"
+  dateFormat="P"
+/>
+```
+
+export const formatDate = (date) => {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  return `Day: ${day}, Month: ${month}, Year: ${year}`;
+};
+
+<DatePicker
+  value={new Date()}
+  label="Select date"
+  placeholder="Select date"
+  formatter={formatDate}
+/>
+
+```
+const formatDate = (date) => {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  return `Day: ${day}, Month: ${month}, Year: ${year}`;
+};
+
+<DatePicker
+  value={new Date()}
+  label="Select date"
+  placeholder="Select date"
+  formatter={formatDate}
+/>
+```
+
+### Default month
+
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  defaultMonth={new Date(2019, 0)}
+/>
+
+```
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  defaultMonth={new Date(2019, 0, 1)}
+/>
+```
+
+### Date ranges
+
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  fromYear={2018}
+  toYear={2020}
+/>
+
+```
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  fromYear={2018}
+  toYear={2020}
+/>
+```
+
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  fromDate={new Date(2018, 0, 1)}
+  toDate={new Date(2020, 2, 14)}
+/>
+
+```
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  fromDate={new Date(2018, 0, 1)}
+  toDate={new Date(2020, 2, 14)}
+/>
+```
+
+### Navigation
+
+**Paginated navigation.**
+
+This is the default mode.
+
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  navigation="pagination"
+/>
+
+```
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  navigation="pagination"
+/>
+```
+
+**Dropdown navigation.**
+
+This mode allows to select a year and a month.
+
+**NOTE:** to use this mode you should provide ***fromYear*** and ***toYear*** props.
+
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  fromYear={2015}
+  toYear={2025} 
+  navigation="dropdown"
+/>
+
+```
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  fromYear={2015}
+  toYear={2025} 
+  navigation="dropdown"
+/>
+```
+
+**Disabled navigation.**
+
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  navigation="disabled"
+/>
+
+```
+<DatePicker
+  label="Select date"
+  placeholder="Select date"
+  navigation="disabled"
+/>
+```

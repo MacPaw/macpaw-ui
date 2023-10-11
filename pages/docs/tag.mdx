@@ -1,0 +1,85 @@
+import { Tag, TagList } from '../../src/ui';
+
+# Tag
+
+<Tag>Affiliate Manager</Tag>
+
+```
+<Tag>Affiliate Manager</Tag>
+```
+
+## With Remove Button
+
+<Tag onRemove={() => alert('remove event')}>Support</Tag>
+
+```
+<Tag onRemove={() => alert('remove event')}>Support</Tag>
+```
+
+## TagList
+
+<TagList style={{ width: 300 }}>
+    <Tag>Kyiv</Tag>
+    <Tag>Kharkiv</Tag>
+    <Tag>Odesa</Tag>
+    <Tag>Dnipro</Tag>
+    <Tag>Donetsk</Tag>
+    <Tag>Zaporizhzhia</Tag>
+    <Tag>Lviv</Tag>
+    <Tag>Kryvyi Rih</Tag>
+    <Tag>Mykolaiv</Tag>
+    <Tag>Mariupol</Tag>
+</TagList>
+
+```
+<TagList style={{ width: 300 }}>
+    <Tag>Kyiv</Tag>
+    <Tag>Kharkiv</Tag>
+    <Tag>Odesa</Tag>
+    <Tag>Dnipro</Tag>
+    <Tag>Donetsk</Tag>
+    <Tag>Zaporizhzhia</Tag>
+    <Tag>Lviv</Tag>
+    <Tag>Kryvyi Rih</Tag>
+    <Tag>Mykolaiv</Tag>
+    <Tag>Mariupol</Tag>
+</TagList>
+```
+
+## Colorful Tags
+
+<TagList style={{ width: 300 }}>
+    <Tag color="primary">primary</Tag>
+    <Tag color="secondary">secondary</Tag>
+    <Tag color="warning">warning</Tag>
+</TagList>
+
+```
+<TagList style={{ width: 300 }}>
+    <Tag color="primary">primary</Tag>
+    <Tag color="secondary">secondary</Tag>
+    <Tag color="warning">warning</Tag>
+</TagList>
+```
+
+## With different border radius
+
+<TagList style={{ width: 300 }}>
+    <Tag borderRadius={0}>Kyiv</Tag>
+    <Tag borderRadius={2}>Kharkiv</Tag>
+    <Tag borderRadius={4}>Odesa</Tag>
+    <Tag borderRadius={6}>Dnipro</Tag>
+    <Tag borderRadius={10}>Donetsk</Tag>
+    <Tag borderRadius={20}>Zaporizhzhia</Tag>
+</TagList>
+
+```
+<TagList style={{ width: 300 }}>
+    <Tag borderRadius={0}>Kyiv</Tag>
+    <Tag borderRadius={2}>Kharkiv</Tag>
+    <Tag borderRadius={4}>Odesa</Tag>
+    <Tag borderRadius={6}>Dnipro</Tag>
+    <Tag borderRadius={10}>Donetsk</Tag>
+    <Tag borderRadius={20}>Zaporizhzhia</Tag>
+</TagList>
+```

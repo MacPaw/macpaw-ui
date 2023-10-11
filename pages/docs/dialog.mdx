@@ -1,0 +1,109 @@
+import { useState } from 'react';
+import { Button, Dialog, DialogContent, DialogActions, DialogIcon, Hint } from '../../src/ui';
+
+# Dialog
+
+export const Example = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const open = () => setIsOpen(true);
+    const close = () => setIsOpen(false);
+    return (
+        <>
+            <Button onClick={open}>Open Dialog</Button>
+            <Dialog isOpen={isOpen} onRequestClose={close}>
+                <DialogContent>
+                    <DialogIcon>
+                        <img src="/example/warning.png" width={172} alt="" />
+                    </DialogIcon>
+                    <h3>Are you totally sure about it?</h3>
+                    Are you sure you want to cancel  CleanMyMac X – Subscription for 5 Macs.
+                    <br />
+                    Note that you would not be able to go back to this point in time.
+                </DialogContent>
+                <DialogActions>
+                    <Button asLink>Cancel Anyway</Button>
+                    <Button outline>Stay Subscribed</Button>
+                    <Button color="warning">Cancel Subscription</Button>
+                </DialogActions>
+            </Dialog>
+        </>
+    );
+};
+
+<Example />
+
+```
+const [isOpen, setIsOpen] = useState(false);
+const open = () => setIsOpen(true);
+const close = () => setIsOpen(false);
+
+<Dialog isOpen={isOpen} onRequestClose={close}>
+    <DialogContent>
+        <DialogIcon>
+            <img src="/example/warning.png" width={172} alt="" />
+        </DialogIcon>
+        <h3>Are you totally sure about it?</h3>
+        Are you sure you want to cancel  CleanMyMac X – Subscription for 5 Macs.
+        <br />
+        Note that you would not be able to go back to this point in time.
+    </DialogContent>
+    <DialogActions>
+        <Button asLink>Cancel Anyway</Button>
+        <Button outline>Stay Subscribed</Button>
+        <Button color="warning">Cancel Subscription</Button>
+    </DialogActions>
+</Dialog>
+```
+
+## Dialog With Hint
+
+export const ExampleWithHint = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const open = () => setIsOpen(true);
+    const close = () => setIsOpen(false);
+    return (
+        <>
+            <Button onClick={open}>Open Dialog</Button>
+            <Dialog isOpen={isOpen} onRequestClose={close}>
+                <DialogContent>
+                    <DialogIcon>
+                        <img src="/example/warning.png" width={172} alt="" />
+                    </DialogIcon>
+                    <h3>Are you totally sure about it?</h3>
+                    Are you sure you want to cancel  CleanMyMac X – Subscription for 5 Macs.
+                    <br />
+                    Note that you would not be able to go back to this point in time.
+                </DialogContent>
+                <DialogActions>
+                    <Hint>Did your download not start? No worries, just click Download to try again.</Hint>
+                    <Button color="secondary">Download CSV</Button>
+                </DialogActions>
+            </Dialog>
+        </>
+    );
+};
+
+<ExampleWithHint />
+
+```
+const [isOpen, setIsOpen] = useState(false);
+const open = () => setIsOpen(true);
+const close = () => setIsOpen(false);
+
+<Dialog isOpen={isOpen} onRequestClose={close}>
+    <DialogContent>
+        <DialogIcon>
+            <img src="/example/warning.png" width={172} alt="" />
+        </DialogIcon>
+        <h3>Are you totally sure about it?</h3>
+        Are you sure you want to cancel  CleanMyMac X – Subscription for 5 Macs.
+        <br />
+        Note that you would not be able to go back to this point in time.
+    </DialogContent>
+    <DialogActions>
+        <Hint>Did your download not start? No worries, just click Download to try again.</Hint>
+        <Button color="secondary">Download CSV</Button>
+    </DialogActions>
+</Dialog>
+```
+
