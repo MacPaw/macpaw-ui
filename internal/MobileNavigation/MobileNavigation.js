@@ -9,9 +9,9 @@ const MobileNavigation = () => {
     <div className={styles.container}>
       <div className={styles.logo}>
         <Link href="/">
-          <a>
-            <MacPawLogo />
-          </a>
+
+          <MacPawLogo />
+
         </Link>
       </div>
       <Dropdown

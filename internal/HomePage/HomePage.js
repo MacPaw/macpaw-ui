@@ -13,10 +13,10 @@ export default function HomePage() {
             you're crafting experiences.
           </span>
           <div className={styles.buttons}>
-            <Link href="/docs">
+            <Link href="/docs" legacyBehavior>
               <Button color="contrast">Read Docs</Button>
             </Link>
-            <Link href="https://github.com/MacPaw/macpaw-ui" target="_blank">
+            <Link href="https://github.com/MacPaw/macpaw-ui" target="_blank" legacyBehavior>
               <Button
                 iconRight={
                   <img

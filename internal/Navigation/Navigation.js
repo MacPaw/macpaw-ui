@@ -7,8 +7,8 @@ import ActiveLink from '../ActiveLink/ActiveLink';
 const Navigation = () => {
   return (
     <div className={styles.navigation}>
-      <Link href="/">
-        <a className={styles.projectLink}>MacPaw UI Kit</a>
+      <Link href="/" className={styles.projectLink}>
+        MacPaw UI Kit
       </Link>
       <div className={styles.navigationLinks}>
         <ActiveLink
