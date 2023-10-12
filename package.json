@@ -19,7 +19,7 @@
     "changes:add": "changeset add"
   },
   "engines": {
-    "node": ">= 16"
+    "node": ">= 20"
   },
   "dependencies": {
     "@floating-ui/react": "^0.26.0",
