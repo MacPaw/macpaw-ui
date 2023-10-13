@@ -34,7 +34,7 @@ import '@macpaw/macpaw-ui/lib/ui.css';
 
 ## Requirements
 
-- Node 16+
+- Node 20+
 - npm 7+ (lock file v2)
 
 ## Library Release Process
