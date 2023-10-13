@@ -1,0 +1,31 @@
+.container {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown,
+.logo {
+  padding: 10px 10px 0;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.navigationLink {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.activeLink {
+  color: #5093ff;
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    display: flex;
+  }
+}

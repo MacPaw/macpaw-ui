@@ -1,7 +1,5 @@
-function IndexPage() {
-  return (
-    <div>Welcome to Macpaw UI Kit!</div>
-  );
-}
+import HomePage from '../internal/HomePage/HomePage';
 
-export default IndexPage;
+export default function Home() {
+  return <HomePage />;
+}

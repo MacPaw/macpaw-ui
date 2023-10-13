@@ -1,0 +1,105 @@
+import { useState } from 'react';
+import { Accordion, AccordionTrigger, AccordionCollapsible, Panel, FormRow, Input, Button } from '../../src/ui';
+
+# Accordion
+
+export const Example = () => {
+    const [activeSection, setActiveSection] = useState('');
+    return (
+         <Accordion onChange={(key) => setActiveSection(key)}>
+            <Panel className="mb-24">
+                <AccordionTrigger sectionKey="profile" style={{ cursor: 'pointer' }}>
+                    <h5>Profile</h5>
+                    Edit your profile settings.
+                </AccordionTrigger>
+                <AccordionCollapsible sectionKey="profile">
+                    <FormRow style={{ marginTop: 32, maxWidth: 600 }}>
+                        <Input placeholder="Name" />
+                    </FormRow>
+                    <Button>Save Changes</Button>
+                </AccordionCollapsible>
+            </Panel>
+            <Panel className="mb-24">
+                <AccordionTrigger sectionKey="password" style={{ cursor: 'pointer' }}>
+                    <h5>Password</h5>
+                    Change the password to your account.
+                </AccordionTrigger>
+                <AccordionCollapsible sectionKey="password">
+                    <FormRow style={{ marginTop: 32, maxWidth: 600 }}>
+                        <Input placeholder="Current password" />
+                    </FormRow>
+                    <FormRow style={{ maxWidth: 600 }}>
+                        <Input placeholder="New password" />
+                    </FormRow>
+                    <Button>Save Changes</Button>
+                </AccordionCollapsible>
+            </Panel>
+            <Panel className="mb-24">
+                <AccordionTrigger sectionKey="email" style={{ cursor: 'pointer' }}>
+                    <h5>Profile</h5>
+                    Change the email address linked to your account.
+                </AccordionTrigger>
+                <AccordionCollapsible sectionKey="email">
+                    <FormRow style={{ marginTop: 32, maxWidth: 600 }}>
+                        <Input placeholder="Email" />
+                    </FormRow>
+                    <FormRow style={{ maxWidth: 600 }}>
+                        <Input placeholder="Current password" />
+                    </FormRow>
+                    <Button>Save Changes</Button>
+                </AccordionCollapsible>
+            </Panel>
+        </Accordion>
+    );
+};
+
+<Example />
+
+```
+const [activeSection, setActiveSection] = useState('');
+
+<Accordion onChange={(key) => setActiveSection(key)}>
+    <Panel className="mb-24">
+        <AccordionTrigger sectionKey="profile" style={{ cursor: 'pointer' }}>
+            <h5>Profile</h5>
+            Edit your profile settings.
+        </AccordionTrigger>
+        <AccordionCollapsible sectionKey="profile">
+            <FormRow style={{ marginTop: 32, maxWidth: 600 }}>
+                <Input placeholder="Name" />
+            </FormRow>
+            <Button>Save Changes</Button>
+        </AccordionCollapsible>
+    </Panel>
+    <Panel className="mb-24">
+        <AccordionTrigger sectionKey="password" style={{ cursor: 'pointer' }}>
+            <h5>Password</h5>
+            Change the password to your account.
+        </AccordionTrigger>
+        <AccordionCollapsible sectionKey="password">
+            <FormRow style={{ marginTop: 32, maxWidth: 600 }}>
+                <Input placeholder="Current password" />
+            </FormRow>
+            <FormRow style={{ maxWidth: 600 }}>
+                <Input placeholder="New password" />
+            </FormRow>
+            <Button>Save Changes</Button>
+        </AccordionCollapsible>
+    </Panel>
+    <Panel className="mb-24">
+        <AccordionTrigger sectionKey="email" style={{ cursor: 'pointer' }}>
+            <h5>Profile</h5>
+            Change the email address linked to your account.
+        </AccordionTrigger>
+        <AccordionCollapsible sectionKey="email">
+            <FormRow style={{ marginTop: 32, maxWidth: 600 }}>
+                <Input placeholder="Email" />
+            </FormRow>
+            <FormRow style={{ maxWidth: 600 }}>
+                <Input placeholder="Current password" />
+            </FormRow>
+            <Button>Save Changes</Button>
+        </AccordionCollapsible>
+    </Panel>
+</Accordion>
+```

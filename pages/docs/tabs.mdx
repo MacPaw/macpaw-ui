@@ -1,0 +1,81 @@
+import React from 'react';
+import { TabsProvider, useTabsContext, Tab, TabList, TabPanel, Panel } from '../../src/ui';
+
+# Tabs
+
+## Import
+
+```
+import { TabsProvider, useTabsContext, Tab, TabList, TabPanel } from '@macpaw/macaw-ui'; 
+```
+
+## Usage
+
+<div style={{ padding: 36, background: 'linear-gradient(155deg, rgba(255, 220, 229, 0.5) 0%, rgba(199, 229, 255, 0.5) 100%)' }}>
+    <TabsProvider initialTab="tab1">
+      <TabList style={{ display: 'flex', gap: '8px'}}>
+        <Tab tab="tab1">
+          Tab 1
+        </Tab>
+        <Tab tab="tab2">
+          Tab 2
+        </Tab>
+      </TabList>
+      <Panel style={{ marginTop: 36 }}>
+          <TabPanel tab="tab1">
+              <div>Tab 1 content</div>
+          </TabPanel>
+          <TabPanel tab="tab2">
+              <div>Tab 2 content</div>
+          </TabPanel>
+      </Panel>
+  </TabsProvider>
+</div>
+
+
+```
+<div style={{ padding: 36, background: 'linear-gradient(155deg, rgba(255, 220, 229, 0.5) 0%, rgba(199, 229, 255, 0.5) 100%)' }}>
+    <TabsProvider initialTab="tab1">
+      <TabList style={{ display: 'flex', gap: '8px'}}>
+        <Tab tab="tab1">
+          Tab 1
+        </Tab>
+        <Tab tab="tab2">
+          Tab 2
+        </Tab>
+      </TabList>
+      <Panel style={{ marginTop: 36 }}>
+          <TabPanel tab="tab1">
+              <div>Tab 1 content</div>
+          </TabPanel>
+          <TabPanel tab="tab2">
+              <div>Tab 2 content</div>
+          </TabPanel>
+      </Panel>
+  </TabsProvider>
+</div>
+```
+
+## Hooks
+
+### useTabsContext
+
+You can use **useTabsContext** hook to get access to the tabs context.
+You should wrap your components with **TabsProvider** to use this hook.
+
+```
+const MyComponent = () => {
+  const { activeTab, setActiveTab } = useTabsContext();
+
+  return (
+    // ...
+  );
+};
+
+const ComponentWithTabs = () => (
+  <TabsProvider>
+    <MyComponent />
+    //...tabs
+  </TabsProvider>
+);
+```

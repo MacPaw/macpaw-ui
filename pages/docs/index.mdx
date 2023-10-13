@@ -1,0 +1,28 @@
+# Installation
+##### Install with npm:
+```bash
+npm install --save @macpaw/macpaw-ui
+```
+
+##### or with yarn:
+```bash
+yarn add @macpaw/macpaw-ui
+```
+
+##### And import stylesheets manually:
+```js
+import '@macpaw/macpaw-ui/lib/ui.css'
+```
+
+## Adding new Icons
+- Add Component's JSX and styles to [src/%ComponentName%](https://github.com/MacPaw/macpaw-ui/tree/master/src) directory
+- Import Component's JS, styles to [ui.js](https://github.com/MacPaw/macpaw-ui/blob/master/src/ui.js) and [ui.scss](https://github.com/MacPaw/macpaw-ui/blob/master/src/ui.scss) correspondingly
+- Add document page in:
+```
+/pages/%component-name%.mdx
+```
+
+## Requirements
+- Node 16+
+- npm 7+ (lock file v2)
+
