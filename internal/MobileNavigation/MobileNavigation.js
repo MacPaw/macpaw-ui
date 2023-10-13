@@ -9,9 +9,9 @@ const MobileNavigation = () => {
     <div className={styles.container}>
       <div className={styles.logo}>
         <Link href="/">
-          <a>
-            <MacPawLogo />
-          </a>
+
+          <MacPawLogo />
+
         </Link>
       </div>
       <Dropdown
@@ -23,24 +23,12 @@ const MobileNavigation = () => {
         position="right"
         className={styles.dropdown}
       >
-        <DropdownItem>
-          <ActiveLink
-            href="/docs"
-            className={styles.navigationLink}
-            activeClassName={styles.activeLink}
-          >
-            Installation
-          </ActiveLink>
+        <DropdownItem component={ActiveLink} href="/docs" className={styles.navigationLink} activeClassName={styles.activeLink}>
+          Installation
         </DropdownItem>
         {pages.map((link) => (
-          <DropdownItem key={link}>
-            <ActiveLink
-              href={`/docs/${link}`}
-              className={styles.navigationLink}
-              activeClassName={styles.activeLink}
-            >
-              {link.replace('-', ' ')}
-            </ActiveLink>
+          <DropdownItem key={link} component={ActiveLink} href={`/docs/${link}`} className={styles.navigationLink} activeClassName={styles.activeLink}>
+            {link.replace('-', ' ')}
           </DropdownItem>
         ))}
       </Dropdown>

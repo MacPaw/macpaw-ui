@@ -28,8 +28,8 @@ const ActiveLink = ({ children, className, activeClassName, ...props }) => {
   }, [asPath, isReady, props.as, props.href, computedClassName]);
 
   return (
-    <Link {...props}>
-      <a className={computedClassName}>{children}</a>
+    <Link {...props} className={computedClassName}>
+      {children}
     </Link>
   );
 };
