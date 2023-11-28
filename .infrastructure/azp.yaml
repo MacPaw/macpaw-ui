@@ -29,7 +29,7 @@ variables:
 stages:
   - stage: main
     pool:
-      name: default-ops
+      name: default-sre
     displayName: Macpaw UI
     jobs:
       - job: build
