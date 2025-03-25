@@ -1,5 +1,11 @@
 # @macpaw/macpaw-ui
 
+## 4.18.0
+
+### Minor Changes
+
+- 914d300: Added new pyament methods
+
 ## 4.17.0
 
 ### Minor Changes
