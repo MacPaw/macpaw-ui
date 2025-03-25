@@ -1,17 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="70" height="54" viewBox="0 0 70 54">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 70 54">
+  <rect width="70" height="54" fill="url(#a)" rx="8.235"/>
+  <rect width="11.667" height="10.125" x="7.892" y="17.55" fill="url(#b)" rx="1.373"/>
+  <path fill="#CDA46E" fill-rule="evenodd" d="M19.559 19.575H7.892V21.6h2.745v2.025H7.892v2.025H19.56v-2.025h-2.745V21.6h2.745v-2.025Zm-4.804 4.05V21.6h-2.059v2.025h2.059Z" clip-rule="evenodd"/>
+  <path fill="#fff" d="M36.716 8.1H7.892v4.05h28.824V8.1ZM61.09 43.2H49.4a.675.675 0 1 0 0 1.35h11.69a.675.675 0 1 0 0-1.35Z" opacity=".22"/>
+  <path fill="url(#c)" d="M60.392 33.075H50.098c-.758 0-1.373.615-1.373 1.373v5.355c0 .758.615 1.372 1.373 1.372h10.294c.758 0 1.373-.614 1.373-1.372v-5.355c0-.758-.615-1.373-1.373-1.373Z"/>
   <defs>
-    <linearGradient id="card-a" x1="0%" x2="99.646%" y1="20.245%" y2="79.545%">
-      <stop offset="0%" stop-color="#CAD4D6"/>
-      <stop offset="100%" stop-color="#B4BABF"/>
+    <linearGradient id="a" x1="-2.699" x2="70.906" y1="10.932" y2="63.389" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#606060"/>
+      <stop offset="1" stop-color="#353141"/>
     </linearGradient>
-    <linearGradient id="card-b" x1="28.561%" x2="99.536%" y1="47.217%" y2="51.219%">
-      <stop offset="0%" stop-color="#656565"/>
-      <stop offset="100%" stop-color="#333"/>
+    <linearGradient id="b" x1="13.726" x2="13.726" y1="17.55" y2="27.675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFEAAB"/>
+      <stop offset="1" stop-color="#FFD072"/>
+    </linearGradient>
+    <linearGradient id="c" x1="48.725" x2="61.641" y1="41.175" y2="32.882" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DE57CD"/>
+      <stop offset="1" stop-color="#E97787"/>
     </linearGradient>
   </defs>
-  <g fill="none" fill-rule="evenodd">
-    <rect width="70" height="54" fill="url(#card-a)" rx="8"/>
-    <rect width="70" height="11" y="11" fill="url(#card-b)"/>
-    <rect width="16.528" height="6" x="44.722" y="28" fill="#FFF" opacity=".546"/>
-  </g>
 </svg>

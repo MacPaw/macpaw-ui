@@ -57,7 +57,7 @@ runs:
       run:  tar -czf /tmp/artifact.tar.gz .
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ inputs.artifact-name }}
         path: /tmp/artifact.tar.gz
