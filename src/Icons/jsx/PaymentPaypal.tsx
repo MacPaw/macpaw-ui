@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { SVGProps } from 'react';
 
-const SvgPaymentPaypal = (props: React.SVGProps<SVGSVGElement>) => (
+const SvgPaymentPaypal = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width={70}
     height={54}

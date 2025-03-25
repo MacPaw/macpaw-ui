@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { SVGProps } from 'react';
 
-const SvgPaymentAmex = (props: React.SVGProps<SVGSVGElement>) => (
+const SvgPaymentAmex = (props: SVGProps<SVGSVGElement>) => (
   <svg width={70} height={54} viewBox="0 0 70 54" xmlns="http://www.w3.org/2000/svg" {...props}>
     <defs>
       <linearGradient x1="0%" y1="20.245%" x2="95.215%" y2="79.755%" id="payment_amex_svg__a">
