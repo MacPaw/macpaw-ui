@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from 'react';
+import React, { act } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { render, screen, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { ModalLauncherProvider, useModalLauncherContext, useModals } from '../ModalLauncherContext';
 
 describe('ModalLauncher', () => {
