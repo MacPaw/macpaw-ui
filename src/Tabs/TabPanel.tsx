@@ -9,7 +9,7 @@ type TabPanelProps = {
 const TabPanel: React.FC<TabPanelProps> = ({ children, tab }) => {
   const { activeTab } = useTabsContext();
 
-  return (activeTab === tab && children) as JSX.Element;
+  return (activeTab === tab && children) as React.ReactElement;
 };
 
 export default TabPanel;

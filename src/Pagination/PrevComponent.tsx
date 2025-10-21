@@ -5,7 +5,7 @@ import BackIcon from '../Icons/jsx/BackIcon';
 export interface PrevComponentProps {
   currentPage: number;
   minPage: number;
-  renderItem: (n: number) => JSX.Element;
+  renderItem: (n: number) => React.ReactElement;
   prevLabel: string;
 }
 
@@ -13,8 +13,7 @@ const PrevComponent: FC<PrevComponentProps> = ({ currentPage, minPage, renderIte
   const isEnabled = currentPage > minPage;
   const element = isEnabled ? renderItem(currentPage - 1) : React.createElement('div');
 
-  // @ts-ignore
-  return React.cloneElement(element as JSX.Element, {
+  return React.cloneElement(element, {
     className: cx('pagination-nav', '-prev', !isEnabled && '-disabled'),
     children: (
       <>
@@ -22,7 +21,8 @@ const PrevComponent: FC<PrevComponentProps> = ({ currentPage, minPage, renderIte
         {prevLabel}
       </>
     ),
-  });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } as any);
 };
 
 export default PrevComponent;

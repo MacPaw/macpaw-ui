@@ -4,7 +4,7 @@ import NextComponent from './NextComponent';
 import PrevComponent from './PrevComponent';
 
 export interface PaginationProps extends HTMLAttributes<HTMLDivElement> {
-  renderItem: (n: number) => JSX.Element;
+  renderItem: (n: number) => React.ReactElement;
   maxPage: number;
   currentPage: number;
   nextLabel?: string;
@@ -66,11 +66,13 @@ const Pagination: FC<React.PropsWithChildren<PaginationProps>> = (props) => {
             </div>
           );
 
-        // @ts-ignore
-        return React.cloneElement(renderItem(n), {
+        const element = renderItem(n);
+
+        return React.cloneElement(element, {
           key,
           className: cx('pagination-page', currentPage === n && '-active'),
-        });
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } as any);
       })}
       <NextComponent currentPage={currentPage} maxPage={maxPage} renderItem={renderItem} nextLabel={nextLabel} />
     </div>

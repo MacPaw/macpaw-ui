@@ -22,7 +22,7 @@ export type PossibleDateType = Date | Date[] | DateRange | undefined;
 export type DaySelectionMode = 'single' | 'multiple' | 'range' | 'default';
 
 interface NavigationSelectableProps {
-  captionLayout: 'dropdown' | 'buttons';
+  captionLayout: 'dropdown' | 'dropdown-months' | 'dropdown-years';
 }
 
 interface NavigationDisabledProps {
@@ -118,9 +118,9 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
         case 'disabled':
           return { disableNavigation: true };
         case 'dropdown':
-          return { captionLayout: 'dropdown' };
+          return { captionLayout: 'dropdown' as const };
         case 'pagination':
-          return { captionLayout: 'buttons' };
+          return { captionLayout: 'dropdown-months' as const };
         default:
           return null;
       }
@@ -218,7 +218,8 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
           <DayPicker
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             mode={selectionMode as any}
-            selected={value}
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            selected={value as any}
             onSelect={handleSelectDate}
             defaultMonth={defaultMonth}
             weekStartsOn={1}

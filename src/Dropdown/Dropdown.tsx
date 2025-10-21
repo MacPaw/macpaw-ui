@@ -19,9 +19,14 @@ const DropDown: React.FC<React.PropsWithChildren<Dropdown>> = (props) => {
   const triggerClone = React.cloneElement(trigger, {
     onClick: () => {
       setIsOpen(!isOpen);
-      if (trigger.props.onClick) trigger.props.onClick();
+      // eslint-disable-next-line @typescript-eslint/no-shadow
+      const props = trigger.props as { onClick?: () => void };
+
+      if (props.onClick) {
+        props.onClick();
+      }
     },
-  });
+  } as Partial<typeof trigger.props>);
 
   const menuClassName = cx('dropdown-menu', {
     '-left': !position || position === 'left',

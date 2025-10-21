@@ -16,7 +16,7 @@ const Tab: React.FC<PropsWithChildren<TabProps>> = ({
   tab,
   className,
   activeClassName = '',
-  __TYPE,
+  __TYPE = DEFAULT_TAB_TYPE,
   ...restProps
 }) => {
   const { activeTab, onSelectTab, color, activeColor, scale } = useTabsContext();
@@ -47,10 +47,6 @@ const Tab: React.FC<PropsWithChildren<TabProps>> = ({
       {children}
     </Button>
   );
-};
-
-Tab.defaultProps = {
-  __TYPE: DEFAULT_TAB_TYPE,
 };
 
 export default Tab;
