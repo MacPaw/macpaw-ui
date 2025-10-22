@@ -13,10 +13,17 @@ const TabList: React.FC<PropsWithChildren<TabListProps>> = ({ children, ...restP
 
     const [firstTab] = React.Children.toArray(children);
 
-    if (!React.isValidElement(firstTab) || firstTab.props.__TYPE !== DEFAULT_TAB_TYPE)
+    if (!React.isValidElement(firstTab)) {
       throw new Error('TabList must have only Tab component as a child.');
+    }
 
-    onSelectTab(firstTab.props.tab);
+    const props = firstTab.props as { __TYPE?: string; tab: string };
+
+    if (props.__TYPE !== DEFAULT_TAB_TYPE) {
+      throw new Error('TabList must have only Tab component as a child.');
+    }
+
+    onSelectTab(props.tab);
   }, [children, activeTab]);
 
   return (

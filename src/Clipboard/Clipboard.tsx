@@ -13,12 +13,15 @@ const TIMEOUT = 1600;
 
 const Clipboard: React.FC<ClipboardProps> = ({ copy, element, onCopyEvent }) => {
   const [canBeCopied, setCanBeCopied] = useState(true);
-  const timerRef = useRef<NodeJS.Timeout>();
+  // eslint-disable-next-line no-undefined
+  const timerRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   useEffect(() => {
     if (!canBeCopied) timerRef.current = setTimeout(() => setCanBeCopied(true), TIMEOUT);
 
-    return () => clearTimeout(timerRef.current as NodeJS.Timeout);
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
   }, [canBeCopied]);
 
   const iconHandler = () => {

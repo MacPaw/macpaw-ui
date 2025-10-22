@@ -38,7 +38,7 @@ const Multiselect: FC<React.PropsWithChildren<MultiselectProps>> = (props) => {
   const rootClassnames = cx(
     'multiselect',
     !selectedOptions.length && '-empty',
-    error && '-error',
+    Boolean(error) && '-error',
     scale === 'medium' && '-medium',
     className,
   );
