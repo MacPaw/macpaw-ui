@@ -10,6 +10,15 @@
     filter: drop-shadow(0px 4px 14px rgba(0, 0, 0, 0.04));
     padding: 16px;
     z-index: 2;
+    
+    // Apply react-day-picker CSS variables directly to calendar
+    --rdp-cell-size: 36px;
+    --rdp-day_button-width: 36px;
+    --rdp-day_button-height: 36px;
+    --rdp-day-width: 36px;
+    --rdp-day-height: 36px;
+    --rdp-accent-color: var(--color-secondary);
+    --rdp-background-color: var(--color-black-04);
 
     &.site {
       &-top {
@@ -28,9 +37,10 @@
   }
 
   .rdp {
-    --rdp-cell-size: 40px;
-    --rdp-accent-color: var(--color-secondary);
-    --rdp-background-color: var(--color-black-04);
+    &-today .rdp-day_button {
+      color: #000;
+      font-weight: 700;
+    }
 
     &-caption_label {
       font-weight: 700;
@@ -38,22 +48,67 @@
       padding: 0;
       border: none;
     }
-    &-day_selected {
-      border: none;
 
-      &:focus-visible {
-        border: none;
-        outline-offset: 0;
+    &-selected {
+      font-weight: normal;
+      font-size: inherit;
+
+      .rdp-day_button {
+        color: rgb(255, 255, 255);
+        background-color: var(--rdp-accent-color);
+  
+        &:focus-visible {
+          border: none;
+          outline-offset: 0;
+        }
       }
     }
+
     &-day {
+      padding: 0;
+      border-radius: 50%;
+      &:hover {
+        background-color: var(--rdp-background-color);
+      }
       &:focus-visible {
         outline: var(--rdp-outline);
       }
     }
 
-    &-dropdown_year {
-      margin-left: 16px;
+    &-chevron {
+      fill: #000;
+    }
+
+    &-dropdown_root {
+      &:not(:first-child) {
+        margin-left: 16px;
+      }
+    }
+
+    &-range_start {
+      border-radius: 50% 0 0 50%;
+      .rdp-day_button {
+        border-radius: 50% 0 0 50%;
+      }
+    }
+    
+    &-range_end {
+      border-radius: 0 50% 50% 0;
+      .rdp-day_button {
+        border-radius: 0 50% 50% 0;
+      }
+    }
+
+    &-range_start.rdp-range_end {
+      border-radius: 50%;
+      .rdp-day_button {
+        border-radius: 50%;
+      }
+    }
+
+    &-month_grid {
+      border-spacing: 0;
+      border-collapse: collapse;
     }
   }
 }

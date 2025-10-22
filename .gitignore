@@ -24,4 +24,6 @@ out
 
 **/*.tsbuildinfo
 
+# Claude
+.claude
 CLAUDE.md

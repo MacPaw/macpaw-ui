@@ -21,16 +21,6 @@ export type PossibleDateType = Date | Date[] | DateRange | undefined;
 
 export type DaySelectionMode = 'single' | 'multiple' | 'range' | 'default';
 
-interface NavigationSelectableProps {
-  captionLayout: 'dropdown' | 'dropdown-months' | 'dropdown-years';
-}
-
-interface NavigationDisabledProps {
-  disableNavigation: boolean;
-}
-
-export type NavigationProps = NavigationSelectableProps | NavigationDisabledProps;
-
 export interface DatePickerCommonProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value'> {
   value?: PossibleDateType;
   error?: InputError;
@@ -44,10 +34,19 @@ export interface DatePickerCommonProps extends Omit<InputHTMLAttributes<HTMLInpu
   closeOnSelect?: boolean;
   dateFormat?: string;
   defaultMonth?: Date;
+  /** @deprecated Use startMonth instead. Converts to startMonth internally. */
   fromYear?: number;
+  /** @deprecated Use endMonth instead. Converts to endMonth internally. */
   toYear?: number;
+  /** @deprecated Use startMonth instead. */
   fromDate?: Date;
+  /** @deprecated Use endMonth instead. */
   toDate?: Date;
+  /** The earliest month to start the month navigation (v9 API) */
+  startMonth?: Date;
+  /** The latest month to end the month navigation (v9 API) */
+  endMonth?: Date;
+  /** Navigation style: 'pagination' shows default navigation, 'dropdown' shows month/year dropdowns, 'disabled' disables navigation */
   navigation?: 'pagination' | 'dropdown' | 'disabled';
 }
 
@@ -91,6 +90,8 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
       toYear,
       fromDate,
       toDate,
+      startMonth: propStartMonth,
+      endMonth: propEndMonth,
       selectionMode = 'single',
       navigation,
       onChange,
@@ -113,17 +114,54 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
       'site-center': openSite === 'center',
     });
 
-    const navigationProps: NavigationProps | null = useMemo(() => {
+    // Convert deprecated props to v9 API (startMonth/endMonth)
+    const startMonth = useMemo(() => {
+      if (propStartMonth) return propStartMonth;
+      if (fromDate) return fromDate;
+      // eslint-disable-next-line no-undefined
+      if (fromYear !== undefined) return new Date(fromYear, 0);
+
+      // eslint-disable-next-line no-undefined
+      return undefined;
+    }, [propStartMonth, fromDate, fromYear]);
+
+    const endMonth = useMemo(() => {
+      const DECEMBER = 11;
+
+      if (propEndMonth) return propEndMonth;
+      if (toDate) return toDate;
+      // eslint-disable-next-line no-undefined
+      if (toYear !== undefined) return new Date(toYear, DECEMBER);
+
+      // eslint-disable-next-line no-undefined
+      return undefined;
+    }, [propEndMonth, toDate, toYear]);
+
+    // Build navigation props for v9 API
+    const navigationProps = useMemo(() => {
+      const props: {
+        captionLayout?: 'label' | 'dropdown' | 'dropdown-months' | 'dropdown-years';
+        disableNavigation?: boolean;
+        hideNavigation?: boolean;
+      } = {};
+
       switch (navigation) {
         case 'disabled':
-          return { disableNavigation: true };
+          props.disableNavigation = true;
+          break;
         case 'dropdown':
-          return { captionLayout: 'dropdown' as const };
+          props.captionLayout = 'dropdown';
+          props.hideNavigation = true;
+          break;
         case 'pagination':
-          return { captionLayout: 'dropdown-months' as const };
+          // 'label' is the default caption layout with arrow navigation
+          props.captionLayout = 'label';
+          break;
         default:
-          return null;
+          break;
       }
+
+      return props;
     }, [navigation]);
 
     // eslint-disable-next-line complexity
@@ -220,15 +258,14 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
             mode={selectionMode as any}
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             selected={value as any}
-            onSelect={handleSelectDate}
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            onSelect={handleSelectDate as any}
             defaultMonth={defaultMonth}
             weekStartsOn={1}
-            fromYear={fromYear}
-            toYear={toYear}
-            fromDate={fromDate}
-            toDate={toDate}
+            startMonth={startMonth}
+            endMonth={endMonth}
             className={calendarClassNames}
-            {...(navigationProps as NavigationProps)}
+            {...navigationProps}
           />
         )}
       </div>
