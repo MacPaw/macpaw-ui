@@ -36,6 +36,7 @@ import '@macpaw/macpaw-ui/lib/ui.css';
 
 - Node 20+
 - npm 7+ (lock file v2)
+- React 17.0.0 or higher (supports React 17, 18, and 19)
 
 ## Library Release Process
 
