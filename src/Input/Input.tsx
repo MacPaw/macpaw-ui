@@ -57,7 +57,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   } = props;
 
   const isDirtyRef = useRef(false);
-  const inputRef = useRef<HTMLInputElement>();
+  // eslint-disable-next-line no-undefined
+  const inputRef = useRef<HTMLInputElement | undefined>(undefined);
 
   const classNames = cx('input', {
     '-error': Boolean(error),

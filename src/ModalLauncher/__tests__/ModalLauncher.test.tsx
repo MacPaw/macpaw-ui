@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import React, { act } from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import ModalLauncher from '../ModalLauncher';
 import { useModalLauncherContext } from '../ModalLauncherContext';
 

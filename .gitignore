@@ -21,3 +21,9 @@ out
 
 # GPG key
 .gpg
+
+**/*.tsbuildinfo
+
+# Claude
+.claude
+CLAUDE.md

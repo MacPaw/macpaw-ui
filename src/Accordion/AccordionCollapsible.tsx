@@ -66,6 +66,7 @@ const AccordionCollapsible: React.FC<React.PropsWithChildren<AccordionCollapsibl
     <Transition
       in={isExpanded}
       timeout={timeout}
+      nodeRef={nodeRef}
       onEnter={onEnter}
       onEntering={onEntering}
       onEntered={onEntered}
