@@ -4,7 +4,7 @@
   "main": "lib/ui.js",
   "scripts": {
     "dev": "next -p 1234",
-    "build": "next build && next export",
+    "build": "next build",
     "lint": "eslint src",
     "test": "jest",
     "test:watch": "jest --watch",
