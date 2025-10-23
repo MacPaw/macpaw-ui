@@ -11,7 +11,7 @@
     padding: 16px;
     z-index: 2;
     
-    // Apply react-day-picker CSS variables directly to calendar
+    // Redefine react-day-picker CSS variables to match our design system
     --rdp-cell-size: 36px;
     --rdp-day_button-width: 36px;
     --rdp-day_button-height: 36px;
