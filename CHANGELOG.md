@@ -1,5 +1,11 @@
 # @macpaw/macpaw-ui
 
+## 5.0.1
+
+### Patch Changes
+
+- - Fix build issue
+
 ## 5.0.0
 
 ### Major Changes
