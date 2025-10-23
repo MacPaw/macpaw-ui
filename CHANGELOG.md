@@ -1,5 +1,12 @@
 # @macpaw/macpaw-ui
 
+## 5.0.2
+
+### Patch Changes
+
+- 3e35d1e: Fix missing lib folder
+- 8863042: Fix missing /lib folder
+
 ## 5.0.1
 
 ### Patch Changes
