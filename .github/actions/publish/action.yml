@@ -23,8 +23,8 @@ inputs:
     required: false
     default: ''
   auth-token:
-    description: 'The auth token to use'
-    required: true
+    description: 'The auth token to use (for private dependencies only, not required for OIDC publishing)'
+    required: false
   use-public-flag:
     description: 'Whether to use the public flag'
     required: false
@@ -51,6 +51,10 @@ runs:
       shell: bash
       run: tar xf artifact.tar.gz
 
+    - name: Update npm for trusted publishing support
+      shell: bash
+      run: npm install -g npm@latest
+
     - name: Publish
       shell: bash
       run: |
@@ -59,5 +63,3 @@ runs:
         else
           npm publish
         fi
-      env:
-        NODE_AUTH_TOKEN: ${{ inputs.auth-token }}
