@@ -84,7 +84,6 @@ jobs:
           registry-url: "https://registry.npmjs.org/"
           artifact-name: "package-artifact"
           scope: "@macpaw"
-          auth-token: ${{ secrets.NPM_TOKEN }}
 
   publish-github:
     name: Publish to Github Registry
