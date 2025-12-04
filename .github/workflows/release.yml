@@ -49,6 +49,8 @@ jobs:
     continue-on-error: false
     needs: release
     if: ${{ needs.release.outputs.releaseReady == 'true' }}
+    permissions:
+      contents: read # Required to checkout repository
     steps:
       - name: Cancel previous jobs
         uses: styfle/cancel-workflow-action@0.11.0
@@ -90,6 +92,9 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     continue-on-error: false
+    permissions:
+      packages: write
+      contents: read
     steps:
       - name: Cancel previous jobs
         uses: styfle/cancel-workflow-action@0.11.0
