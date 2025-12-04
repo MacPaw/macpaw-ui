@@ -2,31 +2,31 @@ name: "Publish package to registry"
 description: "Publishes the package to the registry"
 inputs:
   node-version:
-    description: 'The version of Node.js to use'
+    description: "The version of Node.js to use"
     required: true
   node-cache:
-    description: 'The cache key to use for caching Node.js'
+    description: "The cache key to use for caching Node.js"
     required: false
   package-manager:
-    description: 'The package manager to use'
+    description: "The package manager to use"
     required: false
-    default: 'npm'
+    default: "npm"
   registry-url:
-    description: 'The registry URL to use'
+    description: "The registry URL to use"
     required: false
   artifact-name:
-    description: 'The name of the artifact to download'
+    description: "The name of the artifact to download"
     required: false
-    default: 'package-artifact'
+    default: "package-artifact"
   scope:
-    description: 'The scope to use'
+    description: "The scope to use"
     required: false
-    default: ''
+    default: ""
   auth-token:
-    description: 'The auth token to use (for private dependencies only, not required for OIDC publishing)'
+    description: "The auth token to use (for private dependencies only, not required for OIDC publishing)"
     required: false
   use-public-flag:
-    description: 'Whether to use the public flag'
+    description: "Whether to use the public flag"
     required: false
     default: false
 
@@ -63,3 +63,5 @@ runs:
         else
           npm publish
         fi
+      env:
+        NODE_AUTH_TOKEN: ${{ inputs.auth-token }}
