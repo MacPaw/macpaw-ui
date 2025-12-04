@@ -18,7 +18,7 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v3
-      
+
       - name: Configure git user
         uses: ./.github/actions/github-config
         with:
@@ -30,11 +30,11 @@ jobs:
         id: release
         with:
           node-version: 20
-          release-pr-title: 'chore(release): :package: version update for packages'
-          release-commit-message: 'chore(release): version update for packages'
+          release-pr-title: "chore(release): :package: version update for packages"
+          release-commit-message: "chore(release): version update for packages"
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          release-command: 'changes:release'
-          
+          release-command: "changes:release"
+
       - name: Generate outputs
         id: releaseOutputs
         if: steps.release.outputs.release-ready == 'true'
@@ -57,13 +57,16 @@ jobs:
         uses: ./.github/actions/prepare-packages
         with:
           node-version: 20
-          build-command: 'lib'
+          build-command: "lib"
 
   publish-npm:
     name: Publish to NPM Registry
     needs: prepare
     runs-on: ubuntu-latest
     continue-on-error: false
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Cancel previous jobs
         uses: styfle/cancel-workflow-action@0.11.0
@@ -75,9 +78,9 @@ jobs:
         uses: ./.github/actions/publish
         with:
           node-version: 20
-          registry-url: 'https://registry.npmjs.org/'
-          artifact-name: 'package-artifact'
-          scope: '@macpaw'
+          registry-url: "https://registry.npmjs.org/"
+          artifact-name: "package-artifact"
+          scope: "@macpaw"
           auth-token: ${{ secrets.NPM_TOKEN }}
 
   publish-github:
@@ -88,7 +91,7 @@ jobs:
     steps:
       - name: Cancel previous jobs
         uses: styfle/cancel-workflow-action@0.11.0
-      
+
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -97,6 +100,6 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
-          artifact-name: 'package-artifact'
-          scope: '@macpaw'
+          artifact-name: "package-artifact"
+          scope: "@macpaw"
           auth-token: ${{ secrets.GITHUB_TOKEN }}
