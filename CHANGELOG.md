@@ -1,5 +1,11 @@
 # @macpaw/macpaw-ui
 
+## 5.0.5
+
+### Patch Changes
+
+- 3b16c42: Just a release to check new action
+
 ## 5.0.4
 
 ### Patch Changes
