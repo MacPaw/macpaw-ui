@@ -1,5 +1,11 @@
 # @macpaw/macpaw-ui
 
+## 5.0.4
+
+### Patch Changes
+
+- deda836: Just triger release to check trusted publishing
+
 ## 5.0.3
 
 ### Patch Changes
