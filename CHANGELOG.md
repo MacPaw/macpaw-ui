@@ -1,5 +1,11 @@
 # @macpaw/macpaw-ui
 
+## 5.0.3
+
+### Patch Changes
+
+- 4433cdf: Just triger release to check trusted publishing
+
 ## 5.0.2
 
 ### Patch Changes
