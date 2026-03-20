@@ -16,7 +16,7 @@ const LocaleNames = {
   pt: 'Português do Brasil',
   tr: 'Turkish',
   uk: 'Українська',
-  zh: '繁體中文',
+  zh: '简体中文',
 };
 
 export type SupportedLocale = keyof typeof LocaleNames;
