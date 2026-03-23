@@ -1,5 +1,11 @@
 # @macpaw/macpaw-ui
 
+## 5.0.7
+
+### Patch Changes
+
+- e446548: fix China lang
+
 ## 5.0.6
 
 ### Patch Changes
