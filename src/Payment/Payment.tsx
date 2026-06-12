@@ -9,10 +9,14 @@ import Discover from '../Icons/jsx/PaymentDiscover';
 import GooglePay from '../Icons/jsx/PaymentGooglePay';
 import Ideal from '../Icons/jsx/PaymentIdeal';
 import JCB from '../Icons/jsx/PaymentJcb';
+import KakaoPay from '../Icons/jsx/PaymentKakaoPay';
 import Mada from '../Icons/jsx/PaymentMada';
 import Maestro from '../Icons/jsx/PaymentMaestro';
 import Master from '../Icons/jsx/PaymentMaster';
+import NaverPay from '../Icons/jsx/PaymentNaverPay';
+import PaycoPay from '../Icons/jsx/PaymentPaycoPay';
 import PayPal from '../Icons/jsx/PaymentPaypal';
+import SamsungPay from '../Icons/jsx/PaymentSamsungPay';
 import UnionPay from '../Icons/jsx/PaymentUnionPay';
 import Visa from '../Icons/jsx/PaymentVisa';
 
@@ -33,6 +37,10 @@ const CardType = {
   GooglePay: 'googlepay',
   Ideal: 'ideal',
   Bancontact: 'bancontact',
+  NaverPay: 'naverpay',
+  KakaoPay: 'kakaopay',
+  SamsungPay: 'samsungpay',
+  Payco: 'payco',
 };
 
 const PaymentComponents = {
@@ -49,10 +57,13 @@ const PaymentComponents = {
   [CardType.Mada]: Mada,
   [CardType.Alipay]: Alipay,
   [CardType.ApplePay]: ApplePay,
-  [CardType.ApplePay]: ApplePay,
   [CardType.GooglePay]: GooglePay,
   [CardType.Ideal]: Ideal,
   [CardType.Bancontact]: Bancontact,
+  [CardType.NaverPay]: NaverPay,
+  [CardType.KakaoPay]: KakaoPay,
+  [CardType.SamsungPay]: SamsungPay,
+  [CardType.Payco]: PaycoPay,
 };
 
 export interface PaymentProps extends HTMLAttributes<SVGElement> {
