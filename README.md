@@ -1,5 +1,7 @@
 # macpaw-ui
 
+![MacPaw UI](.github/header.png)
+
 ## Installation
 
 Install with npm:
