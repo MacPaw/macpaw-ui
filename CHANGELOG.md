@@ -1,5 +1,11 @@
 # @macpaw/macpaw-ui
 
+## 5.1.0
+
+### Minor Changes
+
+- 70cfad2: Add Korean payment icons
+
 ## 5.0.7
 
 ### Patch Changes
