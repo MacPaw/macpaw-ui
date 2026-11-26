@@ -39,7 +39,10 @@ stages:
             parameters:
               containerRegistry: gcr
               imageName: $(component)
-              buildArgs: --build-arg NPM_TOKEN=$(github_token)
+              buildArgs: --secret id=npm_token,env=NPM_TOKEN
+              buildEnv:
+                DOCKER_BUILDKIT: 1
+                NPM_TOKEN: $(github_token)
               tag: $(dockerTag)-cli
       - job: deploy
         displayName: Deploy

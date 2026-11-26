@@ -1,13 +1,13 @@
 FROM node:20
 
-ARG NPM_TOKEN
-
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm config set //npm.pkg.github.com/:_authToken=${NPM_TOKEN}
 RUN npm config set @macpaw:registry=https://npm.pkg.github.com
-RUN npm install
+RUN --mount=type=secret,id=npm_token \
+    printf '//npm.pkg.github.com/:_authToken=%s\n' "$(cat /run/secrets/npm_token)" >> ~/.npmrc \
+    && npm install \
+    && npm config delete //npm.pkg.github.com/:_authToken
 
 COPY . .
 RUN npm run build
